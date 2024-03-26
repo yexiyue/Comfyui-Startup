@@ -1,0 +1,2 @@
+[workspace]
+members = ["plugins/tauri-plugin-tracing", "src-tauri"]

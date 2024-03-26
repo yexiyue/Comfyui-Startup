@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-error"
+description = "Enables the error command without any pre-configured scope."
+commands.allow = ["error"]
+
+[[permission]]
+identifier = "deny-error"
+description = "Denies the error command without any pre-configured scope."
+commands.deny = ["error"]

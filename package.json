@@ -1,0 +1,53 @@
+{
+  "name": "comfyui-startup",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "cargo tauri",
+    "extract": "lingui extract"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.18.5",
+    "@lingui/core": "^4.7.1",
+    "@lingui/macro": "^4.7.1",
+    "@lingui/react": "^4.7.1",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@tauri-apps/api": ">=2.0.0-beta.0",
+    "@tauri-apps/plugin-dialog": "2.0.0-beta.2",
+    "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "antd": "^5.15.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.363.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7",
+    "tauri-plugin-tracing-api": "workspace:*",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@lingui/cli": "^4.7.1",
+    "@lingui/conf": "^4.7.1",
+    "@lingui/vite-plugin": "^4.7.1",
+    "@tauri-apps/cli": ">=2.0.0-beta.0",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "babel-plugin-macros": "^3.1.0",
+    "postcss": "^8.4.38",
+    "shadcn-ui": "^0.8.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0"
+  }
+}

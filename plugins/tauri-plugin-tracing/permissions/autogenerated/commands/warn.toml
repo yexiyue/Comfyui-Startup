@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-warn"
+description = "Enables the warn command without any pre-configured scope."
+commands.allow = ["warn"]
+
+[[permission]]
+identifier = "deny-warn"
+description = "Denies the warn command without any pre-configured scope."
+commands.deny = ["warn"]
