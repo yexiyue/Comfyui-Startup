@@ -12,8 +12,8 @@
     "windows": [
       {
         "title": "comfyui-startup",
-        "width": 500,
-        "height": 400
+        "width": 800,
+        "height": 600
       }
     ],
     "security": {

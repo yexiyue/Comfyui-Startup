@@ -1,96 +1,98 @@
 import { useState } from "react";
-import { Trans } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
 import { useConfigStore } from "@/useStore";
 import { open } from "@tauri-apps/plugin-dialog";
-import { info, error } from "tauri-plugin-tracing-api";
-import { Button, Input, Select, Space } from "antd";
+import { info } from "tauri-plugin-tracing-api";
+import { Button, Input, Segmented, Select, Space, App, Form, Card } from "antd";
 import { FolderClosedIcon } from "lucide-react";
-import { Command } from "@tauri-apps/plugin-shell";
 import { invoke } from "@tauri-apps/api/core";
 
 export const Component = () => {
+  const { message } = App.useApp();
   const [step, setStep] = useState(0);
-  const [language, comfyuiPath, setLanguage, setComfyuiPath] = useConfigStore(
-    (store) => [
-      store.language,
-      store.comfyuiPath,
-      store.setLanguage,
-      store.setComfyuiPath,
-    ]
-  );
+  const [
+    country,
+    language,
+    comfyuiPath,
+    setLanguage,
+    setComfyuiPath,
+    setCountry,
+  ] = useConfigStore((store) => [
+    store.country,
+    store.language,
+    store.comfyuiPath,
+    store.setLanguage,
+    store.setComfyuiPath,
+    store.setCountry,
+  ]);
   return (
     <div className="flex items-center h-screen justify-center flex-col">
-      <div
-        className={`${
-          step !== 0 ? "hidden" : "block"
-        } w-full h-[250px] flex flex-col items-center gap-4`}
-      >
-        <p className=" text-xl">Comfyui Startup</p>
-        <Select
-          className="w-[150px]"
-          value={language}
-          onChange={(value) => setLanguage(value)}
-          options={[
-            { value: "en", label: "English" },
-            { value: "zh", label: "中文" },
-          ]}
-        ></Select>
-      </div>
-      <div
-        className={`${
-          step !== 1 ? "hidden" : "block"
-        } w-full h-[250px] flex flex-col items-center gap-4`}
-      >
-        <Button
-          onClick={async () => {
-            try {
-              const command = await invoke("install_comfyui");
-              console.log(command);
-            } catch (error) {
-              console.log(error);
-            }
-          }}
-        >
-          安装Brew
-        </Button>
-        <Input
-          // value={comfyuiPath}
-          // className="w-[200px]"
-          // onClick={async () => {
-          //   const path = await open({
-          //     directory: true,
-          //   });
-          //   info(`${path}`);
-          //   if (path) {
-          //     setComfyuiPath(path);
-          //   }
-          // }}
-          prefix={<FolderClosedIcon />}
-        ></Input>
-      </div>
-      <div
-        className={`${
-          step !== 2 ? "hidden" : "block"
-        } w-full h-[250px] flex flex-col items-center gap-4`}
-      >
-        <p className=" text-xl">Comfyui Startup2</p>
-      </div>
-      <Space>
-        {step !== 0 && (
-          <Button type="primary" onClick={() => setStep(step - 1)}>
-            <Trans>上一步</Trans>
-          </Button>
-        )}
-        {step !== 2 ? (
-          <Button type="primary" onClick={() => setStep(step + 1)}>
-            <Trans>下一步</Trans>
-          </Button>
-        ) : (
-          <Button type="primary">
-            <Trans>完成</Trans>
-          </Button>
-        )}
-      </Space>
+      <Card className="shadow-sm w-[350px]">
+        <p className="text-xl">Comfyui Startup</p>
+        <Form layout="vertical">
+          <Form.Item label={t`语言`}>
+            <Select
+              className="w-[150px]"
+              value={language}
+              onChange={(value) => setLanguage(value)}
+              options={[
+                { value: "en", label: "English" },
+                { value: "zh", label: "中文" },
+              ]}
+            ></Select>
+          </Form.Item>
+          <Form.Item
+            label={t`地区`}
+            extra={t`在安装comfyui时会根据不同地区自动配置代理`}
+          >
+            <Segmented
+              value={country}
+              options={[
+                {
+                  label: t`中国用户`,
+                  value: "chinese",
+                },
+                {
+                  label: t`其他国家`,
+                  value: "foreign",
+                },
+              ]}
+              onChange={setCountry}
+            />
+          </Form.Item>
+
+          <Form.Item label={t`路径`} required>
+            <Input
+              value={comfyuiPath}
+              className="cursor-pointer"
+              onChange={(e) => {
+                setComfyuiPath(e.currentTarget.value);
+              }}
+              placeholder={t`请选择或输入安装路径`}
+              prefix={
+                <FolderClosedIcon
+                  onClick={async () => {
+                    try {
+                      const path = await open({
+                        directory: true,
+                      });
+                      if (path) setComfyuiPath(path);
+                    } catch (error) {
+                      message.error(`${error}`);
+                    }
+                  }}
+                />
+              }
+            />
+          </Form.Item>
+
+          <div className="w-full flex justify-center">
+            <Button onClick={async () => {}} type="primary">
+              <Trans>安装Comfyui</Trans>
+            </Button>
+          </div>
+        </Form>
+      </Card>
     </div>
   );
 };

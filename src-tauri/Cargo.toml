@@ -2,7 +2,7 @@
 name = "comfyui-startup"
 version = "0.0.0"
 description = "A Tauri App"
-authors = ["you"]
+authors = ["yexiyue <yexiyue666@qq.com>"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -21,3 +21,17 @@ smbios-lib = "0.9.1"
 tauri-plugin-dialog = "2.0.0-beta.3"
 tauri-plugin-tracing = { path = "../plugins/tauri-plugin-tracing" }
 tracing = "0.1.40"
+reqwest = { version = "0.12.2", features = ["stream"] }
+tokio = { version = "1.36.0", features = [
+    "fs",
+    "rt",
+    "rt-multi-thread",
+    "macros",
+] }
+rand = "0.8.5"
+futures = "0.3.30"
+sea-orm = { version = "0.12.15", features = [
+    "runtime-tokio-rustls",
+    "sqlx-sqlite",
+] }
+migration = { path = "../migration" }

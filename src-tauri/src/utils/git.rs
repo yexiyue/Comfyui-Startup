@@ -5,6 +5,8 @@ use tracing::{error, info};
 
 use crate::error::MyError;
 
+pub const PROXY: &str = "https://mirror.ghproxy.com/";
+
 pub fn git_clone<P: AsRef<Path>>(url: &str, path: P) -> Result<(), MyError> {
     let output = Command::new("git")
         .arg("clone")

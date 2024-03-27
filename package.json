@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "cargo tauri",
-    "extract": "lingui extract"
+    "extract": "lingui extract",
+    "entity": "sea-orm-cli generate entity -u sqlite:./target/debug/db/database.db --with-serde both -l -o ./entity/src"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.5",
