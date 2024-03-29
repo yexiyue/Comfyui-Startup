@@ -1,2 +1,2 @@
 [workspace]
-members = ["plugins/tauri-plugin-tracing", "src-tauri", "migration", "entity"]
+members = ["src-tauri", "migration", "entity"]

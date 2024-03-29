@@ -16,7 +16,6 @@
     "shell:allow-stdin-write",
     "shell:allow-execute",
     "dialog:default",
-    "dialog:allow-open",
-    "tracing:default"
+    "dialog:allow-open"
   ]
 }

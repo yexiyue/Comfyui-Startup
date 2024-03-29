@@ -28,3 +28,21 @@ pub async fn connect_db() -> Result<DbConn, MyError> {
         .context("failed to migrate")?;
     Ok(db)
 }
+
+pub enum Status {
+    Running,
+    Paused,
+    Success,
+    Failed,
+}
+
+impl Into<String> for Status {
+    fn into(self) -> String {
+        match self {
+            Status::Running => "running".to_string(),
+            Status::Paused => "paused".to_string(),
+            Status::Success => "success".to_string(),
+            Status::Failed => "failed".to_string(),
+        }
+    }
+}

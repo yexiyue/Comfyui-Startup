@@ -1,4 +1,0 @@
-"$schema" = "schemas/schema.json"
-[default]
-description = "Allow all log"
-permissions = ["allow-trace", "allow-info", "allow-warn", "allow-error"]

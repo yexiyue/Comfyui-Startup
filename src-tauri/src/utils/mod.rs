@@ -1,5 +1,4 @@
 use tauri::Manager;
-pub mod download;
 pub mod git;
 
 #[tauri::command]

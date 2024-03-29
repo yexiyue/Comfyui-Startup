@@ -19,9 +19,8 @@ anyhow = "1.0.81"
 tempfile = "3.10.1"
 smbios-lib = "0.9.1"
 tauri-plugin-dialog = "2.0.0-beta.3"
-tauri-plugin-tracing = { path = "../plugins/tauri-plugin-tracing" }
 tracing = "0.1.40"
-reqwest = { version = "0.12.2", features = ["stream"] }
+reqwest = { version = "0.12.2", features = ["stream", "http2"] }
 tokio = { version = "1.36.0", features = [
     "fs",
     "rt",
@@ -35,3 +34,8 @@ sea-orm = { version = "0.12.15", features = [
     "sqlx-sqlite",
 ] }
 migration = { path = "../migration" }
+entity = { path = "../entity" }
+tokio-util = "0.7.10"
+chrono = "0.4.37"
+thiserror = "1.0.58"
+derive_builder = "0.20.0"

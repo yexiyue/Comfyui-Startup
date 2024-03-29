@@ -11,7 +11,7 @@ pub struct Model {
     pub task_id: i32,
     pub start: i64,
     pub end: i64,
-    pub downloaded: Option<bool>,
+    pub downloaded: bool,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

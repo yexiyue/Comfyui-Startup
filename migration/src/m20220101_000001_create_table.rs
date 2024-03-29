@@ -1,7 +1,4 @@
-use sea_orm_migration::{
-    prelude::*,
-    sea_orm::{EnumIter, Iterable},
-};
+use sea_orm_migration::prelude::*;
 
 #[derive(DeriveMigrationName)]
 pub struct Migration;
@@ -43,10 +40,10 @@ impl MigrationTrait for Migration {
                             .timestamp_with_time_zone()
                             .default(Expr::current_timestamp()),
                     )
-                    .col(ColumnDef::new(DownloadTasks::CompletedAt).timestamp_with_time_zone())
                     .col(
                         ColumnDef::new(DownloadTasks::Status)
-                            .enumeration(Alias::new("status"), Status::iter()),
+                            .string()
+                            .default("running"),
                     )
                     .to_owned(),
             )
@@ -70,13 +67,5 @@ pub enum DownloadTasks {
     TotalSize,
     CreatedAt,
     UpdatedAt,
-    CompletedAt,
     Status,
-}
-
-#[derive(Iden, EnumIter)]
-pub enum Status {
-    Failed,
-    Pending,
-    Paused,
 }

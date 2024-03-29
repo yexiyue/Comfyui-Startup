@@ -30,7 +30,8 @@ impl MigrationTrait for Migration {
                     .col(
                         ColumnDef::new(DownloadChunks::Downloaded)
                             .boolean()
-                            .default(false),
+                            .default(false)
+                            .not_null(),
                     )
                     .foreign_key(
                         ForeignKey::create()

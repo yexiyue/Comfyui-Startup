@@ -14,7 +14,6 @@ pub struct Model {
     pub total_size: i64,
     pub created_at: Option<String>,
     pub updated_at: Option<String>,
-    pub completed_at: Option<String>,
     pub status: Option<String>,
 }
 

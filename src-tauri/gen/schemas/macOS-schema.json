@@ -1094,69 +1094,6 @@
           ]
         },
         {
-          "description": "tracing:default -> Allow all log",
-          "type": "string",
-          "enum": [
-            "tracing:default"
-          ]
-        },
-        {
-          "description": "tracing:allow-error -> Enables the error command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:allow-error"
-          ]
-        },
-        {
-          "description": "tracing:allow-info -> Enables the info command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:allow-info"
-          ]
-        },
-        {
-          "description": "tracing:allow-trace -> Enables the trace command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:allow-trace"
-          ]
-        },
-        {
-          "description": "tracing:allow-warn -> Enables the warn command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:allow-warn"
-          ]
-        },
-        {
-          "description": "tracing:deny-error -> Denies the error command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:deny-error"
-          ]
-        },
-        {
-          "description": "tracing:deny-info -> Denies the info command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:deny-info"
-          ]
-        },
-        {
-          "description": "tracing:deny-trace -> Denies the trace command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:deny-trace"
-          ]
-        },
-        {
-          "description": "tracing:deny-warn -> Denies the warn command without any pre-configured scope.",
-          "type": "string",
-          "enum": [
-            "tracing:deny-warn"
-          ]
-        },
-        {
           "description": "tray:default -> Default permissions for the plugin.",
           "type": "string",
           "enum": [

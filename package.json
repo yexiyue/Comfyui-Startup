@@ -31,7 +31,6 @@
     "react-router-dom": "^6.22.3",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
-    "tauri-plugin-tracing-api": "workspace:*",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

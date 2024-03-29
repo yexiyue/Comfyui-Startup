@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Trans, t } from "@lingui/macro";
 import { useConfigStore } from "@/useStore";
 import { open } from "@tauri-apps/plugin-dialog";
-import { info } from "tauri-plugin-tracing-api";
 import { Button, Input, Segmented, Select, Space, App, Form, Card } from "antd";
 import { FolderClosedIcon } from "lucide-react";
-import { invoke } from "@tauri-apps/api/core";
+import { Channel, invoke } from "@tauri-apps/api/core";
 
 export const Component = () => {
   const { message } = App.useApp();
-  const [step, setStep] = useState(0);
+  const [taskId, setTaskId] = useState(0);
+
   const [
     country,
     language,
@@ -87,8 +87,64 @@ export const Component = () => {
           </Form.Item>
 
           <div className="w-full flex justify-center">
-            <Button onClick={async () => {}} type="primary">
+            <Button
+              onClick={async () => {
+                try {
+                  const channel = new Channel();
+                  channel.onmessage = (event) => {
+                    console.log(event);
+                  };
+                  let taskId = await invoke<number>("download", { channel });
+                  // console.log(taskId);
+                  // setTimeout(async () => {
+                  //   try {
+                  //     let res = await invoke<string>("cancel", { taskId });
+                  //     console.log(res);
+                  //   } catch (error) {
+                  //     console.log(error);
+                  //   }
+                  // }, 100000);
+                  setTaskId(taskId);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}
+              type="primary"
+            >
               <Trans>安装Comfyui</Trans>
+            </Button>
+            <Button
+              onClick={async () => {
+                try {
+                  let res = await invoke<string>("cancel", { taskId });
+                  console.log(res);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}
+              type="primary"
+            >
+              <Trans>cancel</Trans>
+            </Button>
+            <Button
+              onClick={async () => {
+                try {
+                  const channel = new Channel();
+                  channel.onmessage = (event) => {
+                    console.log("restore:", event);
+                  };
+                  let res = await invoke<string>("restore", {
+                    taskId: 23,
+                    channel,
+                  });
+                  console.log(res);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}
+              type="primary"
+            >
+              <Trans>restore</Trans>
             </Button>
           </div>
         </Form>
