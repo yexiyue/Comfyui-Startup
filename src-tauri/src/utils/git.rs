@@ -1,30 +1,33 @@
-use std::{path::Path, process::Command};
-
-use anyhow::{anyhow, Context};
-use tracing::{error, info};
-
 use crate::error::MyError;
+use derive_builder::Builder;
 
 pub const PROXY: &str = "https://mirror.ghproxy.com/";
+#[derive(Debug, Builder, Clone)]
+#[builder(setter(into))]
+pub struct Git {
+    url: String,
+    path: String,
+    #[builder(default = "true")]
+    is_parent: bool,
+    #[builder(default = "true")]
+    proxy: bool,
+}
 
-pub fn git_clone<P: AsRef<Path>>(url: &str, path: P) -> Result<(), MyError> {
-    let output = Command::new("git")
-        .arg("clone")
-        .arg(url)
-        .current_dir(path)
-        .stdin(std::process::Stdio::inherit())
-        .stdout(std::process::Stdio::inherit())
-        .stderr(std::process::Stdio::inherit())
-        .spawn()
-        .context("执行git clone命令失败")?
-        .wait()
-        .context("等待git clone命令执行完成失败")?;
+impl Git {
+    pub fn git_clone(&self) -> Result<String, MyError> {
+        let mut url = self.url.clone();
+        if self.proxy {
+            url = format!("{}/{}", PROXY, self.url);
+        }
 
-    if output.success() {
-        info!("clone {} succeeded.", url);
-        Ok(())
-    } else {
-        error!("clone {} failed.", url);
-        Err(anyhow!("clone {} failed.", url).into())
+        if self.is_parent {
+            Ok(format!("cd {};git clone {}", self.path, url))
+        } else {
+            Ok(format!("git clone {} {}", url, self.path))
+        }
+    }
+
+    pub fn builder() -> GitBuilder {
+        GitBuilder::default()
     }
 }

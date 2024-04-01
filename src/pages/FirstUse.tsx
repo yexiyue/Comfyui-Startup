@@ -1,34 +1,65 @@
-import { useState } from "react";
 import { Trans, t } from "@lingui/macro";
 import { useConfigStore } from "@/useStore";
 import { open } from "@tauri-apps/plugin-dialog";
-import { Button, Input, Segmented, Select, Space, App, Form, Card } from "antd";
+import {
+  Button,
+  Input,
+  Segmented,
+  Select,
+  App,
+  Form,
+  Card,
+  Space,
+  Typography,
+} from "antd";
 import { FolderClosedIcon } from "lucide-react";
-import { Channel, invoke } from "@tauri-apps/api/core";
+import Logo from "../assets/logo.svg?react";
+import { useAsyncEffect } from "ahooks";
+import { command } from "@/api";
 
 export const Component = () => {
   const { message } = App.useApp();
-  const [taskId, setTaskId] = useState(0);
 
   const [
     country,
     language,
     comfyuiPath,
+    sysInfo,
     setLanguage,
     setComfyuiPath,
     setCountry,
+    setSysInfo,
   ] = useConfigStore((store) => [
     store.country,
     store.language,
     store.comfyuiPath,
+    store.sysInfo,
     store.setLanguage,
     store.setComfyuiPath,
     store.setCountry,
+    store.setSysInfo,
   ]);
+
+  useAsyncEffect(async () => {
+    try {
+      const config = await command("get_config");
+      const info = await command("get_info");
+      setSysInfo(info);
+      if (config) {
+        setCountry(config.country);
+        setComfyuiPath(config.comfyui_path);
+      }
+    } catch (error) {
+      message.error(`${error}`);
+    }
+  }, []);
+
   return (
     <div className="flex items-center h-screen justify-center flex-col">
       <Card className="shadow-sm w-[350px]">
-        <p className="text-xl">Comfyui Startup</p>
+        <div>
+          <Logo className="w-[300px] h-[150px]" />
+        </div>
         <Form layout="vertical">
           <Form.Item label={t`语言`}>
             <Select
@@ -62,92 +93,54 @@ export const Component = () => {
           </Form.Item>
 
           <Form.Item label={t`路径`} required>
-            <Input
-              value={comfyuiPath}
-              className="cursor-pointer"
-              onChange={(e) => {
-                setComfyuiPath(e.currentTarget.value);
-              }}
-              placeholder={t`请选择或输入安装路径`}
-              prefix={
-                <FolderClosedIcon
-                  onClick={async () => {
-                    try {
-                      const path = await open({
-                        directory: true,
-                      });
-                      if (path) setComfyuiPath(path);
-                    } catch (error) {
-                      message.error(`${error}`);
-                    }
-                  }}
-                />
-              }
-            />
+            <Space.Compact>
+              <Input
+                value={comfyuiPath}
+                className="cursor-pointer"
+                disabled
+                placeholder={t`请选择安装目录`}
+                prefix={<FolderClosedIcon className="h-4 w-4" />}
+              />
+              <Button
+                type="primary"
+                onClick={async () => {
+                  try {
+                    const path = await open({
+                      directory: true,
+                    });
+                    if (path) setComfyuiPath(`${path}/ComfyUI`);
+                  } catch (error) {
+                    message.error(`${error}`);
+                  }
+                }}
+              >
+                <Trans>选择路径</Trans>
+              </Button>
+            </Space.Compact>
           </Form.Item>
 
           <div className="w-full flex justify-center">
             <Button
               onClick={async () => {
-                try {
-                  const channel = new Channel();
-                  channel.onmessage = (event) => {
-                    console.log(event);
-                  };
-                  let taskId = await invoke<number>("download", { channel });
-                  // console.log(taskId);
-                  // setTimeout(async () => {
-                  //   try {
-                  //     let res = await invoke<string>("cancel", { taskId });
-                  //     console.log(res);
-                  //   } catch (error) {
-                  //     console.log(error);
-                  //   }
-                  // }, 100000);
-                  setTaskId(taskId);
-                } catch (error) {
-                  console.log(error);
-                }
+                await command("set_config", {
+                  configState: {
+                    comfyui_path: comfyuiPath,
+                    country,
+                  },
+                });
+                await command("install_comfyui");
               }}
               type="primary"
             >
               <Trans>安装Comfyui</Trans>
             </Button>
-            <Button
-              onClick={async () => {
-                try {
-                  let res = await invoke<string>("cancel", { taskId });
-                  console.log(res);
-                } catch (error) {
-                  console.log(error);
-                }
-              }}
-              type="primary"
-            >
-              <Trans>cancel</Trans>
-            </Button>
-            <Button
-              onClick={async () => {
-                try {
-                  const channel = new Channel();
-                  channel.onmessage = (event) => {
-                    console.log("restore:", event);
-                  };
-                  let res = await invoke<string>("restore", {
-                    taskId: 23,
-                    channel,
-                  });
-                  console.log(res);
-                } catch (error) {
-                  console.log(error);
-                }
-              }}
-              type="primary"
-            >
-              <Trans>restore</Trans>
-            </Button>
           </div>
         </Form>
+        <div className="w-full flex justify-center mt-3">
+          <Typography.Text type="secondary" className="text-xs">
+            {sysInfo?.os_version} {sysInfo?.cpu}
+          </Typography.Text>
+        </div>
       </Card>
     </div>
   );

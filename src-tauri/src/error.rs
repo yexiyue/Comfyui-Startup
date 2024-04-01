@@ -1,23 +1,35 @@
-use std::{error::Error, fmt::Display};
+use std::io;
 
 use serde::Serialize;
+use thiserror::Error;
 
-#[derive(Debug, Serialize)]
-pub struct MyError {
-    pub message: String,
+use crate::{git, utils::GitBuilderError};
+
+#[derive(Debug, Error)]
+pub enum MyError {
+    #[error(transparent)]
+    Error(#[from] anyhow::Error),
+    #[error(transparent)]
+    GitBuilder(#[from] GitBuilderError),
+    #[error(transparent)]
+    Id(#[from] io::Error),
+    #[error(transparent)]
+    Shell(#[from] tauri_plugin_shell::Error),
+    #[error(transparent)]
+    FromUtf8(#[from] std::string::FromUtf8Error),
+    #[error(transparent)]
+    Git(#[from] git2::Error),
+    #[error(transparent)]
+    Git2Builder(#[from] git::GitBuilderError),
+    #[error("{0}")]
+    Code(i32),
 }
 
-impl Error for MyError {}
-impl Display for MyError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}", self.message)
-    }
-}
-
-impl From<anyhow::Error> for MyError {
-    fn from(e: anyhow::Error) -> Self {
-        Self {
-            message: e.to_string(),
-        }
+impl Serialize for MyError {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        serializer.serialize_str(&self.to_string())
     }
 }

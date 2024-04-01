@@ -490,6 +490,7 @@ fn catch_file(filepath: &str) -> anyhow::Result<String> {
     if path.is_dir() {
         return Err(anyhow!("filepath is a directory"));
     }
+    // 创建父目录
     if let Some(parent) = path.parent() {
         if !parent.exists() {
             std::fs::create_dir_all(parent)?;
@@ -501,11 +502,12 @@ fn catch_file(filepath: &str) -> anyhow::Result<String> {
         .to_str()
         .context("filename is not valid")?;
     let dir = std::env!("HOME");
-    let catch_dir = format!("{dir}/.catch/comfyui-startup");
-    let catch_dir = Path::new(&catch_dir);
-    if !catch_dir.exists() {
-        std::fs::create_dir_all(catch_dir)?;
+    let cache_dir = format!("{dir}/.cache/comfyui-startup");
+    let cache_dir = Path::new(&cache_dir);
+    // 创建缓存目录
+    if !cache_dir.exists() {
+        std::fs::create_dir_all(cache_dir)?;
     }
-    let catch_file = format!("{}/{filename}", &catch_dir.display());
-    Ok(catch_file)
+    let cache_file = format!("{}/{filename}", &cache_dir.display());
+    Ok(cache_file)
 }

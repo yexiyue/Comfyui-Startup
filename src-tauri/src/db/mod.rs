@@ -1,6 +1,7 @@
 use anyhow::{anyhow, Context};
 use migration::MigratorTrait;
-use sea_orm::{Database, DbConn};
+use sea_orm::{ConnectOptions, Database, DbConn};
+use tracing::log::LevelFilter;
 
 use crate::error::MyError;
 
@@ -20,7 +21,9 @@ pub async fn connect_db() -> Result<DbConn, MyError> {
     }
 
     let db_path = format!("sqlite:{}?mode=rwc", dir.display());
-    let db = Database::connect(db_path)
+    let mut option = ConnectOptions::new(db_path);
+    option.sqlx_logging_level(LevelFilter::Debug);
+    let db = Database::connect(option)
         .await
         .context("failed to connect db")?;
     migration::Migrator::up(&db, None)

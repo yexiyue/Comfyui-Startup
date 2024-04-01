@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./router/router";
 import { useConfigStore } from "./useStore";
 import { useEffect } from "react";
-import { ConfigProvider, FloatButton } from "antd";
+import { ConfigProvider, FloatButton, App as AntdApp } from "antd";
 import { StyleProvider } from "@ant-design/cssinjs";
 import zhCN from "antd/lib/locale/zh_CN";
 import enUS from "antd/lib/locale/en_US";
@@ -12,7 +12,15 @@ import { BugIcon } from "lucide-react";
 import { invoke } from "@tauri-apps/api/core";
 
 const App = () => {
-  const [language] = useConfigStore((store) => [store.language]);
+  const [language, comfyuiPath, country, setFirstUse] = useConfigStore(
+    (store) => [
+      store.language,
+      store.comfyuiPath,
+      store.country,
+      store.setFirstUse,
+    ]
+  );
+
   useEffect(() => {
     import(`@/locales/${language}.po`).then((res) => {
       i18n.load(res.messages);
@@ -23,7 +31,9 @@ const App = () => {
     <I18nProvider i18n={i18n}>
       <StyleProvider hashPriority="high">
         <ConfigProvider locale={language === "zh" ? zhCN : enUS}>
-          <RouterProvider router={router} />
+          <AntdApp>
+            <RouterProvider router={router} />
+          </AntdApp>
           <FloatButton
             className="w-5 h-5"
             onClick={async () => {

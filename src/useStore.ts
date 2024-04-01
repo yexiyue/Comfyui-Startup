@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { SysInfo } from "./api";
 
 type State = {
   // 语言
@@ -10,6 +11,7 @@ type State = {
   firstUse: boolean;
   // 国家
   country: string;
+  sysInfo?: SysInfo;
 };
 
 type Action = {
@@ -17,6 +19,7 @@ type Action = {
   setFirstUse: (firstUse: boolean) => void;
   setComfyuiPath: (comfyuiPath: string) => void;
   setCountry: (country: string) => void;
+  setSysInfo: (sysInfo: State["sysInfo"]) => void;
 };
 
 export const useConfigStore = create(
@@ -27,6 +30,10 @@ export const useConfigStore = create(
       comfyuiPath: "",
       firstUse: true,
       country: "chinese",
+      sysInfo: undefined,
+      setSysInfo(sysInfo) {
+        set({ sysInfo });
+      },
       setLanguage(language) {
         set({ language });
       },
