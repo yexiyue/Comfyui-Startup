@@ -19,7 +19,10 @@ use commands::{
     config::{get_config, get_info, set_config},
     download::{cancel, download, get_model_list, restore},
     git::{git_clone, git_pull},
-    plugin::{download_manager, download_plugin, get_plugin_list, manager_exists, update_plugin},
+    plugin::{
+        download_manager, download_plugin, get_plugin_list, manager_exists, remove_plugin,
+        update_plugin,
+    },
     startup,
 };
 mod db;
@@ -54,7 +57,8 @@ pub async fn start() {
             download,
             cancel,
             restore,
-            get_model_list
+            get_model_list,
+            remove_plugin
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

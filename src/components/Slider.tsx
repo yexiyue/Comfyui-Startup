@@ -5,7 +5,6 @@ import {
   BlocksIcon,
   CirclePowerIcon,
   FileBoxIcon,
-  FileDownIcon,
   SettingsIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
@@ -38,11 +37,6 @@ export const Slider = () => {
       to: "/model",
     },
     {
-      title: <Trans>下载任务</Trans>,
-      icon: <FileDownIcon className="w-4 h-4" />,
-      to: "/download",
-    },
-    {
       title: <Trans>设置</Trans>,
       icon: <SettingsIcon className="w-4 h-4" />,
       to: "/setting",
@@ -54,7 +48,7 @@ export const Slider = () => {
       <div className="w-full h-12">
         <Logo className="w-full" />
       </div>
-      <Separator className="my-2" />
+      <Separator className="mb-2" />
       <ToggleGroup className="flex w-full flex-col px-2" type="single">
         {menus.map((menu) => (
           <ToggleGroupItem

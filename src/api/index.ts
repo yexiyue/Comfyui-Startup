@@ -28,21 +28,24 @@ export const command = async <T extends keyof Commands>(
     } else {
       message.error(`${error}`);
     }
+    throw error;
   }
 };
 
 type Commands = {
   // plugin
   manager_exists: () => boolean;
-  download_manager: (args: { onProgress: Channel<[number, number]> }) => void;
+  download_manager: (args: {
+    onProgress: Channel<{ message: [number, number]; id: number }>;
+  }) => void;
   get_plugin_list: () => PluginList;
   download_plugin: (arg: {
     plugin: Plugin;
-    onProgress: Channel<[number, number]>;
-  }) => string;
+    onProgress: Channel<{ message: [number, number]; id: number }>;
+  }) => void;
   update_plugin: (args: {
     plugin: Plugin;
-    onProgress: Channel<[number, number]>;
+    onProgress: Channel<{ message: [number, number]; id: number }>;
   }) => number;
 
   // config
@@ -56,14 +59,15 @@ type Commands = {
   // model
   download: (args: {
     model: Model;
-    onProgress: Channel<[number, number]>;
+    onProgress: Channel<{ message: [number, number]; id: number }>;
   }) => number;
   cancel: (args: { taskId: number }) => void;
   restore: (args: {
     taskId: number;
-    onProgress: Channel<[number, number]>;
+    onProgress: Channel<{ message: [number, number]; id: number }>;
   }) => void;
   get_model_list: () => ModelList;
+  remove_plugin: (args: { plugin: Plugin }) => void;
 };
 
 export type SysInfo = {

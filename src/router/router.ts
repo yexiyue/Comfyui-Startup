@@ -12,7 +12,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "plugin",
-        lazy: () => import("@/pages/plugin/Index"),
+        lazy: () => import("@/pages/Plugin"),
+      },
+      {
+        path: "model",
+        lazy: () => import("@/pages/Model"),
+      },
+      {
+        path: "setting",
+        lazy: () => import("@/pages/Setting"),
       },
     ],
   },

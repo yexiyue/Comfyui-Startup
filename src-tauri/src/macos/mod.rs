@@ -30,7 +30,7 @@ pub async fn install_comfyui(state: State<'_, ConfigState>) -> Result<(), MyErro
 
     cmd.add("python3 -m venv venv");
     cmd.add("source venv/bin/activate");
-    cmd.add("pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/");
+    cmd.add("pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/");
     cmd.add("pip config set install.trusted-host pypi.tuna.tsinghua.edu.cn");
     cmd.add("pip install torch torchvision torchaudio");
     cmd.add("pip install -r requirements.txt");

@@ -18,7 +18,7 @@ pub async fn startup(
 ) -> Result<(), MyError> {
     let mut cmd = Exec::new();
     let mut cpu = false;
-    if info.arch == "x86_64" && info.os == "macos" {
+    if info.cpu.starts_with("Apple") && info.os == "macos" {
         cpu = true;
     }
     cmd.add(format!("cd {}", &config.comfyui_path));

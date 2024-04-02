@@ -3,8 +3,8 @@ use std::{
     path::Path,
 };
 
-use crate::git::Git;
 use crate::utils::command;
+use crate::{error::MyError, git::Git};
 use git2::Progress;
 use serde::{Deserialize, Serialize};
 
@@ -31,7 +31,11 @@ pub struct Plugin {
 
 impl Plugin {
     pub fn get_file_name(&self) -> String {
-        self.reference.split('/').last().unwrap().replace(".git", "")
+        self.reference
+            .split('/')
+            .last()
+            .unwrap()
+            .replace(".git", "")
     }
 
     pub async fn download<F>(&self, comfyui_path: &str, proxy: bool, cb: F) -> anyhow::Result<()>
@@ -51,7 +55,6 @@ impl Plugin {
             .proxy(proxy)
             .build()?;
         git.git_clone(cb)?;
-        command("../../venv/bin/pip install -r requirements.txt", &path).await?;
         if self.pip.is_some() {
             let deps = self.pip.as_ref().unwrap().join(" ");
             command(&format!("../../venv/bin/pip install {}", deps), &path).await?;
@@ -64,7 +67,11 @@ impl Plugin {
         F: Fn(Progress) -> bool,
     {
         let name = self.get_file_name();
-        let path = format!("{comfyui_path}/custom_nodes/{name}");
+        let path = Path::new(comfyui_path)
+            .join("custom_nodes")
+            .join(name)
+            .display()
+            .to_string();
         let git = Git::builder()
             .path(&path)
             .url(&self.reference)
@@ -74,6 +81,17 @@ impl Plugin {
         // 1 表示插件已经是最新版
         // 2 表示插件更新成功
         Ok(res)
+    }
+
+    pub async fn remove(&self, comfyui_path: &str) -> Result<(), MyError> {
+        let name = self.get_file_name();
+        let path = Path::new(comfyui_path)
+            .join("custom_nodes")
+            .join(name)
+            .display()
+            .to_string();
+        std::fs::remove_dir_all(path)?;
+        Ok(())
     }
 }
 

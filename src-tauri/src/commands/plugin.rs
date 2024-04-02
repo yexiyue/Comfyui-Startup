@@ -46,13 +46,7 @@ pub async fn download_manager(
             return true;
         })
         .await;
-    match res {
-        Ok(_) => Ok(()),
-        Err(e) => {
-            error!("download_plugin: {e}");
-            Err(MyError::Code(0))
-        }
-    }
+    Ok(res?)
 }
 
 #[tauri::command]
@@ -75,7 +69,7 @@ pub async fn download_plugin(
     config: State<'_, ConfigState>,
     plugin: Plugin,
     on_progress: Channel,
-) -> Result<String, MyError> {
+) -> Result<(), MyError> {
     let res = plugin
         .download(&config.comfyui_path, config.is_chinese(), |p| {
             on_progress
@@ -84,13 +78,7 @@ pub async fn download_plugin(
             return true;
         })
         .await;
-    match res {
-        Ok(_) => Ok(plugin.reference),
-        Err(e) => {
-            error!("download_plugin: {e}");
-            Err(MyError::Code(0))
-        }
-    }
+    Ok(res?)
 }
 
 #[tauri::command]
@@ -116,4 +104,8 @@ pub async fn update_plugin(
             Err(MyError::Code(0))
         }
     }
+}
+#[tauri::command]
+pub async fn remove_plugin(config: State<'_, ConfigState>, plugin: Plugin) -> Result<(), MyError> {
+    plugin.remove(&config.comfyui_path).await
 }
