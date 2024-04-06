@@ -16,6 +16,10 @@
     "shell:allow-stdin-write",
     "shell:allow-execute",
     "dialog:default",
-    "dialog:allow-open"
+    "dialog:allow-open",
+    "dialog:allow-message",
+    "dialog:deny-save",
+    "dialog:allow-ask",
+    "notification:default"
   ]
 }

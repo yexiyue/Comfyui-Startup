@@ -1,9 +1,9 @@
-use ::entity::{
+use crate::entity::download_chunks::{self, ActiveModel};
+use crate::entity::{
     download_chunks::Model,
     prelude::{DownloadChunks, DownloadTasks},
 };
 use anyhow::anyhow;
-use entity::download_chunks::{self, ActiveModel};
 use sea_orm::{prelude::*, IntoActiveModel, Set};
 
 pub struct DownloadChunksService;

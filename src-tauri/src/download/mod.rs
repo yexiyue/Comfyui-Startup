@@ -95,7 +95,7 @@ impl Download {
         let length = req.get_content_info().await?.1;
         let task_id = DownloadTasksService::create(
             &db,
-            entity::download_tasks::Model {
+            crate::entity::download_tasks::Model {
                 id: 0,
                 url: url.into(),
                 filename: filename.into(),
@@ -137,7 +137,7 @@ impl Download {
             let max_retries = self.max_retries;
             let chunk_id = DownloadChunksService::create(
                 &self.db,
-                entity::download_chunks::Model {
+                crate::entity::download_chunks::Model {
                     id: 0,
                     task_id: self.task_id,
                     start: start as i64,
@@ -304,7 +304,7 @@ impl Download {
         // 从数据库中找到没有下载的分块
         let chunks = DownloadChunksService::find_all_not_downloaded(&self.db, self.task_id).await?;
 
-        for entity::download_chunks::Model { id, start, end, .. } in chunks {
+        for crate::entity::download_chunks::Model { id, start, end, .. } in chunks {
             let semaphore = semaphore.clone();
             let parallel_failures_semaphore = parallel_failures_semaphore.clone();
             let mut download_chunk = self.req.clone();
@@ -457,7 +457,7 @@ impl Download {
     }
 
     pub fn from_task(
-        task: entity::download_tasks::Model,
+        task: crate::entity::download_tasks::Model,
         db: &DbConn,
         sender: Sender<(usize, usize)>,
     ) -> anyhow::Result<Self> {
@@ -483,7 +483,6 @@ impl Download {
         self.sender = Some(sender);
     }
 }
-
 
 fn catch_file(filepath: &str) -> anyhow::Result<String> {
     let path = Path::new(filepath);

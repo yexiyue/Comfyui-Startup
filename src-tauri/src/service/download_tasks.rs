@@ -1,7 +1,7 @@
-use ::entity::{download_tasks::Model, prelude::DownloadTasks};
+use crate::entity::download_tasks::ActiveModel;
+use crate::entity::{download_tasks::Model, prelude::DownloadTasks};
 use anyhow::anyhow;
 use chrono::Local;
-use entity::download_tasks::ActiveModel;
 use sea_orm::{prelude::*, IntoActiveModel, Set};
 
 pub struct DownloadTasksService;

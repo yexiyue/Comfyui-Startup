@@ -3,9 +3,9 @@ use std::{borrow::BorrowMut, path::Path};
 use crate::{
     download::Download,
     error::MyError,
-    model::{Model, ModelList},
+    model::Model,
     service::DownloadTasksService,
-    state::{ConfigState, DownloadState},
+    state::{DownloadState, MyConfig},
 };
 use anyhow::{anyhow, Context};
 use sea_orm::DbConn;
@@ -13,29 +13,14 @@ use tauri::{ipc::Channel, State};
 use tracing::info;
 
 #[tauri::command]
-pub async fn get_model_list(config: State<'_, ConfigState>) -> Result<ModelList, MyError> {
-    let path = &config.comfyui_path;
-    let custom_nodes_path = Path::new(path)
-        .join("custom_nodes")
-        .join("ComfyUI-Manager")
-        .join("model-list.json");
-    if !custom_nodes_path.exists() {
-        // 插件未安装
-        return Err(MyError::Code(0));
-    }
-    let model_list = ModelList::from_file(custom_nodes_path)?;
-
-    Ok(model_list)
-}
-
-#[tauri::command]
 pub async fn download(
     db: State<'_, DbConn>,
     download_state: State<'_, DownloadState>,
-    config: State<'_, ConfigState>,
+    state: State<'_, MyConfig>,
     model: Model,
     on_progress: Channel,
 ) -> Result<i32, MyError> {
+    let config = state.lock().await;
     let path = Path::new(&config.comfyui_path);
     let filename = path.join(model.get_model_dir()).join(&model.filename);
     let url = &model.get_url(config.is_chinese());
@@ -44,6 +29,7 @@ pub async fn download(
     let (tx, mut rx) = tokio::sync::mpsc::channel(1);
 
     let (task_id, mut download) = Download::new(&db, url, &filename.display().to_string()).await?;
+    info!("taskId = {}", task_id);
     let download = download
         .sender(tx)
         .max_files(100usize)
@@ -55,20 +41,20 @@ pub async fn download(
     let state = state.borrow_mut();
     state.insert(task_id, download.clone());
     tokio::spawn(async move {
-        while let Some((i, a)) = rx.recv().await {
-            info!("downloading: {i}/{a}");
-            on_progress
-                .send(format!("downloading: {i}/{a}"))
-                .context("send message failed")
-                .unwrap();
-        }
-    });
-    tokio::spawn(async move {
         if let Ok(_) = download.download().await {
             let all_time = start.elapsed();
             info!("all time: {}/s", all_time.as_secs());
         }
     });
+    tokio::spawn(async move {
+        while let Some(res) = rx.recv().await {
+            on_progress
+                .send(res)
+                .context("send message failed")
+                .unwrap();
+        }
+    });
+
     Ok(task_id)
 }
 

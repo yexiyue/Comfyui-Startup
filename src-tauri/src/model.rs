@@ -1,4 +1,6 @@
+use crate::entity::model::{ActiveModel, Entity};
 use crate::git::GITHUB_PROXY;
+use sea_orm::{DbConn, DeriveIntoActiveModel, EntityTrait, IntoActiveModel};
 use serde::{Deserialize, Serialize};
 use std::{
     ops::{Deref, DerefMut},
@@ -8,7 +10,7 @@ use tracing::warn;
 const MODEL_DIR: &str = "models";
 const HF_PROXY: &str = "https://hf-mirror.com";
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, DeriveIntoActiveModel)]
 pub struct Model {
     pub name: String,
     #[serde(rename = "type")]
@@ -96,4 +98,15 @@ impl ModelList {
         let model_list: ModelList = serde_json::from_reader(file)?;
         Ok(model_list)
     }
+}
+
+pub async fn init_model_list(db: &DbConn, model_list: ModelList) -> anyhow::Result<()> {
+    Entity::delete_many().exec(db).await?;
+    let models = model_list
+        .models
+        .into_iter()
+        .map(|model| model.into_active_model())
+        .collect::<Vec<_>>();
+    Entity::insert_many(models).exec(db).await?;
+    Ok(())
 }

@@ -1,6 +1,7 @@
-use std::path::Path;
-
 use serde::{Deserialize, Serialize};
+use std::path::Path;
+use std::sync::Arc;
+use tokio::sync::Mutex;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum Country {
@@ -33,3 +34,5 @@ impl ConfigState {
         }
     }
 }
+
+pub type MyConfig = Arc<Mutex<ConfigState>>;

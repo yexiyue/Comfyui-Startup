@@ -4,8 +4,9 @@ use crate::error::MyError;
 use anyhow::Context;
 use derive_builder::Builder;
 use git2::{build::RepoBuilder, FetchOptions, Progress, RemoteCallbacks, Repository};
+use tracing::info;
 
-pub const GITHUB_PROXY: &str = "https://mirror.ghproxy.com/";
+pub const GITHUB_PROXY: &str = "https://mirror.ghproxy.com";
 
 #[derive(Debug, Builder, Clone)]
 #[builder(setter(into))]
@@ -31,6 +32,7 @@ impl Git {
         } else {
             self.url.clone()
         };
+        info!("git clone {}", url);
         RepoBuilder::new()
             .fetch_options(fo)
             .clone(&url, Path::new(&self.path))?;
@@ -79,4 +81,32 @@ impl Git {
     pub fn builder() -> GitBuilder {
         GitBuilder::default()
     }
+}
+
+pub fn get_git_remote<P: AsRef<Path>>(path: P) -> Option<String> {
+    if let Ok(repo) = Repository::open(path) {
+        if let Ok(remote) = repo.find_remote("origin") {
+            let url = remote.url().map(|s| s.to_string());
+            return url;
+        }
+    }
+    None
+}
+
+pub fn get_git_remotes<P: AsRef<Path>>(path: P) -> Vec<String> {
+    let mut res = vec![];
+    for dir in walkdir::WalkDir::new(path)
+        .max_depth(1)
+        .into_iter()
+        .filter_map(|e| e.ok())
+        .filter(|e| match e.metadata().map(|m| m.is_dir()) {
+            Ok(is_dir) => is_dir,
+            Err(_) => false,
+        })
+    {
+        if let Some(remote) = get_git_remote(dir.path()) {
+            res.push(remote);
+        }
+    }
+    res
 }

@@ -4,6 +4,7 @@ mod utils;
 
 use db::connect_db;
 use tauri::generate_handler;
+use tokio::sync::Mutex;
 use utils::{get_sysinfo, open_devtool};
 mod download;
 mod plugin;
@@ -17,27 +18,30 @@ mod model;
 
 use commands::{
     config::{get_config, get_info, set_config},
-    download::{cancel, download, get_model_list, restore},
-    git::{git_clone, git_pull},
+    download::{cancel, download, restore},
+    init_data,
+    model::{get_model_base_groups, get_model_list, get_model_type_groups},
     plugin::{
-        download_manager, download_plugin, get_plugin_list, manager_exists, remove_plugin,
-        update_plugin,
+        download_manager, download_plugin, get_installed_plugins, get_plugin_list, manager_exists,
+        remove_plugin, update_plugin,
     },
     startup,
 };
 mod db;
 mod state;
-use state::ConfigState;
+use state::{ConfigState, MyConfig};
+mod entity;
 
 pub async fn start() {
     let db = connect_db().await.unwrap();
-    let sys_info = get_sysinfo();
     tauri::Builder::default()
-        .manage(db)
-        .manage(sys_info)
-        .manage(state::DownloadState::new())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_shell::init())
+        .plugin(tauri_plugin_notification::init())
+        .manage(db)
+        .manage(get_sysinfo())
+        .manage(MyConfig::new(Mutex::new(ConfigState::new())))
+        .manage(state::DownloadState::new())
         .invoke_handler(generate_handler![
             open_devtool,
             install_comfyui,
@@ -45,8 +49,6 @@ pub async fn start() {
             set_config,
             get_info,
             startup,
-            git_clone,
-            git_pull,
             // plugin
             get_plugin_list,
             download_plugin,
@@ -58,7 +60,11 @@ pub async fn start() {
             cancel,
             restore,
             get_model_list,
-            remove_plugin
+            remove_plugin,
+            init_data,
+            get_model_type_groups,
+            get_model_base_groups,
+            get_installed_plugins
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

@@ -1,7 +1,7 @@
 use anyhow::Context;
-use tracing::info;
 use std::process::{Command, ExitStatus};
 use tauri::Manager;
+use tracing::info;
 mod git;
 pub use git::{Git, GitBuilderError};
 mod sysinfo;
@@ -42,7 +42,7 @@ impl Exec {
 
 pub async fn command(str: &str, dir: &str) -> anyhow::Result<()> {
     let args = str.split_whitespace().collect::<Vec<_>>();
-    let res=tokio::process::Command::new(args.first().context("命令不能为空")?)
+    let res = tokio::process::Command::new(args.first().context("命令不能为空")?)
         .args(args.iter().skip(1))
         .current_dir(dir)
         .output()
