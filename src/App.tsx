@@ -39,6 +39,9 @@ const App = () => {
             onClick={async () => {
               await invoke("open_devtool");
             }}
+            style={{
+              zIndex: 9999,
+            }}
             icon={<BugIcon className="w-4 h-4" />}
           ></FloatButton>
         </ConfigProvider>

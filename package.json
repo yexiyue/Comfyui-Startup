@@ -10,7 +10,7 @@
     "tauri": "cargo tauri",
     "extract": "lingui extract",
     "ui": "shadcn-ui",
-    "entity": "sea-orm-cli generate entity -u sqlite:./target/debug/db/database.db --with-serde both -l -o ./entity/src"
+    "entity": "sea-orm-cli generate entity -u sqlite:./target/debug/db/database.db --with-serde both  -o ./src-tauri/src/entity"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.5",
@@ -29,11 +29,13 @@
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@tauri-apps/api": ">=2.0.0-beta.0",
     "@tauri-apps/plugin-dialog": "2.0.0-beta.2",
+    "@tauri-apps/plugin-notification": "2.0.0-beta.2",
     "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
     "ahooks": "^3.7.10",
     "antd": "^5.15.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "immer": "^10.0.4",
     "lucide-react": "^0.363.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

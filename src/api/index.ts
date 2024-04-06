@@ -1,35 +1,12 @@
 import { Channel, invoke } from "@tauri-apps/api/core";
-import { message } from "antd";
-import { PluginList, Plugin } from "./plugin";
-import { t } from "@lingui/macro";
 import { Model, ModelList } from "./model";
-
-export const errorMap: any = {
-  get_plugin_list: {
-    "0": t`ComfyUI-Manager 未安装`,
-  },
-  download_plugin: {
-    "0": t`插件安装失败`,
-  },
-  download_manager: {
-    "0": t`ComfyUI Manager安装失败`,
-  },
-};
+import { Plugin, PluginApi } from "./plugin";
 
 export const command = async <T extends keyof Commands>(
   cmd: T,
   args?: Parameters<Commands[T]>[0]
 ) => {
-  try {
-    return await invoke<ReturnType<Commands[T]>>(cmd, args);
-  } catch (error: any) {
-    if (errorMap?.[cmd]?.[error]) {
-      message.error(errorMap[cmd][error]);
-    } else {
-      message.error(`${error}`);
-    }
-    throw error;
-  }
+  return await invoke<ReturnType<Commands[T]>>(cmd, args);
 };
 
 type Commands = {
@@ -38,15 +15,6 @@ type Commands = {
   download_manager: (args: {
     onProgress: Channel<{ message: [number, number]; id: number }>;
   }) => void;
-  get_plugin_list: () => PluginList;
-  download_plugin: (arg: {
-    plugin: Plugin;
-    onProgress: Channel<{ message: [number, number]; id: number }>;
-  }) => void;
-  update_plugin: (args: {
-    plugin: Plugin;
-    onProgress: Channel<{ message: [number, number]; id: number }>;
-  }) => number;
 
   // config
   get_info: () => SysInfo;
@@ -68,7 +36,10 @@ type Commands = {
   }) => void;
   get_model_list: () => ModelList;
   remove_plugin: (args: { plugin: Plugin }) => void;
-};
+  init_data: () => void;
+  get_model_type_groups: () => any;
+  get_model_base_groups: () => any;
+} & PluginApi;
 
 export type SysInfo = {
   arch: string;

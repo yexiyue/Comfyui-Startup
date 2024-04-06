@@ -53,6 +53,9 @@ dependencies:
   '@tauri-apps/plugin-dialog':
     specifier: 2.0.0-beta.2
     version: 2.0.0-beta.2
+  '@tauri-apps/plugin-notification':
+    specifier: 2.0.0-beta.2
+    version: 2.0.0-beta.2
   '@tauri-apps/plugin-shell':
     specifier: '>=2.0.0-beta.0'
     version: 2.0.0-beta.0
@@ -68,6 +71,9 @@ dependencies:
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
+  immer:
+    specifier: ^10.0.4
+    version: 10.0.4
   lucide-react:
     specifier: ^0.363.0
     version: 0.363.0(react@18.2.0)
@@ -91,7 +97,7 @@ dependencies:
     version: 1.0.7(tailwindcss@3.4.1)
   zustand:
     specifier: ^4.5.2
-    version: 4.5.2(@types/react@18.2.15)(react@18.2.0)
+    version: 4.5.2(@types/react@18.2.15)(immer@10.0.4)(react@18.2.0)
 
 devDependencies:
   '@lingui/cli':
@@ -2297,6 +2303,12 @@ packages:
       '@tauri-apps/api': 2.0.0-beta.4
     dev: false
 
+  /@tauri-apps/plugin-notification@2.0.0-beta.2:
+    resolution: {integrity: sha512-OxMuKawWkXGR04hALFrPhRXhA3vGRyMy+kRT3vdHoAwngZHcBGetRqm6CuW0tSNWCgwuUYXpN57636CfUReg5g==}
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.4
+    dev: false
+
   /@tauri-apps/plugin-shell@2.0.0-beta.0:
     resolution: {integrity: sha512-AADGPuGP+YM5Ar48XfA8o9k9jtlSBpEVcsbOEwWdifi0oAiVOBXgiy9C1Icsub/tlD3YjK7oT8vDcOXLGYBhUg==}
     dependencies:
@@ -3246,6 +3258,10 @@ packages:
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: true
+
+  /immer@10.0.4:
+    resolution: {integrity: sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==}
+    dev: false
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -5177,7 +5193,7 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
 
-  /zustand@4.5.2(@types/react@18.2.15)(react@18.2.0):
+  /zustand@4.5.2(@types/react@18.2.15)(immer@10.0.4)(react@18.2.0):
     resolution: {integrity: sha512-2cN1tPkDVkwCy5ickKrI7vijSjPksFRfqS6237NzT0vqSsztTNnQdHw9mmN7uBdk3gceVXU0a+21jFzFzAc9+g==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -5193,6 +5209,7 @@ packages:
         optional: true
     dependencies:
       '@types/react': 18.2.15
+      immer: 10.0.4
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false

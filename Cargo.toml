@@ -1,2 +1,2 @@
 [workspace]
-members = ["src-tauri", "migration", "entity"]
+members = ["src-tauri", "migration"]

@@ -12,6 +12,7 @@ type State = {
   // 国家
   country: string;
   sysInfo?: SysInfo;
+  managerExist: boolean;
 };
 
 type Action = {
@@ -20,6 +21,7 @@ type Action = {
   setComfyuiPath: (comfyuiPath: string) => void;
   setCountry: (country: string) => void;
   setSysInfo: (sysInfo: State["sysInfo"]) => void;
+  setManagerExist: (managerExist: boolean) => void;
 };
 
 export const useConfigStore = create(
@@ -31,6 +33,7 @@ export const useConfigStore = create(
       firstUse: true,
       country: "chinese",
       sysInfo: undefined,
+      managerExist: false,
       setSysInfo(sysInfo) {
         set({ sysInfo });
       },
@@ -45,6 +48,9 @@ export const useConfigStore = create(
       },
       setCountry(country) {
         set({ country });
+      },
+      setManagerExist(managerExist) {
+        set({ managerExist });
       },
     }),
     {
