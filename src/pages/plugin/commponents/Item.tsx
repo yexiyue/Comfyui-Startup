@@ -26,7 +26,7 @@ import {
   XIcon,
 } from "lucide-react";
 import { useState } from "react";
-import { useDownloadingPlugins, usePluginStore } from "./useStore";
+import { useDownloadingPlugins, usePluginStore } from "../useStore";
 
 type PluginItemProps = {
   plugin: Plugin;

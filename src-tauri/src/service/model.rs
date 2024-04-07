@@ -1,6 +1,6 @@
 use crate::entity::model::{Column, Entity, Model};
 use anyhow::Result;
-use sea_orm::{ColumnTrait, DbConn, EntityTrait, QueryFilter, QuerySelect};
+use sea_orm::{ColumnTrait, DbConn, EntityTrait, PaginatorTrait, QueryFilter, QuerySelect};
 use serde_json::Value;
 
 use super::Pagination;
@@ -13,7 +13,7 @@ impl ModelService {
         pagination: Option<Pagination>,
         ty: Option<String>,
         base: Option<String>,
-    ) -> Result<Vec<Model>> {
+    ) -> Result<(Vec<Model>, u64)> {
         let mut res = Entity::find();
         if search != "" {
             res = res.filter(
@@ -23,23 +23,23 @@ impl ModelService {
                     .or(Column::Description.contains(search)),
             );
         }
-        if ty.is_some() {
+        if ty.is_some() && !ty.as_ref().unwrap().is_empty() {
             res = res.filter(Column::Ty.eq(ty.unwrap()));
         }
-        if base.is_some() {
+        if base.is_some() && !base.as_ref().unwrap().is_empty() {
             res = res.filter(Column::Base.eq(base.unwrap()));
         }
-
+        let count = res.clone().count(db).await?;
         if let Some(Pagination { page, page_size }) = pagination {
             res = res.offset((page - 1) * page_size).limit(page_size);
         }
-        Ok(res.all(db).await?)
+        Ok((res.all(db).await?, count))
     }
 
     pub async fn get_type_groups(db: &DbConn) -> Result<Vec<Value>> {
         let res = Entity::find()
             .select_only()
-            .column(Column::Ty)
+            .column_as(Column::Ty, "value")
             .group_by(Column::Ty)
             .into_json()
             .all(db)
@@ -50,7 +50,7 @@ impl ModelService {
     pub async fn get_base_groups(db: &DbConn) -> Result<Vec<Value>> {
         let res = Entity::find()
             .select_only()
-            .column(Column::Base)
+            .column_as(Column::Base, "value")
             .group_by(Column::Base)
             .into_json()
             .all(db)

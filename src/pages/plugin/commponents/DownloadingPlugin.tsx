@@ -1,45 +1,29 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Empty, Pagination } from "antd";
-import { PluginItem } from "./Item";
 import { Skeleton } from "@/components/ui/skeleton";
-import { usePluginStore } from "./useStore";
-import { useMemo, useState } from "react";
+import { usePaginationSearch } from "@/pages/Plugin/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
+import { Empty, Pagination } from "antd";
+import { useDownloadingPlugins } from "../useStore";
+import { PluginItem } from "./Item";
 
-type DownloadedPluginProps = {
-  search?: string;
+type DownloadingPluginProps = {
+  search: string;
   loading?: boolean;
   width: number;
 };
 
-export const DownloadedPlugin = ({
+export const DownloadingPlugin = ({
   search,
   loading,
   width,
-}: DownloadedPluginProps) => {
-  const plugins = usePluginStore((store) =>
-    Object.values(store.downloadPlugins)
-  );
-  const [page, setPage] = useState(1);
-  const [pagesize, setPagesize] = useState(10);
-  // 搜索过滤
-  const filterPlugins = useMemo(() => {
-    if (search) {
-      return plugins.filter(
-        (item) =>
-          item.title.includes(search) ||
-          item.author.includes(search) ||
-          item.description.includes(search)
-      );
-    } else {
-      return plugins;
-    }
-  }, [search, plugins]);
-
-  // 分页处理
-  const filterPluginsPagination = useMemo(() => {
-    return filterPlugins.slice((page - 1) * pagesize, page * pagesize);
-  }, [page, filterPlugins, pagesize]);
+}: DownloadingPluginProps) => {
+  useLingui();
+  const [plugins] = useDownloadingPlugins((store) => [
+    Object.values(store.downloadingPlugins),
+  ]);
+  const { page, pagesize, setPage, setPagesize, count, filterPaginationData } =
+    usePaginationSearch(plugins, search, ["title", "description"]);
 
   return (
     <>
@@ -59,20 +43,20 @@ export const DownloadedPlugin = ({
           ) : plugins.length === 0 ? (
             <Empty
               image={Empty.PRESENTED_IMAGE_SIMPLE}
-              description={t`您还未安装过插件`}
+              description={t`暂无下载中的插件`}
             ></Empty>
           ) : (
             search &&
-            filterPlugins.length === 0 && (
+            count === 0 && (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
                 description={t`没有找到插件`}
               ></Empty>
             )
           )}
-          {filterPluginsPagination.map((plugin) => (
-            <PluginItem plugin={plugin} isDownloaded key={plugin.id} />
-          ))}
+          {filterPaginationData.map((plugin) => {
+            return <PluginItem plugin={plugin} key={plugin.id} />;
+          })}
         </div>
       </ScrollArea>
       <div className="w-full flex justify-end p-4">
@@ -84,7 +68,7 @@ export const DownloadedPlugin = ({
             setPagesize(pageSize);
           }}
           pageSizeOptions={[10, 20, 30]}
-          total={filterPlugins.length}
+          total={count}
         />
       </div>
     </>

@@ -1,20 +1,22 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Empty, Pagination, message } from "antd";
-import { PluginItem } from "./Item";
-import { Skeleton } from "@/components/ui/skeleton";
-import { usePluginStore } from "./useStore";
-import { useState } from "react";
-import { t } from "@lingui/macro";
 import { command } from "@/api";
 import { Plugin } from "@/api/plugin";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
+import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
+import { Empty, Pagination, message } from "antd";
+import { useState } from "react";
+import { usePluginStore } from "../useStore";
+import { PluginItem } from "./Item";
 
 type AllPluginProps = {
-  search?: string;
+  search: string;
   width: number;
 };
 
 export const AllPlugin = ({ search, width }: AllPluginProps) => {
+  useLingui();
   const [plugins, setPlugins] = useState<Plugin[]>([]);
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);
@@ -28,7 +30,7 @@ export const AllPlugin = ({ search, width }: AllPluginProps) => {
     try {
       setLoading(true);
       const res = await command("get_plugin_list", {
-        search: search ?? "",
+        search,
         pagination: {
           page,
           page_size: pagesize,

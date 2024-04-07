@@ -1,6 +1,7 @@
 import { Plugin } from "@/api/plugin";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
 
 type State = {
   downloadPlugins: {
@@ -15,15 +16,12 @@ type Action = {
 };
 
 export const usePluginStore = create(
-  persist<State & Action>(
-    (set, get) => ({
+  persist(
+    immer<State & Action>((set) => ({
       downloadPlugins: {},
       addPlugin(plugin) {
-        set({
-          downloadPlugins: {
-            ...get().downloadPlugins,
-            [plugin.reference]: plugin,
-          },
+        set((state) => {
+          state.downloadPlugins[plugin.reference] = plugin;
         });
       },
       setPlugins: (plugins: Plugin[]) => {
@@ -36,15 +34,11 @@ export const usePluginStore = create(
         });
       },
       removePlugin: (plugin: Plugin) => {
-        const plugins = {
-          ...get().downloadPlugins,
-        };
-        delete plugins[plugin.reference];
-        set({
-          downloadPlugins: plugins,
+        set((state) => {
+          delete state.downloadPlugins[plugin.reference];
         });
       },
-    }),
+    })),
     { name: "plugin-store" }
   )
 );
@@ -62,33 +56,25 @@ type DownloadingPluginsState = {
 };
 
 // 管理下载中的插件
-export const useDownloadingPlugins = create<DownloadingPluginsState>((set) => ({
-  downloadingPlugins: {},
-  downloadingPluginProgress: {},
-  setDownloadingPluginProgress(reference, progress) {
-    set((state) => ({
-      downloadingPluginProgress: {
-        ...state.downloadingPluginProgress,
-        [reference]: progress,
-      },
-    }));
-  },
-  addDownloadingPlugin: (plugin) => {
-    set((state) => ({
-      downloadingPlugins: {
-        ...state.downloadingPlugins,
-        [plugin.reference]: plugin,
-      },
-    }));
-  },
-  removeDownloadingPlugin: (reference) => {
-    set((state) => {
-      delete state.downloadingPlugins[reference];
-      delete state.downloadingPluginProgress[reference];
-      return {
-        downloadingPlugins: { ...state.downloadingPlugins },
-        downloadingPluginProgress: { ...state.downloadingPluginProgress },
-      };
-    });
-  },
-}));
+export const useDownloadingPlugins = create(
+  immer<DownloadingPluginsState>((set) => ({
+    downloadingPlugins: {},
+    downloadingPluginProgress: {},
+    setDownloadingPluginProgress(reference, progress) {
+      set((state) => {
+        state.downloadingPluginProgress[reference] = progress;
+      });
+    },
+    addDownloadingPlugin: (plugin) => {
+      set((state) => {
+        state.downloadingPlugins[plugin.reference] = plugin;
+      });
+    },
+    removeDownloadingPlugin: (reference) => {
+      set((state) => {
+        delete state.downloadingPlugins[reference];
+        delete state.downloadingPluginProgress[reference];
+      });
+    },
+  }))
+);

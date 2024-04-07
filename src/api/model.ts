@@ -1,4 +1,5 @@
 import { Channel } from "@tauri-apps/api/core";
+import { Pagination } from "./plugin";
 
 export type Model = {
   name: string;
@@ -9,17 +10,20 @@ export type Model = {
   reference: string;
   filename: string;
   url: string;
-};
+} & Extra;
 
-type ModelStatus = "pending" | "running" | "paused" | "success" | "failed";
+type Extra = { progress?: number; status?: ModelStatus };
 
-export type ModelList = {
-  models: Model[];
-};
+export type ModelStatus =
+  | "pending"
+  | "running"
+  | "paused"
+  | "success"
+  | "failed";
 
 export type ModelApi = {
-  get_model_type_groups: () => any;
-  get_model_base_groups: () => any;
+  get_model_type_groups: () => { value: string }[];
+  get_model_base_groups: () => { value: string }[];
   download: (args: {
     model: Model;
     onProgress: Channel<{ message: [number, number]; id: number }>;
@@ -29,5 +33,10 @@ export type ModelApi = {
     taskId: number;
     onProgress: Channel<{ message: [number, number]; id: number }>;
   }) => void;
-  get_model_list: () => ModelList;
+  get_model_list: (args: {
+    search: string;
+    pagination?: Pagination;
+    ty?: string;
+    base?: string;
+  }) => [Model[], number];
 };

@@ -14,7 +14,7 @@ pub async fn get_model_list(
     pagination: Option<Pagination>,
     ty: Option<String>,
     base: Option<String>,
-) -> Result<Vec<entity::model::Model>, MyError> {
+) -> Result<(Vec<entity::model::Model>, u64), MyError> {
     Ok(ModelService::get_models(&db, search, pagination, ty, base).await?)
 }
 

@@ -2,16 +2,18 @@ import { command } from "@/api";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Trans, t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { useAsyncEffect, useDebounce, useSize } from "ahooks";
 import { Input, Segmented } from "antd";
 import { SearchIcon } from "lucide-react";
 import { useRef, useState } from "react";
-import { AllPlugin } from "./AllPlugin";
-import { DownloadedPlugin } from "./DownloadedPlugin";
-import { DownloadingPlugin } from "./DownloadingPlugin";
+import { AllPlugin } from "./commponents/AllPlugin";
+import { DownloadedPlugin } from "./commponents/DownloadedPlugin";
+import { DownloadingPlugin } from "./commponents/DownloadingPlugin";
 import { usePluginStore } from "./useStore";
 
 export const Component = () => {
+  useLingui();
   const [search, setSearch] = useState<string>("");
   const divRef = useRef<HTMLDivElement>(null);
   const size = useSize(divRef);
@@ -34,7 +36,9 @@ export const Component = () => {
   return (
     <div className="w-full h-full">
       <div className=" flex justify-between items-center px-4 py-2">
-        <p>插件管理</p>
+        <p>
+          <Trans>插件管理</Trans>
+        </p>
         <Segmented
           value={type}
           onChange={(value) => {
@@ -68,15 +72,6 @@ export const Component = () => {
           />
         </div>
       </div>
-      {/* {type === "all" && (
-        <AllPlugin search={debouncedSearch} width={size?.width ?? 0} />
-      )}
-      {type === "downloading" && (
-        <DownloadingPlugin search={debouncedSearch} width={size?.width ?? 0} />
-      )}
-      {type === "downloaded" && (
-        <DownloadedPlugin search={debouncedSearch} width={size?.width ?? 0} />
-      )} */}
       <div className={cn("w-full", type === "all" ? "block" : "hidden")}>
         <AllPlugin search={debouncedSearch} width={size?.width ?? 0} />
       </div>

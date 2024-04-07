@@ -79,7 +79,7 @@ pub async fn download_manager(
         install_type: "git-clone".into(),
         description: "".into(),
     };
-    
+
     let mut start_time = Instant::now();
     let mut progress = 0f64;
 
@@ -168,6 +168,8 @@ pub async fn download_plugin(
             .await
         {
             Ok(_) => {
+                on_progress.send(100f64).unwrap();
+                sleep(Duration::from_millis(500)).await;
                 on_progress
                     .send(
                         PluginDownloadMessage::builder()

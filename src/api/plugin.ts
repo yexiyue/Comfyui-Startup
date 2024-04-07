@@ -11,7 +11,7 @@ export type Plugin = {
   title: string;
 };
 
-type Pagination = {
+export type Pagination = {
   page: number;
   page_size: number;
 };
