@@ -2,7 +2,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Empty, Pagination, message } from "antd";
 import { PluginItem } from "./Item";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useDownloadingPlugins, usePluginStore } from "./useStore";
+import { usePluginStore } from "./useStore";
 import { useState } from "react";
 import { t } from "@lingui/macro";
 import { command } from "@/api";

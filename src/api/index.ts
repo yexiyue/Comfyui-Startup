@@ -1,6 +1,6 @@
 import { Channel, invoke } from "@tauri-apps/api/core";
-import { Model, ModelList } from "./model";
-import { Plugin, PluginApi } from "./plugin";
+import { ModelApi } from "./model";
+import { PluginApi } from "./plugin";
 
 export const command = async <T extends keyof Commands>(
   cmd: T,
@@ -10,7 +10,7 @@ export const command = async <T extends keyof Commands>(
 };
 
 type Commands = {
-  // plugin
+  // ComfyUI Manager
   manager_exists: () => boolean;
   download_manager: (args: {
     onProgress: Channel<{ message: number; id: number }>;
@@ -23,23 +23,10 @@ type Commands = {
   // comfyui
   install_comfyui: () => void;
   startup: () => void;
-
-  // model
-  download: (args: {
-    model: Model;
-    onProgress: Channel<{ message: [number, number]; id: number }>;
-  }) => number;
-  cancel: (args: { taskId: number }) => void;
-  restore: (args: {
-    taskId: number;
-    onProgress: Channel<{ message: [number, number]; id: number }>;
-  }) => void;
-  get_model_list: () => ModelList;
-  remove_plugin: (args: { plugin: Plugin }) => void;
+  // 初始化数据
   init_data: () => void;
-  get_model_type_groups: () => any;
-  get_model_base_groups: () => any;
-} & PluginApi;
+} & PluginApi &
+  ModelApi;
 
 export type SysInfo = {
   arch: string;

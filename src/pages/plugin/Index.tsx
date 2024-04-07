@@ -1,5 +1,6 @@
 import { command } from "@/api";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import { Trans, t } from "@lingui/macro";
 import { useAsyncEffect, useDebounce, useSize } from "ahooks";
 import { Input, Segmented } from "antd";
@@ -67,7 +68,7 @@ export const Component = () => {
           />
         </div>
       </div>
-      {type === "all" && (
+      {/* {type === "all" && (
         <AllPlugin search={debouncedSearch} width={size?.width ?? 0} />
       )}
       {type === "downloading" && (
@@ -75,8 +76,8 @@ export const Component = () => {
       )}
       {type === "downloaded" && (
         <DownloadedPlugin search={debouncedSearch} width={size?.width ?? 0} />
-      )}
-      {/* <div className={cn("w-full", type === "all" ? "block" : "hidden")}>
+      )} */}
+      <div className={cn("w-full", type === "all" ? "block" : "hidden")}>
         <AllPlugin search={debouncedSearch} width={size?.width ?? 0} />
       </div>
       <div
@@ -86,7 +87,7 @@ export const Component = () => {
       </div>
       <div className={cn("w-full", type === "downloaded" ? "block" : "hidden")}>
         <DownloadedPlugin search={debouncedSearch} width={size?.width ?? 0} />
-      </div> */}
+      </div>
     </div>
   );
 };

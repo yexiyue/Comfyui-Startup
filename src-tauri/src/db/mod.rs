@@ -33,6 +33,7 @@ pub async fn connect_db() -> Result<DbConn, MyError> {
 }
 
 pub enum Status {
+    Pending,
     Running,
     Paused,
     Success,
@@ -42,6 +43,7 @@ pub enum Status {
 impl Into<String> for Status {
     fn into(self) -> String {
         match self {
+            Status::Pending => "pending".to_string(),
             Status::Running => "running".to_string(),
             Status::Paused => "paused".to_string(),
             Status::Success => "success".to_string(),

@@ -101,7 +101,7 @@ impl Download {
                 filename: filename.into(),
                 downloaded_size: 0,
                 total_size: length as i64,
-                status: Some(Status::Running.into()),
+                status: Some(Status::Pending.into()),
                 created_at: None,
                 updated_at: None,
             },

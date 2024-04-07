@@ -51,4 +51,5 @@ export type PluginApi = {
   }) => number;
   get_installed_plugins: () => [string, Plugin | null][];
   cancel_plugin: (args: { plugin: Plugin }) => void;
+  remove_plugin: (args: { plugin: Plugin }) => void;
 };
