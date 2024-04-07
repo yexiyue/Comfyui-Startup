@@ -20,7 +20,7 @@ pub struct Git {
 impl Git {
     pub fn git_clone<F>(&self, cb: F) -> Result<(), MyError>
     where
-        F: Fn(Progress) -> bool,
+        F: FnMut(Progress) -> bool,
     {
         let mut rc = RemoteCallbacks::new();
         rc.transfer_progress(cb);
@@ -41,7 +41,7 @@ impl Git {
 
     pub fn git_pull<F>(&self, cb: F) -> Result<usize, MyError>
     where
-        F: Fn(Progress) -> bool,
+        F: FnMut(Progress) -> bool,
     {
         let repo = Repository::open(&self.path)?;
         let remote_name = "origin"; // 远程仓库的名称，默认通常是"origin"

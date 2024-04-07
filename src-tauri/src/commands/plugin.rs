@@ -3,10 +3,14 @@ use derive_builder::Builder;
 use sea_orm::DbConn;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{path::Path, sync::atomic::AtomicBool, sync::Arc, time::Duration};
+use std::{
+    path::Path,
+    sync::{atomic::AtomicBool, Arc},
+    time::{Duration, Instant},
+};
 use tauri::{ipc::Channel, AppHandle, State};
 use tokio::time::sleep;
-use tracing::error;
+use tracing::{error, info};
 
 use crate::{
     entity,
@@ -75,12 +79,28 @@ pub async fn download_manager(
         install_type: "git-clone".into(),
         description: "".into(),
     };
+    
+    let mut start_time = Instant::now();
+    let mut progress = 0f64;
 
     plugin
         .download(&config.comfyui_path, config.is_chinese(), |p| {
-            on_progress
-                .send(percent(p.received_objects(), p.total_objects()))
-                .unwrap();
+            let new_progress = percent(p.received_objects(), p.total_objects());
+            // 当下载进度太快时，会发生大量消息到前端，导致阻塞，所以这里做了一个截流
+            if start_time.elapsed() > Duration::from_millis(60) && progress != new_progress {
+                start_time = Instant::now();
+                progress = new_progress;
+                // info!("Download Progress: {}", new_progress);
+                on_progress
+                    .send(
+                        PluginDownloadMessage::builder()
+                            .status(PluginStatus::Downloading)
+                            .progress(new_progress)
+                            .build()
+                            .unwrap(),
+                    )
+                    .unwrap();
+            }
             return true;
         })
         .await?;
@@ -119,19 +139,30 @@ pub async fn download_plugin(
     let on_progress2 = on_progress.clone();
 
     let handler = tokio::spawn(async move {
+
         let config = config.lock().await;
+        let mut start_time = Instant::now();
+        let mut progress = 0f64;
+
         match plugin
             .download(&config.comfyui_path, config.is_chinese(), |p| {
                 let v = cancel2.load(std::sync::atomic::Ordering::SeqCst);
-                on_progress
-                    .send(
-                        PluginDownloadMessage::builder()
-                            .status(PluginStatus::Downloading)
-                            .progress(percent(p.received_objects(), p.total_objects()))
-                            .build()
-                            .unwrap(),
-                    )
-                    .unwrap();
+                let new_progress = percent(p.received_objects(), p.total_objects());
+                // 当下载进度太快时，会发生大量消息到前端，导致阻塞，所以这里做了一个截流
+                if start_time.elapsed() > Duration::from_millis(60) && progress != new_progress {
+                    start_time = Instant::now();
+                    progress = new_progress;
+                    info!("Download Progress: {}", new_progress);
+                    on_progress
+                        .send(
+                            PluginDownloadMessage::builder()
+                                .status(PluginStatus::Downloading)
+                                .progress(new_progress)
+                                .build()
+                                .unwrap(),
+                        )
+                        .unwrap();
+                }
                 return v;
             })
             .await
@@ -164,6 +195,7 @@ pub async fn download_plugin(
 
     app.listen("plugin-cancel", move |event| {
         let reference = serde_json::from_str::<Value>(event.payload()).unwrap();
+
         if reference["reference"] == plugin_reference {
             if cancel
                 .compare_exchange(
@@ -198,14 +230,29 @@ pub async fn update_plugin(
     on_progress: Channel,
 ) -> Result<usize, MyError> {
     let config = config.lock().await;
+    let mut start_time = Instant::now();
+    let mut progress = 0f64;
+
     let res = plugin
         .update(&config.comfyui_path, config.is_chinese(), |p| {
-            on_progress
-                .send(percent(p.received_objects(), p.total_objects()))
-                .unwrap();
+            let new_progress = percent(p.received_objects(), p.total_objects());
+            if start_time.elapsed() > Duration::from_millis(60) && progress != new_progress {
+                start_time = Instant::now();
+                progress = new_progress;
+                on_progress
+                    .send(
+                        PluginDownloadMessage::builder()
+                            .status(PluginStatus::Downloading)
+                            .progress(new_progress)
+                            .build()
+                            .unwrap(),
+                    )
+                    .unwrap();
+            }
             return true;
         })
         .await;
+
     match res {
         Ok(i) => {
             on_progress.send(100f64).unwrap();

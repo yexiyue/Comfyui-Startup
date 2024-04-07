@@ -53,7 +53,7 @@ impl Plugin {
 
     pub async fn download<F>(&self, comfyui_path: &str, proxy: bool, cb: F) -> anyhow::Result<()>
     where
-        F: Fn(Progress) -> bool,
+        F: FnMut(Progress) -> bool,
     {
         let name = self.get_file_name();
         let path = Path::new(comfyui_path)
@@ -77,7 +77,7 @@ impl Plugin {
 
     pub async fn update<F>(&self, comfyui_path: &str, proxy: bool, cb: F) -> anyhow::Result<usize>
     where
-        F: Fn(Progress) -> bool,
+        F: FnMut(Progress) -> bool,
     {
         let name = self.get_file_name();
         let path = Path::new(comfyui_path)
