@@ -27,7 +27,7 @@ type PluginStatus =
 export type PluginOnProgress = Channel<{
   message: {
     error_message: string | null;
-    progress: [number, number] | null;
+    progress: number | null;
     status: PluginStatus;
   };
   id: number;
@@ -44,7 +44,10 @@ export type PluginApi = {
   }) => void;
   update_plugin: (args: {
     plugin: Plugin;
-    onProgress: PluginOnProgress;
+    onProgress: Channel<{
+      message: number;
+      id: number;
+    }>;
   }) => number;
   get_installed_plugins: () => [string, Plugin | null][];
   cancel_plugin: (args: { plugin: Plugin }) => void;

@@ -40,12 +40,11 @@ export const ManagerModal = ({ managerExist }: ManagerModalProps) => {
               try {
                 setDownloading(true);
                 const onProgress = new Channel<{
-                  message: [number, number];
+                  message: number;
                   id: number;
                 }>();
                 onProgress.onmessage = (res) => {
-                  let [received, total] = res.message;
-                  setProgress(Math.floor((received / total) * 100));
+                  setProgress(res.message);
                 };
 
                 await command("download_manager", { onProgress });

@@ -2,8 +2,10 @@ use anyhow::Context;
 use derive_builder::Builder;
 use sea_orm::DbConn;
 use serde::{Deserialize, Serialize};
-use std::path::Path;
-use tauri::{ipc::Channel, State};
+use serde_json::Value;
+use std::{path::Path, sync::atomic::AtomicBool, sync::Arc, time::Duration};
+use tauri::{ipc::Channel, AppHandle, State};
+use tokio::time::sleep;
 use tracing::error;
 
 use crate::{
@@ -29,7 +31,7 @@ pub enum PluginStatus {
 #[builder(setter(into))]
 pub struct PluginDownloadMessage {
     #[builder(default)]
-    progress: Option<(usize, usize)>,
+    progress: Option<f64>,
     status: PluginStatus,
     #[builder(default)]
     error_message: Option<String>,
@@ -54,6 +56,10 @@ pub async fn manager_exists(config: State<'_, MyConfig>) -> Result<bool, MyError
     }
 }
 
+fn percent(a: usize, b: usize) -> f64 {
+    (a as f64 / b as f64 * 100f64).floor()
+}
+
 #[tauri::command]
 pub async fn download_manager(
     config: State<'_, MyConfig>,
@@ -73,7 +79,7 @@ pub async fn download_manager(
     plugin
         .download(&config.comfyui_path, config.is_chinese(), |p| {
             on_progress
-                .send((p.indexed_objects(), p.total_objects()))
+                .send(percent(p.received_objects(), p.total_objects()))
                 .unwrap();
             return true;
         })
@@ -92,6 +98,7 @@ pub async fn get_plugin_list(
 
 #[tauri::command]
 pub async fn download_plugin(
+    app: AppHandle,
     config: State<'_, MyConfig>,
     plugin: Plugin,
     on_progress: Channel,
@@ -106,20 +113,26 @@ pub async fn download_plugin(
         )
         .context("Send Message Error")?;
 
-    tokio::spawn(async move {
+    let cancel = Arc::new(AtomicBool::new(true));
+    let cancel2 = cancel.clone();
+    let plugin_reference = plugin.reference.clone();
+    let on_progress2 = on_progress.clone();
+
+    let handler = tokio::spawn(async move {
         let config = config.lock().await;
         match plugin
             .download(&config.comfyui_path, config.is_chinese(), |p| {
+                let v = cancel2.load(std::sync::atomic::Ordering::SeqCst);
                 on_progress
                     .send(
                         PluginDownloadMessage::builder()
                             .status(PluginStatus::Downloading)
-                            .progress((p.indexed_objects(), p.total_objects()))
+                            .progress(percent(p.received_objects(), p.total_objects()))
                             .build()
                             .unwrap(),
                     )
                     .unwrap();
-                return true;
+                return v;
             })
             .await
         {
@@ -134,18 +147,47 @@ pub async fn download_plugin(
                     .unwrap();
             }
             Err(e) => {
-                on_progress
-                    .send(
-                        PluginDownloadMessage::builder()
-                            .status(PluginStatus::Error)
-                            .error_message(e.to_string())
-                            .build()
-                            .unwrap(),
-                    )
-                    .unwrap();
+                if !cancel2.load(std::sync::atomic::Ordering::SeqCst) {
+                    on_progress
+                        .send(
+                            PluginDownloadMessage::builder()
+                                .status(PluginStatus::Error)
+                                .error_message(e.to_string())
+                                .build()
+                                .unwrap(),
+                        )
+                        .unwrap();
+                }
             }
         }
     });
+
+    app.listen("plugin-cancel", move |event| {
+        let reference = serde_json::from_str::<Value>(event.payload()).unwrap();
+        if reference["reference"] == plugin_reference {
+            if cancel
+                .compare_exchange(
+                    true,
+                    false,
+                    std::sync::atomic::Ordering::SeqCst,
+                    std::sync::atomic::Ordering::SeqCst,
+                )
+                .is_ok()
+            {
+                on_progress2
+                    .send(
+                        PluginDownloadMessage::builder()
+                            .status(PluginStatus::Canceled)
+                            .build()
+                            .unwrap(),
+                    )
+                    .context("Send Message Error")
+                    .unwrap();
+                handler.abort();
+            }
+        }
+    });
+
     Ok(())
 }
 
@@ -159,13 +201,15 @@ pub async fn update_plugin(
     let res = plugin
         .update(&config.comfyui_path, config.is_chinese(), |p| {
             on_progress
-                .send((p.indexed_objects(), p.total_objects()))
+                .send(percent(p.received_objects(), p.total_objects()))
                 .unwrap();
             return true;
         })
         .await;
     match res {
         Ok(i) => {
+            on_progress.send(100f64).unwrap();
+            sleep(Duration::from_millis(500)).await;
             return Ok(i);
         }
         Err(e) => {

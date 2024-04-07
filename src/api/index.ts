@@ -13,7 +13,7 @@ type Commands = {
   // plugin
   manager_exists: () => boolean;
   download_manager: (args: {
-    onProgress: Channel<{ message: [number, number]; id: number }>;
+    onProgress: Channel<{ message: number; id: number }>;
   }) => void;
 
   // config

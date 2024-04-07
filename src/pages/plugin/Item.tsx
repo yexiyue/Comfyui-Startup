@@ -9,11 +9,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { notification } from "@/lib/notification";
 import { cn } from "@/lib/utils";
 import { GithubOutlined } from "@ant-design/icons";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
+import { Channel } from "@tauri-apps/api/core";
+import { emit } from "@tauri-apps/api/event";
 import { open } from "@tauri-apps/plugin-shell";
+import { useMemoizedFn } from "ahooks";
 import { App, Button, Progress, Space, Tag, Typography, theme } from "antd";
 import {
   ArrowBigDownDashIcon,
@@ -21,11 +25,8 @@ import {
   Trash2Icon,
   XIcon,
 } from "lucide-react";
-import { useDownloadingPlugins, usePluginStore } from "./useStore";
-import { Channel } from "@tauri-apps/api/core";
-import { useMemoizedFn } from "ahooks";
-import { notification } from "@/lib/notification";
 import { useState } from "react";
+import { useDownloadingPlugins, usePluginStore } from "./useStore";
 
 type PluginItemProps = {
   plugin: Plugin;
@@ -85,10 +86,9 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
             size="sm"
             className="h-6"
             onClick={async () => {
-              const onProgress = new Channel<any>();
+              const onProgress = new Channel<{ message: number; id: number }>();
               onProgress.onmessage = (res) => {
-                let [received, total] = res.message;
-                setProgress(Math.floor((received / total) * 100));
+                setProgress(res.message);
               };
               try {
                 setDownloading(true);
@@ -134,9 +134,7 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
             className="h-6"
             size="sm"
             onClick={async () => {
-              await command("cancel_plugin", {
-                plugin,
-              });
+              await emit("plugin-cancel", { reference: plugin.reference });
             }}
           >
             <Space size={4}>
@@ -159,8 +157,7 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
                 }
                 if (status === "Downloading" && progress) {
                   setPending(false);
-                  const [received, total] = progress;
-                  setProgress(Math.floor((received / total) * 100));
+                  setProgress(progress);
                 }
                 if (status === "Error" && error_message) {
                   // 清理操作
@@ -189,6 +186,11 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
                     title: t`${plugin.title} 安装成功`,
                     body: t`${plugin.title} 安装成功，请重启ComfyUI`,
                   });
+                }
+                if (status === "Canceled") {
+                  setDownloading(false);
+                  removeDownloadingPlugin(plugin.reference);
+                  message.success(t`${plugin.title} 取消成功`);
                 }
               };
               // 添加到下载中
