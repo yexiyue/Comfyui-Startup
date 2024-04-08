@@ -1,16 +1,37 @@
-use std::{borrow::BorrowMut, path::Path};
+use std::{borrow::BorrowMut, path::Path, time::Duration};
 
 use crate::{
-    download::Download,
+    db::Status,
+    download::{Download, DownloadError},
     error::MyError,
     model::Model,
     service::DownloadTasksService,
     state::{DownloadState, MyConfig},
 };
 use anyhow::{anyhow, Context};
+use derive_builder::Builder;
 use sea_orm::DbConn;
+use serde::Serialize;
 use tauri::{ipc::Channel, State};
 use tracing::info;
+
+#[derive(Debug, Serialize, Clone, Builder)]
+#[builder(setter(into))]
+pub struct DownloadMessage {
+    #[builder(default)]
+    progress: Option<(usize, usize)>,
+    #[builder(default)]
+    speed: Option<f64>,
+    status: Status,
+    #[builder(default)]
+    error_message: Option<String>,
+}
+
+impl DownloadMessage {
+    pub fn builder() -> DownloadMessageBuilder {
+        DownloadMessageBuilder::default()
+    }
+}
 
 #[tauri::command]
 pub async fn download(
@@ -25,7 +46,6 @@ pub async fn download(
     let filename = path.join(model.get_model_dir()).join(&model.filename);
     let url = &model.get_url(config.is_chinese());
 
-    let start = std::time::Instant::now();
     let (tx, mut rx) = tokio::sync::mpsc::channel(1);
 
     let (task_id, mut download) = Download::new(&db, url, &filename.display().to_string()).await?;
@@ -33,25 +53,70 @@ pub async fn download(
     let download = download
         .sender(tx)
         .max_files(100usize)
-        // .signal(true)
         .build()
         .context("创建下载任务失败")?;
+
     let state = download_state.clone();
     let mut state = state.lock().await;
     let state = state.borrow_mut();
     state.insert(task_id, download.clone());
+    let on_progress2 = on_progress.clone();
+
     tokio::spawn(async move {
-        if let Ok(_) = download.download().await {
-            let all_time = start.elapsed();
-            info!("all time: {}/s", all_time.as_secs());
+        match download.download().await {
+            Ok(_) => {
+                on_progress2.send(DownloadMessage::builder().status(Status::Success).build()?)?;
+            }
+            Err(e) => match e {
+                DownloadError::Canceled => {
+                    on_progress2
+                        .send(DownloadMessage::builder().status(Status::Paused).build()?)?;
+                }
+                other => {
+                    on_progress2.send(
+                        DownloadMessage::builder()
+                            .status(Status::Failed)
+                            .error_message(other.to_string())
+                            .build()?,
+                    )?;
+                }
+            },
         }
+        Ok::<(), anyhow::Error>(())
     });
+
+    on_progress
+        .send(
+            DownloadMessage::builder()
+                .status(Status::Pending)
+                .build()
+                .unwrap(),
+        )
+        .unwrap();
+
     tokio::spawn(async move {
-        while let Some(res) = rx.recv().await {
-            on_progress
-                .send(res)
-                .context("send message failed")
-                .unwrap();
+        let mut start_time = std::time::Instant::now();
+        let mut last_a = 0f64;
+        while let Some((a, b)) = rx.recv().await {
+            if start_time.elapsed() > Duration::from_millis(60) {
+                let speed = if a == 0 {
+                    0f64
+                } else {
+                    ((a as f64 - last_a) / start_time.elapsed().as_secs_f64()).floor()
+                };
+                last_a = a as f64;
+                start_time = std::time::Instant::now();
+                on_progress
+                    .send(
+                        DownloadMessage::builder()
+                            .status(Status::Running)
+                            .progress((a, b))
+                            .speed(speed)
+                            .build()
+                            .unwrap(),
+                    )
+                    .unwrap();
+            }
         }
     });
 
@@ -59,15 +124,12 @@ pub async fn download(
 }
 
 #[tauri::command]
-pub async fn cancel(
-    task_id: i32,
-    download_state: State<'_, DownloadState>,
-) -> Result<String, MyError> {
+pub async fn cancel(task_id: i32, download_state: State<'_, DownloadState>) -> Result<(), MyError> {
     let mut state = download_state.lock().await;
     let state = state.borrow_mut();
     if let Some(download) = state.get(&task_id) {
         download.cancel();
-        Ok("Canceled".into())
+        Ok(())
     } else {
         Err(anyhow!("Task not found").into())
     }
@@ -79,12 +141,12 @@ pub async fn restore(
     db: State<'_, DbConn>,
     download_state: State<'_, DownloadState>,
     on_progress: Channel,
-) -> Result<String, MyError> {
+) -> Result<(), MyError> {
     let mut state = download_state.lock().await;
     let state = state.borrow_mut();
     //重新生成信道
     let (tx, mut rx) = tokio::sync::mpsc::channel(1);
-
+    info!("restore taskId = {}", task_id);
     // 如果有直接克隆，没有就查找数据库然后创建
     let download = if let Some(download) = state.get(&task_id) {
         let mut download = download.clone();
@@ -95,22 +157,69 @@ pub async fn restore(
         let task = DownloadTasksService::find_by_id(&db, task_id).await?;
         Download::from_task(task, &db, tx)?
     };
+
     // 然后更新状态
     state.insert(task_id, download.clone());
 
-    tokio::spawn(async move {
-        download.restore().await.map_err(|e| anyhow!(e))?;
-        Ok::<(), MyError>(())
-    });
+    let on_progress2 = on_progress.clone();
 
     tokio::spawn(async move {
-        while let Some((i, a)) = rx.recv().await {
-            info!("downloading: {i}/{a}");
-            on_progress
-                .send(format!("downloading: {i}/{a}"))
-                .context("send message failed")
-                .unwrap();
+        match download.restore().await {
+            Ok(_) => {
+                on_progress2.send(DownloadMessage::builder().status(Status::Success).build()?)?;
+            }
+            Err(e) => match e {
+                DownloadError::Canceled => {
+                    on_progress2
+                        .send(DownloadMessage::builder().status(Status::Paused).build()?)?;
+                }
+                other => {
+                    on_progress2.send(
+                        DownloadMessage::builder()
+                            .status(Status::Failed)
+                            .error_message(other.to_string())
+                            .build()?,
+                    )?;
+                }
+            },
+        }
+        Ok::<(), anyhow::Error>(())
+    });
+
+    on_progress
+        .send(
+            DownloadMessage::builder()
+                .status(Status::Pending)
+                .build()
+                .unwrap(),
+        )
+        .unwrap();
+
+    tokio::spawn(async move {
+        let mut start_time = std::time::Instant::now();
+        let mut last_a = 0f64;
+        while let Some((a, b)) = rx.recv().await {
+            if start_time.elapsed() > Duration::from_millis(60) {
+                let speed = if a == 0 {
+                    0f64
+                } else {
+                    ((a as f64 - last_a) / start_time.elapsed().as_secs_f64()).floor()
+                };
+                last_a = a as f64;
+                start_time = std::time::Instant::now();
+                on_progress
+                    .send(
+                        DownloadMessage::builder()
+                            .status(Status::Running)
+                            .progress((a, b))
+                            .speed(speed)
+                            .build()
+                            .unwrap(),
+                    )
+                    .unwrap();
+            }
         }
     });
-    Ok("restore".into())
+
+    Ok(())
 }

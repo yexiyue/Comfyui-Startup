@@ -1,6 +1,7 @@
 use anyhow::{anyhow, Context};
 use migration::MigratorTrait;
 use sea_orm::{ConnectOptions, Database, DbConn};
+use serde::Serialize;
 use tracing::log::LevelFilter;
 
 use crate::error::MyError;
@@ -32,6 +33,8 @@ pub async fn connect_db() -> Result<DbConn, MyError> {
     Ok(db)
 }
 
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "lowercase")]
 pub enum Status {
     Pending,
     Running,

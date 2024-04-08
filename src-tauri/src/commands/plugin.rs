@@ -1,7 +1,7 @@
 use anyhow::Context;
 use derive_builder::Builder;
 use sea_orm::DbConn;
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use serde_json::Value;
 use std::{
     path::Path,
@@ -21,17 +21,16 @@ use crate::{
     state::MyConfig,
 };
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Clone)]
 pub enum PluginStatus {
     Success,
     Error,
     Pending,
     Downloading,
-    Updating,
     Canceled,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Builder)]
+#[derive(Debug, Serialize, Clone, Builder)]
 #[builder(setter(into))]
 pub struct PluginDownloadMessage {
     #[builder(default)]
@@ -60,7 +59,7 @@ pub async fn manager_exists(config: State<'_, MyConfig>) -> Result<bool, MyError
     }
 }
 
-fn percent(a: usize, b: usize) -> f64 {
+pub fn percent(a: usize, b: usize) -> f64 {
     (a as f64 / b as f64 * 100f64).floor()
 }
 
@@ -139,7 +138,6 @@ pub async fn download_plugin(
     let on_progress2 = on_progress.clone();
 
     let handler = tokio::spawn(async move {
-
         let config = config.lock().await;
         let mut start_time = Instant::now();
         let mut progress = 0f64;
