@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { usePaginationSearch } from "@/pages/Plugin/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { Empty, Pagination } from "antd";
+import { Empty } from "antd";
 import { useDownloadingPlugins } from "../useStore";
 import { PluginItem } from "./Item";
 
@@ -22,7 +22,8 @@ export const DownloadingPlugin = ({
   const [plugins] = useDownloadingPlugins((store) => [
     Object.values(store.downloadingPlugins),
   ]);
-  const { page, pagesize, setPage, setPagesize, count, filterPaginationData } =
+
+  const { count, filterPaginationData, paginationContainer } =
     usePaginationSearch(plugins, search, ["title", "description"]);
 
   return (
@@ -59,18 +60,7 @@ export const DownloadingPlugin = ({
           })}
         </div>
       </ScrollArea>
-      <div className="w-full flex justify-end p-4">
-        <Pagination
-          current={page}
-          pageSize={pagesize}
-          onChange={(page, pageSize) => {
-            setPage(page);
-            setPagesize(pageSize);
-          }}
-          pageSizeOptions={[10, 20, 30]}
-          total={count}
-        />
-      </div>
+      <div className="w-full flex justify-end p-4">{paginationContainer}</div>
     </>
   );
 };

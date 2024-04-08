@@ -1,3 +1,4 @@
+import { Pagination } from "antd";
 import { useState, useMemo } from "react";
 
 export const usePaginationSearch = <T extends Record<string, any>>(
@@ -27,12 +28,22 @@ export const usePaginationSearch = <T extends Record<string, any>>(
     return filterPlugins.slice((page - 1) * pagesize, page * pagesize);
   }, [page, filterPlugins, pagesize]);
 
+  const paginationContainer = (
+    <Pagination
+      current={page}
+      pageSize={pagesize}
+      onChange={(page, pageSize) => {
+        setPage(page);
+        setPagesize(pageSize);
+      }}
+      pageSizeOptions={[10, 20, 30]}
+      total={filterPlugins.length}
+    />
+  );
+
   return {
     count: filterPlugins.length,
-    page,
-    pagesize,
-    setPage,
-    setPagesize,
     filterPaginationData,
+    paginationContainer,
   };
 };

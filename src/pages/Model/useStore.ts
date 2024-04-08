@@ -13,7 +13,7 @@ type ModelDownloadStore = {
 
 export const useModelDownloadStore = create(
   persist(
-    immer<ModelDownloadStore>((set, get) => ({
+    immer<ModelDownloadStore>((set,) => ({
       downloadingModels: {},
       addDownloadingModel(model) {
         set((state) => {

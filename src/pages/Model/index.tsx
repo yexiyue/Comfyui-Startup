@@ -1,16 +1,19 @@
 import { command } from "@/api";
-import { useAsyncEffect, useDebounce, useSize } from "ahooks";
-import { useRef, useState } from "react";
-import { Input, Segmented, SelectProps } from "antd";
-import { t, Trans } from "@lingui/macro";
-import { SearchIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { AllModel } from "./commponents/AllModel";
 import { cn } from "@/lib/utils";
+import { Trans, t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
+import { useAsyncEffect, useDebounce, useSize } from "ahooks";
+import { Input, Segmented, Select, SelectProps } from "antd";
+import { SearchIcon } from "lucide-react";
+import { useRef, useState } from "react";
+import { AllModel } from "./commponents/AllModel";
 
 export const Component = () => {
+  useLingui();
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search, { wait: 500 });
+  const [viewType, setViewType] = useState("all");
   const [type, setType] = useState("");
   const [base, setBase] = useState("");
   const [types, setTypes] = useState<SelectProps["options"]>([]);
@@ -21,9 +24,11 @@ export const Component = () => {
   const size = useSize(divRef);
 
   useAsyncEffect(async () => {
-    const types = await command("get_model_type_groups");
+    const types: any = await command("get_model_type_groups");
+    types.unshift({ label: t`全部`, value: "" });
     setTypes(types);
-    const bases = await command("get_model_base_groups");
+    const bases: any = await command("get_model_base_groups");
+    bases.unshift({ label: t`全部`, value: "" });
     setBases(bases);
   }, []);
 
@@ -37,11 +42,13 @@ export const Component = () => {
   return (
     <div className="w-full h-full">
       <div className=" flex justify-between items-center px-4 py-2">
-        <p>插件管理</p>
+        <p>
+          <Trans>模型管理</Trans>
+        </p>
         <Segmented
-          value={type}
+          value={viewType}
           onChange={(value) => {
-            setType(value);
+            setViewType(value);
           }}
           options={[
             {
@@ -62,6 +69,18 @@ export const Component = () => {
       <Separator />
       <div ref={divRef} className="p-4">
         <div className="w-full flex gap-4">
+          <Select
+            className="w-[200px]"
+            value={type}
+            onChange={(value) => setType(value)}
+            options={types}
+          />
+          <Select
+            className="w-[200px]"
+            value={base}
+            onChange={(value) => setBase(value)}
+            options={bases}
+          />
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -72,7 +91,7 @@ export const Component = () => {
         </div>
       </div>
 
-      <div className={cn("w-full", type === "all" ? "block" : "hidden")}>
+      <div className={cn("w-full", viewType === "all" ? "block" : "hidden")}>
         <AllModel {...props} />
       </div>
       {/* <div

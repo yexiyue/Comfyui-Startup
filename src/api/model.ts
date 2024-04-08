@@ -2,6 +2,7 @@ import { Channel } from "@tauri-apps/api/core";
 import { Pagination } from "./plugin";
 
 export type Model = {
+  id: number;
   name: string;
   type: string;
   base: string;
