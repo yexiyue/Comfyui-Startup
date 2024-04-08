@@ -8,6 +8,8 @@ import { Input, Segmented, Select, SelectProps } from "antd";
 import { SearchIcon } from "lucide-react";
 import { useRef, useState } from "react";
 import { AllModel } from "./commponents/AllModel";
+import { DownloadedModel } from "./commponents/DownloadedModel";
+import { DownloadingModel } from "./commponents/DownloadingModel";
 
 export const Component = () => {
   useLingui();
@@ -94,14 +96,19 @@ export const Component = () => {
       <div className={cn("w-full", viewType === "all" ? "block" : "hidden")}>
         <AllModel {...props} />
       </div>
-      {/* <div
-        className={cn("w-full", type === "downloading" ? "block" : "hidden")}
+      <div
+        className={cn(
+          "w-full",
+          viewType === "downloading" ? "block" : "hidden"
+        )}
       >
-        <DownloadingPlugin search={debouncedSearch} width={size?.width ?? 0} />
+        <DownloadingModel {...props} />
       </div>
-      <div className={cn("w-full", type === "downloaded" ? "block" : "hidden")}>
-        <DownloadedPlugin search={debouncedSearch} width={size?.width ?? 0} />
-      </div> */}
+      <div
+        className={cn("w-full", viewType === "downloaded" ? "block" : "hidden")}
+      >
+        <DownloadedModel {...props} />
+      </div>
     </div>
   );
 };

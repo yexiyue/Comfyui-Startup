@@ -4,26 +4,34 @@ import { usePaginationSearch } from "@/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";
-import { usePluginStore } from "../useStore";
-import { PluginItem } from "./Item";
+import { useModelDownloadStore } from "../useStore";
+import { ModelItem } from "./Item";
 
-type DownloadedPluginProps = {
+type DownloadingModelProps = {
   search: string;
   loading?: boolean;
   width: number;
+  type?: string;
+  base?: string;
 };
 
-export const DownloadedPlugin = ({
+export const DownloadingModel = ({
   search,
   loading,
   width,
-}: DownloadedPluginProps) => {
+  type,
+  base,
+}: DownloadingModelProps) => {
   useLingui();
-  const plugins = usePluginStore((store) =>
-    Object.values(store.downloadPlugins)
-  );
+  const [models] = useModelDownloadStore((store) => [
+    Object.values(store.downloadingModels),
+  ]);
+
   const { count, filterPaginationData, paginationContainer } =
-    usePaginationSearch(plugins, search, ["title", "description"]);
+    usePaginationSearch(models, search, ["name", "description", "filename"], {
+      type,
+      base,
+    });
 
   return (
     <>
@@ -40,23 +48,22 @@ export const DownloadedPlugin = ({
                 <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
               ))}
             </div>
-          ) : plugins.length === 0 ? (
+          ) : models.length === 0 ? (
             <Empty
               image={Empty.PRESENTED_IMAGE_SIMPLE}
-              description={t`您还未安装过插件`}
+              description={t`暂无下载中的模型`}
             ></Empty>
           ) : (
-            search &&
             count === 0 && (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={t`没有找到插件`}
+                description={t`没有找到模型`}
               ></Empty>
             )
           )}
-          {filterPaginationData.map((plugin) => (
-            <PluginItem plugin={plugin} isDownloaded key={plugin.id} />
-          ))}
+          {filterPaginationData.map((model) => {
+            return <ModelItem model={model} key={model.id} />;
+          })}
         </div>
       </ScrollArea>
       <div className="w-full flex justify-end p-4">{paginationContainer}</div>

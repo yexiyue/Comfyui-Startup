@@ -59,7 +59,7 @@ pub struct Download {
     req: DownloadReq,
     filename: String,
     // 最多允许下载的连接数
-    #[builder(default = "10")]
+    #[builder(default = "100")]
     max_files: usize,
     #[builder(default = "1024*1024")]
     chunk_size: usize,

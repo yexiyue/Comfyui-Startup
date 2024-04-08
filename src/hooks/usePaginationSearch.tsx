@@ -5,28 +5,36 @@ export const usePaginationSearch = <T extends Record<string, any>>(
   data: T[],
   search: string,
   filterFields: (keyof T)[],
+  equals: Partial<T> = {},
   initialPage: number = 1,
   initialPageSize: number = 10
 ) => {
   const [page, setPage] = useState(initialPage);
   const [pagesize, setPagesize] = useState(initialPageSize);
   // 搜索过滤
-  const filterPlugins = useMemo(() => {
+  const filterData = useMemo(() => {
+    let filterData = data;
     if (search) {
-      return data.filter((item) => {
+      filterData = data.filter((item) => {
         return filterFields.some((field) => {
           return item[field] && item[field].includes(search);
         });
       });
-    } else {
-      return data;
     }
+    if (equals) {
+      Object.keys(equals).forEach((key) => {
+        if (equals[key]) {
+          filterData = filterData.filter((item) => item[key] === equals[key]);
+        }
+      });
+    }
+    return filterData;
   }, [search, data]);
 
   // 分页处理
   const filterPaginationData = useMemo(() => {
-    return filterPlugins.slice((page - 1) * pagesize, page * pagesize);
-  }, [page, filterPlugins, pagesize]);
+    return filterData.slice((page - 1) * pagesize, page * pagesize);
+  }, [page, filterData, pagesize]);
 
   const paginationContainer = (
     <Pagination
@@ -37,12 +45,12 @@ export const usePaginationSearch = <T extends Record<string, any>>(
         setPagesize(pageSize);
       }}
       pageSizeOptions={[10, 20, 30]}
-      total={filterPlugins.length}
+      total={filterData.length}
     />
   );
 
   return {
-    count: filterPlugins.length,
+    count: filterData.length,
     filterPaginationData,
     paginationContainer,
   };

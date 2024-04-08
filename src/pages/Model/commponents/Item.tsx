@@ -1,6 +1,5 @@
 import { command } from "@/api";
-import { Model } from "@/api/model";
-import { Plugin, PluginOnProgress } from "@/api/plugin";
+import { Model, ModelOnProgress } from "@/api/model";
 import { Button as UIButton } from "@/components/ui/button";
 import {
   Card,
@@ -11,22 +10,21 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { notification } from "@/lib/notification";
-import { cn } from "@/lib/utils";
-import { GithubOutlined } from "@ant-design/icons";
+import { cn, formatToBytes } from "@/lib/utils";
+import { FileOutlined, LinkOutlined } from "@ant-design/icons";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Channel } from "@tauri-apps/api/core";
-import { emit } from "@tauri-apps/api/event";
 import { open } from "@tauri-apps/plugin-shell";
 import { useMemoizedFn } from "ahooks";
 import { App, Button, Progress, Space, Tag, Typography, theme } from "antd";
 import {
   ArrowBigDownDashIcon,
-  ArrowBigUpDash,
+  SlashIcon,
   Trash2Icon,
   XIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useModelDownloadStore } from "../useStore";
 
 type ModelItemProps = {
   model: Model;
@@ -37,92 +35,133 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
   useLingui();
   const themes = theme.useToken();
   const { message } = App.useApp();
-  const downloading = false;
-  const progress = 0;
+  const [
+    downloadingModel,
+    addDownloadingModel,
+    addDownloadedModel,
+    setProgress,
+    removeDownloadingModel,
+    removeDownloadedModel,
+  ] = useModelDownloadStore((store) => [
+    store.downloadingModels[model.url],
+    store.addDownloadingModel,
+    store.addDownloadedModel,
+    store.setProgress,
+    store.removeDownloadingModel,
+    store.removeDownloadedModel,
+  ]);
+  const downloading = downloadingModel?.status !== undefined;
+
+  const onDownloadingProgress = useMemoizedFn(() => {
+    const onProgress: ModelOnProgress = new Channel();
+    onProgress.onmessage = ({
+      message: { speed, status, progress, error_message },
+    }) => {
+      setProgress(model.url, progress, status, speed);
+      if (status === "failed") {
+        message.error({
+          content: (
+            <Space direction="vertical">
+              <Trans>{downloadingModel.name} 下载失败，请稍后再试</Trans>
+              <Typography.Text type="secondary">
+                {error_message}
+              </Typography.Text>
+            </Space>
+          ),
+        });
+      }
+
+      if (status === "success") {
+        addDownloadedModel(model);
+        removeDownloadingModel(model.url);
+        message.success(t`${model.name} 下载成功`);
+        notification({
+          title: t`${model.name} 下载成功`,
+        });
+      }
+    };
+    return onProgress;
+  });
 
   return (
-    <Card className="relative">
-      {/* {isDownloaded ? (
-        <Space className=" absolute top-4 right-4 ">
-          <UIButton
-            size="sm"
-            variant="destructive"
-            className="h-6"
-            onClick={async () => {
-              try {
-                await command("remove_plugin", { plugin });
-                removePlugin(plugin);
-                message.success(t`${plugin.title} 卸载成功`);
-              } catch (error) {
-                message.error(t`${plugin.title} 卸载失败`);
-              }
-            }}
-          >
-            <Space size={4}>
-              <Trash2Icon className="w-4 h-4" />
-              <Trans>卸载</Trans>
-            </Space>
-          </UIButton>
-          <UIButton
-            size="sm"
-            className="h-6"
-            onClick={async () => {
-              const onProgress = new Channel<{ message: number; id: number }>();
-              onProgress.onmessage = (res) => {
-                setProgress(res.message);
-              };
-              try {
-                setDownloading(true);
-                setProgress(0);
-                const res = await command("update_plugin", {
-                  plugin,
-                  onProgress,
-                });
-                if (res === 1) {
-                  message.success(t`${plugin.title} 已经是最新版`);
-                } else {
-                  message.success(t`${plugin.title} 更新成功`);
-                }
-              } catch (error) {
-                message.error(t`${plugin.title} 更新失败`);
-              } finally {
-                setDownloading(false);
-              }
-            }}
-          >
-            <Space size={4}>
-              <ArrowBigUpDash className="w-4 h-4" />
-              <Trans>更新</Trans>
-            </Space>
-          </UIButton>
-        </Space>
+    <Card className="relative min-w-[600px]">
+      {isDownloaded ? (
+        <UIButton
+          size="sm"
+          variant="destructive"
+          className="h-6 absolute top-4 right-4"
+          onClick={async () => {
+            removeDownloadedModel(model.url);
+          }}
+        >
+          <Space size={4}>
+            <Trash2Icon className="w-4 h-4" />
+            <Trans>删除</Trans>
+          </Space>
+        </UIButton>
       ) : downloading ? (
         <Space className=" absolute top-4 right-4 ">
-          <UIButton className="h-6" size="sm" disabled>
-            <Space size={4}>
-              {progress !== 100 ? (
-                pending ? (
-                  <Trans>等待中...</Trans>
-                ) : (
-                  <Trans>下载中...</Trans>
-                )
-              ) : (
-                <Trans>安装中...</Trans>
-              )}
-            </Space>
-          </UIButton>
           <UIButton
             className="h-6"
             size="sm"
             onClick={async () => {
-              await emit("plugin-cancel", { reference: plugin.reference });
+              await command("cancel", { taskId: downloadingModel.taskId! });
             }}
           >
             <Space size={4}>
-              <XIcon className="w-4 h-4" />
               <Trans>取消</Trans>
             </Space>
           </UIButton>
+          {downloadingModel.status === "running" && (
+            <UIButton
+              className="h-6"
+              size="sm"
+              onClick={async () => {
+                await command("cancel", { taskId: downloadingModel.taskId! });
+              }}
+            >
+              <Space size={4}>
+                <XIcon className="w-4 h-4" />
+                <Trans>暂停</Trans>
+              </Space>
+            </UIButton>
+          )}
+          {downloadingModel.status === "failed" && (
+            <UIButton
+              className="h-6"
+              size="sm"
+              onClick={async () => {
+                const onProgress = onDownloadingProgress();
+                await command("restore", {
+                  taskId: downloadingModel.taskId!,
+                  onProgress,
+                });
+              }}
+            >
+              <Space size={4}>
+                <XIcon className="w-4 h-4" />
+                <Trans>重新下载</Trans>
+              </Space>
+            </UIButton>
+          )}
+          {downloadingModel.status === "paused" && (
+            <UIButton
+              className="h-6"
+              size="sm"
+              onClick={async () => {
+                const onProgress = onDownloadingProgress();
+                await command("restore", {
+                  taskId: downloadingModel.taskId!,
+                  onProgress,
+                });
+              }}
+            >
+              <Space size={4}>
+                <XIcon className="w-4 h-4" />
+                <Trans>恢复下载</Trans>
+              </Space>
+            </UIButton>
+          )}
         </Space>
       ) : (
         <UIButton
@@ -130,65 +169,14 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
           size="sm"
           onClick={async () => {
             try {
-              const onProgress: PluginOnProgress = new Channel();
-              onProgress.onmessage = async (res) => {
-                const { status, progress, error_message } = res.message;
-                if (status === "Pending") {
-                  setPending(true);
-                }
-                if (status === "Downloading" && progress) {
-                  setPending(false);
-                  setProgress(progress);
-                }
-                if (status === "Error" && error_message) {
-                  // 清理操作
-                  setDownloading(false);
-                  removeDownloadingPlugin(plugin.reference);
-                  await command("remove_plugin", { plugin });
-                  message.error({
-                    content: (
-                      <Space direction="vertical">
-                        <Trans>{plugin.title} 安装失败，请稍后再试</Trans>
-                        <Typography.Text type="secondary">
-                          {error_message}
-                        </Typography.Text>
-                      </Space>
-                    ),
-                  });
-                }
-                if (status === "Success") {
-                  // 清理操作
-                  setDownloading(false);
-                  removeDownloadingPlugin(plugin.reference);
-                  // 安装成功后移出下载中，添加到已下载
-                  addPlugin(plugin);
-                  message.success(t`${plugin.title} 安装成功`);
-                  notification({
-                    title: t`${plugin.title} 安装成功`,
-                    body: t`${plugin.title} 安装成功，请重启ComfyUI`,
-                  });
-                }
-                if (status === "Canceled") {
-                  setDownloading(false);
-                  removeDownloadingPlugin(plugin.reference);
-                  message.success(t`${plugin.title} 取消成功`);
-                }
-              };
-              // 添加到下载中
-              setDownloading(true);
-              addDownloadingPlugin(plugin);
-              setPending(true);
-              setProgress(0);
-              await command("download_plugin", {
-                plugin,
-                onProgress,
-              });
-            } catch (error: any) {
-              await command("remove_plugin", { plugin });
+              const onProgress = onDownloadingProgress();
+              const taskId = await command("download", { model, onProgress });
+              addDownloadingModel(model, taskId);
+            } catch (error) {
               message.error({
                 content: (
                   <Space direction="vertical">
-                    <Trans>{plugin.title} 安装失败，请稍后再试</Trans>
+                    <Trans>{model.name} 下载失败，请稍后再试</Trans>
                     <Typography.Text type="secondary">{`${error}`}</Typography.Text>
                   </Space>
                 ),
@@ -198,36 +186,100 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
         >
           <Space size={4}>
             <ArrowBigDownDashIcon className="w-4 h-4" />
-            <Trans>安装</Trans>
+            <Trans>下载</Trans>
           </Space>
         </UIButton>
-      )} */}
+      )}
       <CardHeader className="p-4">
-        <CardTitle className="flex justify-between">{model.name}</CardTitle>
+        <CardTitle className="flex justify-between pr-[160px]">
+          <Typography.Text
+            ellipsis={{
+              tooltip: {
+                title: model.name,
+              },
+            }}
+          >
+            {model.name}
+          </Typography.Text>
+        </CardTitle>
         <CardDescription>
           <Space>
             <Tag color={themes.token.colorPrimary}>{model.type}</Tag>
+            <Tag color="orange">{model.base}</Tag>
+            <Tag icon={<FileOutlined />} color="geekblue">
+              {model.filename}
+            </Tag>
             <Button
               size="small"
               onClick={() => {
                 open(model.reference);
               }}
-              icon={<GithubOutlined />}
-            ></Button>
+              icon={<LinkOutlined />}
+            />
           </Space>
         </CardDescription>
       </CardHeader>
       <CardContent className={cn("px-4 pt-0", downloading ? "pb-0" : "pb-2")}>
         <p className="text-wrap">{model.description}</p>
       </CardContent>
-      <CardFooter className="py-0 pb-2">
+      <CardFooter className="pb-2 justify-between">
         <Progress
           size="small"
+          className="flex-1"
           style={{
             display: downloading ? "block" : "none",
           }}
-          percent={progress}
+          percent={
+            downloadingModel?.progress
+              ? Math.floor(
+                  (downloadingModel.progress[0] /
+                    downloadingModel.progress[1]) *
+                    100
+                )
+              : 0
+          }
         />
+        <div className="w-[200px] flex justify-end items-center gap-2">
+          {downloadingModel?.speed && (
+            <Typography.Text
+              type="secondary"
+              className="text-nowrap whitespace-nowrap ml-2"
+              style={{
+                fontSize: 12,
+              }}
+            >
+              {formatToBytes(downloadingModel.speed)}/s
+            </Typography.Text>
+          )}
+          {downloadingModel?.progress && (
+            <div className="flex items-center">
+              <Typography.Text
+                type="secondary"
+                className="text-nowrap whitespace-nowrap"
+                style={{
+                  fontSize: 12,
+                }}
+              >
+                {formatToBytes(downloadingModel.progress[0])}
+              </Typography.Text>
+              <SlashIcon
+                className="w-3 h-3"
+                style={{
+                  transform: "rotate(-25deg)",
+                }}
+              />
+              <Typography.Text
+                type="secondary"
+                className="text-nowrap whitespace-nowrap"
+                style={{
+                  fontSize: 12,
+                }}
+              >
+                {formatToBytes(downloadingModel.progress[1])}
+              </Typography.Text>
+            </div>
+          )}
+        </div>
       </CardFooter>
     </Card>
   );

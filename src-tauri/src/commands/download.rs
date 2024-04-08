@@ -50,11 +50,7 @@ pub async fn download(
 
     let (task_id, mut download) = Download::new(&db, url, &filename.display().to_string()).await?;
     info!("taskId = {}", task_id);
-    let download = download
-        .sender(tx)
-        .max_files(100usize)
-        .build()
-        .context("创建下载任务失败")?;
+    let download = download.sender(tx).build().context("创建下载任务失败")?;
 
     let state = download_state.clone();
     let mut state = state.lock().await;
@@ -63,6 +59,7 @@ pub async fn download(
     let on_progress2 = on_progress.clone();
 
     tokio::spawn(async move {
+        let time = std::time::Instant::now();
         match download.download().await {
             Ok(_) => {
                 on_progress2.send(DownloadMessage::builder().status(Status::Success).build()?)?;
@@ -82,6 +79,8 @@ pub async fn download(
                 }
             },
         }
+
+        info!("download time = {:?}/s", time.elapsed().as_secs_f64());
         Ok::<(), anyhow::Error>(())
     });
 
@@ -96,16 +95,27 @@ pub async fn download(
 
     tokio::spawn(async move {
         let mut start_time = std::time::Instant::now();
+        // 记录17次60毫秒的速度，这样求出的数度更平稳
+        let mut queue_list = vec![];
         let mut last_a = 0f64;
         while let Some((a, b)) = rx.recv().await {
             if start_time.elapsed() > Duration::from_millis(60) {
+                start_time = std::time::Instant::now();
+
                 let speed = if a == 0 {
                     0f64
                 } else {
-                    ((a as f64 - last_a) / start_time.elapsed().as_secs_f64()).floor()
+                    queue_list.push(((a as f64 - last_a), start_time.elapsed().as_secs_f64()));
+
+                    if queue_list.len() > 17 {
+                        queue_list.remove(0);
+                    }
+                    (queue_list.iter().map(|x| x.0).sum::<f64>()
+                        / queue_list.iter().map(|x| x.1).sum::<f64>())
+                    .floor()
                 };
+
                 last_a = a as f64;
-                start_time = std::time::Instant::now();
                 on_progress
                     .send(
                         DownloadMessage::builder()
@@ -147,6 +157,10 @@ pub async fn restore(
     //重新生成信道
     let (tx, mut rx) = tokio::sync::mpsc::channel(1);
     info!("restore taskId = {}", task_id);
+    // 获取上一次的下载进度
+    let task = DownloadTasksService::find_by_id(&db, task_id).await?;
+    let downloaded_size = task.downloaded_size;
+
     // 如果有直接克隆，没有就查找数据库然后创建
     let download = if let Some(download) = state.get(&task_id) {
         let mut download = download.clone();
@@ -154,7 +168,6 @@ pub async fn restore(
         download.set_sender(tx);
         download
     } else {
-        let task = DownloadTasksService::find_by_id(&db, task_id).await?;
         Download::from_task(task, &db, tx)?
     };
 
@@ -197,16 +210,27 @@ pub async fn restore(
 
     tokio::spawn(async move {
         let mut start_time = std::time::Instant::now();
-        let mut last_a = 0f64;
+        // 记录17次60毫秒的速度，这样求出的数度更平稳
+        let mut queue_list = vec![];
+        let mut last_a = downloaded_size as f64;
         while let Some((a, b)) = rx.recv().await {
             if start_time.elapsed() > Duration::from_millis(60) {
+                start_time = std::time::Instant::now();
+
                 let speed = if a == 0 {
                     0f64
                 } else {
-                    ((a as f64 - last_a) / start_time.elapsed().as_secs_f64()).floor()
+                    queue_list.push(((a as f64 - last_a), start_time.elapsed().as_secs_f64()));
+
+                    if queue_list.len() > 17 {
+                        queue_list.remove(0);
+                    }
+                    (queue_list.iter().map(|x| x.0).sum::<f64>()
+                        / queue_list.iter().map(|x| x.1).sum::<f64>())
+                    .floor()
                 };
+
                 last_a = a as f64;
-                start_time = std::time::Instant::now();
                 on_progress
                     .send(
                         DownloadMessage::builder()

@@ -6,7 +6,8 @@ import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
 import { Empty, Pagination, message } from "antd";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useModelDownloadStore } from "../useStore";
 import { ModelItem } from "./Item";
 
 type AllModelProps = {
@@ -23,6 +24,14 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);
   const [count, setCount] = useState(0);
+
+  const [downloadedModels] = useModelDownloadStore((store) => [
+    Object.keys(store.downloadedModels),
+  ]);
+
+  const downloadedKeys = useMemo(() => {
+    return new Set(downloadedModels);
+  }, [downloadedModels]);
 
   useAsyncEffect(async () => {
     try {
@@ -44,7 +53,7 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
       setLoading(false);
     }
   }, [page, pagesize, search, type, base]);
-  console.log(filterModels);
+
   return (
     <>
       <ScrollArea className="h-[calc(100vh-176px)] w-full">
@@ -65,12 +74,18 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
             filterModels.length === 0 && (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={t`没有找到插件`}
+                description={t`没有找到模型`}
               ></Empty>
             )
           )}
           {filterModels.map((model) => {
-            return <ModelItem key={model.id} model={model} />;
+            return (
+              <ModelItem
+                key={model.id}
+                isDownloaded={downloadedKeys.has(model.url)}
+                model={model}
+              />
+            );
           })}
         </div>
       </ScrollArea>

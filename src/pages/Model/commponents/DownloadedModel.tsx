@@ -4,26 +4,33 @@ import { usePaginationSearch } from "@/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";
-import { usePluginStore } from "../useStore";
-import { PluginItem } from "./Item";
+import { useModelDownloadStore } from "../useStore";
+import { ModelItem } from "./Item";
 
-type DownloadedPluginProps = {
+type DownloadedModelProps = {
   search: string;
   loading?: boolean;
   width: number;
+  type?: string;
+  base?: string;
 };
 
-export const DownloadedPlugin = ({
+export const DownloadedModel = ({
   search,
   loading,
   width,
-}: DownloadedPluginProps) => {
+  base,
+  type,
+}: DownloadedModelProps) => {
   useLingui();
-  const plugins = usePluginStore((store) =>
-    Object.values(store.downloadPlugins)
+  const models = useModelDownloadStore((store) =>
+    Object.values(store.downloadedModels)
   );
   const { count, filterPaginationData, paginationContainer } =
-    usePaginationSearch(plugins, search, ["title", "description"]);
+    usePaginationSearch(models, search, ["name", "description", "filename"], {
+      base,
+      type,
+    });
 
   return (
     <>
@@ -40,22 +47,21 @@ export const DownloadedPlugin = ({
                 <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
               ))}
             </div>
-          ) : plugins.length === 0 ? (
+          ) : models.length === 0 ? (
             <Empty
               image={Empty.PRESENTED_IMAGE_SIMPLE}
-              description={t`您还未安装过插件`}
+              description={t`您还未下载过模型`}
             ></Empty>
           ) : (
-            search &&
             count === 0 && (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={t`没有找到插件`}
+                description={t`没有找到模型`}
               ></Empty>
             )
           )}
-          {filterPaginationData.map((plugin) => (
-            <PluginItem plugin={plugin} isDownloaded key={plugin.id} />
+          {filterPaginationData.map((model) => (
+            <ModelItem model={model} isDownloaded key={model.id} />
           ))}
         </div>
       </ScrollArea>

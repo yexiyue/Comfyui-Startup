@@ -1,6 +1,6 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
-import { usePaginationSearch } from "@/pages/Plugin/hooks/usePaginationSearch";
+import { usePaginationSearch } from "@/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";

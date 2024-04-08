@@ -5,36 +5,56 @@ import { Model, ModelStatus } from "@/api/model";
 
 type ModelDownloadStore = {
   downloadingModels: Record<string, Model>;
-
-  addDownloadingModel: (model: Model) => void;
-  setProgress: (url: string, progress: number, status?: ModelStatus) => void;
+  addDownloadingModel: (model: Model, taskId: number) => void;
+  setProgress: (
+    url: string,
+    progress: [number, number] | null,
+    status: ModelStatus,
+    speed: number | null
+  ) => void;
   removeDownloadingModel: (url: string) => void;
+
+  downloadedModels: Record<string, Model>;
+  addDownloadedModel: (model: Model) => void;
+  removeDownloadedModel: (url: string) => void;
 };
 
 export const useModelDownloadStore = create(
   persist(
-    immer<ModelDownloadStore>((set,) => ({
+    immer<ModelDownloadStore>((set) => ({
       downloadingModels: {},
-      addDownloadingModel(model) {
+      downloadedModels: {},
+      addDownloadingModel(model, taskId) {
         set((state) => {
           state.downloadingModels[model.url] = {
             ...model,
-            progress: 0,
             status: "pending",
+            taskId,
           };
         });
       },
-      setProgress(url, progress, status) {
+      setProgress(url, progress, status, speed) {
         set((state) => {
-          state.downloadingModels[url].progress = progress;
-          if (status) {
-            state.downloadingModels[url].status = status;
+          if (status === "running") {
+            state.downloadingModels[url].progress = progress;
           }
+          state.downloadingModels[url].status = status;
+          state.downloadingModels[url].speed = speed;
         });
       },
       removeDownloadingModel(url) {
         set((state) => {
           delete state.downloadingModels[url];
+        });
+      },
+      addDownloadedModel(model) {
+        set((state) => {
+          state.downloadedModels[model.url] = model;
+        });
+      },
+      removeDownloadedModel(url) {
+        set((state) => {
+          delete state.downloadedModels[url];
         });
       },
     })),

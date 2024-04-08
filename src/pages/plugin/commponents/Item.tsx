@@ -60,7 +60,7 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
   });
 
   return (
-    <Card className="relative">
+    <Card className="relative min-w-[600px]">
       {isDownloaded ? (
         <Space className=" absolute top-4 right-4 ">
           <UIButton
