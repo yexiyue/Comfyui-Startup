@@ -43,6 +43,7 @@ export type ModelApi = {
   download: (args: { model: Model; onProgress: ModelOnProgress }) => number;
   restore: (args: { taskId: number; onProgress: ModelOnProgress }) => void;
   cancel: (args: { taskId: number }) => void;
+  remove: (args: { url: string }) => void;
   get_model_list: (args: {
     search: string;
     pagination?: Pagination;

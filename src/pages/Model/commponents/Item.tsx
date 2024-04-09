@@ -91,7 +91,22 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
           variant="destructive"
           className="h-6 absolute top-4 right-4"
           onClick={async () => {
-            removeDownloadedModel(model.url);
+            try {
+              await command("remove", { url: model.url });
+              removeDownloadedModel(model.url);
+              message.success({
+                content: t`${model.name} 删除成功`,
+              });
+            } catch (error) {
+              message.error({
+                content: (
+                  <Space direction="vertical">
+                    <Trans>{model.name} 删除失败</Trans>
+                    <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                  </Space>
+                ),
+              });
+            }
           }}
         >
           <Space size={4}>
@@ -105,7 +120,22 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
             className="h-6"
             size="sm"
             onClick={async () => {
-              await command("cancel", { taskId: downloadingModel.taskId! });
+              try {
+                await command("remove", { url: model.url });
+                removeDownloadingModel(model.url);
+                message.success({
+                  content: t`${model.name} 取消成功`,
+                });
+              } catch (error) {
+                message.error({
+                  content: (
+                    <Space direction="vertical">
+                      <Trans>{model.name} 取消失败</Trans>
+                      <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                    </Space>
+                  ),
+                });
+              }
             }}
           >
             <Space size={4}>
@@ -117,7 +147,18 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
               className="h-6"
               size="sm"
               onClick={async () => {
-                await command("cancel", { taskId: downloadingModel.taskId! });
+                try {
+                  await command("cancel", { taskId: downloadingModel.taskId! });
+                } catch (error) {
+                  message.error({
+                    content: (
+                      <Space direction="vertical">
+                        <Trans>{model.name} 暂停失败</Trans>
+                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                      </Space>
+                    ),
+                  });
+                }
               }}
             >
               <Space size={4}>
@@ -131,11 +172,22 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
               className="h-6"
               size="sm"
               onClick={async () => {
-                const onProgress = onDownloadingProgress();
-                await command("restore", {
-                  taskId: downloadingModel.taskId!,
-                  onProgress,
-                });
+                try {
+                  const onProgress = onDownloadingProgress();
+                  await command("restore", {
+                    taskId: downloadingModel.taskId!,
+                    onProgress,
+                  });
+                } catch (error) {
+                  message.error({
+                    content: (
+                      <Space direction="vertical">
+                        <Trans>{model.name} 重新下载失败</Trans>
+                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                      </Space>
+                    ),
+                  });
+                }
               }}
             >
               <Space size={4}>
@@ -149,11 +201,22 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
               className="h-6"
               size="sm"
               onClick={async () => {
-                const onProgress = onDownloadingProgress();
-                await command("restore", {
-                  taskId: downloadingModel.taskId!,
-                  onProgress,
-                });
+                try {
+                  const onProgress = onDownloadingProgress();
+                  await command("restore", {
+                    taskId: downloadingModel.taskId!,
+                    onProgress,
+                  });
+                } catch (error) {
+                  message.error({
+                    content: (
+                      <Space direction="vertical">
+                        <Trans>{model.name} 恢复下载失败</Trans>
+                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                      </Space>
+                    ),
+                  });
+                }
               }}
             >
               <Space size={4}>

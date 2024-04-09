@@ -9,6 +9,7 @@ pub struct Model {
     #[sea_orm(primary_key)]
     pub id: i32,
     pub url: String,
+    pub origin_url: String,
     pub filename: String,
     pub downloaded_size: i64,
     pub total_size: i64,

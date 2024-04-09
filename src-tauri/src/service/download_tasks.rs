@@ -1,4 +1,4 @@
-use crate::entity::download_tasks::ActiveModel;
+use crate::entity::download_tasks::{ActiveModel, Column};
 use crate::entity::{download_tasks::Model, prelude::DownloadTasks};
 use anyhow::anyhow;
 use chrono::Local;
@@ -10,6 +10,7 @@ impl DownloadTasksService {
     pub async fn create(db: &DbConn, model: Model) -> anyhow::Result<i32> {
         let active_model = ActiveModel {
             url: Set(model.url),
+            origin_url: Set(model.origin_url),
             filename: Set(model.filename),
             status: Set(model.status),
             downloaded_size: Set(model.downloaded_size),
@@ -58,8 +59,11 @@ impl DownloadTasksService {
         Ok(res.ok_or(anyhow!("download task {id} not found"))?)
     }
 
-    pub async fn find_all(db: &DbConn) -> anyhow::Result<Vec<Model>> {
-        let res = DownloadTasks::find().all(db).await?;
-        Ok(res)
+    pub async fn find_by_url(db: &DbConn, origin_url: &str) -> anyhow::Result<Model> {
+        let res = DownloadTasks::find()
+            .filter(Column::OriginUrl.eq(origin_url))
+            .one(db)
+            .await?;
+        Ok(res.ok_or(anyhow!("download task {origin_url} not found"))?)
     }
 }

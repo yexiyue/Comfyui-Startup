@@ -23,6 +23,8 @@ pub enum MyError {
     Git2Builder(#[from] git::GitBuilderError),
     #[error("{0}")]
     Code(i32),
+    #[error(transparent)]
+    Infallible(#[from] std::convert::Infallible),
 }
 
 impl Serialize for MyError {

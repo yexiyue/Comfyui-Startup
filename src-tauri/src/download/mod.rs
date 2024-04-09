@@ -87,6 +87,7 @@ impl Download {
         db: &DbConn,
         url: &str,
         filename: &str,
+        origin_url: &str,
     ) -> anyhow::Result<(i32, DownloadBuilder)> {
         let client = reqwest::Client::builder()
             .http2_keep_alive_timeout(Duration::from_secs(15))
@@ -102,6 +103,7 @@ impl Download {
                 downloaded_size: 0,
                 total_size: length as i64,
                 status: Some(Status::Pending.into()),
+                origin_url: origin_url.into(),
                 created_at: None,
                 updated_at: None,
             },
@@ -181,7 +183,7 @@ impl Download {
             }));
         }
 
-        let filename = catch_file(&self.filename)?;
+        let filename = cache_file(&self.filename)?;
         let mut file = tokio::fs::File::create(&filename).await?;
 
         let mut has_downloaded_bytes = 0;
@@ -214,7 +216,7 @@ impl Download {
     // 单独流式下载
     async fn download_single_async(&self, length: usize) -> Result<(), DownloadError> {
         let (tx, mut rx) = tokio::sync::mpsc::channel::<Bytes>(50);
-        let filename = catch_file(&self.filename)?;
+        let filename = cache_file(&self.filename)?;
         let mut file = tokio::fs::File::create(&filename).await?;
         let sender = self.sender.clone();
 
@@ -348,7 +350,7 @@ impl Download {
             }));
         }
 
-        let filename = catch_file(&self.filename)?;
+        let filename = cache_file(&self.filename)?;
 
         // 追加方式打开文件
         let mut file = tokio::fs::OpenOptions::new()
@@ -415,7 +417,7 @@ impl Download {
     async fn process_res(&self, req: Result<(), DownloadError>) -> Result<(), DownloadError> {
         match req {
             Ok(_) => {
-                let filename = catch_file(&self.filename)?;
+                let filename = cache_file(&self.filename)?;
                 tokio::fs::copy(&filename, &self.filename).await?;
                 tokio::fs::remove_file(&filename).await?;
                 DownloadTasksService::update(
@@ -484,7 +486,7 @@ impl Download {
     }
 }
 
-fn catch_file(filepath: &str) -> anyhow::Result<String> {
+pub fn cache_file(filepath: &str) -> anyhow::Result<String> {
     let path = Path::new(filepath);
     if path.is_dir() {
         return Err(anyhow!("filepath is a directory"));
@@ -495,18 +497,14 @@ fn catch_file(filepath: &str) -> anyhow::Result<String> {
             std::fs::create_dir_all(parent)?;
         }
     }
-    let filename = path
-        .file_name()
-        .context("filename is not valid")?
-        .to_str()
-        .context("filename is not valid")?;
+    let filename = path.file_name().context("filename is not valid")?;
     let dir = std::env!("HOME");
-    let cache_dir = format!("{dir}/.cache/comfyui-startup");
-    let cache_dir = Path::new(&cache_dir);
+
+    let cache_dir = Path::new(dir).join(".cache").join("comfyui-startup");
     // 创建缓存目录
     if !cache_dir.exists() {
-        std::fs::create_dir_all(cache_dir)?;
+        std::fs::create_dir_all(&cache_dir)?;
     }
-    let cache_file = format!("{}/{filename}", &cache_dir.display());
-    Ok(cache_file)
+    let cache_file = cache_dir.join(filename);
+    Ok(cache_file.display().to_string())
 }

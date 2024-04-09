@@ -19,6 +19,7 @@ impl MigrationTrait for Migration {
                             .primary_key(),
                     )
                     .col(ColumnDef::new(DownloadTasks::Url).string().not_null())
+                    .col(ColumnDef::new(DownloadTasks::OriginUrl).string().not_null())
                     .col(ColumnDef::new(DownloadTasks::Filename).string().not_null())
                     .col(
                         ColumnDef::new(DownloadTasks::DownloadedSize)
@@ -62,6 +63,7 @@ pub enum DownloadTasks {
     Table,
     Id,
     Url,
+    OriginUrl,
     Filename,
     DownloadedSize,
     TotalSize,

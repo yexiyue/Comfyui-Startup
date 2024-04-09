@@ -18,7 +18,7 @@ mod model;
 
 use commands::{
     config::{get_config, get_info, set_config},
-    download::{cancel, download, restore},
+    download::{cancel, download, remove, restore},
     init_data,
     model::{get_model_base_groups, get_model_list, get_model_type_groups},
     plugin::{
@@ -59,6 +59,7 @@ pub async fn start() {
             download,
             cancel,
             restore,
+            remove,
             get_model_list,
             remove_plugin,
             init_data,

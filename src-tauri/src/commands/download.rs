@@ -1,8 +1,13 @@
-use std::{borrow::BorrowMut, path::Path, time::Duration};
+use std::{
+    borrow::BorrowMut,
+    path::{Path, PathBuf},
+    str::FromStr,
+    time::Duration,
+};
 
 use crate::{
     db::Status,
-    download::{Download, DownloadError},
+    download::{cache_file, Download, DownloadError},
     error::MyError,
     model::Model,
     service::DownloadTasksService,
@@ -48,7 +53,8 @@ pub async fn download(
 
     let (tx, mut rx) = tokio::sync::mpsc::channel(1);
 
-    let (task_id, mut download) = Download::new(&db, url, &filename.display().to_string()).await?;
+    let (task_id, mut download) =
+        Download::new(&db, url, &filename.display().to_string(), &model.url).await?;
     info!("taskId = {}", task_id);
     let download = download.sender(tx).build().context("创建下载任务失败")?;
 
@@ -100,14 +106,12 @@ pub async fn download(
         let mut last_a = 0f64;
         while let Some((a, b)) = rx.recv().await {
             if start_time.elapsed() > Duration::from_millis(60) {
-                start_time = std::time::Instant::now();
-
                 let speed = if a == 0 {
                     0f64
                 } else {
                     queue_list.push(((a as f64 - last_a), start_time.elapsed().as_secs_f64()));
 
-                    if queue_list.len() > 17 {
+                    if queue_list.len() > 30 {
                         queue_list.remove(0);
                     }
                     (queue_list.iter().map(|x| x.0).sum::<f64>()
@@ -115,6 +119,7 @@ pub async fn download(
                     .floor()
                 };
 
+                start_time = std::time::Instant::now();
                 last_a = a as f64;
                 on_progress
                     .send(
@@ -215,21 +220,19 @@ pub async fn restore(
         let mut last_a = downloaded_size as f64;
         while let Some((a, b)) = rx.recv().await {
             if start_time.elapsed() > Duration::from_millis(60) {
-                start_time = std::time::Instant::now();
-
                 let speed = if a == 0 {
                     0f64
                 } else {
                     queue_list.push(((a as f64 - last_a), start_time.elapsed().as_secs_f64()));
 
-                    if queue_list.len() > 17 {
+                    if queue_list.len() > 30 {
                         queue_list.remove(0);
                     }
                     (queue_list.iter().map(|x| x.0).sum::<f64>()
                         / queue_list.iter().map(|x| x.1).sum::<f64>())
                     .floor()
                 };
-
+                start_time = std::time::Instant::now();
                 last_a = a as f64;
                 on_progress
                     .send(
@@ -246,4 +249,35 @@ pub async fn restore(
     });
 
     Ok(())
+}
+
+#[tauri::command]
+pub async fn remove(
+    url: &str,
+    download_state: State<'_, DownloadState>,
+    db: State<'_, DbConn>,
+) -> Result<(), MyError> {
+    let mut state = download_state.lock().await;
+    let state = state.borrow_mut();
+    let task = DownloadTasksService::find_by_url(&db, url).await?;
+    if let Some(download) = state.get(&task.id) {
+        download.cancel();
+    }
+    DownloadTasksService::delete(&db, task.id).await?;
+    match task.status {
+        Some(status) => {
+            let success: String = Status::Success.into();
+            let path = if status == success {
+                PathBuf::from_str(&task.filename)?
+            } else {
+                let file_path = cache_file(&task.filename)?;
+                PathBuf::from_str(&file_path)?
+            };
+            if path.exists() {
+                tokio::fs::remove_file(path).await?;
+            }
+            Ok(())
+        }
+        None => Err(anyhow!("Task not found").into()),
+    }
 }
