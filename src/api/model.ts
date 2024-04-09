@@ -50,4 +50,5 @@ export type ModelApi = {
     ty?: string;
     base?: string;
   }) => [Model[], number];
+  get_download_model: (args: { isDownloading: boolean }) => Model[];
 };

@@ -62,7 +62,7 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
         message.error({
           content: (
             <Space direction="vertical">
-              <Trans>{downloadingModel.name} 下载失败，请稍后再试</Trans>
+              <Trans>{model.name} 下载失败，请稍后再试</Trans>
               <Typography.Text type="secondary">
                 {error_message}
               </Typography.Text>
@@ -266,7 +266,7 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
           </Typography.Text>
         </CardTitle>
         <CardDescription>
-          <Space>
+          <Space size={2}>
             <Tag color={themes.token.colorPrimary}>{model.type}</Tag>
             <Tag color="orange">{model.base}</Tag>
             <Tag icon={<FileOutlined />} color="geekblue">

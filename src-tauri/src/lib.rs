@@ -20,7 +20,7 @@ use commands::{
     config::{get_config, get_info, set_config},
     download::{cancel, download, remove, restore},
     init_data,
-    model::{get_model_base_groups, get_model_list, get_model_type_groups},
+    model::{get_download_model, get_model_base_groups, get_model_list, get_model_type_groups},
     plugin::{
         download_manager, download_plugin, get_installed_plugins, get_plugin_list, manager_exists,
         remove_plugin, update_plugin,
@@ -63,6 +63,7 @@ pub async fn start() {
             get_model_list,
             remove_plugin,
             init_data,
+            get_download_model,
             get_model_type_groups,
             get_model_base_groups,
             get_installed_plugins

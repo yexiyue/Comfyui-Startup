@@ -54,3 +54,15 @@ impl Into<String> for Status {
         }
     }
 }
+
+impl ToString for Status {
+    fn to_string(&self) -> String {
+        match self {
+            Status::Pending => "pending".to_string(),
+            Status::Running => "running".to_string(),
+            Status::Paused => "paused".to_string(),
+            Status::Success => "success".to_string(),
+            Status::Failed => "failed".to_string(),
+        }
+    }
+}

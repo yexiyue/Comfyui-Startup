@@ -2,7 +2,7 @@ import { command } from "@/api";
 import { ManagerModal } from "@/components/Home/ManagerModal";
 import { useConfigStore } from "@/useStore";
 import { useAsyncEffect } from "ahooks";
-import { Button, message } from "antd";
+import { Button } from "antd";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

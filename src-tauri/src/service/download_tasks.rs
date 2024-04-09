@@ -1,8 +1,11 @@
+use crate::db::Status;
 use crate::entity::download_tasks::{ActiveModel, Column};
 use crate::entity::{download_tasks::Model, prelude::DownloadTasks};
+use crate::service::ModelService;
 use anyhow::anyhow;
 use chrono::Local;
 use sea_orm::{prelude::*, IntoActiveModel, Set};
+use serde_json::json;
 
 pub struct DownloadTasksService;
 
@@ -65,5 +68,34 @@ impl DownloadTasksService {
             .one(db)
             .await?;
         Ok(res.ok_or(anyhow!("download task {origin_url} not found"))?)
+    }
+
+    pub async fn find_downloaded(
+        db: &DbConn,
+        is_downloading: bool,
+    ) -> anyhow::Result<Vec<serde_json::Value>> {
+        let mut tasks = DownloadTasks::find();
+        if is_downloading {
+            tasks = tasks.filter(Column::Status.ne(Status::Success.to_string()));
+        } else {
+            tasks = tasks.filter(Column::Status.eq(Status::Success.to_string()))
+        }
+
+        let tasks = tasks.all(db).await?;
+        let mut models = vec![];
+        for i in tasks {
+            let model = ModelService::get_by_url(db, i.origin_url).await?;
+            if model.is_some() {
+                let mut value = json!(model);
+                value["status"] = json!(i.status);
+                value["taskId"] = json!(i.id);
+                if is_downloading {
+                    value["progress"] = json!(vec![i.downloaded_size, i.total_size]);
+                }
+                models.push(value);
+            }
+        }
+
+        Ok(models)
     }
 }

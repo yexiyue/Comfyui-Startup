@@ -3,6 +3,8 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
+import { getCurrent } from "@tauri-apps/api/window";
+import { confirm } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect, useDebounce, useSize } from "ahooks";
 import { Input, Segmented, Select, SelectProps } from "antd";
 import { SearchIcon } from "lucide-react";
@@ -10,6 +12,7 @@ import { useRef, useState } from "react";
 import { AllModel } from "./commponents/AllModel";
 import { DownloadedModel } from "./commponents/DownloadedModel";
 import { DownloadingModel } from "./commponents/DownloadingModel";
+import { useModelDownloadStore } from "./useStore";
 
 export const Component = () => {
   useLingui();
@@ -20,6 +23,22 @@ export const Component = () => {
   const [base, setBase] = useState("");
   const [types, setTypes] = useState<SelectProps["options"]>([]);
   const [bases, setBases] = useState<SelectProps["options"]>([]);
+  const [setDownloadingModel, setDownloadedModel] = useModelDownloadStore(
+    (store) => [store.setDownloadingModel, store.setDownloadedModel]
+  );
+
+  // 同步数据库中的下载任务
+  useAsyncEffect(async () => {
+    const downloadedModels = await command("get_download_model", {
+      isDownloading: false,
+    });
+    const downloadingModels = await command("get_download_model", {
+      isDownloading: true,
+    });
+
+    setDownloadedModel(downloadedModels);
+    setDownloadingModel(downloadingModels);
+  }, []);
 
   // 获取宽度
   const divRef = useRef<HTMLDivElement>(null);
@@ -72,14 +91,16 @@ export const Component = () => {
       <div ref={divRef} className="p-4">
         <div className="w-full flex gap-4">
           <Select
-            className="w-[200px]"
+            className="w-[250px]"
+            showSearch
             value={type}
             onChange={(value) => setType(value)}
             options={types}
           />
           <Select
-            className="w-[200px]"
+            className="w-[250px]"
             value={base}
+            showSearch
             onChange={(value) => setBase(value)}
             options={bases}
           />

@@ -16,6 +16,7 @@ import { useLingui } from "@lingui/react";
 export const Slider = () => {
   const navigate = useNavigate();
   useLingui();
+
   const menus: {
     title: ReactNode;
     icon: ReactNode;

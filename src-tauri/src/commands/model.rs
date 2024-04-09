@@ -1,7 +1,7 @@
 use crate::{
     entity,
     error::MyError,
-    service::{ModelService, Pagination},
+    service::{DownloadTasksService, ModelService, Pagination},
 };
 use sea_orm::DbConn;
 use serde_json::Value;
@@ -26,4 +26,12 @@ pub async fn get_model_type_groups(db: State<'_, DbConn>) -> Result<Vec<Value>, 
 #[tauri::command]
 pub async fn get_model_base_groups(db: State<'_, DbConn>) -> Result<Vec<Value>, MyError> {
     Ok(ModelService::get_base_groups(&db).await?)
+}
+
+#[tauri::command]
+pub async fn get_download_model(
+    db: State<'_, DbConn>,
+    is_downloading: bool,
+) -> Result<Vec<serde_json::Value>, MyError> {
+    Ok(DownloadTasksService::find_downloaded(&db, is_downloading).await?)
 }

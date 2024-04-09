@@ -57,4 +57,11 @@ impl ModelService {
             .await?;
         Ok(res)
     }
+
+    pub async fn get_by_url<P: Into<String>>(db: &DbConn, url: P) -> Result<Option<Model>> {
+        Ok(Entity::find()
+            .filter(Column::Url.eq(url.into()))
+            .one(db)
+            .await?)
+    }
 }

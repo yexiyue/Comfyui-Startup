@@ -13,10 +13,12 @@ type ModelDownloadStore = {
     speed: number | null
   ) => void;
   removeDownloadingModel: (url: string) => void;
+  setDownloadingModel: (model: Model[]) => void;
 
   downloadedModels: Record<string, Model>;
   addDownloadedModel: (model: Model) => void;
   removeDownloadedModel: (url: string) => void;
+  setDownloadedModel: (model: Model[]) => void;
 };
 
 export const useModelDownloadStore = create(
@@ -24,6 +26,7 @@ export const useModelDownloadStore = create(
     immer<ModelDownloadStore>((set) => ({
       downloadingModels: {},
       downloadedModels: {},
+      // downloading
       addDownloadingModel(model, taskId) {
         set((state) => {
           state.downloadingModels[model.url] = {
@@ -47,6 +50,14 @@ export const useModelDownloadStore = create(
           delete state.downloadingModels[url];
         });
       },
+      setDownloadingModel(model) {
+        set((state) => {
+          model.forEach((item) => {
+            state.downloadingModels[item.url] = item;
+          });
+        });
+      },
+      // downloaded
       addDownloadedModel(model) {
         set((state) => {
           state.downloadedModels[model.url] = model;
@@ -55,6 +66,13 @@ export const useModelDownloadStore = create(
       removeDownloadedModel(url) {
         set((state) => {
           delete state.downloadedModels[url];
+        });
+      },
+      setDownloadedModel(model) {
+        set((state) => {
+          model.forEach((item) => {
+            state.downloadedModels[item.url] = item;
+          });
         });
       },
     })),
