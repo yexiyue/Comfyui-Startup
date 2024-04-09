@@ -13,7 +13,7 @@ impl PluginService {
         pagination: Option<Pagination>,
     ) -> Result<(Vec<Model>, u64)> {
         let mut res = Entity::find();
-        if search != "" {
+        if !search.is_empty() {
             res = res.filter(
                 Column::Title
                     .contains(search)

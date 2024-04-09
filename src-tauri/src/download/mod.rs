@@ -95,7 +95,7 @@ impl Download {
         let req = DownloadReq::builder().client(client).url(url).build()?;
         let length = req.get_content_info().await?.1;
         let task_id = DownloadTasksService::create(
-            &db,
+            db,
             crate::entity::download_tasks::Model {
                 id: 0,
                 url: url.into(),
@@ -438,7 +438,7 @@ impl Download {
                         Some(Status::Paused.into()),
                     )
                     .await?;
-                    return Err(e);
+                    Err(e)
                 }
                 other => {
                     DownloadTasksService::update(
@@ -448,7 +448,7 @@ impl Download {
                         Some(Status::Failed.into()),
                     )
                     .await?;
-                    return Err(other);
+                    Err(other)
                 }
             },
         }

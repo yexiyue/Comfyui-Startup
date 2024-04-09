@@ -74,7 +74,7 @@ pub async fn download_manager(
         title: "ComfyUI-Manager".into(),
         reference: "https://github.com/ltdrdata/ComfyUI-Manager.git".into(),
         pip: None,
-        files: vec![].into(),
+        files: vec![],
         install_type: "git-clone".into(),
         description: "".into(),
     };
@@ -100,7 +100,7 @@ pub async fn download_manager(
                     )
                     .unwrap();
             }
-            return true;
+            true
         })
         .await?;
     Ok(())
@@ -161,7 +161,7 @@ pub async fn download_plugin(
                         )
                         .unwrap();
                 }
-                return v;
+                v
             })
             .await
         {
@@ -196,8 +196,8 @@ pub async fn download_plugin(
     app.listen("plugin-cancel", move |event| {
         let reference = serde_json::from_str::<Value>(event.payload()).unwrap();
 
-        if reference["reference"] == plugin_reference {
-            if cancel
+        if reference["reference"] == plugin_reference
+            && cancel
                 .compare_exchange(
                     true,
                     false,
@@ -205,18 +205,17 @@ pub async fn download_plugin(
                     std::sync::atomic::Ordering::SeqCst,
                 )
                 .is_ok()
-            {
-                on_progress2
-                    .send(
-                        PluginDownloadMessage::builder()
-                            .status(PluginStatus::Canceled)
-                            .build()
-                            .unwrap(),
-                    )
-                    .context("Send Message Error")
-                    .unwrap();
-                handler.abort();
-            }
+        {
+            on_progress2
+                .send(
+                    PluginDownloadMessage::builder()
+                        .status(PluginStatus::Canceled)
+                        .build()
+                        .unwrap(),
+                )
+                .context("Send Message Error")
+                .unwrap();
+            handler.abort();
         }
     });
 
@@ -249,7 +248,7 @@ pub async fn update_plugin(
                     )
                     .unwrap();
             }
-            return true;
+            true
         })
         .await;
 
@@ -257,7 +256,7 @@ pub async fn update_plugin(
         Ok(i) => {
             on_progress.send(100f64).unwrap();
             sleep(Duration::from_millis(500)).await;
-            return Ok(i);
+            Ok(i)
         }
         Err(e) => {
             error!("update_plugin: {e}");
@@ -283,7 +282,7 @@ pub async fn get_installed_plugins(
     let res = get_git_remotes(custom_nodes_path);
     let mut plugins = vec![];
     for i in res.iter() {
-        if let Some(name) = i.split("/").last().map(|s| s.replace(".git", "")) {
+        if let Some(name) = i.split('/').last().map(|s| s.replace(".git", "")) {
             if let Some(plugin) = PluginService::get_plugin(&db, &name).await? {
                 plugins.push((i.clone(), Some(plugin)));
             }

@@ -34,12 +34,10 @@ impl Model {
                     self.save_path
                 );
                 path.join("etc").display().to_string()
+            } else if self.save_path.starts_with("custom_nodes") {
+                self.save_path.clone()
             } else {
-                if self.save_path.starts_with("custom_nodes") {
-                    self.save_path.clone()
-                } else {
-                    path.join(&self.save_path).display().to_string()
-                }
+                path.join(&self.save_path).display().to_string()
             }
         } else {
             match self.ty.as_str() {

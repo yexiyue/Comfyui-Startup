@@ -59,7 +59,7 @@ impl DownloadTasksService {
 
     pub async fn find_by_id(db: &DbConn, id: i32) -> anyhow::Result<Model> {
         let res = DownloadTasks::find_by_id(id).one(db).await?;
-        Ok(res.ok_or(anyhow!("download task {id} not found"))?)
+        res.ok_or(anyhow!("download task {id} not found"))
     }
 
     pub async fn find_by_url(db: &DbConn, origin_url: &str) -> anyhow::Result<Model> {
@@ -67,7 +67,7 @@ impl DownloadTasksService {
             .filter(Column::OriginUrl.eq(origin_url))
             .one(db)
             .await?;
-        Ok(res.ok_or(anyhow!("download task {origin_url} not found"))?)
+        res.ok_or(anyhow!("download task {origin_url} not found"))
     }
 
     pub async fn find_downloaded(

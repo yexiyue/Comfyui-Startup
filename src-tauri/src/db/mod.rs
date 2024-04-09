@@ -43,9 +43,9 @@ pub enum Status {
     Failed,
 }
 
-impl Into<String> for Status {
-    fn into(self) -> String {
-        match self {
+impl From<Status> for String {
+    fn from(val: Status) -> Self {
+        match val {
             Status::Pending => "pending".to_string(),
             Status::Running => "running".to_string(),
             Status::Paused => "paused".to_string(),

@@ -15,7 +15,6 @@ pub fn install_brew(china_user: bool) -> Result<(String, String), MyError> {
     if !china_user {
         let mut zprofile = std::fs::OpenOptions::new()
             .append(true)
-            .write(true)
             .open(&zprofile_path)
             .context("创建zprofile文件失败")?;
         zprofile

@@ -111,7 +111,7 @@ impl DownloadReq {
             .ok_or(DownloadReqError::RangeNotSatisfiable)?
             .to_str()?;
 
-        let size = content_range.split("/").collect::<Vec<_>>();
+        let size = content_range.split('/').collect::<Vec<_>>();
         let length = size
             .last()
             .ok_or(DownloadReqError::RangeNotSatisfiable)?
@@ -136,7 +136,7 @@ impl DownloadReq {
         let length = content_length
             .parse::<usize>()
             .context("failed to parse content-length")?;
-        let filename = self.url.split("/").last().unwrap();
+        let filename = self.url.split('/').last().unwrap();
         Ok((filename.into(), length))
     }
 

@@ -64,17 +64,17 @@ impl Git {
         let fetch_commit = repo.reference_to_annotated_commit(&fetch_head)?;
         let analysis = repo.merge_analysis(&[&fetch_commit])?;
         if analysis.0.is_up_to_date() {
-            return Ok(1);
+            Ok(1)
         } else if analysis.0.is_fast_forward() {
             // 执行合并操作
             let mut refrence = repo.find_reference(default_branch_name)?;
             refrence.set_target(fetch_commit.id(), "Fast forward")?;
             repo.set_head(default_branch_name)?;
-            return Ok(repo
+            Ok(repo
                 .checkout_head(Some(git2::build::CheckoutBuilder::default().force()))
-                .map(|_| 2usize)?);
+                .map(|_| 2usize)?)
         } else {
-            return Ok(0);
+            Ok(0)
         }
     }
 
@@ -99,10 +99,7 @@ pub fn get_git_remotes<P: AsRef<Path>>(path: P) -> Vec<String> {
         .max_depth(1)
         .into_iter()
         .filter_map(|e| e.ok())
-        .filter(|e| match e.metadata().map(|m| m.is_dir()) {
-            Ok(is_dir) => is_dir,
-            Err(_) => false,
-        })
+        .filter(|e| e.metadata().map(|m| m.is_dir()).unwrap_or(false))
     {
         if let Some(remote) = get_git_remote(dir.path()) {
             res.push(remote);

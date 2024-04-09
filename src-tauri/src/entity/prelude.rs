@@ -2,5 +2,3 @@
 
 pub use super::download_chunks::Entity as DownloadChunks;
 pub use super::download_tasks::Entity as DownloadTasks;
-pub use super::model::Entity as Model;
-pub use super::plugin::Entity as Plugin;
