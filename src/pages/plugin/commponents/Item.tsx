@@ -241,7 +241,17 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
         </CardTitle>
         <CardDescription>
           <Space>
-            <Tag color={themes.token.colorPrimary}>{plugin.author}</Tag>
+            <Tooltip
+              title={
+                <span className="text-xs">
+                  <Trans>作者: {plugin.author}</Trans>
+                </span>
+              }
+            >
+              <Tag color="gold" className="cursor-default">
+                {plugin.author}
+              </Tag>
+            </Tooltip>
             <Button
               size="small"
               onClick={() => {

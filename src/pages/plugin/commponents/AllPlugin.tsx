@@ -21,14 +21,12 @@ export const AllPlugin = ({ search, width }: AllPluginProps) => {
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);
   const [count, setCount] = useState(0);
-  const [loading, setLoading] = useState(true);
   const downloadedKeys = usePluginStore(
     (store) => new Set(Object.keys(store.downloadPlugins))
   );
 
   useAsyncEffect(async () => {
     try {
-      setLoading(true);
       const res = await command("get_plugin_list", {
         search,
         pagination: {
@@ -44,8 +42,6 @@ export const AllPlugin = ({ search, width }: AllPluginProps) => {
     } catch (error) {
       message.error(t`获取插件列表失败`);
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   }, [search, page, pagesize]);
 
@@ -58,21 +54,21 @@ export const AllPlugin = ({ search, width }: AllPluginProps) => {
             width,
           }}
         >
-          {loading ? (
-            <div className="flex flex-col space-y-3">
-              {Array.from(Array(5)).map((_, index) => (
-                <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
-              ))}
-            </div>
-          ) : (
-            search &&
-            plugins.length === 0 && (
+          {
+            // loading ? (
+            // <div className="flex flex-col space-y-3">
+            //   {Array.from(Array(5)).map((_, index) => (
+            //     <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
+            //   ))}
+            // </div>
+            // ) :
+            search && plugins.length === 0 && (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
                 description={t`没有找到插件`}
               ></Empty>
             )
-          )}
+          }
           {plugins.map((plugin) => {
             return (
               <PluginItem

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useAsyncEffect, useDebounce, useSize } from "ahooks";
-import { Input, Segmented, Select, SelectProps } from "antd";
+import { Input, Segmented, Select, SelectProps, Tooltip } from "antd";
 import { SearchIcon } from "lucide-react";
 import { useRef, useState } from "react";
 import { AllModel } from "./commponents/AllModel";
@@ -88,20 +88,28 @@ export const Component = () => {
       <Separator />
       <div ref={divRef} className="p-4">
         <div className="w-full flex gap-4">
-          <Select
-            className="w-[250px]"
-            showSearch
-            value={type}
-            onChange={(value) => setType(value)}
-            options={types}
-          />
-          <Select
-            className="w-[250px]"
-            value={base}
-            showSearch
-            onChange={(value) => setBase(value)}
-            options={bases}
-          />
+          <Tooltip
+            mouseEnterDelay={0.5}
+            title={<Trans>模型类型</Trans>}
+            placement="left"
+          >
+            <Select
+              className="w-[400px]"
+              showSearch
+              value={type}
+              onChange={(value) => setType(value)}
+              options={types}
+            />
+          </Tooltip>
+          <Tooltip mouseEnterDelay={0.5} title={<Trans>基础模型</Trans>}>
+            <Select
+              className="w-[400px]"
+              value={base}
+              showSearch
+              onChange={(value) => setBase(value)}
+              options={bases}
+            />
+          </Tooltip>
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}

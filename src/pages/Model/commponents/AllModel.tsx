@@ -19,7 +19,7 @@ type AllModelProps = {
 
 export const AllModel = ({ search, width, type, base }: AllModelProps) => {
   useLingui();
-  const [loading, setLoading] = useState(true);
+
   const [filterModels, setFilterModels] = useState<Model[]>([]);
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);
@@ -35,7 +35,6 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
 
   useAsyncEffect(async () => {
     try {
-      setLoading(true);
       const res = await command("get_model_list", {
         search,
         ty: type,
@@ -49,8 +48,6 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
       setCount(res[1]);
     } catch (error) {
       message.error(t`获取模型列表失败`);
-    } finally {
-      setLoading(false);
     }
   }, [page, pagesize, search, type, base]);
 
@@ -63,21 +60,21 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
             width,
           }}
         >
-          {loading ? (
-            <div className="flex flex-col space-y-3">
-              {Array.from(Array(5)).map((_, index) => (
-                <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
-              ))}
-            </div>
-          ) : (
-            search &&
-            filterModels.length === 0 && (
+          {
+            //   loading ? (
+            //   <div className="flex flex-col space-y-3">
+            //     {Array.from(Array(5)).map((_, index) => (
+            //       <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
+            //     ))}
+            //   </div>
+            // ) :
+            search && filterModels.length === 0 && (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
                 description={t`没有找到模型`}
               ></Empty>
             )
-          )}
+          }
           {filterModels.map((model) => {
             return (
               <ModelItem

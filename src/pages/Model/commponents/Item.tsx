@@ -306,11 +306,44 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
         </CardTitle>
         <CardDescription>
           <Space size={2}>
-            <Tag color={themes.token.colorPrimary}>{model.type}</Tag>
-            <Tag color="orange">{model.base}</Tag>
-            <Tag icon={<FileOutlined />} color="geekblue">
-              {model.filename}
-            </Tag>
+            <Tooltip
+              title={
+                <span className="text-xs">
+                  <Trans>模型类型: {model.type}</Trans>
+                </span>
+              }
+            >
+              <Tag color="cyan" className="cursor-default">
+                {model.type}
+              </Tag>
+            </Tooltip>
+            <Tooltip
+              title={
+                <span className="text-xs">
+                  <Trans>基础类型: {model.base}</Trans>
+                </span>
+              }
+            >
+              <Tag color="orange" className="cursor-default">
+                {model.base}
+              </Tag>
+            </Tooltip>
+            <Tooltip
+              title={
+                <span className="text-xs">
+                  <Trans>模型文件名: {model.filename}</Trans>
+                </span>
+              }
+            >
+              <Tag
+                icon={<FileOutlined />}
+                color="geekblue"
+                className="cursor-default"
+              >
+                {model.filename}
+              </Tag>
+            </Tooltip>
+
             <Button
               size="small"
               onClick={() => {

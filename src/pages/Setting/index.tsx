@@ -23,8 +23,8 @@ export const Component = () => {
   ]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <Form className="w-[50%]" layout="vertical">
+    <div className="w-full h-full flex justify-center items-center">
+      <Form className=" translate-y-[-50px]">
         <Form.Item label={t`语言`}>
           <Select
             className="w-[150px]"
@@ -38,7 +38,7 @@ export const Component = () => {
         </Form.Item>
         <Form.Item
           label={t`地区`}
-          extra={t`在安装comfyui时会根据不同地区自动配置代理`}
+          extra={t`在安装模型和插件时会根据不同地区自动配置代理`}
         >
           <Segmented
             value={country}
@@ -56,7 +56,7 @@ export const Component = () => {
           />
         </Form.Item>
 
-        <Form.Item label={t`路径`} required>
+        <Form.Item label={t`路径`}>
           <Space.Compact>
             <Input
               value={comfyuiPath}
@@ -81,19 +81,22 @@ export const Component = () => {
             </Button>
           </Space.Compact>
         </Form.Item>
-        <Button
-          onClick={async () => {
-            let res = await command("set_config", {
-              configState: {
-                comfyui_path: comfyuiPath,
-                country,
-              },
-            });
-            console.log(res);
-          }}
-        >
-          <Trans>更新</Trans>
-        </Button>
+        <div className="flex justify-center">
+          <Button
+            type="primary"
+            className="w-full"
+            onClick={async () => {
+              await command("set_config", {
+                configState: {
+                  comfyui_path: comfyuiPath,
+                  country,
+                },
+              });
+            }}
+          >
+            <Trans>更新</Trans>
+          </Button>
+        </div>
       </Form>
     </div>
   );
