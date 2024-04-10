@@ -3,8 +3,6 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { getCurrent } from "@tauri-apps/api/window";
-import { confirm } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect, useDebounce, useSize } from "ahooks";
 import { Input, Segmented, Select, SelectProps } from "antd";
 import { SearchIcon } from "lucide-react";

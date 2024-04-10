@@ -1,5 +1,6 @@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Trans } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { Space } from "antd";
 import {
   BlocksIcon,
@@ -11,7 +12,7 @@ import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg?react";
 import { Separator } from "./ui/separator";
-import { useLingui } from "@lingui/react";
+
 
 export const Slider = () => {
   const navigate = useNavigate();
