@@ -24,16 +24,7 @@ import { useLingui } from "@lingui/react";
 import { Channel } from "@tauri-apps/api/core";
 import { open } from "@tauri-apps/plugin-shell";
 import { useMemoizedFn } from "ahooks";
-import {
-  App,
-  Button,
-  Progress,
-  Space,
-  Tag,
-  Tooltip,
-  Typography,
-  theme,
-} from "antd";
+import { App, Button, Progress, Space, Tag, Tooltip, Typography } from "antd";
 import { SlashIcon } from "lucide-react";
 import { useModelDownloadStore } from "../useStore";
 import { useState } from "react";
@@ -45,7 +36,7 @@ type ModelItemProps = {
 
 export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
   useLingui();
-  const themes = theme.useToken();
+
   const { message } = App.useApp();
   const [
     downloadingModel,

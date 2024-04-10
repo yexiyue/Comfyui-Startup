@@ -1,12 +1,11 @@
 import { command } from "@/api";
 import { Model } from "@/api/model";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Skeleton } from "@/components/ui/skeleton";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
 import { Empty, Pagination, message } from "antd";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useModelDownloadStore } from "../useStore";
 import { ModelItem } from "./Item";
 
@@ -24,6 +23,10 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setPage(1);
+  }, [base, type]);
 
   const [downloadedModels] = useModelDownloadStore((store) => [
     Object.keys(store.downloadedModels),
@@ -60,21 +63,12 @@ export const AllModel = ({ search, width, type, base }: AllModelProps) => {
             width,
           }}
         >
-          {
-            //   loading ? (
-            //   <div className="flex flex-col space-y-3">
-            //     {Array.from(Array(5)).map((_, index) => (
-            //       <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
-            //     ))}
-            //   </div>
-            // ) :
-            search && filterModels.length === 0 && (
-              <Empty
-                image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={t`没有找到模型`}
-              ></Empty>
-            )
-          }
+          {(search || base || type) && filterModels.length === 0 && (
+            <Empty
+              image={Empty.PRESENTED_IMAGE_SIMPLE}
+              description={t`没有找到模型`}
+            ></Empty>
+          )}
           {filterModels.map((model) => {
             return (
               <ModelItem

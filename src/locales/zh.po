@@ -1,12 +1,303 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-03-23 19:26+0800\n"
+"POT-Creation-Date: 2024-04-10 21:29+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: zh\n"
 
-#: src/pages/Home.tsx:8
-msgid "你好"
-msgstr "你好"
+#: src/pages/Model/commponents/Item.tsx:79
+#: src/pages/Model/commponents/Item.tsx:282
+msgid "{0} 下载失败，请稍后再试"
+msgstr "{0} 下载失败，请稍后再试"
+
+#: src/pages/Model/commponents/Item.tsx:91
+#: src/pages/Model/commponents/Item.tsx:93
+msgid "{0} 下载成功"
+msgstr "{0} 下载成功"
+
+#: src/pages/Model/commponents/Item.tsx:121
+msgid "{0} 删除失败"
+msgstr "{0} 删除失败"
+
+#: src/pages/Model/commponents/Item.tsx:115
+msgid "{0} 删除成功"
+msgstr "{0} 删除成功"
+
+#: src/pages/Plugin/commponents/Item.tsx:86
+msgid "{0} 卸载失败"
+msgstr "{0} 卸载失败"
+
+#: src/pages/Plugin/commponents/Item.tsx:84
+msgid "{0} 卸载成功"
+msgstr "{0} 卸载成功"
+
+#: src/pages/Model/commponents/Item.tsx:152
+msgid "{0} 取消失败"
+msgstr "{0} 取消失败"
+
+#: src/pages/Model/commponents/Item.tsx:146
+#: src/pages/Plugin/commponents/Item.tsx:202
+msgid "{0} 取消成功"
+msgstr "{0} 取消成功"
+
+#: src/pages/Plugin/commponents/Item.tsx:179
+#: src/pages/Plugin/commponents/Item.tsx:219
+msgid "{0} 安装失败，请稍后再试"
+msgstr "{0} 安装失败，请稍后再试"
+
+#: src/pages/Plugin/commponents/Item.tsx:193
+#: src/pages/Plugin/commponents/Item.tsx:195
+msgid "{0} 安装成功"
+msgstr "{0} 安装成功"
+
+#: src/pages/Plugin/commponents/Item.tsx:196
+msgid "{0} 安装成功，请重启ComfyUI"
+msgstr "{0} 安装成功，请重启ComfyUI"
+
+#: src/pages/Plugin/commponents/Item.tsx:112
+msgid "{0} 已经是最新版"
+msgstr "{0} 已经是最新版"
+
+#: src/pages/Model/commponents/Item.tsx:248
+msgid "{0} 恢复下载失败"
+msgstr "{0} 恢复下载失败"
+
+#: src/pages/Model/commponents/Item.tsx:188
+msgid "{0} 暂停失败"
+msgstr "{0} 暂停失败"
+
+#: src/pages/Plugin/commponents/Item.tsx:117
+msgid "{0} 更新失败"
+msgstr "{0} 更新失败"
+
+#: src/pages/Plugin/commponents/Item.tsx:114
+msgid "{0} 更新成功"
+msgstr "{0} 更新成功"
+
+#: src/pages/Model/commponents/Item.tsx:217
+msgid "{0} 重新下载失败"
+msgstr "{0} 重新下载失败"
+
+#: src/components/Home/ManagerModal.tsx:51
+#: src/components/Home/ManagerModal.tsx:53
+msgid "ComfyUI-Manager 安装成功"
+msgstr "ComfyUI-Manager 安装成功"
+
+#: src/components/Home/ManagerModal.tsx:54
+msgid "ComfyUI-Manager 安装成功，请重启ComfyUI"
+msgstr "ComfyUI-Manager 安装成功，请重启ComfyUI"
+
+#: src/components/Home/ManagerModal.tsx:72
+msgid "ComfyUI-Manager 未安装"
+msgstr "ComfyUI-Manager 未安装"
+
+#: src/pages/Model/commponents/Item.tsx:263
+msgid "下载"
+msgstr "下载"
+
+#: src/pages/Model/index.tsx:78
+#: src/pages/Plugin/commponents/Item.tsx:144
+#: src/pages/Plugin/index.tsx:53
+msgid "下载中"
+msgstr "下载中"
+
+#: src/pages/FirstUse.tsx:83
+#: src/pages/Setting/index.tsx:47
+msgid "中国用户"
+msgstr "中国用户"
+
+#: src/components/Home/ManagerModal.tsx:75
+msgid "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
+msgstr "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
+
+#: src/pages/Plugin/commponents/Item.tsx:247
+msgid "作者: {0}"
+msgstr "作者: {0}"
+
+#: src/pages/Model/index.tsx:47
+#: src/pages/Model/index.tsx:50
+#: src/pages/Model/index.tsx:74
+#: src/pages/Plugin/index.tsx:49
+msgid "全部"
+msgstr "全部"
+
+#: src/pages/FirstUse.tsx:87
+#: src/pages/Setting/index.tsx:51
+msgid "其他国家"
+msgstr "其他国家"
+
+#: src/pages/Model/commponents/Item.tsx:104
+msgid "删除"
+msgstr "删除"
+
+#: src/pages/Plugin/commponents/Item.tsx:74
+msgid "卸载"
+msgstr "卸载"
+
+#: src/pages/Model/commponents/Item.tsx:133
+#: src/pages/Plugin/commponents/Item.tsx:127
+msgid "取消"
+msgstr "取消"
+
+#: src/components/Slider.tsx:27
+msgid "启动"
+msgstr "启动"
+
+#: src/pages/FirstUse.tsx:77
+msgid "在安装comfyui时会根据不同地区自动配置代理"
+msgstr "在安装comfyui时会根据不同地区自动配置代理"
+
+#: src/pages/Setting/index.tsx:41
+msgid "在安装模型和插件时会根据不同地区自动配置代理"
+msgstr "在安装模型和插件时会根据不同地区自动配置代理"
+
+#: src/pages/FirstUse.tsx:76
+#: src/pages/Setting/index.tsx:40
+msgid "地区"
+msgstr "地区"
+
+#: src/pages/Model/index.tsx:104
+msgid "基础模型"
+msgstr "基础模型"
+
+#: src/pages/Model/commponents/Item.tsx:323
+msgid "基础类型: {0}"
+msgstr "基础类型: {0}"
+
+#: src/components/Home/ManagerModal.tsx:64
+#: src/pages/Plugin/commponents/Item.tsx:154
+msgid "安装"
+msgstr "安装"
+
+#: src/pages/FirstUse.tsx:135
+msgid "安装Comfyui"
+msgstr "安装Comfyui"
+
+#: src/components/Home/ManagerModal.tsx:64
+#: src/pages/Plugin/commponents/Item.tsx:147
+msgid "安装中"
+msgstr "安装中"
+
+#: src/pages/Model/index.tsx:82
+#: src/pages/Plugin/index.tsx:57
+msgid "已安装"
+msgstr "已安装"
+
+#: src/components/Layout.tsx:28
+msgid "当前有{0}个模型正在下载，确定要关闭吗？"
+msgstr "当前有{0}个模型正在下载，确定要关闭吗？"
+
+#: src/pages/Model/commponents/Item.tsx:230
+msgid "恢复下载"
+msgstr "恢复下载"
+
+#: src/pages/Model/commponents/DownloadedModel.tsx:53
+msgid "您还未下载过模型"
+msgstr "您还未下载过模型"
+
+#: src/pages/Plugin/commponents/DownloadedPlugin.tsx:46
+msgid "您还未安装过插件"
+msgstr "您还未安装过插件"
+
+#: src/components/Layout.tsx:29
+msgid "提示"
+msgstr "提示"
+
+#: src/components/Slider.tsx:32
+#: src/pages/Plugin/index.tsx:40
+msgid "插件管理"
+msgstr "插件管理"
+
+#: src/pages/Model/index.tsx:116
+#: src/pages/Plugin/index.tsx:69
+msgid "搜索"
+msgstr "搜索"
+
+#: src/pages/Model/commponents/Item.tsx:174
+msgid "暂停"
+msgstr "暂停"
+
+#: src/pages/Plugin/commponents/DownloadingPlugin.tsx:47
+msgid "暂无下载中的插件"
+msgstr "暂无下载中的插件"
+
+#: src/pages/Model/commponents/DownloadingModel.tsx:54
+msgid "暂无下载中的模型"
+msgstr "暂无下载中的模型"
+
+#: src/pages/Plugin/commponents/Item.tsx:91
+#: src/pages/Setting/index.tsx:97
+msgid "更新"
+msgstr "更新"
+
+#: src/pages/Model/commponents/Item.tsx:334
+msgid "模型文件名: {0}"
+msgstr "模型文件名: {0}"
+
+#: src/components/Slider.tsx:37
+#: src/pages/Model/index.tsx:65
+msgid "模型管理"
+msgstr "模型管理"
+
+#: src/pages/Model/index.tsx:93
+msgid "模型类型"
+msgstr "模型类型"
+
+#: src/pages/Model/commponents/Item.tsx:312
+msgid "模型类型: {0}"
+msgstr "模型类型: {0}"
+
+#: src/pages/Plugin/commponents/AllPlugin.tsx:68
+#: src/pages/Plugin/commponents/DownloadedPlugin.tsx:53
+#: src/pages/Plugin/commponents/DownloadingPlugin.tsx:54
+msgid "没有找到插件"
+msgstr "没有找到插件"
+
+#: src/pages/Model/commponents/AllModel.tsx:74
+#: src/pages/Model/commponents/DownloadedModel.tsx:59
+#: src/pages/Model/commponents/DownloadingModel.tsx:60
+msgid "没有找到模型"
+msgstr "没有找到模型"
+
+#: src/pages/Model/commponents/Item.tsx:170
+#: src/pages/Plugin/commponents/Item.tsx:142
+msgid "等待中"
+msgstr "等待中"
+
+#: src/pages/Plugin/commponents/AllPlugin.tsx:43
+msgid "获取插件列表失败"
+msgstr "获取插件列表失败"
+
+#: src/pages/Model/commponents/AllModel.tsx:50
+msgid "获取模型列表失败"
+msgstr "获取模型列表失败"
+
+#: src/components/Slider.tsx:42
+msgid "设置"
+msgstr "设置"
+
+#: src/pages/FirstUse.tsx:64
+#: src/pages/Setting/index.tsx:28
+msgid "语言"
+msgstr "语言"
+
+#: src/pages/FirstUse.tsx:101
+#: src/pages/Setting/index.tsx:64
+msgid "请选择安装目录"
+msgstr "请选择安装目录"
+
+#: src/pages/FirstUse.tsx:95
+#: src/pages/Setting/index.tsx:59
+msgid "路径"
+msgstr "路径"
+
+#: src/pages/FirstUse.tsx:117
+#: src/pages/Setting/index.tsx:80
+msgid "选择路径"
+msgstr "选择路径"
+
+#: src/pages/Model/commponents/Item.tsx:199
+msgid "重新下载"
+msgstr "重新下载"

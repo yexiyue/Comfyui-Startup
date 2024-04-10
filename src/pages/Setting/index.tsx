@@ -1,11 +1,13 @@
 import { command } from "@/api";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { open } from "@tauri-apps/plugin-dialog";
 import { Button, Form, Input, Segmented, Select, Space, message } from "antd";
 import { FolderClosedIcon } from "lucide-react";
 
 export const Component = () => {
+  useLingui();
   const [
     country,
     setCountry,
@@ -24,18 +26,11 @@ export const Component = () => {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      <Form className=" translate-y-[-50px]">
-        <Form.Item label={t`语言`}>
-          <Select
-            className="w-[150px]"
-            value={language}
-            onChange={(value) => setLanguage(value)}
-            options={[
-              { value: "en", label: "English" },
-              { value: "zh", label: "中文" },
-            ]}
-          ></Select>
-        </Form.Item>
+      <Form
+        className="w-[380px] translate-y-[-50px]"
+        layout="vertical"
+        labelCol={{ span: 4 }}
+      >
         <Form.Item
           label={t`地区`}
           extra={t`在安装模型和插件时会根据不同地区自动配置代理`}
@@ -80,6 +75,17 @@ export const Component = () => {
               <Trans>选择路径</Trans>
             </Button>
           </Space.Compact>
+        </Form.Item>
+        <Form.Item label={t`语言`}>
+          <Select
+            className="w-[150px]"
+            value={language}
+            onChange={(value) => setLanguage(value)}
+            options={[
+              { value: "en", label: "English" },
+              { value: "zh", label: "中文" },
+            ]}
+          ></Select>
         </Form.Item>
         <div className="flex justify-center">
           <Button

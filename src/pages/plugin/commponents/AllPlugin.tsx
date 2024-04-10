@@ -1,7 +1,6 @@
 import { command } from "@/api";
 import { Plugin } from "@/api/plugin";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Skeleton } from "@/components/ui/skeleton";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
@@ -54,21 +53,12 @@ export const AllPlugin = ({ search, width }: AllPluginProps) => {
             width,
           }}
         >
-          {
-            // loading ? (
-            // <div className="flex flex-col space-y-3">
-            //   {Array.from(Array(5)).map((_, index) => (
-            //     <Skeleton key={index} className="h-[125px] w-full rounded-xl" />
-            //   ))}
-            // </div>
-            // ) :
-            search && plugins.length === 0 && (
-              <Empty
-                image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={t`没有找到插件`}
-              ></Empty>
-            )
-          }
+          {search && plugins.length === 0 && (
+            <Empty
+              image={Empty.PRESENTED_IMAGE_SIMPLE}
+              description={t`没有找到插件`}
+            ></Empty>
+          )}
           {plugins.map((plugin) => {
             return (
               <PluginItem
