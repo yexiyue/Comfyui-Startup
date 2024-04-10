@@ -51,7 +51,7 @@ pub async fn download(
     let filename = path.join(model.get_model_dir()).join(&model.filename);
     let url = &model.get_url(config.is_chinese());
 
-    let (tx, mut rx) = tokio::sync::mpsc::channel(1);
+    let (tx, mut rx) = tokio::sync::mpsc::channel(50);
 
     let (task_id, mut download) =
         Download::new(&db, url, &filename.display().to_string(), &model.url).await?;
@@ -160,7 +160,7 @@ pub async fn restore(
     let mut state = download_state.lock().await;
     let state = state.borrow_mut();
     //重新生成信道
-    let (tx, mut rx) = tokio::sync::mpsc::channel(1);
+    let (tx, mut rx) = tokio::sync::mpsc::channel(50);
     info!("restore taskId = {}", task_id);
     // 获取上一次的下载进度
     let task = DownloadTasksService::find_by_id(&db, task_id).await?;

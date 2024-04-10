@@ -1,7 +1,7 @@
-import { create } from "zustand";
-import { immer } from "zustand/middleware/immer";
-import { persist } from "zustand/middleware";
 import { Model, ModelStatus } from "@/api/model";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
 
 type ModelDownloadStore = {
   downloadingModels: Record<string, Model>;
@@ -52,9 +52,11 @@ export const useModelDownloadStore = create(
       },
       setDownloadingModel(model) {
         set((state) => {
+          let downloadingModels: Record<string, Model> = {};
           model.forEach((item) => {
-            state.downloadingModels[item.url] = item;
+            downloadingModels[item.url] = item;
           });
+          state.downloadingModels = downloadingModels;
         });
       },
       // downloaded
@@ -70,9 +72,11 @@ export const useModelDownloadStore = create(
       },
       setDownloadedModel(model) {
         set((state) => {
+          let downloadedModels: Record<string, Model> = {};
           model.forEach((item) => {
-            state.downloadedModels[item.url] = item;
+            downloadedModels[item.url] = item;
           });
+          state.downloadedModels = downloadedModels;
         });
       },
     })),
