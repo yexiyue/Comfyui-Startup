@@ -228,7 +228,17 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
         </Space>
       )}
       <CardHeader className="p-4">
-        <CardTitle className="flex justify-between">{plugin.title}</CardTitle>
+        <CardTitle className="flex justify-between pr-[160px]">
+          <Typography.Text
+            ellipsis={{
+              tooltip: {
+                title: plugin.title,
+              },
+            }}
+          >
+            {plugin.title}
+          </Typography.Text>
+        </CardTitle>
         <CardDescription>
           <Space>
             <Tag color={themes.token.colorPrimary}>{plugin.author}</Tag>

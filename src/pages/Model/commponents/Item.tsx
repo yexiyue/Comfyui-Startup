@@ -1,6 +1,5 @@
 import { command } from "@/api";
 import { Model, ModelOnProgress } from "@/api/model";
-import { Button as UIButton } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,20 +10,33 @@ import {
 } from "@/components/ui/card";
 import { notification } from "@/lib/notification";
 import { cn, formatToBytes } from "@/lib/utils";
-import { FileOutlined, LinkOutlined } from "@ant-design/icons";
+import {
+  CloseOutlined,
+  CloudDownloadOutlined,
+  DeleteOutlined,
+  FileOutlined,
+  LinkOutlined,
+  PauseCircleOutlined,
+  PlayCircleOutlined,
+} from "@ant-design/icons";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Channel } from "@tauri-apps/api/core";
 import { open } from "@tauri-apps/plugin-shell";
 import { useMemoizedFn } from "ahooks";
-import { App, Button, Progress, Space, Tag, Typography, theme } from "antd";
 import {
-  ArrowBigDownDashIcon,
-  SlashIcon,
-  Trash2Icon,
-  XIcon,
-} from "lucide-react";
+  App,
+  Button,
+  Progress,
+  Space,
+  Tag,
+  Tooltip,
+  Typography,
+  theme,
+} from "antd";
+import { SlashIcon } from "lucide-react";
 import { useModelDownloadStore } from "../useStore";
+import { useState } from "react";
 
 type ModelItemProps = {
   model: Model;
@@ -51,6 +63,8 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
     store.removeDownloadedModel,
   ]);
   const downloading = downloadingModel?.status !== undefined;
+
+  const [taskLoading, setTaskLoading] = useState(false);
 
   const onDownloadingProgress = useMemoizedFn(() => {
     const onProgress: ModelOnProgress = new Channel();
@@ -86,172 +100,197 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
   return (
     <Card className="relative min-w-[600px]">
       {isDownloaded ? (
-        <UIButton
-          size="sm"
-          variant="destructive"
-          className="h-6 absolute top-4 right-4"
-          onClick={async () => {
-            try {
-              await command("remove", { url: model.url });
-              removeDownloadedModel(model.url);
-              message.success({
-                content: t`${model.name} 删除成功`,
-              });
-            } catch (error) {
-              message.error({
-                content: (
-                  <Space direction="vertical">
-                    <Trans>{model.name} 删除失败</Trans>
-                    <Typography.Text type="secondary">{`${error}`}</Typography.Text>
-                  </Space>
-                ),
-              });
-            }
-          }}
-        >
-          <Space size={4}>
-            <Trash2Icon className="w-4 h-4" />
-            <Trans>删除</Trans>
-          </Space>
-        </UIButton>
+        <Space className=" absolute top-4 right-4 ">
+          <Tooltip title={<Trans>删除</Trans>}>
+            <Button
+              size="small"
+              type="primary"
+              danger
+              icon={<DeleteOutlined />}
+              onClick={async () => {
+                try {
+                  await command("remove", { url: model.url });
+                  removeDownloadedModel(model.url);
+                  message.success({
+                    content: t`${model.name} 删除成功`,
+                  });
+                } catch (error) {
+                  message.error({
+                    content: (
+                      <Space direction="vertical">
+                        <Trans>{model.name} 删除失败</Trans>
+                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                      </Space>
+                    ),
+                  });
+                }
+              }}
+            ></Button>
+          </Tooltip>
+        </Space>
       ) : downloading ? (
         <Space className=" absolute top-4 right-4 ">
-          <UIButton
-            className="h-6"
-            size="sm"
-            onClick={async () => {
-              try {
-                await command("remove", { url: model.url });
-                removeDownloadingModel(model.url);
-                message.success({
-                  content: t`${model.name} 取消成功`,
-                });
-              } catch (error) {
-                message.error({
-                  content: (
-                    <Space direction="vertical">
-                      <Trans>{model.name} 取消失败</Trans>
-                      <Typography.Text type="secondary">{`${error}`}</Typography.Text>
-                    </Space>
-                  ),
-                });
-              }
-            }}
-          >
-            <Space size={4}>
-              <Trans>取消</Trans>
-            </Space>
-          </UIButton>
-          {downloadingModel.status === "running" && (
-            <UIButton
-              className="h-6"
-              size="sm"
+          <Tooltip title={<Trans>取消</Trans>}>
+            <Button
+              size="small"
+              type="primary"
+              danger
+              loading={taskLoading}
+              icon={<CloseOutlined />}
               onClick={async () => {
                 try {
-                  await command("cancel", { taskId: downloadingModel.taskId! });
+                  setTaskLoading(true);
+                  await command("remove", { url: model.url });
+                  removeDownloadingModel(model.url);
+                  message.success({
+                    content: t`${model.name} 取消成功`,
+                  });
                 } catch (error) {
                   message.error({
                     content: (
                       <Space direction="vertical">
-                        <Trans>{model.name} 暂停失败</Trans>
+                        <Trans>{model.name} 取消失败</Trans>
                         <Typography.Text type="secondary">{`${error}`}</Typography.Text>
                       </Space>
                     ),
                   });
+                } finally {
+                  setTaskLoading(false);
                 }
               }}
+            ></Button>
+          </Tooltip>
+          {downloadingModel.status === "pending" && (
+            <Button
+              size="small"
+              loading
+              type="primary"
+              style={{ fontSize: 12 }}
             >
-              <Space size={4}>
-                <XIcon className="w-4 h-4" />
-                <Trans>暂停</Trans>
-              </Space>
-            </UIButton>
+              <Trans>等待中</Trans>
+            </Button>
+          )}
+          {downloadingModel.status === "running" && (
+            <Tooltip title={<Trans>暂停</Trans>}>
+              <Button
+                size="small"
+                type="primary"
+                icon={<PauseCircleOutlined />}
+                onClick={async () => {
+                  try {
+                    await command("cancel", {
+                      taskId: downloadingModel.taskId!,
+                    });
+                  } catch (error) {
+                    message.error({
+                      content: (
+                        <Space direction="vertical">
+                          <Trans>{model.name} 暂停失败</Trans>
+                          <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                        </Space>
+                      ),
+                    });
+                  }
+                }}
+              ></Button>
+            </Tooltip>
           )}
           {downloadingModel.status === "failed" && (
-            <UIButton
-              className="h-6"
-              size="sm"
-              onClick={async () => {
-                try {
-                  const onProgress = onDownloadingProgress();
-                  await command("restore", {
-                    taskId: downloadingModel.taskId!,
-                    onProgress,
-                  });
-                } catch (error) {
-                  message.error({
-                    content: (
-                      <Space direction="vertical">
-                        <Trans>{model.name} 重新下载失败</Trans>
-                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
-                      </Space>
-                    ),
-                  });
-                }
-              }}
-            >
-              <Space size={4}>
-                <XIcon className="w-4 h-4" />
-                <Trans>重新下载</Trans>
-              </Space>
-            </UIButton>
+            <Tooltip title={<Trans>重新下载</Trans>}>
+              <Button
+                size="small"
+                type="primary"
+                loading={taskLoading}
+                icon={<PlayCircleOutlined />}
+                onClick={async () => {
+                  try {
+                    setTaskLoading(true);
+                    const onProgress = onDownloadingProgress();
+                    await command("restore", {
+                      taskId: downloadingModel.taskId!,
+                      onProgress,
+                    });
+                  } catch (error) {
+                    message.error({
+                      content: (
+                        <Space direction="vertical">
+                          <Trans>{model.name} 重新下载失败</Trans>
+                          <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                        </Space>
+                      ),
+                    });
+                  } finally {
+                    setTaskLoading(false);
+                  }
+                }}
+              ></Button>
+            </Tooltip>
           )}
           {downloadingModel.status === "paused" && (
-            <UIButton
-              className="h-6"
-              size="sm"
-              onClick={async () => {
-                try {
-                  const onProgress = onDownloadingProgress();
-                  await command("restore", {
-                    taskId: downloadingModel.taskId!,
-                    onProgress,
-                  });
-                } catch (error) {
-                  message.error({
-                    content: (
-                      <Space direction="vertical">
-                        <Trans>{model.name} 恢复下载失败</Trans>
-                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
-                      </Space>
-                    ),
-                  });
-                }
-              }}
-            >
-              <Space size={4}>
-                <XIcon className="w-4 h-4" />
-                <Trans>恢复下载</Trans>
-              </Space>
-            </UIButton>
+            <Tooltip title={<Trans>恢复下载</Trans>}>
+              <Button
+                size="small"
+                type="primary"
+                loading={taskLoading}
+                icon={<PlayCircleOutlined />}
+                onClick={async () => {
+                  try {
+                    setTaskLoading(true);
+                    const onProgress = onDownloadingProgress();
+                    await command("restore", {
+                      taskId: downloadingModel.taskId!,
+                      onProgress,
+                    });
+                  } catch (error) {
+                    message.error({
+                      content: (
+                        <Space direction="vertical">
+                          <Trans>{model.name} 恢复下载失败</Trans>
+                          <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                        </Space>
+                      ),
+                    });
+                  } finally {
+                    setTaskLoading(false);
+                  }
+                }}
+              ></Button>
+            </Tooltip>
           )}
         </Space>
       ) : (
-        <UIButton
-          className=" absolute top-4 right-4 h-6"
-          size="sm"
-          onClick={async () => {
-            try {
-              const onProgress = onDownloadingProgress();
-              const taskId = await command("download", { model, onProgress });
-              addDownloadingModel(model, taskId);
-            } catch (error) {
-              message.error({
-                content: (
-                  <Space direction="vertical">
-                    <Trans>{model.name} 下载失败，请稍后再试</Trans>
-                    <Typography.Text type="secondary">{`${error}`}</Typography.Text>
-                  </Space>
-                ),
-              });
-            }
-          }}
-        >
-          <Space size={4}>
-            <ArrowBigDownDashIcon className="w-4 h-4" />
-            <Trans>下载</Trans>
-          </Space>
-        </UIButton>
+        <Space className="absolute top-4 right-4">
+          <Tooltip title={<Trans>下载</Trans>}>
+            <Button
+              size="small"
+              type="primary"
+              loading={taskLoading}
+              icon={<CloudDownloadOutlined />}
+              onClick={async () => {
+                try {
+                  setTaskLoading(true);
+                  const onProgress = onDownloadingProgress();
+                  const taskId = await command("download", {
+                    model,
+                    onProgress,
+                  });
+                  addDownloadingModel(model, taskId);
+                } catch (error) {
+                  message.error({
+                    content: (
+                      <Space direction="vertical">
+                        <Trans>{model.name} 下载失败，请稍后再试</Trans>
+                        <Typography.Text type="secondary">{`${error}`}</Typography.Text>
+                      </Space>
+                    ),
+                  });
+                } finally {
+                  setTaskLoading(false);
+                }
+              }}
+            ></Button>
+          </Tooltip>
+        </Space>
       )}
       <CardHeader className="p-4">
         <CardTitle className="flex justify-between pr-[160px]">
