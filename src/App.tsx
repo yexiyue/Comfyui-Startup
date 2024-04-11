@@ -4,17 +4,26 @@ import { I18nProvider } from "@lingui/react";
 import { invoke } from "@tauri-apps/api/core";
 import { App as AntdApp, ConfigProvider, FloatButton } from "antd";
 import enUS from "antd/lib/locale/en_US";
+import jaJP from "antd/lib/locale/ja_JP";
 import zhCN from "antd/lib/locale/zh_CN";
 import { BugIcon } from "lucide-react";
 import { useEffect } from "react";
 import { RouterProvider } from "react-router-dom";
 import { messages as enMessages } from "./locales/en.po";
+import { messages as jaMessages } from "./locales/ja.po";
 import { messages as zhMessages } from "./locales/zh.po";
 import { router } from "./router/router";
 import { useConfigStore } from "./useStore";
 
+const languageMap = {
+  en: enUS,
+  zh: zhCN,
+  ja: jaJP,
+};
+
 i18n.load("zh", zhMessages);
 i18n.load("en", enMessages);
+i18n.load("ja", jaMessages);
 
 const App = () => {
   const [language] = useConfigStore((store) => [store.language]);
@@ -22,11 +31,13 @@ const App = () => {
   useEffect(() => {
     i18n.activate(language);
   }, [language]);
-  
+
   return (
     <I18nProvider i18n={i18n}>
       <StyleProvider hashPriority="high">
-        <ConfigProvider locale={language === "zh" ? zhCN : enUS}>
+        <ConfigProvider
+          locale={languageMap[language as keyof typeof languageMap]}
+        >
           <AntdApp>
             <RouterProvider router={router} />
           </AntdApp>

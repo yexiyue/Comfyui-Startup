@@ -6,11 +6,7 @@ import { confirm } from "@tauri-apps/plugin-dialog";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Slider } from "./Slider";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "./ui/resizable";
+import { Separator } from "./ui/separator";
 
 export const Layout = () => {
   // 全局只注册一次的关闭提示
@@ -41,22 +37,12 @@ export const Layout = () => {
     });
   }, []);
   return (
-    <div className="w-screen h-screen">
-      <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel
-          collapsedSize={5}
-          defaultSize={20}
-          minSize={15}
-          maxSize={25}
-          collapsible
-        >
-          <Slider />
-        </ResizablePanel>
-        <ResizableHandle withHandle />
-        <ResizablePanel>
-          <Outlet></Outlet>
-        </ResizablePanel>
-      </ResizablePanelGroup>
+    <div className="w-screen h-screen flex">
+      <Slider />
+      <Separator orientation="vertical" className="h-full" />
+      <div className="overflow-hidden flex-1">
+        <Outlet />
+      </div>
     </div>
   );
 };

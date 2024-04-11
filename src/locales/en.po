@@ -7,311 +7,303 @@ msgstr ""
 "X-Generator: MonoDevelop Gettext addin\n"
 "Language: en\n"
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-04-10 21:40:34+0800\n"
+"PO-Revision-Date: 2024-04-10 22:45:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Report-Msgid-Bugs-To: \n"
+"Plural-Forms: \n"
 
-#: src\pages\Model\commponents\Item.tsx:79
-#: src\pages\Model\commponents\Item.tsx:282
+#: src/pages/Model/commponents/Item.tsx:70
+#: src/pages/Model/commponents/Item.tsx:273
 msgid "{0} 下载失败，请稍后再试"
 msgstr "{0} The download failed, please try again later"
 
-#: src\pages\Model\commponents\Item.tsx:91
-#: src\pages\Model\commponents\Item.tsx:93
+#: src/pages/Model/commponents/Item.tsx:82
+#: src/pages/Model/commponents/Item.tsx:84
 msgid "{0} 下载成功"
 msgstr "{0} The download was successful"
 
-#: src\pages\Model\commponents\Item.tsx:121
+#: src/pages/Model/commponents/Item.tsx:112
 msgid "{0} 删除失败"
 msgstr "{0} Deletion failed"
 
-#: src\pages\Model\commponents\Item.tsx:115
+#: src/pages/Model/commponents/Item.tsx:106
 msgid "{0} 删除成功"
 msgstr "{0} The deletion is successful"
 
-#: src\pages\Plugin\commponents\Item.tsx:86
+#: src/pages/Plugin/commponents/Item.tsx:86
 msgid "{0} 卸载失败"
 msgstr "{0} Uninstall failed"
 
-#: src\pages\Plugin\commponents\Item.tsx:84
+#: src/pages/Plugin/commponents/Item.tsx:84
 msgid "{0} 卸载成功"
 msgstr "{0} Uninstall successfully"
 
-#: src\pages\Model\commponents\Item.tsx:152
+#: src/pages/Model/commponents/Item.tsx:143
 msgid "{0} 取消失败"
 msgstr "{0} Cancellation failed"
 
-#: src\pages\Model\commponents\Item.tsx:146
-#: src\pages\Plugin\commponents\Item.tsx:202
+#: src/pages/Model/commponents/Item.tsx:137
+#: src/pages/Plugin/commponents/Item.tsx:202
 msgid "{0} 取消成功"
 msgstr "{0} Cancellation successful"
 
-#: src\pages\Plugin\commponents\Item.tsx:179
-#: src\pages\Plugin\commponents\Item.tsx:219
+#: src/pages/Plugin/commponents/Item.tsx:179
+#: src/pages/Plugin/commponents/Item.tsx:219
 msgid "{0} 安装失败，请稍后再试"
 msgstr "{0} Installation failed, please try again later"
 
-#: src\pages\Plugin\commponents\Item.tsx:193
-#: src\pages\Plugin\commponents\Item.tsx:195
+#: src/pages/Plugin/commponents/Item.tsx:193
+#: src/pages/Plugin/commponents/Item.tsx:195
 msgid "{0} 安装成功"
 msgstr "{0} Installation successful"
 
-#: src\pages\Plugin\commponents\Item.tsx:196
+#: src/pages/Plugin/commponents/Item.tsx:196
 msgid "{0} 安装成功，请重启ComfyUI"
 msgstr "{0} The installation is successful, please restart ComfyUI"
 
-#: src\pages\Plugin\commponents\Item.tsx:112
+#: src/pages/Plugin/commponents/Item.tsx:112
 msgid "{0} 已经是最新版"
 msgstr "{0} is already the latest version"
 
-#: src\pages\Model\commponents\Item.tsx:248
+#: src/pages/Model/commponents/Item.tsx:239
 msgid "{0} 恢复下载失败"
 msgstr "{0} Failed to resume download"
 
-#: src\pages\Model\commponents\Item.tsx:188
+#: src/pages/Model/commponents/Item.tsx:179
 msgid "{0} 暂停失败"
 msgstr "{0} Pause failed"
 
-#: src\pages\Plugin\commponents\Item.tsx:117
+#: src/pages/Plugin/commponents/Item.tsx:117
 msgid "{0} 更新失败"
 msgstr "{0} Update failed"
 
-#: src\pages\Plugin\commponents\Item.tsx:114
+#: src/pages/Plugin/commponents/Item.tsx:114
 msgid "{0} 更新成功"
 msgstr "{0} The update was successful"
 
-#: src\pages\Model\commponents\Item.tsx:217
+#: src/pages/Model/commponents/Item.tsx:208
 msgid "{0} 重新下载失败"
 msgstr "{0} Redownload failed"
 
-#: src\components\Home\ManagerModal.tsx:51
-#: src\components\Home\ManagerModal.tsx:53
+#: src/components/Home/ManagerModal.tsx:51
+#: src/components/Home/ManagerModal.tsx:53
 msgid "ComfyUI-Manager 安装成功"
 msgstr "ComfyUI-Manager was successfully installed"
 
-#: src\components\Home\ManagerModal.tsx:54
+#: src/components/Home/ManagerModal.tsx:54
 msgid "ComfyUI-Manager 安装成功，请重启ComfyUI"
 msgstr "ComfyUI-Manager is successfully installed, please restart ComfyUI"
 
-#: src\components\Home\ManagerModal.tsx:72
+#: src/components/Home/ManagerModal.tsx:72
 msgid "ComfyUI-Manager 未安装"
 msgstr "ComfyUI-Manager is not installed"
 
-#: src\pages\Model\commponents\Item.tsx:263
+#: src/pages/Model/commponents/Item.tsx:254
 msgid "下载"
 msgstr "Download"
 
-#: src\pages\Model\index.tsx:78
-#: src\pages\Plugin\commponents\Item.tsx:144
-#: src\pages\Plugin\index.tsx:53
+#: src/pages/Model/index.tsx:78
+#: src/pages/Plugin/commponents/Item.tsx:144
+#: src/pages/Plugin/index.tsx:53
 msgid "下载中"
 msgstr "Downloading"
 
-#: src\pages\FirstUse.tsx:83
-#: src\pages\Setting\index.tsx:47
+#: src/pages/FirstUse.tsx:86
+#: src/pages/Setting/index.tsx:42
 msgid "中国用户"
 msgstr "Chinese users"
 
-#: src\components\Home\ManagerModal.tsx:75
+#: src/components/Home/ManagerModal.tsx:75
 msgid "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
-msgstr ""
-"In order not to affect the normal use of plug-in management and model "
-"management functions, please install the ComfyUI-Manager plug-in and click Install "
-"to install it automatically"
+msgstr "In order not to affect the normal use of plug-in management and model management functions, please install the ComfyUI-Manager plug-in and click Install to install it automatically"
 
-#: src\pages\Plugin\commponents\Item.tsx:247
+#: src/pages/Plugin/commponents/Item.tsx:247
 msgid "作者: {0}"
 msgstr "Author: {0}"
 
-#: src\pages\Model\index.tsx:47
-#: src\pages\Model\index.tsx:50
-#: src\pages\Model\index.tsx:74
-#: src\pages\Plugin\index.tsx:49
+#: src/pages/Model/index.tsx:47
+#: src/pages/Model/index.tsx:50
+#: src/pages/Model/index.tsx:74
+#: src/pages/Plugin/index.tsx:49
 msgid "全部"
-msgstr "all"
+msgstr "All"
 
-#: src\pages\FirstUse.tsx:87
-#: src\pages\Setting\index.tsx:51
+#: src/pages/FirstUse.tsx:90
+#: src/pages/Setting/index.tsx:46
 msgid "其他国家"
 msgstr "Other countries"
 
-#: src\pages\Model\commponents\Item.tsx:104
+#: src/pages/Model/commponents/Item.tsx:95
 msgid "删除"
 msgstr "Delete"
 
-#: src\pages\Plugin\commponents\Item.tsx:74
+#: src/pages/Plugin/commponents/Item.tsx:74
 msgid "卸载"
 msgstr "unload"
 
-#: src\pages\Model\commponents\Item.tsx:133
-#: src\pages\Plugin\commponents\Item.tsx:127
+#: src/pages/Model/commponents/Item.tsx:124
+#: src/pages/Plugin/commponents/Item.tsx:127
 msgid "取消"
 msgstr "Cancel"
 
-#: src\components\Slider.tsx:27
+#: src/components/Slider.tsx:27
 msgid "启动"
 msgstr "initiate"
 
-#: src\pages\FirstUse.tsx:77
+#: src/pages/FirstUse.tsx:80
 msgid "在安装comfyui时会根据不同地区自动配置代理"
-msgstr ""
-"When installing comfyui, the agent is automatically configured according to "
-"different regions"
+msgstr "When installing comfyui, the agent is automatically configured according to different regions"
 
-#: src\pages\Setting\index.tsx:41
+#: src/pages/Setting/index.tsx:36
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
-msgstr ""
-"When installing models and plugins, agents are automatically configured based "
-"on different regions"
+msgstr "When installing models and plugins, agents are automatically configured based on different regions"
 
-#: src\pages\FirstUse.tsx:76
-#: src\pages\Setting\index.tsx:40
+#: src/pages/FirstUse.tsx:79
+#: src/pages/Setting/index.tsx:35
 msgid "地区"
-msgstr "region"
+msgstr "Region"
 
-#: src\pages\Model\index.tsx:104
+#: src/pages/Model/index.tsx:104
 msgid "基础模型"
 msgstr "Base model"
 
-#: src\pages\Model\commponents\Item.tsx:323
+#: src/pages/Model/commponents/Item.tsx:314
 msgid "基础类型: {0}"
 msgstr "Base Type: {0}"
 
-#: src\components\Home\ManagerModal.tsx:64
-#: src\pages\Plugin\commponents\Item.tsx:154
+#: src/components/Home/ManagerModal.tsx:64
+#: src/pages/Plugin/commponents/Item.tsx:154
 msgid "安装"
 msgstr "Installation"
 
-#: src\pages\FirstUse.tsx:135
+#: src/pages/FirstUse.tsx:138
 msgid "安装Comfyui"
 msgstr "Install Comfyui"
 
-#: src\components\Home\ManagerModal.tsx:64
-#: src\pages\Plugin\commponents\Item.tsx:147
+#: src/components/Home/ManagerModal.tsx:64
+#: src/pages/Plugin/commponents/Item.tsx:147
 msgid "安装中"
 msgstr "Installing"
 
-#: src\pages\Model\index.tsx:82
-#: src\pages\Plugin\index.tsx:57
+#: src/pages/Model/index.tsx:82
+#: src/pages/Plugin/index.tsx:57
 msgid "已安装"
 msgstr "Installed"
 
-#: src\components\Layout.tsx:28
+#: src/components/Layout.tsx:28
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
-msgstr ""
-"There are currently {0} models being downloaded, are you sure you want to "
-"close them?"
+msgstr "There are currently {0} models being downloaded, are you sure you want to close them?"
 
-#: src\pages\Model\commponents\Item.tsx:230
+#: src/pages/Model/commponents/Item.tsx:221
 msgid "恢复下载"
 msgstr "Resume downloads"
 
-#: src\pages\Model\commponents\DownloadedModel.tsx:53
+#: src/pages/Model/commponents/DownloadedModel.tsx:53
 msgid "您还未下载过模型"
 msgstr "You haven't downloaded the model yet"
 
-#: src\pages\Plugin\commponents\DownloadedPlugin.tsx:46
+#: src/pages/Plugin/commponents/DownloadedPlugin.tsx:46
 msgid "您还未安装过插件"
 msgstr "You haven't installed the plugin yet"
 
-#: src\components\Layout.tsx:29
+#: src/components/Layout.tsx:29
 msgid "提示"
 msgstr "prompt"
 
-#: src\components\Slider.tsx:32
-#: src\pages\Plugin\index.tsx:40
+#: src/components/Slider.tsx:32
+#: src/pages/Plugin/index.tsx:40
 msgid "插件管理"
 msgstr "Plugin management"
 
-#: src\pages\Model\index.tsx:116
-#: src\pages\Plugin\index.tsx:69
+#: src/pages/Model/index.tsx:116
+#: src/pages/Plugin/index.tsx:69
 msgid "搜索"
 msgstr "Search"
 
-#: src\pages\Model\commponents\Item.tsx:174
+#: src/pages/Model/commponents/Item.tsx:165
 msgid "暂停"
 msgstr "Time out"
 
-#: src\pages\Plugin\commponents\DownloadingPlugin.tsx:47
+#: src/pages/Plugin/commponents/DownloadingPlugin.tsx:47
 msgid "暂无下载中的插件"
 msgstr "There are no plugins in the process of downloading"
 
-#: src\pages\Model\commponents\DownloadingModel.tsx:54
+#: src/pages/Model/commponents/DownloadingModel.tsx:54
 msgid "暂无下载中的模型"
 msgstr "There are no models in the download"
 
-#: src\pages\Plugin\commponents\Item.tsx:91
-#: src\pages\Setting\index.tsx:97
+#: src/pages/Plugin/commponents/Item.tsx:91
+#: src/pages/Setting/index.tsx:104
 msgid "更新"
-msgstr "update"
+msgstr "Update"
 
-#: src\pages\Model\commponents\Item.tsx:334
+#: src/pages/Model/commponents/Item.tsx:325
 msgid "模型文件名: {0}"
 msgstr "Model File Name: {0}"
 
-#: src\components\Slider.tsx:37
-#: src\pages\Model\index.tsx:65
+#: src/components/Slider.tsx:37
+#: src/pages/Model/index.tsx:65
 msgid "模型管理"
 msgstr "Model management"
 
-#: src\pages\Model\index.tsx:93
+#: src/pages/Model/index.tsx:93
 msgid "模型类型"
 msgstr "Model type"
 
-#: src\pages\Model\commponents\Item.tsx:312
+#: src/pages/Model/commponents/Item.tsx:303
 msgid "模型类型: {0}"
 msgstr "Model Type: {0}"
 
-#: src\pages\Plugin\commponents\AllPlugin.tsx:68
-#: src\pages\Plugin\commponents\DownloadedPlugin.tsx:53
-#: src\pages\Plugin\commponents\DownloadingPlugin.tsx:54
+#: src/pages/Plugin/commponents/AllPlugin.tsx:59
+#: src/pages/Plugin/commponents/DownloadedPlugin.tsx:53
+#: src/pages/Plugin/commponents/DownloadingPlugin.tsx:54
 msgid "没有找到插件"
 msgstr "No plugins found"
 
-#: src\pages\Model\commponents\AllModel.tsx:74
-#: src\pages\Model\commponents\DownloadedModel.tsx:59
-#: src\pages\Model\commponents\DownloadingModel.tsx:60
+#: src/pages/Model/commponents/AllModel.tsx:69
+#: src/pages/Model/commponents/DownloadedModel.tsx:59
+#: src/pages/Model/commponents/DownloadingModel.tsx:60
 msgid "没有找到模型"
 msgstr "No model found"
 
-#: src\pages\Model\commponents\Item.tsx:170
-#: src\pages\Plugin\commponents\Item.tsx:142
+#: src/pages/Model/commponents/Item.tsx:161
+#: src/pages/Plugin/commponents/Item.tsx:142
 msgid "等待中"
 msgstr "Waiting"
 
-#: src\pages\Plugin\commponents\AllPlugin.tsx:43
+#: src/pages/Plugin/commponents/AllPlugin.tsx:42
 msgid "获取插件列表失败"
 msgstr "Failed to get plug-in list"
 
-#: src\pages\Model\commponents\AllModel.tsx:50
+#: src/pages/Model/commponents/AllModel.tsx:53
 msgid "获取模型列表失败"
 msgstr "Failed to get model list"
 
-#: src\components\Slider.tsx:42
+#: src/components/Slider.tsx:42
 msgid "设置"
 msgstr "Set up"
 
-#: src\pages\FirstUse.tsx:64
-#: src\pages\Setting\index.tsx:28
+#: src/pages/FirstUse.tsx:66
+#: src/pages/Setting/index.tsx:79
 msgid "语言"
-msgstr "language"
+msgstr "Language"
 
-#: src\pages\FirstUse.tsx:101
-#: src\pages\Setting\index.tsx:64
+#: src/pages/FirstUse.tsx:104
+#: src/pages/Setting/index.tsx:59
 msgid "请选择安装目录"
 msgstr "Please select the installation directory"
 
-#: src\pages\FirstUse.tsx:95
-#: src\pages\Setting\index.tsx:59
+#: src/pages/FirstUse.tsx:98
+#: src/pages/Setting/index.tsx:54
 msgid "路径"
-msgstr "path"
+msgstr "Path"
 
-#: src\pages\FirstUse.tsx:117
-#: src\pages\Setting\index.tsx:80
+#: src/pages/FirstUse.tsx:120
+#: src/pages/Setting/index.tsx:75
 msgid "选择路径"
 msgstr "Select a path"
 
-#: src\pages\Model\commponents\Item.tsx:199
+#: src/pages/Model/commponents/Item.tsx:190
 msgid "重新下载"
 msgstr "Re-download"
-

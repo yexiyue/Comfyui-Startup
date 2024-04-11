@@ -1,7 +1,8 @@
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { cn } from "@/lib/utils";
+import { useConfigStore } from "@/useStore";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { Space } from "antd";
+import { Space, theme } from "antd";
 import {
   BlocksIcon,
   CirclePowerIcon,
@@ -9,13 +10,19 @@ import {
   SettingsIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg?react";
+import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-
 
 export const Slider = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const token = theme.useToken().token;
+  const [expanded, setExpanded] = useConfigStore((store) => [
+    store.expanded,
+    store.setExpanded,
+  ]);
   useLingui();
 
   const menus: {
@@ -46,26 +53,36 @@ export const Slider = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-[200px]">
       <div className="w-full h-12">
         <Logo className="w-full" />
       </div>
       <Separator className="mb-2" />
-      <ToggleGroup className="flex w-full flex-col px-2" type="single">
+      <div className="flex w-full flex-col px-2 gap-2">
         {menus.map((menu) => (
-          <ToggleGroupItem
-            className="w-full"
+          <Button
+            variant="ghost"
             key={menu.to}
+            className={cn(
+              location.pathname === menu.to ? "" : " hover:bg-gray-100"
+            )}
+            style={
+              location.pathname === menu.to
+                ? {
+                    backgroundColor: token.colorPrimary,
+                    color: token.colorTextLightSolid,
+                  }
+                : {}
+            }
             onClick={() => navigate(menu.to)}
-            value={menu.to}
           >
-            <Space className="w-full">
+            <Space className="w-full text-nowrap">
               {menu.icon}
               {menu.title}
             </Space>
-          </ToggleGroupItem>
+          </Button>
         ))}
-      </ToggleGroup>
+      </div>
     </div>
   );
 };

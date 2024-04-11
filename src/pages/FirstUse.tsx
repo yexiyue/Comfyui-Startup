@@ -1,23 +1,25 @@
-import { Trans, t } from "@lingui/macro";
+import { command } from "@/api";
 import { useConfigStore } from "@/useStore";
+import { Trans, t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { open } from "@tauri-apps/plugin-dialog";
+import { useAsyncEffect } from "ahooks";
 import {
+  App,
   Button,
+  Card,
+  Form,
   Input,
   Segmented,
   Select,
-  App,
-  Form,
-  Card,
   Space,
   Typography,
 } from "antd";
 import { FolderClosedIcon } from "lucide-react";
 import Logo from "../assets/logo.svg?react";
-import { useAsyncEffect } from "ahooks";
-import { command } from "@/api";
 
 export const Component = () => {
+  useLingui();
   const { message } = App.useApp();
 
   const [
@@ -69,6 +71,7 @@ export const Component = () => {
               options={[
                 { value: "en", label: "English" },
                 { value: "zh", label: "中文" },
+                { value: "ja", label: "日本語" },
               ]}
             ></Select>
           </Form.Item>

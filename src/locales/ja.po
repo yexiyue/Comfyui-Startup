@@ -1,237 +1,237 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-04-10 21:29+0800\n"
+"POT-Creation-Date: 2024-04-10 22:36+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
-"Language: zh\n"
+"X-Generator: MonoDevelop Gettext addin\n"
+"Language: ja\n"
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2024-04-10 22:37:17+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Report-Msgid-Bugs-To: \n"
 "Plural-Forms: \n"
 
 #: src/pages/Model/commponents/Item.tsx:70
 #: src/pages/Model/commponents/Item.tsx:273
 msgid "{0} 下载失败，请稍后再试"
-msgstr "{0} 下载失败，请稍后再试"
+msgstr "{0} ダウンロードに失敗した場合は、後でもう一度やり直してください"
 
 #: src/pages/Model/commponents/Item.tsx:82
 #: src/pages/Model/commponents/Item.tsx:84
 msgid "{0} 下载成功"
-msgstr "{0} 下载成功"
+msgstr "{0} ダウンロードは成功しました"
 
 #: src/pages/Model/commponents/Item.tsx:112
 msgid "{0} 删除失败"
-msgstr "{0} 删除失败"
+msgstr "{0} 削除に失敗しました"
 
 #: src/pages/Model/commponents/Item.tsx:106
 msgid "{0} 删除成功"
-msgstr "{0} 删除成功"
+msgstr "{0} 削除が成功しました"
 
 #: src/pages/Plugin/commponents/Item.tsx:86
 msgid "{0} 卸载失败"
-msgstr "{0} 卸载失败"
+msgstr "{0} アンインストールに失敗しました"
 
 #: src/pages/Plugin/commponents/Item.tsx:84
 msgid "{0} 卸载成功"
-msgstr "{0} 卸载成功"
+msgstr "{0} アンインストールに成功しました"
 
 #: src/pages/Model/commponents/Item.tsx:143
 msgid "{0} 取消失败"
-msgstr "{0} 取消失败"
+msgstr "{0} キャンセルに失敗しました"
 
 #: src/pages/Model/commponents/Item.tsx:137
 #: src/pages/Plugin/commponents/Item.tsx:202
 msgid "{0} 取消成功"
-msgstr "{0} 取消成功"
+msgstr "{0} キャンセルが成功しました"
 
 #: src/pages/Plugin/commponents/Item.tsx:179
 #: src/pages/Plugin/commponents/Item.tsx:219
 msgid "{0} 安装失败，请稍后再试"
-msgstr "{0} 安装失败，请稍后再试"
+msgstr "インストールに失敗した{0}、後でもう一度やり直してください"
 
 #: src/pages/Plugin/commponents/Item.tsx:193
 #: src/pages/Plugin/commponents/Item.tsx:195
 msgid "{0} 安装成功"
-msgstr "{0} 安装成功"
+msgstr "{0} インストールが成功しました"
 
 #: src/pages/Plugin/commponents/Item.tsx:196
 msgid "{0} 安装成功，请重启ComfyUI"
-msgstr "{0} 安装成功，请重启ComfyUI"
+msgstr "インストールが成功した{0}、ComfyUIを再起動してください"
 
 #: src/pages/Plugin/commponents/Item.tsx:112
 msgid "{0} 已经是最新版"
-msgstr "{0} 已经是最新版"
+msgstr "{0}すでに最新バージョンです"
 
 #: src/pages/Model/commponents/Item.tsx:239
 msgid "{0} 恢复下载失败"
-msgstr "{0} 恢复下载失败"
+msgstr "{0} ダウンロードの再開に失敗しました"
 
 #: src/pages/Model/commponents/Item.tsx:179
 msgid "{0} 暂停失败"
-msgstr "{0} 暂停失败"
+msgstr "{0} 一時停止に失敗しました"
 
 #: src/pages/Plugin/commponents/Item.tsx:117
 msgid "{0} 更新失败"
-msgstr "{0} 更新失败"
+msgstr "{0} 更新に失敗しました"
 
 #: src/pages/Plugin/commponents/Item.tsx:114
 msgid "{0} 更新成功"
-msgstr "{0} 更新成功"
+msgstr "{0} アップデートは成功しました"
 
 #: src/pages/Model/commponents/Item.tsx:208
 msgid "{0} 重新下载失败"
-msgstr "{0} 重新下载失败"
+msgstr "{0} 再ダウンロードに失敗しました"
 
 #: src/components/Home/ManagerModal.tsx:51
 #: src/components/Home/ManagerModal.tsx:53
 msgid "ComfyUI-Manager 安装成功"
-msgstr "ComfyUI-Manager 安装成功"
+msgstr "ComfyUI-Managerが正常にインストールされました"
 
 #: src/components/Home/ManagerModal.tsx:54
 msgid "ComfyUI-Manager 安装成功，请重启ComfyUI"
-msgstr "ComfyUI-Manager 安装成功，请重启ComfyUI"
+msgstr "ComfyUI-Managerが正常にインストールされました。ComfyUIを再起動してください"
 
 #: src/components/Home/ManagerModal.tsx:72
 msgid "ComfyUI-Manager 未安装"
-msgstr "ComfyUI-Manager 未安装"
+msgstr "ComfyUI-Managerがインストールされていません"
 
 #: src/pages/Model/commponents/Item.tsx:254
 msgid "下载"
-msgstr "下载"
+msgstr "ダウンロード"
 
 #: src/pages/Model/index.tsx:78
 #: src/pages/Plugin/commponents/Item.tsx:144
 #: src/pages/Plugin/index.tsx:53
 msgid "下载中"
-msgstr "下载中"
+msgstr "ダウンロード"
 
 #: src/pages/FirstUse.tsx:86
 #: src/pages/Setting/index.tsx:42
 msgid "中国用户"
-msgstr "中国用户"
+msgstr "中国のユーザー"
 
 #: src/components/Home/ManagerModal.tsx:75
 msgid "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
-msgstr "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
+msgstr "プラグイン管理機能やモデル管理機能の通常の使用に影響を与えないために、ComfyUI-Managerプラグインをインストールし、[インストール]をクリックして自動的にインストールしてください"
 
 #: src/pages/Plugin/commponents/Item.tsx:247
 msgid "作者: {0}"
-msgstr "作者: {0}"
+msgstr "著者: {0}"
 
 #: src/pages/Model/index.tsx:47
 #: src/pages/Model/index.tsx:50
 #: src/pages/Model/index.tsx:74
 #: src/pages/Plugin/index.tsx:49
 msgid "全部"
-msgstr "全部"
+msgstr "すべての"
 
 #: src/pages/FirstUse.tsx:90
 #: src/pages/Setting/index.tsx:46
 msgid "其他国家"
-msgstr "其他国家"
+msgstr "その他の国"
 
 #: src/pages/Model/commponents/Item.tsx:95
 msgid "删除"
-msgstr "删除"
+msgstr "削除"
 
 #: src/pages/Plugin/commponents/Item.tsx:74
 msgid "卸载"
-msgstr "卸载"
+msgstr "降ろす"
 
 #: src/pages/Model/commponents/Item.tsx:124
 #: src/pages/Plugin/commponents/Item.tsx:127
 msgid "取消"
-msgstr "取消"
+msgstr "キャンセル"
 
 #: src/components/Slider.tsx:27
 msgid "启动"
-msgstr "启动"
+msgstr "始める"
 
 #: src/pages/FirstUse.tsx:80
 msgid "在安装comfyui时会根据不同地区自动配置代理"
-msgstr "在安装comfyui时会根据不同地区自动配置代理"
+msgstr "comfyuiをインストールすると、エージェントはさまざまなリージョンに従って自動的に構成されます"
 
 #: src/pages/Setting/index.tsx:36
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
-msgstr "在安装模型和插件时会根据不同地区自动配置代理"
+msgstr "モデルとプラグインをインストールすると、エージェントはさまざまなリージョンに基づいて自動的に構成されます"
 
 #: src/pages/FirstUse.tsx:79
 #: src/pages/Setting/index.tsx:35
 msgid "地区"
-msgstr "地区"
+msgstr "地域"
 
 #: src/pages/Model/index.tsx:104
 msgid "基础模型"
-msgstr "基础模型"
+msgstr "ベース車"
 
 #: src/pages/Model/commponents/Item.tsx:314
 msgid "基础类型: {0}"
-msgstr "基础类型: {0}"
+msgstr "ベースタイプ:{0}"
 
 #: src/components/Home/ManagerModal.tsx:64
 #: src/pages/Plugin/commponents/Item.tsx:154
 msgid "安装"
-msgstr "安装"
+msgstr "取り付け"
 
 #: src/pages/FirstUse.tsx:138
 msgid "安装Comfyui"
-msgstr "安装Comfyui"
+msgstr "Comfyuiをインストールする"
 
 #: src/components/Home/ManagerModal.tsx:64
 #: src/pages/Plugin/commponents/Item.tsx:147
 msgid "安装中"
-msgstr "安装中"
+msgstr "装着"
 
 #: src/pages/Model/index.tsx:82
 #: src/pages/Plugin/index.tsx:57
 msgid "已安装"
-msgstr "已安装"
+msgstr "インストール"
 
 #: src/components/Layout.tsx:28
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
-msgstr "当前有{0}个模型正在下载，确定要关闭吗？"
+msgstr "現在、{0}モデルがダウンロードされていますが、閉じてもよろしいですか?"
 
 #: src/pages/Model/commponents/Item.tsx:221
 msgid "恢复下载"
-msgstr "恢复下载"
+msgstr "ダウンロードの再開"
 
 #: src/pages/Model/commponents/DownloadedModel.tsx:53
 msgid "您还未下载过模型"
-msgstr "您还未下载过模型"
+msgstr "モデルをまだダウンロードしていません"
 
 #: src/pages/Plugin/commponents/DownloadedPlugin.tsx:46
 msgid "您还未安装过插件"
-msgstr "您还未安装过插件"
+msgstr "プラグインをまだインストールしていません"
 
 #: src/components/Layout.tsx:29
 msgid "提示"
-msgstr "提示"
+msgstr "プロンプト"
 
 #: src/components/Slider.tsx:32
 #: src/pages/Plugin/index.tsx:40
 msgid "插件管理"
-msgstr "插件管理"
+msgstr "プラグイン管理"
 
 #: src/pages/Model/index.tsx:116
 #: src/pages/Plugin/index.tsx:69
 msgid "搜索"
-msgstr "搜索"
+msgstr "捜索"
 
 #: src/pages/Model/commponents/Item.tsx:165
 msgid "暂停"
-msgstr "暂停"
+msgstr "たんま"
 
 #: src/pages/Plugin/commponents/DownloadingPlugin.tsx:47
 msgid "暂无下载中的插件"
-msgstr "暂无下载中的插件"
+msgstr "ダウンロード中のプラグインはありません"
 
 #: src/pages/Model/commponents/DownloadingModel.tsx:54
 msgid "暂无下载中的模型"
-msgstr "暂无下载中的模型"
+msgstr "ダウンロードにモデルがありません"
 
 #: src/pages/Plugin/commponents/Item.tsx:91
 #: src/pages/Setting/index.tsx:104
@@ -240,70 +240,70 @@ msgstr "更新"
 
 #: src/pages/Model/commponents/Item.tsx:325
 msgid "模型文件名: {0}"
-msgstr "模型文件名: {0}"
+msgstr "モデルファイル名:{0}"
 
 #: src/components/Slider.tsx:37
 #: src/pages/Model/index.tsx:65
 msgid "模型管理"
-msgstr "模型管理"
+msgstr "モデル管理"
 
 #: src/pages/Model/index.tsx:93
 msgid "模型类型"
-msgstr "模型类型"
+msgstr "モデルの種類"
 
 #: src/pages/Model/commponents/Item.tsx:303
 msgid "模型类型: {0}"
-msgstr "模型类型: {0}"
+msgstr "モデルタイプ:{0}"
 
 #: src/pages/Plugin/commponents/AllPlugin.tsx:59
 #: src/pages/Plugin/commponents/DownloadedPlugin.tsx:53
 #: src/pages/Plugin/commponents/DownloadingPlugin.tsx:54
 msgid "没有找到插件"
-msgstr "没有找到插件"
+msgstr "プラグインが見つかりませんでした"
 
 #: src/pages/Model/commponents/AllModel.tsx:69
 #: src/pages/Model/commponents/DownloadedModel.tsx:59
 #: src/pages/Model/commponents/DownloadingModel.tsx:60
 msgid "没有找到模型"
-msgstr "没有找到模型"
+msgstr "モデルが見つかりません"
 
 #: src/pages/Model/commponents/Item.tsx:161
 #: src/pages/Plugin/commponents/Item.tsx:142
 msgid "等待中"
-msgstr "等待中"
+msgstr "待つこと"
 
 #: src/pages/Plugin/commponents/AllPlugin.tsx:42
 msgid "获取插件列表失败"
-msgstr "获取插件列表失败"
+msgstr "プラグイン リストの取得に失敗しました"
 
 #: src/pages/Model/commponents/AllModel.tsx:53
 msgid "获取模型列表失败"
-msgstr "获取模型列表失败"
+msgstr "モデルリストの取得に失敗しました"
 
 #: src/components/Slider.tsx:42
 msgid "设置"
-msgstr "设置"
+msgstr "並べる"
 
 #: src/pages/FirstUse.tsx:66
 #: src/pages/Setting/index.tsx:79
 msgid "语言"
-msgstr "语言"
+msgstr "言語"
 
 #: src/pages/FirstUse.tsx:104
 #: src/pages/Setting/index.tsx:59
 msgid "请选择安装目录"
-msgstr "请选择安装目录"
+msgstr "インストールディレクトリを選択してください"
 
 #: src/pages/FirstUse.tsx:98
 #: src/pages/Setting/index.tsx:54
 msgid "路径"
-msgstr "路径"
+msgstr "パス"
 
 #: src/pages/FirstUse.tsx:120
 #: src/pages/Setting/index.tsx:75
 msgid "选择路径"
-msgstr "选择路径"
+msgstr "パスを選択"
 
 #: src/pages/Model/commponents/Item.tsx:190
 msgid "重新下载"
-msgstr "重新下载"
+msgstr "再ダウンロード"

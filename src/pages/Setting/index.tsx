@@ -84,6 +84,7 @@ export const Component = () => {
             options={[
               { value: "en", label: "English" },
               { value: "zh", label: "中文" },
+              { value: "ja", label: "日本語" },
             ]}
           ></Select>
         </Form.Item>

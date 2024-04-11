@@ -13,6 +13,8 @@ type State = {
   country: string;
   sysInfo?: SysInfo;
   managerExist: boolean;
+  // 侧边栏是否展开
+  expanded: boolean;
 };
 
 type Action = {
@@ -22,6 +24,7 @@ type Action = {
   setCountry: (country: string) => void;
   setSysInfo: (sysInfo: State["sysInfo"]) => void;
   setManagerExist: (managerExist: boolean) => void;
+  setExpanded: (expanded: boolean) => void;
 };
 
 export const useConfigStore = create(
@@ -34,6 +37,7 @@ export const useConfigStore = create(
       country: "chinese",
       sysInfo: undefined,
       managerExist: false,
+      expanded: true,
       setSysInfo(sysInfo) {
         set({ sysInfo });
       },
@@ -51,6 +55,9 @@ export const useConfigStore = create(
       },
       setManagerExist(managerExist) {
         set({ managerExist });
+      },
+      setExpanded(expanded) {
+        set({ expanded });
       },
     }),
     {

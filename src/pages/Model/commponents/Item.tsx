@@ -89,7 +89,7 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
   });
 
   return (
-    <Card className="relative min-w-[600px]">
+    <Card className="relative">
       {isDownloaded ? (
         <Space className=" absolute top-4 right-4 ">
           <Tooltip title={<Trans>删除</Trans>}>
