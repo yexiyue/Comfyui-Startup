@@ -2,7 +2,7 @@ import { command } from "@/api";
 import { ManagerModal } from "@/components/Home/ManagerModal";
 import { useConfigStore } from "@/useStore";
 import { useAsyncEffect } from "ahooks";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -48,10 +48,12 @@ export const Component = () => {
   }, [comfyuiPath, country]);
 
   useAsyncEffect(async () => {
-    if (managerExist) {
+    try {
       await command("init_data");
+    } catch (error) {
+      message.error(`${error}`);
     }
-  }, [managerExist]);
+  }, []);
 
   return (
     <div className=" h-screen">

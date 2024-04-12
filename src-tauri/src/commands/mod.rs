@@ -1,12 +1,13 @@
-use std::path::Path;
-
+use reqwest::Client;
 use sea_orm::DbConn;
 use tauri::State;
+use tracing::info;
 
 use crate::{
     error::MyError,
-    model::{init_model_list, ModelList},
-    plugin::{init_plugin_list, PluginList},
+    git::GITHUB_PROXY,
+    model::{init_model_list, Model},
+    plugin::{init_plugin_list, Plugin},
     state::MyConfig,
     utils::{Exec, SysInfo},
 };
@@ -37,15 +38,33 @@ pub async fn startup(info: State<'_, SysInfo>, config: State<'_, MyConfig>) -> R
 #[tauri::command]
 pub async fn init_data(config: State<'_, MyConfig>, db: State<'_, DbConn>) -> Result<(), MyError> {
     let config = config.lock().await;
-    let path = &config.comfyui_path;
-    let comfyui_manager_path = Path::new(path).join("custom_nodes").join("ComfyUI-Manager");
-    if !comfyui_manager_path.exists() {
-        // 插件未安装
-        return Err(MyError::Code(0));
-    }
-    let plugin_list = PluginList::from_file(comfyui_manager_path.join("custom-node-list.json"))?;
-    init_plugin_list(&db, plugin_list).await?;
-    let model_list = ModelList::from_file(comfyui_manager_path.join("model-list.json"))?;
-    init_model_list(&db, model_list).await?;
+    let proxy = config.is_chinese();
+    let client = Client::builder().user_agent("Edge").build()?;
+
+    let prefix = if proxy {
+        format!(
+            "{}/https://raw.githubusercontent.com/yexiyue/Comfyui-Startup/main",
+            GITHUB_PROXY
+        )
+    } else {
+        "https://raw.githubusercontent.com/yexiyue/Comfyui-Startup/main".to_string()
+    };
+
+    let plugin_list = client
+        .get(format!("{}/custom-node-list.json", prefix))
+        .send()
+        .await?
+        .json::<Vec<Plugin>>()
+        .await?;
+    let model_list = client
+        .get(format!("{}/model-list.json", prefix))
+        .send()
+        .await?
+        .json::<Vec<Model>>()
+        .await?;
+
+    init_plugin_list(&db, plugin_list.into()).await?;
+    init_model_list(&db, model_list.into()).await?;
+
     Ok(())
 }

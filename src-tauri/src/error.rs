@@ -25,6 +25,8 @@ pub enum MyError {
     Code(i32),
     #[error(transparent)]
     Infallible(#[from] std::convert::Infallible),
+    #[error(transparent)]
+    Reqwest(#[from] reqwest::Error),
 }
 
 impl Serialize for MyError {

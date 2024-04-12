@@ -22,6 +22,7 @@ impl MigrationTrait for Migration {
                     .col(ColumnDef::new(Plugin::Author).string().not_null())
                     .col(ColumnDef::new(Plugin::Reference).string().not_null())
                     .col(ColumnDef::new(Plugin::Description).string().not_null())
+                    .col(ColumnDef::new(Plugin::ZhDescription).string())
                     .col(ColumnDef::new(Plugin::InstallType).string().not_null())
                     .col(ColumnDef::new(Plugin::Pip).text())
                     .col(ColumnDef::new(Plugin::Files).text().not_null())
@@ -48,4 +49,5 @@ enum Plugin {
     Files,
     InstallType,
     Description,
+    ZhDescription
 }

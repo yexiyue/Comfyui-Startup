@@ -19,6 +19,7 @@ pub struct Plugin {
     pub files: Vec<String>,
     pub install_type: String,
     pub description: String,
+    pub zh_description: Option<String>,
 }
 
 impl IntoActiveModel<ActiveModel> for Plugin {
@@ -31,6 +32,7 @@ impl IntoActiveModel<ActiveModel> for Plugin {
             install_type: Set(self.install_type),
             pip: Set(self.pip.map(|p| p.into())),
             files: Set(self.files.into()),
+            zh_description: Set(self.zh_description),
             ..Default::default()
         }
     }
@@ -125,7 +127,16 @@ impl DerefMut for PluginList {
     }
 }
 
+impl From<Vec<Plugin>> for PluginList {
+    fn from(value: Vec<Plugin>) -> Self {
+        Self {
+            custom_nodes: value,
+        }
+    }
+}
+
 impl PluginList {
+    #[allow(unused)]
     pub fn from_file<P: AsRef<Path>>(path: P) -> Result<Self, anyhow::Error> {
         let file = std::fs::File::open(path)?;
         let plugin_list: PluginList = serde_json::from_reader(file)?;

@@ -12,6 +12,7 @@ pub struct Model {
     pub author: String,
     pub reference: String,
     pub description: String,
+    pub zh_description: Option<String>,
     pub install_type: String,
     pub pip: Option<StringVec>,
     pub files: StringVec,

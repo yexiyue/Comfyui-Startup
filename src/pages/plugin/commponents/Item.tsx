@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { notification } from "@/lib/notification";
 import { cn } from "@/lib/utils";
+import { useConfigStore } from "@/useStore";
 import {
   CloseOutlined,
   DeleteOutlined,
@@ -30,10 +31,10 @@ import {
   Space,
   Tag,
   Tooltip,
-  Typography,
-  theme,
+  Typography
 } from "antd";
 import { useState } from "react";
+import Markdown from "react-markdown";
 import { useDownloadingPlugins, usePluginStore } from "../useStore";
 
 type PluginItemProps = {
@@ -43,7 +44,7 @@ type PluginItemProps = {
 
 export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
   useLingui();
-  const themes = theme.useToken();
+  const [language] = useConfigStore((store) => [store.language]);
   const { message } = App.useApp();
   const [removePlugin, addPlugin] = usePluginStore((store) => [
     store.removePlugin,
@@ -263,7 +264,9 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className={cn("px-4 pt-0", downloading ? "pb-0" : "pb-2")}>
-        <p className="text-wrap">{plugin.description}</p>
+        <Markdown>
+          {language === "zh" ? plugin.zh_description : plugin.description}
+        </Markdown>
       </CardContent>
       <CardFooter className="py-0 pb-2">
         <Progress

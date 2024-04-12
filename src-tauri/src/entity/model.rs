@@ -15,6 +15,7 @@ pub struct Model {
     pub base: String,
     pub save_path: String,
     pub description: String,
+    pub zh_description: Option<String>,
     pub reference: String,
     pub filename: String,
     pub url: String,

@@ -4,6 +4,7 @@ export type Plugin = {
   id: number;
   author: string;
   description: string;
+  zh_description: string;
   files: string[];
   install_type: string;
   pip?: string[];

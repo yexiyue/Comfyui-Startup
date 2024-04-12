@@ -129,7 +129,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
     "title": "ComfyUI Frame Interpolation",
-    "zh_description": "节点：KSampler逐渐增加降噪（高效）"
+    "zh_description": "节点：KSampler逐渐增加降噪(高效)"
   },
   {
     "author": "Fannovel16",
@@ -162,7 +162,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Fannovel16/ComfyUI-Video-Matting",
     "title": "ComfyUI-Video-Matting",
-    "zh_description": "[a/Robust Video Matting（RVM）]（https：//github.com/PeterL1n/RobustVideoMatting/）在ComfyUI中的最小实现"
+    "zh_description": "[a/Robust Video Matting(RVM)](https：//github.com/PeterL1n/RobustVideoMatting/)在ComfyUI中的最小实现"
   },
   {
     "author": "biegert",
@@ -195,7 +195,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/BlenderNeko/ComfyUI_ADV_CLIP_emb",
     "title": "Advanced CLIP Text Encode",
-    "zh_description": "高级CLIP文本编码（如果您需要A1111类似提示符。你需要这个但Cutoff节点已经包含了这个功能。）"
+    "zh_description": "高级CLIP文本编码(如果您需要A1111类似提示符。你需要这个但Cutoff节点已经包含了这个功能。)"
   },
   {
     "author": "BlenderNeko",
@@ -228,7 +228,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/BlenderNeko/ComfyUI_SeeCoder",
     "title": "SeeCoder [WIP]",
-    "zh_description": "它提供了从图像输入生成CLIP的能力，不像unCLIP，它适用于所有模型。(To使用此扩展，您需要从 ** 安装模型 ** 下载所需的模型文件）"
+    "zh_description": "它提供了从图像输入生成CLIP的能力，不像unCLIP，它适用于所有模型。(To使用此扩展，您需要从 ** 安装模型 ** 下载所需的模型文件)"
   },
   {
     "author": "jags111",
@@ -239,7 +239,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/jags111/efficiency-nodes-comfyui",
     "title": "Efficiency Nodes for ComfyUI Version 2.0+",
-    "zh_description": "ComfyUI自定义节点的集合，帮助简化工作流并减少总节点数。[注：这个节点最初是由LucianoCirino创建的，但是[a/original repository]（https：//github.com/LucianoCirino/efficiency-nodes-comfyui）不再被维护，并被一个新的维护者分叉。要使用分叉版本，您应该卸载原始版本，并 ** 删除所有 ** 此版本。]"
+    "zh_description": "ComfyUI自定义节点的集合，帮助简化工作流并减少总节点数。[注：这个节点最初是由LucianoCirino创建的，但是[a/original repository](https：//github.com/LucianoCirino/efficiency-nodes-comfyui)不再被维护，并被一个新的维护者分叉。要使用分叉版本，您应该卸载原始版本，并 ** 删除所有 ** 此版本。]"
   },
   {
     "author": "jags111",
@@ -356,7 +356,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/WASasquatch/ASTERR",
     "title": "ASTERR",
-    "zh_description": "抽象树评估限制运行（ASTERR）是一个Python脚本执行器，适用于ComfyUI。[W/警告：ASTERR从Web界面运行Python代码！强烈建议在封闭环境中运行此操作，因为它可能存在潜在的安全风险。"
+    "zh_description": "抽象树评估限制运行(ASTERR)是一个Python脚本执行器，适用于ComfyUI。[W/警告：ASTERR从Web界面运行Python代码！强烈建议在封闭环境中运行此操作，因为它可能存在潜在的安全风险。"
   },
   {
     "author": "WASasquatch",
@@ -367,7 +367,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/WASasquatch/WAS_Extras",
     "title": "WAS_Extras",
-    "zh_description": "节点：调节（混合）、修补VAE编码（WAS）、VividSharpen。实验节点，或其他随机额外的辅助节点。"
+    "zh_description": "节点：调节(混合)、修补VAE编码(WAS)、VividSharpen。实验节点，或其他随机额外的辅助节点。"
   },
   {
     "author": "SaltAI",
@@ -458,7 +458,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/CYBERLOOM-INC/ComfyUI-nodes-hnmr",
     "title": "ComfyUI-nodes-hnmr",
-    "zh_description": "为潜在、采样、模型、加载器、图像、文本提供各种自定义节点。这是hnmr 293的原始[a/ComfyUI-nodes-hnmr]（https：//github.com/hnmr293/ComfyUI-nodes-hnmr）的固定版本。"
+    "zh_description": "为潜在、采样、模型、加载器、图像、文本提供各种自定义节点。这是hnmr 293的原始[a/ComfyUI-nodes-hnmr](https：//github.com/hnmr293/ComfyUI-nodes-hnmr)的固定版本。"
   },
   {
     "author": "BadCafeCode",
@@ -491,7 +491,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Jcd1230/rembg-comfyui-node",
     "title": "Rembg Background Removal Node for ComfyUI",
-    "zh_description": "节点：图像删除背景（rembg）"
+    "zh_description": "节点：图像删除背景(rembg)"
   },
   {
     "author": "YinBailiang",
@@ -585,7 +585,7 @@
     ],
     "reference": "https://github.com/city96/ComfyUI_DiT",
     "title": "ComfyUI_DiT [WIP]",
-    "zh_description": "[a/DiT（带变压器的可扩展扩散模型）]的测试床（https：//github.com/facebookresearch/DiT）。[w/没有一个代码是稳定的，如果出于某种原因你想使用它，请期待破坏性的更改。]"
+    "zh_description": "[a/DiT(带变压器的可扩展扩散模型)]的测试床(https：//github.com/facebookresearch/DiT)。[w/没有一个代码是稳定的，如果出于某种原因你想使用它，请期待破坏性的更改。]"
   },
   {
     "author": "city96",
@@ -640,7 +640,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/SLAPaper/ComfyUI-dpmpp_2m_alt-Sampler",
     "title": "ComfyUI DPM++ 2M Alt Sampler",
-    "zh_description": "[a/hallatore]（https：//github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/8457）引入的采样器\n代码取自[a/smZNodes]（https：//github.com/shimizu/ComfyUI_smZNodes）"
+    "zh_description": "[a/hallatore](https：//github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/8457)引入的采样器\n代码取自[a/smZNodes](https：//github.com/shimizu/ComfyUI_smZNodes)"
   },
   {
     "author": "flyingshutter",
@@ -677,7 +677,7 @@
     ],
     "reference": "https://github.com/Zuellni/ComfyUI-ExLlama",
     "title": "ComfyUI-ExLlama",
-    "zh_description": "节点：ExLama加载器、ExLama生成器。\n用于加载4位GPTQ Llama/2型号。你可以在[a/https：//huggingface.co/TheBloke]（https：//huggingface.co/TheBloke）[w/注意：你需要手动安装适合你系统的pip包。比如如果您的系统是'Python3.10 + Windows + CUDA 11.8'，那么您需要安装'exllama-0.0.17+ cu 118-cp 310-cp 310-win_amd64.whl'。可用的软件包文件是[a/here]（https：//github.com/jllllllama/releases）]"
+    "zh_description": "节点：ExLama加载器、ExLama生成器。\n用于加载4位GPTQ Llama/2型号。你可以在[a/https：//huggingface.co/TheBloke](https：//huggingface.co/TheBloke)[w/注意：你需要手动安装适合你系统的pip包。比如如果您的系统是'Python3.10 + Windows + CUDA 11.8'，那么您需要安装'exllama-0.0.17+ cu 118-cp 310-cp 310-win_amd64.whl'。可用的软件包文件是[a/here](https：//github.com/jllllllama/releases)]"
   },
   {
     "author": "Zuellni",
@@ -688,7 +688,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Zuellni/ComfyUI-ExLlama-Nodes",
     "title": "ComfyUI ExLlamaV2 Nodes",
-    "zh_description": "一个简单的ComfyUI本地文本生成器，使用[a/ExLlamaV 2]（https：//github.com/turboderp/exllamav2）。\n[w/注意：需要手动安装包。]"
+    "zh_description": "一个简单的ComfyUI本地文本生成器，使用[a/ExLlamaV 2](https：//github.com/turboderp/exllamav2)。\n[w/注意：需要手动安装包。]"
   },
   {
     "author": "Zuellni",
@@ -833,7 +833,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ssitu/ComfyUI_restart_sampling",
     "title": "Restart Sampling",
-    "zh_description": "基于论文“Restart Sampling for Improving Generative Processes”（[a/paper]（https：//arxiv.org/abs/2306.14878），[a/repo]（https：//github.com/Newbeeer/diffusion_restart_sampling））的重启采样的非官方ComfyUI节点"
+    "zh_description": "基于论文“Restart Sampling for Improving Generative Processes”([a/paper](https：//arxiv.org/abs/2306.14878)，[a/repo](https：//github.com/Newbeeer/diffusion_restart_sampling))的重启采样的非官方ComfyUI节点"
   },
   {
     "author": "ssitu",
@@ -855,7 +855,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ssitu/ComfyUI_fabric",
     "title": "ComfyUI fabric",
-    "zh_description": "ComfyUI节点基于论文[a/FABRIC：个性化扩散模型与迭代反馈]（https：//arxiv.org/abs/2307.10159）（通过基于注意力的参考图像调节反馈）"
+    "zh_description": "ComfyUI节点基于论文[a/FABRIC：个性化扩散模型与迭代反馈](https：//arxiv.org/abs/2307.10159)(通过基于注意力的参考图像调节反馈)"
   },
   {
     "author": "space-nuko",
@@ -877,7 +877,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/space-nuko/ComfyUI-OpenPose-Editor",
     "title": "OpenPose Editor",
-    "zh_description": "stable-diffusion-webui的openpose-editor扩展的一个端口。注意：需要[a/this ComfyUI补丁]（https：//github.com/comfyanouss/ComfyUI/pull/711）才能正常工作"
+    "zh_description": "stable-diffusion-webui的openpose-editor扩展的一个端口。注意：需要[a/this ComfyUI补丁](https：//github.com/comfyanouss/ComfyUI/pull/711)才能正常工作"
   },
   {
     "author": "space-nuko",
@@ -899,7 +899,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Nourepide/ComfyUI-Allor",
     "title": "Allor Plugin",
-    "zh_description": "Allor是ComfyUI的插件，强调透明度和性能。\n[注：如果您没有禁用设置中的默认节点覆盖功能，则内置节点（即ImageScale和ImageScaleBy节点）将被禁用。(ref：[a/配置]（https：//github.com/Nourepide/ComfyUI-Allor#configuration））]"
+    "zh_description": "Allor是ComfyUI的插件，强调透明度和性能。\n[注：如果您没有禁用设置中的默认节点覆盖功能，则内置节点(即ImageScale和ImageScaleBy节点)将被禁用。(ref：[a/配置](https：//github.com/Nourepide/ComfyUI-Allor#configuration))]"
   },
   {
     "author": "melMass",
@@ -944,7 +944,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/bmad4ever/ComfyUI-Bmad-DirtyUndoRedo",
     "title": "ComfyUI-Bmad-DirtyUndoRedo",
-    "zh_description": "ComfyUI扩展，添加了撤消（和重做）功能。"
+    "zh_description": "ComfyUI扩展，添加了撤消(和重做)功能。"
   },
   {
     "author": "bmad4ever",
@@ -1010,7 +1010,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
     "title": "FizzNodes",
-    "zh_description": "动画和实用程序的预定提示、预定float/int值和wave函数节点。与[a/framesync]（https：//www.framesync.xyz/）和[a/keyframe-string-generator]（https：//www.chigozie.co.uk/keyframe-string-generator/）兼容，用于Comfyui中的音频同步动画。"
+    "zh_description": "动画和实用程序的预定提示、预定float/int值和wave函数节点。与[a/framesync](https：//www.framesync.xyz/)和[a/keyframe-string-generator](https：//www.chigozie.co.uk/keyframe-string-generator/)兼容，用于Comfyui中的音频同步动画。"
   },
   {
     "author": "FizzleDorf",
@@ -1021,7 +1021,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/FizzleDorf/ComfyUI-AIT",
     "title": "ComfyUI-AIT",
-    "zh_description": "Facebook Meta [a/AITemplate]（https：//github.com/facebookincubator/AITemplate）repo的ComfyUI实现，用于使用cpp/cuda更快的推理。这个新的repo落后于旧版本，但是一个更稳定的基础，以保持AIT在线。请耐心等待，因为回购最终将包括与之前相同的功能。\n注意：您可以在传统通道中找到旧的AIT扩展。"
+    "zh_description": "Facebook Meta [a/AITemplate](https：//github.com/facebookincubator/AITemplate)repo的ComfyUI实现，用于使用cpp/cuda更快的推理。这个新的repo落后于旧版本，但是一个更稳定的基础，以保持AIT在线。请耐心等待，因为回购最终将包括与之前相同的功能。\n注意：您可以在传统通道中找到旧的AIT扩展。"
   },
   {
     "author": "filipemeneses",
@@ -1054,7 +1054,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/shiimizu/ComfyUI-TiledDiffusion",
     "title": "Tiled Diffusion & VAE for ComfyUI",
-    "zh_description": "该扩展通过以下技术，在有限的VRAM下实现大型图像绘制和放大：\n1.两种SOTA扩散平铺算法：[a/Mixture of Diffusers]（https：//github.com/albarji/mixture-of-diffusers）和[a/MultiDiffusion]（https：//github.com/omerbt/MultiDiffusion）\n2.pkuliyi2015的Tiled VAE算法。"
+    "zh_description": "该扩展通过以下技术，在有限的VRAM下实现大型图像绘制和放大：\n1.两种SOTA扩散平铺算法：[a/Mixture of Diffusers](https：//github.com/albarji/mixture-of-diffusers)和[a/MultiDiffusion](https：//github.com/omerbt/MultiDiffusion)\n2.pkuliyi2015的Tiled VAE算法。"
   },
   {
     "author": "ZaneA",
@@ -1112,7 +1112,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/cubiq/ComfyUI_InstantID",
     "title": "ComfyUI InstantID (Native Support)",
-    "zh_description": "本机[a/InstantID]（https：//github.com/InstantID）支持ComfyUI。\n这个扩展与许多已经可用的扩展不同，因为它不使用扩散器，而是本地实现InstantID，并且它与ComfyUI完全集成。\n请注意，这仍然可以被认为是测试阶段，期待您的反馈。"
+    "zh_description": "本机[a/InstantID](https：//github.com/InstantID)支持ComfyUI。\n这个扩展与许多已经可用的扩展不同，因为它不使用扩散器，而是本地实现InstantID，并且它与ComfyUI完全集成。\n请注意，这仍然可以被认为是测试阶段，期待您的反馈。"
   },
   {
     "author": "cubiq",
@@ -1123,7 +1123,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/cubiq/ComfyUI_FaceAnalysis",
     "title": "Face Analysis for ComfyUI",
-    "zh_description": "这个扩展使用[a/DLib]（http：//dlib.net/）来计算两个面之间的欧几里得和余弦距离。\n注意：从安装模型菜单中安装形状预测器，面部识别模型。"
+    "zh_description": "这个扩展使用[a/DLib](http：//dlib.net/)来计算两个面之间的欧几里得和余弦距离。\n注意：从安装模型菜单中安装形状预测器，面部识别模型。"
   },
   {
     "author": "shockz0rz",
@@ -1156,7 +1156,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/yolanother/DTAIComfyPromptAgent",
     "title": "Comfy UI Prompt Agent",
-    "zh_description": "节点：提示代理，提示代理（字符串）。该脚本为Comfy UI稳定扩散客户端提供了一个提示代理节点。"
+    "zh_description": "节点：提示代理，提示代理(字符串)。该脚本为Comfy UI稳定扩散客户端提供了一个提示代理节点。"
   },
   {
     "author": "yolanother",
@@ -1178,7 +1178,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/yolanother/DTAIComfyLoaders",
     "title": "Comfy UI Online Loaders",
-    "zh_description": "节点：提交图像（参数），提交图像。一个加载程序的集合，它们使用共享的公共联机数据源，而不是依赖于本地存在的文件。"
+    "zh_description": "节点：提交图像(参数)，提交图像。一个加载程序的集合，它们使用共享的公共联机数据源，而不是依赖于本地存在的文件。"
   },
   {
     "author": "yolanother",
@@ -1211,7 +1211,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/yolanother/DTAIComfyVariables",
     "title": "Variables for Comfy UI",
-    "zh_description": "节点：字符串，Int，浮点，短字符串，CLIP文本编码（带变量），字符串格式，短字符串格式。这个扩展通过提供变量节点和共享全局变量来提高生活质量。"
+    "zh_description": "节点：字符串，Int，浮点，短字符串，CLIP文本编码(带变量)，字符串格式，短字符串格式。这个扩展通过提供变量节点和共享全局变量来提高生活质量。"
   },
   {
     "author": "sipherxyz",
@@ -1281,7 +1281,7 @@
     ],
     "reference": "https://github.com/andersxa/comfyui-PromptAttention",
     "title": "CLIP Directional Prompt Attention",
-    "zh_description": "节点：CLIP方向提示注意编码。方向提示注意力试图解决上下文词（或提示的部分）对提示后面或不相关的部分产生影响的问题。"
+    "zh_description": "节点：CLIP方向提示注意编码。方向提示注意力试图解决上下文词(或提示的部分)对提示后面或不相关的部分产生影响的问题。"
   },
   {
     "author": "ArtVentureX",
@@ -1295,7 +1295,7 @@
     ],
     "reference": "https://github.com/ArtVentureX/comfyui-animatediff",
     "title": "AnimateDiff",
-    "zh_description": "ComfyUI的AnimateDiff集成，改编自sd-webui-animatediff。\n[w/您只需要下载[a/mm_sd_v14.ckpt]（https：//huggingface.co/guoyww/animatedif/resolve/main/mm_sd_v14.ckpt）之一|[a/mm_sd_v15.ckpt]（https：//huggingface.co/guoyww/animatedif/resolve/main/mm_sd_v15.ckpt）。将模型权重置于%%ComfyUI/custom_nodes/comfyui-animatediff/models%%下。请勿更改型号文件名。]"
+    "zh_description": "ComfyUI的AnimateDiff集成，改编自sd-webui-animatediff。\n[w/您只需要下载[a/mm_sd_v14.ckpt](https：//huggingface.co/guoyww/animatedif/resolve/main/mm_sd_v14.ckpt)之一|[a/mm_sd_v15.ckpt](https：//huggingface.co/guoyww/animatedif/resolve/main/mm_sd_v15.ckpt)。将模型权重置于%%ComfyUI/custom_nodes/comfyui-animatediff/models%%下。请勿更改型号文件名。]"
   },
   {
     "author": "twri",
@@ -1317,7 +1317,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/wolfden/ComfyUi_PromptStylers",
     "title": "SDXL Prompt Styler (customized version by wolfden)",
-    "zh_description": "这些自定义节点基于[a/twri/SDXL Prompt Styler]（https：//github.com/twri/sdxl_styler）提供了各种自定义的提示样式。"
+    "zh_description": "这些自定义节点基于[a/twri/SDXL Prompt Styler](https：//github.com/twri/sdxl_styler)提供了各种自定义的提示样式。"
   },
   {
     "author": "wolfden",
@@ -1361,7 +1361,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/asagi4/ComfyUI-CADS",
     "title": "ComfyUI-CADS",
-    "zh_description": "尝试为ComfyUI实现[a/CADS]（https：//arxiv.org/abs/2310.17347）。也要归功于[a/A1111实现]（https：//github.com/v0xie/sd-webui-cads/tree/main），我将其用作参考。"
+    "zh_description": "尝试为ComfyUI实现[a/CADS](https：//arxiv.org/abs/2310.17347)。也要归功于[a/A1111实现](https：//github.com/v0xie/sd-webui-cads/tree/main)，我将其用作参考。"
   },
   {
     "author": "asagi4",
@@ -1383,7 +1383,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/jamesWalker55/comfyui-p2ldgan",
     "title": "ComfyUI - P2LDGAN Node",
-    "zh_description": "节点：P2 LDGAN。这将P2 LDGAN集成到ComfyUI中。P2 LDGAN从输入图像中提取线性。\n[w/要使用此扩展，您需要下载[a/p2 ldgan模型]（https：//drive.google.com/file/d/1To4V_Btc3QhCLBWZ0PdSNgC1cbm3isHP）并将其保存在%%ComfyUI/custom_nodes/comfyui-p2 ldgan/checkpoints%目录中。]"
+    "zh_description": "节点：P2 LDGAN。这将P2 LDGAN集成到ComfyUI中。P2 LDGAN从输入图像中提取线性。\n[w/要使用此扩展，您需要下载[a/p2 ldgan模型](https：//drive.google.com/file/d/1To4V_Btc3QhCLBWZ0PdSNgC1cbm3isHP)并将其保存在%%ComfyUI/custom_nodes/comfyui-p2 ldgan/checkpoints%目录中。]"
   },
   {
     "author": "jamesWalker55",
@@ -1428,7 +1428,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kwaroran/abg-comfyui",
     "title": "abg-comfyui",
-    "zh_description": "节点：移除图像背景（abg）。一个动漫背景移除节点，基于这个hf空间，工作原理与automatic1111中的AGB扩展相同。"
+    "zh_description": "节点：移除图像背景(abg)。一个动漫背景移除节点，基于这个hf空间，工作原理与automatic1111中的AGB扩展相同。"
   },
   {
     "author": "bash-j",
@@ -1494,7 +1494,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
     "title": "AnimateDiff Evolved",
-    "zh_description": "一个分叉的存储库，主动维护[a/AnimateDiff]（https：//github.com/ArtVentureX/comfyui-animatediff），由ArtVentureX创建。\n\n改进了ComfyUI的AnimateDiff集成，改编自sd-webui-animatediff。\n[w/从[a/Original Models]下载一个或多个运动模型（https：//huggingface.co/guoyww/animateddiff/tree/main）|[a/Finetuned Models]（https：//huggingface.co/manshoety/AD_Stabilized_Motion/tree/main）。有关其他模型链接和用法，请参见README。将模型权重置于%%ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models%下。您可以自由地重命名模型，但保留原始名称将在共享工作流时更容易使用。]"
+    "zh_description": "一个分叉的存储库，主动维护[a/AnimateDiff](https：//github.com/ArtVentureX/comfyui-animatediff)，由ArtVentureX创建。\n\n改进了ComfyUI的AnimateDiff集成，改编自sd-webui-animatediff。\n[w/从[a/Original Models]下载一个或多个运动模型(https：//huggingface.co/guoyww/animateddiff/tree/main)|[a/Finetuned Models](https：//huggingface.co/manshoety/AD_Stabilized_Motion/tree/main)。有关其他模型链接和用法，请参见README。将模型权重置于%%ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models%下。您可以自由地重命名模型，但保留原始名称将在共享工作流时更容易使用。]"
   },
   {
     "author": "Kosinkadink",
@@ -1516,7 +1516,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Gourieff/comfyui-reactor-node",
     "title": "ReActor Node for ComfyUI",
-    "zh_description": "基于ReActor（ex Roop-GE）SD-WebUI Face Swap扩展的ComfyUI快速而简单的“roop-like”人脸交换扩展节点"
+    "zh_description": "基于ReActor(ex Roop-GE)SD-WebUI Face Swap扩展的ComfyUI快速而简单的“roop-like”人脸交换扩展节点"
   },
   {
     "author": "imb101",
@@ -1527,7 +1527,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/imb101/ComfyUI-FaceSwap",
     "title": "FaceSwap",
-    "zh_description": "节点：FaceSwapNode。非常基本的自定义节点，用于在ComfyUI中启用人脸交换。（roop）"
+    "zh_description": "节点：FaceSwapNode。非常基本的自定义节点，用于在ComfyUI中启用人脸交换。(roop)"
   },
   {
     "author": "Chaoses-Ib",
@@ -1582,7 +1582,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/dimtoneff/ComfyUI-PixelArt-Detector",
     "title": "ComfyUI PixelArt Detector",
-    "zh_description": "这个节点操作像素艺术图像的方式，它应该看起来像素完美（缩小，改变调色板，放大等）。"
+    "zh_description": "这个节点操作像素艺术图像的方式，它应该看起来像素完美(缩小，改变调色板，放大等)。"
   },
   {
     "author": "dimtoneff",
@@ -1615,7 +1615,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/M1kep/Comfy_KepListStuff",
     "title": "Comfy_KepListStuff",
-    "zh_description": "节点：范围（步长）、范围（步长）、列表长度、图像覆盖、堆叠图像、空图像、连接图像列表、连接浮动列表。此扩展提供了各种列表操作节点"
+    "zh_description": "节点：范围(步长)、范围(步长)、列表长度、图像覆盖、堆叠图像、空图像、连接图像列表、连接浮动列表。此扩展提供了各种列表操作节点"
   },
   {
     "author": "M1kep",
@@ -1648,7 +1648,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/M1kep/Comfy_KepMatteAnything",
     "title": "Comfy_KepMatteAnything",
-    "zh_description": "此扩展提供了一个自定义节点，允许在ComfyUI中使用[a/Matte Anything]（https：//github.com/hustvl/Matte-Anything）。"
+    "zh_description": "此扩展提供了一个自定义节点，允许在ComfyUI中使用[a/Matte Anything](https：//github.com/hustvl/Matte-Anything)。"
   },
   {
     "author": "M1kep",
@@ -1681,7 +1681,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/M1kep/ComfyUI-KepOpenAI",
     "title": "ComfyUI-KepOpenAI",
-    "zh_description": "ComfyUI-KepOpenAI是一个用户友好的节点，用作与GPT-4 with Vision（GPT-4V）API的接口。这种集成促进了图像与文本提示的处理，利用OpenAI API的功能来生成与所提供的输入上下文相关的文本完成。"
+    "zh_description": "ComfyUI-KepOpenAI是一个用户友好的节点，用作与GPT-4 with Vision(GPT-4V)API的接口。这种集成促进了图像与文本提示的处理，利用OpenAI API的功能来生成与所提供的输入上下文相关的文本完成。"
   },
   {
     "author": "uarefans",
@@ -1692,7 +1692,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/uarefans/ComfyUI-Fans",
     "title": "ComfyUI-Fans",
-    "zh_description": "节点：球迷风格（最多10风格），球迷文本Concat（直到10文本）。"
+    "zh_description": "节点：球迷风格(最多10风格)，球迷文本Concat(直到10文本)。"
   },
   {
     "author": "NicholasMcCarthy",
@@ -1747,7 +1747,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/m-sokes/ComfyUI-Sokes-Nodes",
     "title": "ComfyUI Sokes Nodes",
-    "zh_description": "节点：空潜在随机化器（9个输入）"
+    "zh_description": "节点：空潜在随机化器(9个输入)"
   },
   {
     "author": "Extraltodeus",
@@ -1780,7 +1780,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Extraltodeus/sigmas_tools_and_the_golden_scheduler",
     "title": "sigmas_tools_and_the_golden_scheduler",
-    "zh_description": "几个节点混合sigma和一个使用phi的自定义调度器，然后一个使用eval（）的节点能够使用自定义公式进行调度。"
+    "zh_description": "几个节点混合sigma和一个使用phi的自定义调度器，然后一个使用eval()的节点能够使用自定义公式进行调度。"
   },
   {
     "author": "Extraltodeus",
@@ -1802,7 +1802,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Extraltodeus/Vector_Sculptor_ComfyUI",
     "title": "Vector_Sculptor_ComfyUI",
-    "zh_description": "主节点使你的条件反射走向类似的概念，从而丰富你的构图，或者更远，从而使它更精确。只要余弦相似性分数减小，它就收集相似的前第二向量。如果它往后退，它就会停止。这允许设置一个相对的方向类似的概念。\n最后有一些例子，但是[a/你也可以查看这个imgur相册]（https：//imgur.com/a/WvPd81Y），这证明了提高多样性的能力。"
+    "zh_description": "主节点使你的条件反射走向类似的概念，从而丰富你的构图，或者更远，从而使它更精确。只要余弦相似性分数减小，它就收集相似的前第二向量。如果它往后退，它就会停止。这允许设置一个相对的方向类似的概念。\n最后有一些例子，但是[a/你也可以查看这个imgur相册](https：//imgur.com/a/WvPd81Y)，这证明了提高多样性的能力。"
   },
   {
     "author": "JPS",
@@ -1835,7 +1835,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/hustille/ComfyUI_Fooocus_KSampler",
     "title": "ComfyUI_Fooocus_KSampler",
-    "zh_description": "节点：KSampler With Refiner（Foocus）。[a/Foocus]（https：//github.com/lllyasviel/Foocus）中的KSampler作为ComfyUI节点[w/Note：此修补了ComfyUI的基本行为-不要与其他采样器一起使用。或者也许是？其他采样者可能会从这些变化中获益... ymv.]"
+    "zh_description": "节点：KSampler With Refiner(Foocus)。[a/Foocus](https：//github.com/lllyasviel/Foocus)中的KSampler作为ComfyUI节点[w/Note：此修补了ComfyUI的基本行为-不要与其他采样器一起使用。或者也许是？其他采样者可能会从这些变化中获益... ymv.]"
   },
   {
     "author": "badjeff",
@@ -1869,7 +1869,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION",
     "title": "AIGODLIKE-COMFYUI-TRANSLATION",
-    "zh_description": "它提供语言设置。（由于支持每种语言，因此需要各语言用户的贡献。"
+    "zh_description": "它提供语言设置。(由于支持每种语言，因此需要各语言用户的贡献。"
   },
   {
     "author": "AIGODLIKE",
@@ -1946,7 +1946,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/laksjdjf/pfg-ComfyUI",
     "title": "pfg-ComfyUI",
-    "zh_description": "https://github.com/laksjdjf/pfg-webui的ComfyUI版本。(To使用此扩展，您需要从 ** 安装模型 ** 下载所需的模型文件）"
+    "zh_description": "https://github.com/laksjdjf/pfg-webui的ComfyUI版本。(To使用此扩展，您需要从 ** 安装模型 ** 下载所需的模型文件)"
   },
   {
     "author": "laksjdjf",
@@ -1968,7 +1968,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/laksjdjf/cd-tuner_negpip-ComfyUI",
     "title": "cd-tuner_negpip-ComfyUI",
-    "zh_description": "节点：应用CDTuner，应用Negapip.此扩展提供了[a/CD（Color/Detail）Tuner]（https：//github.com/hako-mikan/sd-webui-cd-tuner）和[a/Negative Prompt in the Prompt]（https：//github.com/hako-mikan/sd-webui-pip）特性。"
+    "zh_description": "节点：应用CDTuner，应用Negapip.此扩展提供了[a/CD(Color/Detail)Tuner](https：//github.com/hako-mikan/sd-webui-cd-tuner)和[a/Negative Prompt in the Prompt](https：//github.com/hako-mikan/sd-webui-pip)特性。"
   },
   {
     "author": "laksjdjf",
@@ -1979,7 +1979,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/laksjdjf/LCMSampler-ComfyUI",
     "title": "LCMSampler-ComfyUI",
-    "zh_description": "此扩展节点是为SSD-1B动画的LCM转换使用。它不能保证与原始LCM一起运行（因为它不能在当前版本中加载权重）。为了利用LCM的快速生成，还提供了一个用于使用TAESD作为解码器的节点。这是由ComfyUI-VAE启发的。"
+    "zh_description": "此扩展节点是为SSD-1B动画的LCM转换使用。它不能保证与原始LCM一起运行(因为它不能在当前版本中加载权重)。为了利用LCM的快速生成，还提供了一个用于使用TAESD作为解码器的节点。这是由ComfyUI-VAE启发的。"
   },
   {
     "author": "laksjdjf",
@@ -1990,7 +1990,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/laksjdjf/LoRTnoC-ComfyUI",
     "title": "LoRTnoC-ComfyUI",
-    "zh_description": "这是一个在ComfyUI上使用LoRTnoC（LoRA with ControlNet的提示块）的存储库。\n注意：请将模型文件放在与controlnet相同的位置。(Is这太武断了？）"
+    "zh_description": "这是一个在ComfyUI上使用LoRTnoC(LoRA with ControlNet的提示块)的存储库。\n注意：请将模型文件放在与controlnet相同的位置。(Is这太武断了？)"
   },
   {
     "author": "laksjdjf",
@@ -2001,7 +2001,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/laksjdjf/Batch-Condition-ComfyUI",
     "title": "Batch-Condition-ComfyUI",
-    "zh_description": "节点：CLIP文本编码（批处理），字符串输入，批处理字符串"
+    "zh_description": "节点：CLIP文本编码(批处理)，字符串输入，批处理字符串"
   },
   {
     "author": "alsritter",
@@ -2067,7 +2067,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nagolinc/ComfyUI_FastVAEDecorder_SDXL",
     "title": "ComfyUI_FastVAEDecorder_SDXL",
-    "zh_description": "根据：[a/Birch-san/diffusers-play/approx_add]（https：//github.com/Birch-san/diffusers-play/tree/main/approx_add）。此ComfyUI节点允许您快速预览SDXL 1.0潜在版本。"
+    "zh_description": "根据：[a/Birch-san/diffusers-play/approx_add](https：//github.com/Birch-san/diffusers-play/tree/main/approx_add)。此ComfyUI节点允许您快速预览SDXL 1.0潜在版本。"
   },
   {
     "author": "bradsec",
@@ -2246,7 +2246,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/spro/comfyui-mirror",
     "title": "Latent Mirror node for ComfyUI",
-    "zh_description": "节点：潜在镜像。节点沿Y（垂直/从左到右）或X（水平/从上到下）轴镜像潜在。"
+    "zh_description": "节点：潜在镜像。节点沿Y(垂直/从左到右)或X(水平/从上到下)轴镜像潜在。"
   },
   {
     "author": "Tropfchen",
@@ -2268,7 +2268,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Acly/comfyui-tooling-nodes",
     "title": "ComfyUI Nodes for External Tooling",
-    "zh_description": "节点：加载图像（Base64），加载掩码（Base64），发送图像（WebSocket），裁剪图像，应用掩码到图像。提供了面向使用ComfyUI作为外部工具后端的节点。\n注意：当使用外部工具如[comfyui-capture-injection]（https：//github.com/minux302/comfyui-capture-injection）时，此扩展是必要的。"
+    "zh_description": "节点：加载图像(Base64)，加载掩码(Base64)，发送图像(WebSocket)，裁剪图像，应用掩码到图像。提供了面向使用ComfyUI作为外部工具后端的节点。\n注意：当使用外部工具如[comfyui-capture-injection](https：//github.com/minux302/comfyui-capture-injection)时，此扩展是必要的。"
   },
   {
     "author": "Acly",
@@ -2279,7 +2279,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Acly/comfyui-inpaint-nodes",
     "title": "ComfyUI Inpaint Nodes",
-    "zh_description": "使用ComfyUI更好地修复实验节点。添加两个节点，允许使用[a/Foocus]（https：//github.com/Acly/comfyui-inpaint-nodes）inpaint模型。这是一个小而灵活的补丁，可以应用于任何SDXL检查点，并将其转换为一个inpaint模型。然后，这个模型可以像其他inpaint模型一样使用，并提供相同的好处。[a/阅读更多]（https：//github.com/lllyasviel/Fooocus/discussions/414）"
+    "zh_description": "使用ComfyUI更好地修复实验节点。添加两个节点，允许使用[a/Foocus](https：//github.com/Acly/comfyui-inpaint-nodes)inpaint模型。这是一个小而灵活的补丁，可以应用于任何SDXL检查点，并将其转换为一个inpaint模型。然后，这个模型可以像其他inpaint模型一样使用，并提供相同的好处。[a/阅读更多](https：//github.com/lllyasviel/Fooocus/discussions/414)"
   },
   {
     "author": "picturesonpictures",
@@ -2312,7 +2312,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/alt-key-project/comfyui-dream-video-batches",
     "title": "Dream Video Batches",
-    "zh_description": "为基于批处理的视频生成工作流提供实用程序（s.a.动画差和稳定视频扩散）。"
+    "zh_description": "为基于批处理的视频生成工作流提供实用程序(s.a.动画差和稳定视频扩散)。"
   },
   {
     "author": "seanlynch",
@@ -2323,7 +2323,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/seanlynch/comfyui-optical-flow",
     "title": "ComfyUI Optical Flow",
-    "zh_description": "该软件包包含三个节点，用于帮助您计算图像对之间的光流，通常是视频中的相邻帧，可视化流，并将流应用于相同尺寸的另一个图像。大部分代码来自Deforum，所以这是在同一个许可证下发布的（MIT）。"
+    "zh_description": "该软件包包含三个节点，用于帮助您计算图像对之间的光流，通常是视频中的相邻帧，可视化流，并将流应用于相同尺寸的另一个图像。大部分代码来自Deforum，所以这是在同一个许可证下发布的(MIT)。"
   },
   {
     "author": "ealkanat",
@@ -2356,7 +2356,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/mav-rik/facerestore_cf",
     "title": "Facerestore CF (Code Former)",
-    "zh_description": "这是[a/facerestore自定义节点]（https：//civitai.com/models/24690/comfyui-facestore-node）的副本，其中有一点更改以支持CodeFormer Fidelity参数。这些ComfyUI节点可用于恢复图像中的面部，类似于AUTOMATIC 1111 webui中的面部恢复选项。\n注意：要使用此节点，您需要从“安装模型”菜单下载面部恢复模型和面部检测模型。"
+    "zh_description": "这是[a/facerestore自定义节点](https：//civitai.com/models/24690/comfyui-facestore-node)的副本，其中有一点更改以支持CodeFormer Fidelity参数。这些ComfyUI节点可用于恢复图像中的面部，类似于AUTOMATIC 1111 webui中的面部恢复选项。\n注意：要使用此节点，您需要从“安装模型”菜单下载面部恢复模型和面部检测模型。"
   },
   {
     "author": "braintacles",
@@ -2433,7 +2433,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ramyma/A8R8_ComfyUI_nodes",
     "title": "A8R8 ComfyUI Nodes",
-    "zh_description": "节点：Base64图像输入节点，Base64图像输出节点。[a/A8 R8]（https：//github.com/ramyma/a8r8）支持与ComfyUI集成的节点"
+    "zh_description": "节点：Base64图像输入节点，Base64图像输出节点。[a/A8 R8](https：//github.com/ramyma/a8r8)支持与ComfyUI集成的节点"
   },
   {
     "author": "spinagon",
@@ -2488,7 +2488,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/spacepxl/ComfyUI-RAVE",
     "title": "ComfyUI-RAVE",
-    "zh_description": "[a/RAVE]的非官方ComfyUI实现（https：//rave-video.github.io/）"
+    "zh_description": "[a/RAVE]的非官方ComfyUI实现(https：//rave-video.github.io/)"
   },
   {
     "author": "PTA",
@@ -2499,7 +2499,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/phineas-pta/comfyui-auto-nodes-layout",
     "title": "auto nodes layout",
-    "zh_description": "一个ComfyUI扩展，将更好的节点布局算法应用到ComfyUI工作流（主要用于可视化目的）"
+    "zh_description": "一个ComfyUI扩展，将更好的节点布局算法应用到ComfyUI工作流(主要用于可视化目的)"
   },
   {
     "author": "receyuki",
@@ -2543,7 +2543,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Clybius/ComfyUI-Latent-Modifiers",
     "title": "ComfyUI-Latent-Modifiers",
-    "zh_description": "节点：潜在扩散巨型修改器。在扩散过程中修改潜在的ComfyUI节点。（Sharing，Tonemap，Resscale，Extra Noise）"
+    "zh_description": "节点：潜在扩散巨型修改器。在扩散过程中修改潜在的ComfyUI节点。(Sharing，Tonemap，Resscale，Extra Noise)"
   },
   {
     "author": "Clybius",
@@ -2598,7 +2598,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chrisgoringe/cg-image-picker",
     "title": "Image chooser",
-    "zh_description": "一个自定义节点，在选择要传递给工作流的其余部分的图像（或潜在图像）时暂停流。"
+    "zh_description": "一个自定义节点，在选择要传递给工作流的其余部分的图像(或潜在图像)时暂停流。"
   },
   {
     "author": "chrisgoringe",
@@ -2709,7 +2709,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kijai/ComfyUI-Marigold",
     "title": "Marigold depth estimation in ComfyUI",
-    "zh_description": "这是Marigold深度估计的包装器节点：[https：//github.com/prs-eth/Marigold]（https：//github.com/kijai/ComfyUI-Marigold）。当前使用的扩散器管道与原始实现相同，因此除了自定义节点之外，还需要扩散器格式的模型。\n注意：请参阅repo中的详细信息进行安装。"
+    "zh_description": "这是Marigold深度估计的包装器节点：[https：//github.com/prs-eth/Marigold](https：//github.com/kijai/ComfyUI-Marigold)。当前使用的扩散器管道与原始实现相同，因此除了自定义节点之外，还需要扩散器格式的模型。\n注意：请参阅repo中的详细信息进行安装。"
   },
   {
     "author": "kijai",
@@ -2720,7 +2720,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kijai/ComfyUI-Geowizard",
     "title": "Geowizard depth and normal estimation in ComfyUI",
-    "zh_description": "这是一个Geowentry的diffusers（0.27.2）包装器节点：[https：//github.com/fuxiao0719/GeoWizard]。该模型从Hugginface自动下载到ComfyUI/models/diffusers/geowrics"
+    "zh_description": "这是一个Geowentry的diffusers(0.27.2)包装器节点：[https：//github.com/fuxiao0719/GeoWizard]。该模型从Hugginface自动下载到ComfyUI/models/diffusers/geowrics"
   },
   {
     "author": "kijai",
@@ -2742,7 +2742,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kijai/ComfyUI-DDColor",
     "title": "ComfyUI-DDColor",
-    "zh_description": "在ComfyUI中使用[a/DDColor]（https：//github.com/piddnad/DDColor）的节点。"
+    "zh_description": "在ComfyUI中使用[a/DDColor](https：//github.com/piddnad/DDColor)的节点。"
   },
   {
     "author": "Kijai",
@@ -2797,7 +2797,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kijai/ComfyUI-APISR",
     "title": "ComfyUI-APISR",
-    "zh_description": "在ComfyUI中使用[a/APISR]（https：//github.com/Kiteretsu77/APISR）的节点"
+    "zh_description": "在ComfyUI中使用[a/APISR](https：//github.com/Kiteretsu77/APISR)的节点"
   },
   {
     "author": "kijai",
@@ -2808,7 +2808,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kijai/ComfyUI-DiffusionLight",
     "title": "DiffusionLight implementation for ComfyUI",
-    "zh_description": "这是创建光探测器的[a/DiffusionLight]（https：//github.com/DiffusionLight/DiffusionLight）方法的简化实现。你需要包含的LoRA，像往常一样把它放在ComfyUI/loras文件夹中，它是从原来的扩散器转换而来的。"
+    "zh_description": "这是创建光探测器的[a/DiffusionLight](https：//github.com/DiffusionLight/DiffusionLight)方法的简化实现。你需要包含的LoRA，像往常一样把它放在ComfyUI/loras文件夹中，它是从原来的扩散器转换而来的。"
   },
   {
     "author": "kijai",
@@ -2852,7 +2852,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/thedyze/save-image-extended-comfyui",
     "title": "Save Image Extended for ComfyUI",
-    "zh_description": "自定义保存在文件名和文件夹名中的信息。将采样器参数的值用作文件或文件夹名称的一部分。在每个文件夹中，将正面和负面提示保存为JSON（文本）文件中的条目。"
+    "zh_description": "自定义保存在文件名和文件夹名中的信息。将采样器参数的值用作文件或文件夹名称的一部分。在每个文件夹中，将正面和负面提示保存为JSON(文本)文件中的条目。"
   },
   {
     "author": "SOELexicon",
@@ -2940,7 +2940,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chrish-slingshot/CrasHUtils",
     "title": "CrasH Utils",
-    "zh_description": "影响和生活质量的混合体。节点：ImageGlitcher（给图像一个很酷的毛刺效果），ColorStylizer（突出图像中的单一颜色），QueryLocalLLM（通过oobabooga查询本地LLM API），SDXLReslution（标准SDXL分辨率选择器，完整列表），SDXLResolutionSplit（将SDXL分辨率拆分为宽度和高度）。 "
+    "zh_description": "影响和生活质量的混合体。节点：ImageGlitcher(给图像一个很酷的毛刺效果)，ColorStylizer(突出图像中的单一颜色)，QueryLocalLLM(通过oobabooga查询本地LLM API)，SDXLReslution(标准SDXL分辨率选择器，完整列表)，SDXLResolutionSplit(将SDXL分辨率拆分为宽度和高度)。 "
   },
   {
     "author": "spinagon",
@@ -2951,7 +2951,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/spinagon/ComfyUI-seam-carving",
     "title": "ComfyUI-seam-carving",
-    "zh_description": "节点：图像调整大小（接缝雕刻）。ComfyUI的接缝雕刻（图像大小）。基于[a/https：//github.com/li-plus/seam-caving]（https：//github.com/li-plus/seam-caving）。采用接缝雕刻算法，可以在保证重要内容不失真的前提下，智能调整图像大小。雕刻过程可以被进一步引导，以便可以从图像中移除对象而没有明显的伪影。"
+    "zh_description": "节点：图像调整大小(接缝雕刻)。ComfyUI的接缝雕刻(图像大小)。基于[a/https：//github.com/li-plus/seam-caving](https：//github.com/li-plus/seam-caving)。采用接缝雕刻算法，可以在保证重要内容不失真的前提下，智能调整图像大小。雕刻过程可以被进一步引导，以便可以从图像中移除对象而没有明显的伪影。"
   },
   {
     "author": "YMC",
@@ -2962,7 +2962,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/YMC-GitHub/ymc-node-suite-comfyui",
     "title": "ymc-node-suite-comfyui",
-    "zh_description": "ymc的comfyui节点。此扩展由提供各种实用功能（如文本、区域和I/O）的节点组成。"
+    "zh_description": "ymc的comfyui节点。此扩展由提供各种实用功能(如文本、区域和I/O)的节点组成。"
   },
   {
     "author": "chibiace",
@@ -3105,7 +3105,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/shadowcz007/comfyui-consistency-decoder",
     "title": "Consistency Decoder",
-    "zh_description": "[a/openai Consistency Decoder]（https：//github.com/openai/consistency decoder）。下载[a/OpenAI VAE模型]（https：//openaippublic.azureedge.net/diff-configur/c9 cebd 3132 dd 9 c42936 d803 e33424145 a748843 c8 f716 c 0814838 bdc 8a 2fe 7 cb/decoder.pt）后，将其放置在`model/configurt`目录中使用。"
+    "zh_description": "[a/openai Consistency Decoder](https：//github.com/openai/consistency decoder)。下载[a/OpenAI VAE模型](https：//openaippublic.azureedge.net/diff-configur/c9 cebd 3132 dd 9 c42936 d803 e33424145 a748843 c8 f716 c 0814838 bdc 8a 2fe 7 cb/decoder.pt)后，将其放置在`model/configurt`目录中使用。"
   },
   {
     "author": "shadowcz007",
@@ -3116,7 +3116,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/shadowcz007/comfyui-Image-reward",
     "title": "comfyui-Image-reward",
-    "zh_description": "[a/ImageReward]（https：//github.com/THUDM/ImageReward）：文本到图像生成中的人类偏好学习。这是NeurIPS 2023的一篇[a/paper]（https：//arxiv.org/abs/2304.05977）"
+    "zh_description": "[a/ImageReward](https：//github.com/THUDM/ImageReward)：文本到图像生成中的人类偏好学习。这是NeurIPS 2023的一篇[a/paper](https：//arxiv.org/abs/2304.05977)"
   },
   {
     "author": "ostris",
@@ -3139,7 +3139,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/0xbitches/ComfyUI-LCM",
     "title": "Latent Consistency Model for ComfyUI",
-    "zh_description": "这个自定义节点在ComfyUI中实现了一个潜在一致性模型采样器。（LCM）"
+    "zh_description": "这个自定义节点在ComfyUI中实现了一个潜在一致性模型采样器。(LCM)"
   },
   {
     "author": "aszc-dev",
@@ -3150,7 +3150,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/aszc-dev/ComfyUI-CoreMLSuite",
     "title": "Core ML Suite for ComfyUI",
-    "zh_description": "此扩展包含一组ComfyUI的自定义节点，允许您在ComfyUI工作流中使用Core ML模型。模型可以在这里获得，或者你可以使用coremltools转换你自己的模型。在ComfyUI中使用Core ML模型的主要动机是允许您在Apple Silicon（M1/M2）机器上使用ANE（Apple Neural Engine）来提高性能。"
+    "zh_description": "此扩展包含一组ComfyUI的自定义节点，允许您在ComfyUI工作流中使用Core ML模型。模型可以在这里获得，或者你可以使用coremltools转换你自己的模型。在ComfyUI中使用Core ML模型的主要动机是允许您在Apple Silicon(M1/M2)机器上使用ANE(Apple Neural Engine)来提高性能。"
   },
   {
     "author": "taabata",
@@ -3172,7 +3172,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/taabata/LCM_Inpaint-Outpaint_Comfy",
     "title": "LCM_Inpaint-Outpaint_Comfy",
-    "zh_description": "ComfyUI自定义节点，用于使用新的潜在一致性模型（LCM）进行修复/修复"
+    "zh_description": "ComfyUI自定义节点，用于使用新的潜在一致性模型(LCM)进行修复/修复"
   },
   {
     "author": "noxinias",
@@ -3216,7 +3216,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kinfolk0117/ComfyUI_GradientDeepShrink",
     "title": "ComfyUI_GradientDeepShrink",
-    "zh_description": "节点：AddendDownscale（Kohya Deep Shrink）。"
+    "zh_description": "节点：AddendDownscale(Kohya Deep Shrink)。"
   },
   {
     "author": "kinfolk0117",
@@ -3227,7 +3227,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kinfolk0117/ComfyUI_Pilgram",
     "title": "ComfyUI_Pilgram",
-    "zh_description": "使用ComfyUI中的[a/Pilgam 2]（https：//github.com/mgineer85/pilgam2）过滤器"
+    "zh_description": "使用ComfyUI中的[a/Pilgam 2](https：//github.com/mgineer85/pilgam2)过滤器"
   },
   {
     "author": "Fictiverse",
@@ -3249,7 +3249,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/idrirap/ComfyUI-Lora-Auto-Trigger-Words",
     "title": "ComfyUI-Lora-Auto-Trigger-Words",
-    "zh_description": "这个项目是[a/https：//github.com/Extraltodeus/LoadLoraWithTags]（https：//github.com/Extraltodeus/LoadLoraWithTags）的一个分支。这些自定义节点的目的是方便地访问用于触发lora的标签。"
+    "zh_description": "这个项目是[a/https：//github.com/Extraltodeus/LoadLoraWithTags](https：//github.com/Extraltodeus/LoadLoraWithTags)的一个分支。这些自定义节点的目的是方便地访问用于触发lora的标签。"
   },
   {
     "author": "aianimation55",
@@ -3271,7 +3271,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/noembryo/ComfyUI-noEmbryo",
     "title": "noEmbryo nodes",
-    "zh_description": "AdvertTermList（1-6）：是一些帮助在ComfyUI中创建Adverts的节点。分辨率比例使用比例因子输出图像尺寸。Regex Text Chopper使用RegEx输出文本的切碎部分。"
+    "zh_description": "AdvertTermList(1-6)：是一些帮助在ComfyUI中创建Adverts的节点。分辨率比例使用比例因子输出图像尺寸。Regex Text Chopper使用RegEx输出文本的切碎部分。"
   },
   {
     "author": "mikkel",
@@ -3293,7 +3293,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ParmanBabra/ComfyUI-Malefish-Custom-Scripts",
     "title": "ComfyUI-Malefish-Custom-Scripts",
-    "zh_description": "节点：多Lora加载器、随机（提示）、合并（提示）、CSV文件加载器"
+    "zh_description": "节点：多Lora加载器、随机(提示)、合并(提示)、CSV文件加载器"
   },
   {
     "author": "IAmMatan.com",
@@ -3304,7 +3304,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/matan1905/ComfyUI-Serving-Toolkit",
     "title": "ComfyUI Serving toolkit",
-    "zh_description": "此扩展添加了节点，使您可以轻松地为工作流提供服务（例如使用不和谐机器人） "
+    "zh_description": "此扩展添加了节点，使您可以轻松地为工作流提供服务(例如使用不和谐机器人) "
   },
   {
     "author": "PCMonsterx",
@@ -3326,7 +3326,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Trung0246/ComfyUI-0246",
     "title": "ComfyUI-0246",
-    "zh_description": "我为ComfyUI做了随机节点，以解决我与ComfyUI的矛盾（例如：管道，进程）。有不同的质量。"
+    "zh_description": "我为ComfyUI做了随机节点，以解决我与ComfyUI的矛盾(例如：管道，进程)。有不同的质量。"
   },
   {
     "author": "fexli",
@@ -3481,7 +3481,7 @@
     "nodename_pattern": " \\(jov\\)$",
     "reference": "https://github.com/Amorano/Jovimetrix",
     "title": "Jovimetrix Composition Nodes",
-    "zh_description": "像Substance Designer一样创作。网络摄像头，媒体流（输入/输出），滴答动画，颜色校正，几何体操作，像素着色器，多面体形状生成器，重映射图像几何测量和颜色，沉重的灵感来自WAS和MTB节点套件。"
+    "zh_description": "像Substance Designer一样创作。网络摄像头，媒体流(输入/输出)，滴答动画，颜色校正，几何体操作，像素着色器，多面体形状生成器，重映射图像几何测量和颜色，沉重的灵感来自WAS和MTB节点套件。"
   },
   {
     "author": "Umikaze-job",
@@ -3647,7 +3647,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/thecooltechguy/ComfyUI-ComfyRun",
     "title": "ComfyUI-ComfyRun",
-    "zh_description": "运行和共享任何ComfyUI工作流的最简单方法[a/https://comfyrun.com]（https：//comfyrun.com）"
+    "zh_description": "运行和共享任何ComfyUI工作流的最简单方法[a/https://comfyrun.com](https：//comfyrun.com)"
   },
   {
     "author": "thecooltechguy",
@@ -3779,7 +3779,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-Q-Align",
     "title": "ComfyUI-Q-Align",
-    "zh_description": "节点：Q-Align评分。[a/Q-Align]（https：//arxiv.org/abs/2312.17090）为ComfyUI实现"
+    "zh_description": "节点：Q-Align评分。[a/Q-Align](https：//arxiv.org/abs/2312.17090)为ComfyUI实现"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3790,7 +3790,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID",
     "title": "ComfyUI-InstantID",
-    "zh_description": "ComfyUI的[a/InstantID]（https：//github.com/InstantID/InstantID）的非正式实现"
+    "zh_description": "ComfyUI的[a/InstantID](https：//github.com/InstantID/InstantID)的非正式实现"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3801,7 +3801,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-PhotoMaker-ZHO",
     "title": "ComfyUI PhotoMaker (ZHO)",
-    "zh_description": "[a/PhotoMaker]（https：//github.com/AddentARC/PhotoMaker）的非官方实现"
+    "zh_description": "[a/PhotoMaker](https：//github.com/AddentARC/PhotoMaker)的非官方实现"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3823,7 +3823,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-SVD-ZHO",
     "title": "ComfyUI-SVD-ZHO (WIP)",
-    "zh_description": "我的工作流+用于稳定视频扩散（SVD）的辅助节点"
+    "zh_description": "我的工作流+用于稳定视频扩散(SVD)的辅助节点"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3834,7 +3834,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-SegMoE",
     "title": "ComfyUI SegMoE",
-    "zh_description": "[a/SegMoE：Segmind Mixture of Diffusion Experts]（https：//github.com/segmind/segmoe）的非正式实现ComfyUI"
+    "zh_description": "[a/SegMoE：Segmind Mixture of Diffusion Experts](https：//github.com/segmind/segmoe)的非正式实现ComfyUI"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3845,7 +3845,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM",
     "title": "ComfyUI YoloWorld-EfficientSAM",
-    "zh_description": "[a/YOLO-World + EfficientSAM]（https：//huggingface.co/spaces/SkalskiP/YOLO-World）和[a/YOLO-World]（https：//github.com/AILab-CVC/YOLO-World）的非正式实现ComfyUI\n注意：从Install models菜单安装efficient_sam模型。\n[w/安装或更新此自定义节点时，许多安装包可能会因安装要求而降级。]"
+    "zh_description": "[a/YOLO-World + EfficientSAM](https：//huggingface.co/spaces/SkalskiP/YOLO-World)和[a/YOLO-World](https：//github.com/AILab-CVC/YOLO-World)的非正式实现ComfyUI\n注意：从Install models菜单安装efficient_sam模型。\n[w/安装或更新此自定义节点时，许多安装包可能会因安装要求而降级。]"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3856,7 +3856,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-PixArt-alpha-Diffusers",
     "title": "ComfyUI-PixArt-alpha-Diffusers",
-    "zh_description": "ComfyUI的[a/PixArt-alpha-Diffusers]（https：//github.com/PixArt-alpha/PixArt-alpha）的非官方实现"
+    "zh_description": "ComfyUI的[a/PixArt-alpha-Diffusers](https：//github.com/PixArt-alpha/PixArt-alpha)的非官方实现"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3878,7 +3878,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-DepthFM",
     "title": "DepthFM IN COMFYUI",
-    "zh_description": "[a/DepthFM]（https：//github.com/CompVis/depth-fm）的非正式实现ComfyUI"
+    "zh_description": "[a/DepthFM](https：//github.com/CompVis/depth-fm)的非正式实现ComfyUI"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -3889,7 +3889,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO",
     "title": "ComfyUI-BiRefNet-ZHO",
-    "zh_description": "[a/BiRefNet]（https：//github.com/zhengpeng7/birefnet）在ComfyUI中的更佳版本|img和视频"
+    "zh_description": "[a/BiRefNet](https：//github.com/zhengpeng7/birefnet)在ComfyUI中的更佳版本|img和视频"
   },
   {
     "author": "kenjiqq",
@@ -3999,7 +3999,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/wmatson/easy-comfy-nodes",
     "title": "easy-comfy-nodes",
-    "zh_description": "节点：HTTP POST，Empty Dict，AssunStr，AssunDict Img，加载Img从URL（EZ），加载Img批从URL（EZ），Video Combined + upload（EZ），."
+    "zh_description": "节点：HTTP POST，Empty Dict，AssunStr，AssunDict Img，加载Img从URL(EZ)，加载Img批从URL(EZ)，Video Combined + upload(EZ)，."
   },
   {
     "author": "DrJKL",
@@ -4057,7 +4057,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Haoming02/comfyui-diffusion-cg",
     "title": "ComfyUI Diffusion Color Grading",
-    "zh_description": "这是我和AlexisVass联合研究的ComfyUI端口。欲了解更多信息，请查看Automatic 1111的原始[a/Extension]（https：//github.com/Haoming02/sd-webui-diffusion-cg）。"
+    "zh_description": "这是我和AlexisVass联合研究的ComfyUI端口。欲了解更多信息，请查看Automatic 1111的原始[a/Extension](https：//github.com/Haoming02/sd-webui-diffusion-cg)。"
   },
   {
     "author": "Haoming02",
@@ -4159,7 +4159,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/subtleGradient/TinkerBot-tech-for-ComfyUI-Touchpad",
     "title": "Touchpad two-finger gesture support for macOS",
-    "zh_description": "两个手指滚动（垂直和水平）来平移画布。两指捏可放大和缩小。命令上下滚动以放大和缩小。修复[comfyanument/ComfyUI#2059]（https：//github.com/comfyanumentous/ComfyUI/issues/2059）。"
+    "zh_description": "两个手指滚动(垂直和水平)来平移画布。两指捏可放大和缩小。命令上下滚动以放大和缩小。修复[comfyanument/ComfyUI#2059](https：//github.com/comfyanumentous/ComfyUI/issues/2059)。"
   },
   {
     "author": "zcfrank1st",
@@ -4248,7 +4248,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/zfkun/ComfyUI_zfkun",
     "title": "ComfyUI_zfkun",
-    "zh_description": "用于常用工具的节点集合，包括文本预览、文本翻译（多平台、多语言）、图像加载器、网络摄像头捕获。"
+    "zh_description": "用于常用工具的节点集合，包括文本预览、文本翻译(多平台、多语言)、图像加载器、网络摄像头捕获。"
   },
   {
     "author": "zcfrank1st",
@@ -4303,7 +4303,7 @@
     "install_type": "git-clone",
     "reference": "https://git.mmaker.moe/mmaker/sd-webui-color-enhance",
     "title": "Color Enhance",
-    "zh_description": "节点：颜色增强，颜色混合。这与GIMP/GEGL用于颜色增强的算法相同。这个实现的要点是，它将颜色空间转换为CIELCh（ab）并规范化色度（或[colorfulness]（https：//en.wikipedia.org/wiki/Colorfulness）]分量。原始来源可以在下面的链接中找到。"
+    "zh_description": "节点：颜色增强，颜色混合。这与GIMP/GEGL用于颜色增强的算法相同。这个实现的要点是，它将颜色空间转换为CIELCh(ab)并规范化色度(或[colorfulness](https：//en.wikipedia.org/wiki/Colorfulness)]分量。原始来源可以在下面的链接中找到。"
   },
   {
     "author": "modusCell",
@@ -4336,7 +4336,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/MitoshiroPJ/comfyui_slothful_attention",
     "title": "ComfyUI Slothful Attention",
-    "zh_description": "此自定义节点允许在没有训练的情况下控制输出。减少方法类似于[a/Spatial-Reduction Attention]（https：//paperswithcode.com/method/spatial-reduction-attention），但由于开销，在典型图像尺寸上可能不会增加生成速度。(In有些情况下，稍慢）"
+    "zh_description": "此自定义节点允许在没有训练的情况下控制输出。减少方法类似于[a/Spatial-Reduction Attention](https：//paperswithcode.com/method/spatial-reduction-attention)，但由于开销，在典型图像尺寸上可能不会增加生成速度。(In有些情况下，稍慢)"
   },
   {
     "author": "brianfitzgerald",
@@ -4347,7 +4347,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/brianfitzgerald/style_aligned_comfy",
     "title": "StyleAligned for ComfyUI",
-    "zh_description": "[a/StyleAligned]（https：//style-aligned-gen.github.io/）为ComfyUI编写的论文。此节点允许您将一致的样式应用于批处理中的所有图像;默认情况下，它将使用批处理中的第一个图像作为样式参考，强制所有其他图像与该样式一致。"
+    "zh_description": "[a/StyleAligned](https：//style-aligned-gen.github.io/)为ComfyUI编写的论文。此节点允许您将一致的样式应用于批处理中的所有图像;默认情况下，它将使用批处理中的第一个图像作为样式参考，强制所有其他图像与该样式一致。"
   },
   {
     "author": "deroberon",
@@ -4358,7 +4358,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/deroberon/demofusion-comfyui",
     "title": "demofusion-comfyui",
-    "zh_description": "Demofusion自定义节点是一个包装器，它将Ruoyi Du创建和实现的[a/DemoFusion]（https：//ruoyidu.github.io/demofusion/demofusion.html）技术的工作和实现适应于Comfyui环境。"
+    "zh_description": "Demofusion自定义节点是一个包装器，它将Ruoyi Du创建和实现的[a/DemoFusion](https：//ruoyidu.github.io/demofusion/demofusion.html)技术的工作和实现适应于Comfyui环境。"
   },
   {
     "author": "deroberon",
@@ -4369,7 +4369,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/deroberon/StableZero123-comfyui",
     "title": "StableZero123-comfyui",
-    "zh_description": "StableZero 123是一个节点包装器，它使用了[此处]提供的模型和技术（https：//github.com/SUDO-AI-3D/zero123plus/）。它使用Zero 123 plus模型，仅使用一张图像生成3D视图。"
+    "zh_description": "StableZero 123是一个节点包装器，它使用了[此处]提供的模型和技术(https：//github.com/SUDO-AI-3D/zero123plus/)。它使用Zero 123 plus模型，仅使用一张图像生成3D视图。"
   },
   {
     "author": "glifxyz",
@@ -4402,7 +4402,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/aegis72/aegisflow_utility_nodes",
     "title": "AegisFlow Utility Nodes",
-    "zh_description": "这些节点将被放置在comfyui/custom_nodes/aegisflow中，并包含图像传递器（接受有线或无线的图像，输入并传递图像。潜在传递器对潜在也做同样的事情，预处理器传递器允许在AegisFlow Shima中传递一个直通映像和10个控制网。如果您打算通过UE节点无线接受图像输入，则不应重命名预处理器上的输入。这是可以做到的，但是每个controlnet预处理器列的发送节点输入regex也必须更改。"
+    "zh_description": "这些节点将被放置在comfyui/custom_nodes/aegisflow中，并包含图像传递器(接受有线或无线的图像，输入并传递图像。潜在传递器对潜在也做同样的事情，预处理器传递器允许在AegisFlow Shima中传递一个直通映像和10个控制网。如果您打算通过UE节点无线接受图像输入，则不应重命名预处理器上的输入。这是可以做到的，但是每个controlnet预处理器列的发送节点输入regex也必须更改。"
   },
   {
     "author": "Aegis72",
@@ -4435,7 +4435,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/vienteck/ComfyUI-Chat-GPT-Integration",
     "title": "ComfyUI-Chat-GPT-Integration",
-    "zh_description": "这个扩展是基于[a/ComfyUI-QualityOfLifeSuit_Omar 92]（https：//github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92）扩展的重新设想的版本，它支持通过新的OpenAI API与ChatGPT集成。\n注意：请参阅[a/repository]上的详细安装说明（https：//github.com/vienteck/ComfyUI-Chat-GPT-Integration）。"
+    "zh_description": "这个扩展是基于[a/ComfyUI-QualityOfLifeSuit_Omar 92](https：//github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92)扩展的重新设想的版本，它支持通过新的OpenAI API与ChatGPT集成。\n注意：请参阅[a/repository]上的详细安装说明(https：//github.com/vienteck/ComfyUI-Chat-GPT-Integration)。"
   },
   {
     "author": "MNeMoNiCuZ",
@@ -4468,7 +4468,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/SpaceKendo/ComfyUI-svd_txt2vid",
     "title": "Text to video for Stable Video Diffusion in ComfyUI",
-    "zh_description": "此节点将[a/Stable Video Diffusion]（https：//github.com/Stability-AI/generative-models）图像到视频模型的init_image调节替换为文本嵌入以及调节帧。调节框架是一组潜在的。"
+    "zh_description": "此节点将[a/Stable Video Diffusion](https：//github.com/Stability-AI/generative-models)图像到视频模型的init_image调节替换为文本嵌入以及调节帧。调节框架是一组潜在的。"
   },
   {
     "author": "NimaNzrii",
@@ -4512,7 +4512,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/dmarx/ComfyUI-Keyframed",
     "title": "ComfyUI-Keyframed",
-    "zh_description": "ComfyUI节点，用于使用comfyUI节点来定义和操作参数曲线，从而简化参数/提示关键帧。本质上提供了一个ComfyUI接口到[a/keyframework]（https：//github.com/dmarx/keyframework）库。"
+    "zh_description": "ComfyUI节点，用于使用comfyUI节点来定义和操作参数曲线，从而简化参数/提示关键帧。本质上提供了一个ComfyUI接口到[a/keyframework](https：//github.com/dmarx/keyframework)库。"
   },
   {
     "author": "dmarx",
@@ -4534,7 +4534,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/TripleHeadedMonkey/ComfyUI_MileHighStyler",
     "title": "ComfyUI_MileHighStyler",
-    "zh_description": "此扩展提供了各种SDXL提示样式器。参见：[a/youtube]（https：youtu.be/WBHI-2uww7o? si= dijvDaUI 4nmx4VkF）"
+    "zh_description": "此扩展提供了各种SDXL提示样式器。参见：[a/youtube](https：youtu.be/WBHI-2uww7o? si= dijvDaUI 4nmx4VkF)"
   },
   {
     "author": "BennyKok",
@@ -4644,7 +4644,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/CosmicLaca/ComfyUI_Primere_Nodes",
     "title": "Primere nodes for ComfyUI",
-    "zh_description": "此扩展提供了各种实用程序节点。输入（提示、样式、动态、合并等），输出（样式堆），仪表板（选择器，加载器，开关，..），网络（LORA，嵌入，超网络），视觉（视觉选择器，）"
+    "zh_description": "此扩展提供了各种实用程序节点。输入(提示、样式、动态、合并等)，输出(样式堆)，仪表板(选择器，加载器，开关，..)，网络(LORA，嵌入，超网络)，视觉(视觉选择器，)"
   },
   {
     "author": "RenderRift",
@@ -4710,7 +4710,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ceruleandeep/ComfyUI-LLaVA-Captioner",
     "title": "ComfyUI LLaVA Captioner",
-    "zh_description": "一个ComfyUI扩展，用于与您的图像聊天。在您自己的系统上运行，没有使用外部服务，没有过滤器。使用[a/LLaVA多模LLM]（https：//llava-vl.github.io/），这样你就可以用自然语言给出指令或提问。它可能和GPT3.5一样聪明，它可以看到。"
+    "zh_description": "一个ComfyUI扩展，用于与您的图像聊天。在您自己的系统上运行，没有使用外部服务，没有过滤器。使用[a/LLaVA多模LLM](https：//llava-vl.github.io/)，这样你就可以用自然语言给出指令或提问。它可能和GPT3.5一样聪明，它可以看到。"
   },
   {
     "author": "styler00dollar",
@@ -4721,7 +4721,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/styler00dollar/ComfyUI-sudo-latent-upscale",
     "title": "ComfyUI-sudo-latent-upscale",
-    "zh_description": "直接在潜在空间内放大。对模型进行SD1.5训练并绘制内容。可能会在某个时候添加新的架构或更新模型。这引起了[city 96/SD-Latent-Upscaler]（https：//github.com/city96/SD-Latent-Upscaler）和[Ttl/ComfyUi_NNLatentUpscale]（https：//github.com/Ttl/ComfyUi_NNLatentUpscale）的强烈质疑。 "
+    "zh_description": "直接在潜在空间内放大。对模型进行SD1.5训练并绘制内容。可能会在某个时候添加新的架构或更新模型。这引起了[city 96/SD-Latent-Upscaler](https：//github.com/city96/SD-Latent-Upscaler)和[Ttl/ComfyUi_NNLatentUpscale](https：//github.com/Ttl/ComfyUi_NNLatentUpscale)的强烈质疑。 "
   },
   {
     "author": "styler00dollar",
@@ -4732,7 +4732,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/styler00dollar/ComfyUI-deepcache",
     "title": "ComfyUI-deepcache",
-    "zh_description": "此扩展为[a/DeepCache：加速扩散模型免费]（https：//arxiv.org/abs/2312.00858）提供节点\n注意：原始代码可以在[a/here]找到（https：//gist.github.com/laksjdjf/435c512bc19636e9c9af4ee7bea9eb86）。完全归功于laksjdjf分享代码。 "
+    "zh_description": "此扩展为[a/DeepCache：加速扩散模型免费](https：//arxiv.org/abs/2312.00858)提供节点\n注意：原始代码可以在[a/here]找到(https：//gist.github.com/laksjdjf/435c512bc19636e9c9af4ee7bea9eb86)。完全归功于laksjdjf分享代码。 "
   },
   {
     "author": "HarroweD and quadmoon",
@@ -4844,7 +4844,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/crystian/ComfyUI-Crystools-save",
     "title": "Crystools-save",
-    "zh_description": "有了这种生命质量的延长，你可以用一个特定的名称保存你的工作流，并包括其他细节，如作者，描述和版本（在metadata/json中）。重要：当您分享您的工作流程（通过png/json）时，其他人将能够看到您的信息！"
+    "zh_description": "有了这种生命质量的延长，你可以用一个特定的名称保存你的工作流，并包括其他细节，如作者，描述和版本(在metadata/json中)。重要：当您分享您的工作流程(通过png/json)时，其他人将能够看到您的信息！"
   },
   {
     "author": "Kangkang625",
@@ -4858,7 +4858,7 @@
     ],
     "reference": "https://github.com/Kangkang625/ComfyUI-paint-by-example",
     "title": "ComfyUI-Paint-by-Example",
-    "zh_description": "这个仓库是[a/Paint-by-Example]（https：//github.com/Fantasy-Studio/Paint-by-Example）的一个简单实现，基于它的[a/huggingface pipeline]（https：//huggingface.co/Fantasy-Studio/Paint-by-Example）。"
+    "zh_description": "这个仓库是[a/Paint-by-Example](https：//github.com/Fantasy-Studio/Paint-by-Example)的一个简单实现，基于它的[a/huggingface pipeline](https：//huggingface.co/Fantasy-Studio/Paint-by-Example)。"
   },
   {
     "author": "54rt1n",
@@ -4869,7 +4869,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/54rt1n/ComfyUI-DareMerge",
     "title": "ComfyUI-DareMerge",
-    "zh_description": "通过dare tie合并两个检查点模型[a/（https：//github.com/yule-BUAA/MergeLM）]（https：//github.com/yule-BUAA/MergeLM），有点像。"
+    "zh_description": "通过dare tie合并两个检查点模型[a/(https：//github.com/yule-BUAA/MergeLM)](https：//github.com/yule-BUAA/MergeLM)，有点像。"
   },
   {
     "author": "an90ray",
@@ -4880,7 +4880,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/an90ray/ComfyUI_RErouter_CustomNodes",
     "title": "ComfyUI_RErouter_CustomNodes",
-    "zh_description": "节点：RErouter，String（RE），Int（RE）"
+    "zh_description": "节点：RErouter，String(RE)，Int(RE)"
   },
   {
     "author": "jesenzhang",
@@ -4891,7 +4891,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/jesenzhang/ComfyUI_StreamDiffusion",
     "title": "ComfyUI_StreamDiffusion",
-    "zh_description": "这是一个简单的ComfyUI实现StreamDiffusion（A Pipeline-Level Solution for Real-Time Interactive Generation）"
+    "zh_description": "这是一个简单的ComfyUI实现StreamDiffusion(A Pipeline-Level Solution for Real-Time Interactive Generation)"
   },
   {
     "author": "ai-liam",
@@ -4913,7 +4913,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Ryuukeisyou/comfyui_face_parsing",
     "title": "comfyui_face_parsing",
-    "zh_description": "这是一组ComfyUI的自定义节点。节点利用[a/face parking model]（https：//huggingface.co/jonathandinu/face-parking）来提供面部的详细分割。为了提高人脸分割的准确性，首先使用[a/yolov 8人脸模型]（https：//huggingface.co/Bingsu/adetailer/）从图像中提取人脸。还有图像和掩模处理的辅助节点。还提供了用于皮肤平滑的引导滤波器。"
+    "zh_description": "这是一组ComfyUI的自定义节点。节点利用[a/face parking model](https：//huggingface.co/jonathandinu/face-parking)来提供面部的详细分割。为了提高人脸分割的准确性，首先使用[a/yolov 8人脸模型](https：//huggingface.co/Bingsu/adetailer/)从图像中提取人脸。还有图像和掩模处理的辅助节点。还提供了用于皮肤平滑的引导滤波器。"
   },
   {
     "author": "tocubed",
@@ -4924,7 +4924,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/tocubed/ComfyUI-AudioReactor",
     "title": "ComfyUI-AudioReactor",
-    "zh_description": "节点：Shadertoy，加载音频（从路径），音频帧变换（Shadertoy），音频帧变换（节拍）"
+    "zh_description": "节点：Shadertoy，加载音频(从路径)，音频帧变换(Shadertoy)，音频帧变换(节拍)"
   },
   {
     "author": "ntc-ai",
@@ -4935,7 +4935,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ntc-ai/ComfyUI-DARE-LoRA-Merge",
     "title": "ComfyUI - Apply LoRA Stacker with DARE",
-    "zh_description": "多个LoRA与[a/DARE]结合的实验（https：//arxiv.org/pdf/2311.03099.pdf）"
+    "zh_description": "多个LoRA与[a/DARE]结合的实验(https：//arxiv.org/pdf/2311.03099.pdf)"
   },
   {
     "author": "wwwins",
@@ -4990,7 +4990,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/flowtyone/ComfyUI-Flowty-LDSR",
     "title": "ComfyUI-Flowty-LDSR",
-    "zh_description": "这是一个自定义节点，可让您利用ComfyUI中的潜在扩散超分辨率（LDSR）模型。"
+    "zh_description": "这是一个自定义节点，可让您利用ComfyUI中的潜在扩散超分辨率(LDSR)模型。"
   },
   {
     "author": "flowtyone",
@@ -5001,7 +5001,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/flowtyone/ComfyUI-Flowty-TripoSR",
     "title": "ComfyUI-Flowty-TripoSR",
-    "zh_description": "这是一个自定义节点，允许您直接从ComfyUI使用TripoSR。\n[a/TripoSR]（https：//github.com/VAST-AI-Research/TripoSR）是一个最先进的开源模型，用于从单个图像进行快速前馈3D重建，由Tripo AI和Stability AI合作开发。(TL;DR从图像中创建3D模型。"
+    "zh_description": "这是一个自定义节点，允许您直接从ComfyUI使用TripoSR。\n[a/TripoSR](https：//github.com/VAST-AI-Research/TripoSR)是一个最先进的开源模型，用于从单个图像进行快速前馈3D重建，由Tripo AI和Stability AI合作开发。(TL;DR从图像中创建3D模型。"
   },
   {
     "author": "flowtyone",
@@ -5012,7 +5012,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/flowtyone/ComfyUI-Flowty-CRM",
     "title": "ComfyUI-Flowty-CRM",
-    "zh_description": "这是一个自定义节点，允许您直接从ComfyUI使用卷积重建模型。\n[a/CRM]（https：//ml.cs.tsinghua.edu.cn/qizhengyi/CRM/）是一个高保真前馈单图像到3D生成模型。"
+    "zh_description": "这是一个自定义节点，允许您直接从ComfyUI使用卷积重建模型。\n[a/CRM](https：//ml.cs.tsinghua.edu.cn/qizhengyi/CRM/)是一个高保真前馈单图像到3D生成模型。"
   },
   {
     "author": "massao000",
@@ -5023,7 +5023,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/massao000/ComfyUI_aspect_ratios",
     "title": "ComfyUI_aspect_ratios",
-    "zh_description": "基于[a/sd-webui-ar]的ComfyUI长宽比选择器（https：github.com/alemelis/sd-webui-ar? tab= readme-over-file）。"
+    "zh_description": "基于[a/sd-webui-ar]的ComfyUI长宽比选择器(https：github.com/alemelis/sd-webui-ar? tab= readme-over-file)。"
   },
   {
     "author": "SiliconFlow",
@@ -5034,7 +5034,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/siliconflow/onediff_comfy_nodes",
     "title": "OneDiff Nodes",
-    "zh_description": "[a/Onediff]（https：//github.com/siliconflow/onediff）ComfyUI节点。"
+    "zh_description": "[a/Onediff](https：//github.com/siliconflow/onediff)ComfyUI节点。"
   },
   {
     "author": "ZHO-ZHO-ZHO",
@@ -5111,7 +5111,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chaojie/ComfyUI-AniPortrait",
     "title": "ComfyUI-AniPortrait",
-    "zh_description": "ComfyUI [a/AniPortrait]（https：//github.com/Zejun-Yang/AniPortrait）"
+    "zh_description": "ComfyUI [a/AniPortrait](https：//github.com/Zejun-Yang/AniPortrait)"
   },
   {
     "author": "chaojie",
@@ -5221,7 +5221,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chaojie/ComfyUI-MotionCtrl",
     "title": "ComfyUI-MotionCtrl",
-    "zh_description": "节点：下载MotionCtrl [a/motioncall.pth]（https：//huggingface.co/AddentARC/MotionCtrl/blob/main/motionctrl.pth）的权重并将其放入ComfyUI/models/checkpoint"
+    "zh_description": "节点：下载MotionCtrl [a/motioncall.pth](https：//huggingface.co/AddentARC/MotionCtrl/blob/main/motionctrl.pth)的权重并将其放入ComfyUI/models/checkpoint"
   },
   {
     "author": "chaojie",
@@ -5243,7 +5243,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chaojie/ComfyUI-MotionCtrl-SVD",
     "title": "ComfyUI-MotionCtrl-SVD",
-    "zh_description": "节点：下载MotionCtrl-SVD的权重[a/motioncalls_svd.ckpt]（https：//huggingface.co/AddentARC/MotionCtrl/blob/main/motionctrl_svd.ckpt）并将其放入ComfyUI/models/checkpoint"
+    "zh_description": "节点：下载MotionCtrl-SVD的权重[a/motioncalls_svd.ckpt](https：//huggingface.co/AddentARC/MotionCtrl/blob/main/motionctrl_svd.ckpt)并将其放入ComfyUI/models/checkpoint"
   },
   {
     "author": "chaojie",
@@ -5265,7 +5265,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chaojie/ComfyUI-DragNUWA",
     "title": "ComfyUI-DragNUWA",
-    "zh_description": "节点：下载DragNUWA [a/drag_nuwa_svd.pth]（https：//drive.google.com/file/d/1Z4JOley0SJCb35kFF4PCc6N6P1ftfX4i/view）的权重并将其放入ComfyUI/models/checkpoint/drag_nuwa_svd.pth\n[w/由于torch软件包和许多其他软件包的版本发生了变化，它可能会扰乱您的安装环境。]"
+    "zh_description": "节点：下载DragNUWA [a/drag_nuwa_svd.pth](https：//drive.google.com/file/d/1Z4JOley0SJCb35kFF4PCc6N6P1ftfX4i/view)的权重并将其放入ComfyUI/models/checkpoint/drag_nuwa_svd.pth\n[w/由于torch软件包和许多其他软件包的版本发生了变化，它可能会扰乱您的安装环境。]"
   },
   {
     "author": "chaojie",
@@ -5287,7 +5287,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/chaojie/ComfyUI-I2VGEN-XL",
     "title": "ComfyUI-I2VGEN-XL",
-    "zh_description": "这是[a/i2 vgen-xl]（https：//github.com/ali-vilab/i2vgen-xl）的实现"
+    "zh_description": "这是[a/i2 vgen-xl](https：//github.com/ali-vilab/i2vgen-xl)的实现"
   },
   {
     "author": "chaojie",
@@ -5331,7 +5331,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/kft334/Knodes",
     "title": "Knodes",
-    "zh_description": "节点：图像到Websocket（Base64），加载图像（Base64），加载图像（Base64）"
+    "zh_description": "节点：图像到Websocket(Base64)，加载图像(Base64)，加载图像(Base64)"
   },
   {
     "author": "MrForExample",
@@ -5343,7 +5343,7 @@
     "nodename_pattern": "^\\[Comfy3D\\]",
     "reference": "https://github.com/MrForExample/ComfyUI-3D-Pack",
     "title": "ComfyUI-3D-Pack",
-    "zh_description": "一个广泛的节点套件，使ComfyUI能够使用切割边缘算法（3DGS，NeRF等）处理3D输入（网格和UV纹理等）。\n注：可以从[a/https：//github.com/remsky/ComfyUI3D-Assorted-Wheels]（https：//github.com/remsky/ComfyUI3D-Assorted-Wheels）下载预构建的python wheels"
+    "zh_description": "一个广泛的节点套件，使ComfyUI能够使用切割边缘算法(3DGS，NeRF等)处理3D输入(网格和UV纹理等)。\n注：可以从[a/https：//github.com/remsky/ComfyUI3D-Assorted-Wheels](https：//github.com/remsky/ComfyUI3D-Assorted-Wheels)下载预构建的python wheels"
   },
   {
     "author": "Mr.ForExample",
@@ -5366,7 +5366,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Hangover3832/ComfyUI-Hangover-Nodes",
     "title": "ComfyUI-Hangover-Nodes",
-    "zh_description": "节点：MS ko-2询问器，保存图像不带元数据，图像比例边界框。Microsoft [a/kosoft-2]（https：//huggingface.co/microsoft/kosmos-2-patch14-224）图像到文本Transformer的实现。"
+    "zh_description": "节点：MS ko-2询问器，保存图像不带元数据，图像比例边界框。Microsoft [a/kosoft-2](https：//huggingface.co/microsoft/kosmos-2-patch14-224)图像到文本Transformer的实现。"
   },
   {
     "author": "Hangover3832",
@@ -5388,7 +5388,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Hangover3832/ComfyUI-Hangover-Recognize_Anything",
     "title": "Recognize Anything Model (RAM) for ComfyUI",
-    "zh_description": "这是一个ComfyUI的图像识别节点，基于[a/xinyu 1205]（https：//huggingface.co/xinyu1205）的RAM++模型。\n该节点输出一个标签串，其中包含图像中所有已识别的对象和元素。\n用于图像标记和字幕。"
+    "zh_description": "这是一个ComfyUI的图像识别节点，基于[a/xinyu 1205](https：//huggingface.co/xinyu1205)的RAM++模型。\n该节点输出一个标签串，其中包含图像中所有已识别的对象和元素。\n用于图像标记和字幕。"
   },
   {
     "author": "tzwm",
@@ -5421,7 +5421,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/daniel-lewis-ab/ComfyUI-TTS",
     "title": "ComfyUI-TTS",
-    "zh_description": "ComfyUI的文本转语音（TTS）"
+    "zh_description": "ComfyUI的文本转语音(TTS)"
   },
   {
     "author": "djbielejeski",
@@ -5542,7 +5542,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Taremin/comfyui-string-tools",
     "title": "ComfyUI String Tools",
-    "zh_description": " 此扩展提供了StringToolsConcat节点（它连接多个文本）和StringToolsRandomChoice节点（它从多个文本中随机选择一个文本）。"
+    "zh_description": " 此扩展提供了StringToolsConcat节点(它连接多个文本)和StringToolsRandomChoice节点(它从多个文本中随机选择一个文本)。"
   },
   {
     "author": "Taremin",
@@ -5564,7 +5564,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/foxtrot-roger/comfyui-rf-nodes",
     "title": "RF Nodes",
-    "zh_description": "一堆节点，可用于操作基元类型（数字、文本等）还有一些帮助生成文本和时间戳。"
+    "zh_description": "一堆节点，可用于操作基元类型(数字、文本等)还有一些帮助生成文本和时间戳。"
   },
   {
     "author": "abyz22",
@@ -5575,7 +5575,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/abyz22/image_control",
     "title": "image_control",
-    "zh_description": "节点：abyz22_Padding Image、abyz22_ImpactWildcardEncode、abyz22_setimageinfo、abyz22_SaveImage、abyz22_ImpactWildcardEncode_GetPrompt、abyz22_Setqueue、abyz22_drawmask、abyz22_FirstNonmatrix、abyz22_blendimages、abyz22_blend_onecolor。请在[a/https：//github.com/abyz22/image_control]（https：//github.com/abyz22/image_control）查看工作流程"
+    "zh_description": "节点：abyz22_Padding Image、abyz22_ImpactWildcardEncode、abyz22_setimageinfo、abyz22_SaveImage、abyz22_ImpactWildcardEncode_GetPrompt、abyz22_Setqueue、abyz22_drawmask、abyz22_FirstNonmatrix、abyz22_blendimages、abyz22_blend_onecolor。请在[a/https：//github.com/abyz22/image_control](https：//github.com/abyz22/image_control)查看工作流程"
   },
   {
     "author": "HAL41",
@@ -5597,7 +5597,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nkchocoai/ComfyUI-SizeFromPresets",
     "title": "ComfyUI-SizeFromPresets",
-    "zh_description": "添加一个节点，该节点输出从预设（.csv）中选择的大小的宽度和高度。"
+    "zh_description": "添加一个节点，该节点输出从预设(.csv)中选择的大小的宽度和高度。"
   },
   {
     "author": "nkchocoai",
@@ -5608,7 +5608,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nkchocoai/ComfyUI-PromptUtilities",
     "title": "ComfyUI-PromptUtilities",
-    "zh_description": "节点：格式字符串，连接字符串列表，加载预设，加载预设（高级），常量字符串，常量字符串（多行）。添加与提示相关的有用节点。"
+    "zh_description": "节点：格式字符串，连接字符串列表，加载预设，加载预设(高级)，常量字符串，常量字符串(多行)。添加与提示相关的有用节点。"
   },
   {
     "author": "nkchocoai",
@@ -5630,7 +5630,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nkchocoai/ComfyUI-SaveImageWithMetaData",
     "title": "ComfyUI-SaveImageWithMetaData",
-    "zh_description": "添加一个节点以保存图像，其中包含从每个节点的输入值中提取的元数据（PNGInfo）。\n由于这些值是动态提取的，所以可以将各种扩展节点输出的值添加到元数据中。"
+    "zh_description": "添加一个节点以保存图像，其中包含从每个节点的输入值中提取的元数据(PNGInfo)。\n由于这些值是动态提取的，所以可以将各种扩展节点输出的值添加到元数据中。"
   },
   {
     "author": "nkchocoai",
@@ -5641,7 +5641,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nkchocoai/ComfyUI-Dart",
     "title": "ComfyUI-Dart",
-    "zh_description": "通过[a/Dart（Danbooru Tags Transformer）]（https：//huggingface.co/p1atdev/dart-v1-sft）添加生成danbooru标签的节点。"
+    "zh_description": "通过[a/Dart(Danbooru Tags Transformer)](https：//huggingface.co/p1atdev/dart-v1-sft)添加生成danbooru标签的节点。"
   },
   {
     "author": "JaredTherriault",
@@ -5674,7 +5674,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Siberpone/lazy-pony-prompter",
     "title": "Lazy Pony Prompter",
-    "zh_description": "AUTOMATIC 1111的Stable Diffusion Web UI和ComfyUI的小马提示符助手扩展，它充分利用了您最喜欢的booru查询语法的强大功能。目前支持[a/Derpibooru]（https：//derpibooru/org）和[a/E621]（https：//e621.net/）。"
+    "zh_description": "AUTOMATIC 1111的Stable Diffusion Web UI和ComfyUI的小马提示符助手扩展，它充分利用了您最喜欢的booru查询语法的强大功能。目前支持[a/Derpibooru](https：//derpibooru/org)和[a/E621](https：//e621.net/)。"
   },
   {
     "author": "dave-palt",
@@ -5707,7 +5707,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Miosp/ComfyUI-FBCNN",
     "title": "ComfyUI-FBCNN",
-    "zh_description": "使用[a/FBCNN]进行JPEG去伪影的节点（https：//github.com/jiaxi-jiang/FBCNN）。"
+    "zh_description": "使用[a/FBCNN]进行JPEG去伪影的节点(https：//github.com/jiaxi-jiang/FBCNN)。"
   },
   {
     "author": "JcandZero",
@@ -5740,7 +5740,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus",
     "title": "ComfyUI PhotoMaker Plus",
-    "zh_description": "[a/PhotoMaker]（https：//github.com/AddentARC/PhotoMaker）模型的ComfyUI参考实现。[W/WARN：仓库名称已更改。对于以前安装过它的用户，请从磁盘中删除custom_nodes/ComfyUI-PhotoMaker并重新安装它。]"
+    "zh_description": "[a/PhotoMaker](https：//github.com/AddentARC/PhotoMaker)模型的ComfyUI参考实现。[W/WARN：仓库名称已更改。对于以前安装过它的用户，请从磁盘中删除custom_nodes/ComfyUI-PhotoMaker并重新安装它。]"
   },
   {
     "author": "Qais Malkawi",
@@ -5795,7 +5795,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/DimaChaichan/LAizypainter-Exporter-ComfyUI",
     "title": "LAizypainter-Exporter-ComfyUI",
-    "zh_description": "这个导出器是一个ComfyUI的插件，它可以导出[a/LAizypainer]（https：//github.com/DimaChaichan/LAizypainer）的任务。\nLAizypainter是一个Photoshop插件，您可以使用它直接将任务发送到稳定扩散服务器。有关a [a/Task]的更多信息（https：github.com/DimaChaichan/LAizypainter? tab= readme-over-file#task）"
+    "zh_description": "这个导出器是一个ComfyUI的插件，它可以导出[a/LAizypainer](https：//github.com/DimaChaichan/LAizypainer)的任务。\nLAizypainter是一个Photoshop插件，您可以使用它直接将任务发送到稳定扩散服务器。有关a [a/Task]的更多信息(https：github.com/DimaChaichan/LAizypainter? tab= readme-over-file#task)"
   },
   {
     "author": "adriflex",
@@ -5817,7 +5817,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Shraknard/ComfyUI-Remover",
     "title": "ComfyUI-Remover",
-    "zh_description": "ComfyUI的自定义节点，使图像的部分透明（面部、背景...）"
+    "zh_description": "ComfyUI的自定义节点，使图像的部分透明(面部、背景...)"
   },
   {
     "author": "FlyingFireCo",
@@ -5861,7 +5861,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/gokayfem/ComfyUI_VLM_nodes",
     "title": "VLM_nodes",
-    "zh_description": "视觉语言模型（VLM）、大型语言模型（LLM）、图像字幕、自动提示生成、创造性和一致性提示建议、关键词提取的自定义节点"
+    "zh_description": "视觉语言模型(VLM)、大型语言模型(LLM)、图像字幕、自动提示生成、创造性和一致性提示建议、关键词提取的自定义节点"
   },
   {
     "author": "gokayfem",
@@ -5960,7 +5960,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/yuvraj108c/ComfyUI-Depth-Anything-Tensorrt",
     "title": "ComfyUI Depth Anything TensorRT",
-    "zh_description": "此扩展提供了Python中[a/Depth-Anything-Tensorrt]（https：//github.com/spacewalk01/depth-anything-tensorrt）的ComfyUI自定义节点实现，用于超快的深度图生成"
+    "zh_description": "此扩展提供了Python中[a/Depth-Anything-Tensorrt](https：//github.com/spacewalk01/depth-anything-tensorrt)的ComfyUI自定义节点实现，用于超快的深度图生成"
   },
   {
     "author": "yuvraj108c",
@@ -5971,7 +5971,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/yuvraj108c/ComfyUI-PiperTTS",
     "title": "ComfyUI PiperTTS",
-    "zh_description": "使用[a/Piper]在ComfyUI内转换文本到语音（https：//github.com/rhasspy/piper）"
+    "zh_description": "使用[a/Piper]在ComfyUI内转换文本到语音(https：//github.com/rhasspy/piper)"
   },
   {
     "author": "blepping",
@@ -5993,7 +5993,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/blepping/ComfyUI-sonar",
     "title": "ComfyUI-sonar",
-    "zh_description": "ComfyUI的Sonar采样（基于动量的采样）的一个janky实现。"
+    "zh_description": "ComfyUI的Sonar采样(基于动量的采样)的一个janky实现。"
   },
   {
     "author": "JerryOrbachJr",
@@ -6026,7 +6026,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/mape/ComfyUI-mape-Helpers",
     "title": "mape's ComfyUI Helpers",
-    "zh_description": "多显示器图像预览，可变分配/无线节点，提示调整，命令调整，固定最喜欢的节点，节点导航，模糊搜索，节点时间跟踪，组织和错误管理。欲了解更多信息，请访问：[a/https：//comfyui.ma.pe/]（https：//comfyui.ma.pe/）"
+    "zh_description": "多显示器图像预览，可变分配/无线节点，提示调整，命令调整，固定最喜欢的节点，节点导航，模糊搜索，节点时间跟踪，组织和错误管理。欲了解更多信息，请访问：[a/https：//comfyui.ma.pe/](https：//comfyui.ma.pe/)"
   },
   {
     "author": "zhongpei",
@@ -6059,7 +6059,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Loewen-Hob/rembg-comfyui-node-better",
     "title": "Rembg Background Removal Node for ComfyUI",
-    "zh_description": "此自定义节点基于[a/rembg-comfyui-node]（https：//github.com/Jcd1230/rembg-comfyui-node），但提供了选择ONNX型号的附加功能。"
+    "zh_description": "此自定义节点基于[a/rembg-comfyui-node](https：//github.com/Jcd1230/rembg-comfyui-node)，但提供了选择ONNX型号的附加功能。"
   },
   {
     "author": "HaydenReeve",
@@ -6092,7 +6092,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/StartHua/Comfyui_joytag",
     "title": "Comfyui_joytag",
-    "zh_description": "JoyTag是一个最先进的人工智能视觉模型，用于标记图像，专注于性积极性和包容性。它使用Danbooru标记模式，但工作范围广泛，从手绘到摄影。\n下载重量并将其置于检查点：[a/https：//huggingface.co/fancyfeast/joytag/tree/main]（https：//huggingface.co/fancyfeast/joytag/tree/main）"
+    "zh_description": "JoyTag是一个最先进的人工智能视觉模型，用于标记图像，专注于性积极性和包容性。它使用Danbooru标记模式，但工作范围广泛，从手绘到摄影。\n下载重量并将其置于检查点：[a/https：//huggingface.co/fancyfeast/joytag/tree/main](https：//huggingface.co/fancyfeast/joytag/tree/main)"
   },
   {
     "author": "StartHua",
@@ -6103,7 +6103,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/StartHua/Comfyui_segformer_b2_clothes",
     "title": "comfyui_segformer_b2_clothes",
-    "zh_description": "SegFormer模型在ATR数据集上进行了微调，用于衣服分割，但也可以用于人体分割！\n下载重量并将其置于检查点下：[a/https：//huggingface.co/martmdjaga/segformer_b2_clothes]（https：//huggingface.co/martmdjaga/segformer_b2_clothes）"
+    "zh_description": "SegFormer模型在ATR数据集上进行了微调，用于衣服分割，但也可以用于人体分割！\n下载重量并将其置于检查点下：[a/https：//huggingface.co/martmdjaga/segformer_b2_clothes](https：//huggingface.co/martmdjaga/segformer_b2_clothes)"
   },
   {
     "author": "StartHua",
@@ -6114,7 +6114,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/StartHua/ComfyUI_OOTDiffusion_CXH",
     "title": "ComfyUI_OOTDiffusion_CXH",
-    "zh_description": "节点：Ood_hd_CXH、Ood_hd_CXH。[a/OOTDiffusion]（https：//github.com/levihsu/OOTDiffusion）"
+    "zh_description": "节点：Ood_hd_CXH、Ood_hd_CXH。[a/OOTDiffusion](https：//github.com/levihsu/OOTDiffusion)"
   },
   {
     "author": "ricklove",
@@ -6125,7 +6125,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ricklove/comfyui-ricklove",
     "title": "comfyui-ricklove",
-    "zh_description": "节点：图像裁剪和重定尺寸通过掩模，图像解裁剪，图像阴影，光流（凹陷），扭曲图像与流，图像阈值（通道），微调变量，微调分析，微调分析批处理，.. Misc ComfyUI nodes by Rick Love"
+    "zh_description": "节点：图像裁剪和重定尺寸通过掩模，图像解裁剪，图像阴影，光流(凹陷)，扭曲图像与流，图像阈值(通道)，微调变量，微调分析，微调分析批处理，.. Misc ComfyUI nodes by Rick Love"
   },
   {
     "author": "nosiu",
@@ -6136,7 +6136,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nosiu/comfyui-instantId-faceswap",
     "title": "ComfyUI InstantID Faceswapper",
-    "zh_description": "基于[a/InstantID]（https：//github.com/InstantID/InstantID）为ComfyUI实现[a/faceswap]（https：//github.com/nosiu/InstantID-faceswap/tree/main）。允许使用[a/LCM Lora]（https：//huggingface.co/latent-consistency/lcm-lora-sdxl），只需几个生成步骤就可以产生良好的结果。\n注意：仅适用于SDXL检查点。"
+    "zh_description": "基于[a/InstantID](https：//github.com/InstantID/InstantID)为ComfyUI实现[a/faceswap](https：//github.com/nosiu/InstantID-faceswap/tree/main)。允许使用[a/LCM Lora](https：//huggingface.co/latent-consistency/lcm-lora-sdxl)，只需几个生成步骤就可以产生良好的结果。\n注意：仅适用于SDXL检查点。"
   },
   {
     "author": "zhongpei",
@@ -6147,7 +6147,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/zhongpei/ComfyUI-InstructIR",
     "title": "ComfyUI for InstructIR",
-    "zh_description": "增强图像恢复。(ref：[a/INSTUTIR]（https：//github.com/mv-lab/INSTUTIR））"
+    "zh_description": "增强图像恢复。(ref：[a/INSTUTIR](https：//github.com/mv-lab/INSTUTIR))"
   },
   {
     "author": "LyazS",
@@ -6158,7 +6158,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/LyazS/comfyui-anime-seg",
     "title": "Anime Character Segmentation node for comfyui",
-    "zh_description": "一个comfyui的动画字符分割节点，基于[this hf space]（https：//huggingface.co/spaces/skytnt/anime-remove-background）。"
+    "zh_description": "一个comfyui的动画字符分割节点，基于[this hf space](https：//huggingface.co/spaces/skytnt/anime-remove-background)。"
   },
   {
     "author": "Chan-0312",
@@ -6169,7 +6169,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Chan-0312/ComfyUI-IPAnimate",
     "title": "ComfyUI-IPAnimate",
-    "zh_description": "这是一个基于IPAdapter+ControlNet逐帧生成视频的项目。与[a/Steerable-motion]（https：//github.com/banodoco/Steerable-Motion）不同，我们不依赖AnimateDiff。这一决定主要是因为AnimateDiff生成的视频通常很模糊。通过使用IPAdapter+ControlNet的逐帧控制，我们可以生成更高清晰度和更可控的视频。"
+    "zh_description": "这是一个基于IPAdapter+ControlNet逐帧生成视频的项目。与[a/Steerable-motion](https：//github.com/banodoco/Steerable-Motion)不同，我们不依赖AnimateDiff。这一决定主要是因为AnimateDiff生成的视频通常很模糊。通过使用IPAdapter+ControlNet的逐帧控制，我们可以生成更高清晰度和更可控的视频。"
   },
   {
     "author": "Chan-0312",
@@ -6180,7 +6180,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Chan-0312/ComfyUI-EasyDeforum",
     "title": "ComfyUI-EasyDeforum",
-    "zh_description": "节点：Easy2DDefum（Chan）"
+    "zh_description": "节点：Easy2DDefum(Chan)"
   },
   {
     "author": "trumanwong",
@@ -6202,7 +6202,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/TemryL/ComfyS3",
     "title": "ComfyS3",
-    "zh_description": "ComfyS 3与ComfyUI中的[a/Amazon S3]（https：//aws.amazon.com/zh/s3/）无缝集成。这个开源项目提供了自定义节点，用于直接从ComfyUI图形界面中的S3 bucket轻松加载和保存图像、视频和检查点模型。"
+    "zh_description": "ComfyS 3与ComfyUI中的[a/Amazon S3](https：//aws.amazon.com/zh/s3/)无缝集成。这个开源项目提供了自定义节点，用于直接从ComfyUI图形界面中的S3 bucket轻松加载和保存图像、视频和检查点模型。"
   },
   {
     "author": "davask",
@@ -6213,7 +6213,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/davask/ComfyUI-MarasIT-Nodes",
     "title": "🐰 MarasIT Nodes",
-    "zh_description": "AnyBus Node（又称UniversalBus或UniBus）试图提供一个基于AnyType Input/Input的通用总线节点（有些人可能会说）。\n[i/INFO：灵感来源：Was Node Suite来自WASasquatch，Get/Set节点来自KJNode，Highway节点来自Trung 0246]"
+    "zh_description": "AnyBus Node(又称UniversalBus或UniBus)试图提供一个基于AnyType Input/Input的通用总线节点(有些人可能会说)。\n[i/INFO：灵感来源：Was Node Suite来自WASasquatch，Get/Set节点来自KJNode，Highway节点来自Trung 0246]"
   },
   {
     "author": "yffyhk",
@@ -6235,7 +6235,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/dfl/comfyui-clip-with-break",
     "title": "comfyui-clip-with-break",
-    "zh_description": "带有BREAK格式的剪辑文本编码器，如A1111（使用调节concat）"
+    "zh_description": "带有BREAK格式的剪辑文本编码器，如A1111(使用调节concat)"
   },
   {
     "author": "dfl",
@@ -6246,7 +6246,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/dfl/comfyui-tcd-scheduler",
     "title": "ComfyUI-TCD-scheduler",
-    "zh_description": "ComfyUI自定义采样器节点，实现Zheng等人。基于[a/https：//mhh0318.github.io/tcd]（https：//mhh0318.github.io/tcd）的轨迹一致性蒸馏"
+    "zh_description": "ComfyUI自定义采样器节点，实现Zheng等人。基于[a/https：//mhh0318.github.io/tcd](https：//mhh0318.github.io/tcd)的轨迹一致性蒸馏"
   },
   {
     "author": "MarkoCa1",
@@ -6268,7 +6268,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/antrobot1234/antrobots-comfyUI-nodepack",
     "title": "antrobots ComfyUI Nodepack",
-    "zh_description": "一个包含各种东西的小节点包，我觉得应该在base comfy-UI中。目前包括一些图像处理节点以帮助修复，KSampler版本（高级）允许去噪，以及一个可以交换其输入的节点。如果遇到任何bug或错误，请记住提出问题！"
+    "zh_description": "一个包含各种东西的小节点包，我觉得应该在base comfy-UI中。目前包括一些图像处理节点以帮助修复，KSampler版本(高级)允许去噪，以及一个可以交换其输入的节点。如果遇到任何bug或错误，请记住提出问题！"
   },
   {
     "author": "bilal-arikan",
@@ -6422,7 +6422,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/jordoh/ComfyUI-Deepface",
     "title": "ComfyUI Deepface",
-    "zh_description": "ComfyUI节点包装[a/deepface]（https：//github.com/serengil/deepface）库。"
+    "zh_description": "ComfyUI节点包装[a/deepface](https：//github.com/serengil/deepface)库。"
   },
   {
     "author": "al-swaiti",
@@ -6444,7 +6444,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/yytdfc/ComfyUI-Bedrock",
     "title": "Amazon Bedrock nodes for for ComfyUI",
-    "zh_description": "此扩展提供Amazon Bedrock的基金模型节点，包括Claude（v1，v2.0，v2.1）、SDXL。"
+    "zh_description": "此扩展提供Amazon Bedrock的基金模型节点，包括Claude(v1，v2.0，v2.1)、SDXL。"
   },
   {
     "author": "mirabarukaso",
@@ -6554,7 +6554,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/logtd/ComfyUI-FLATTEN",
     "title": "ComfyUI-FLATTEN",
-    "zh_description": "ComfyUI节点使用[a/FLATTEN：optical FLow-guided Attention for consistent text-to-video editing]（https：//github.com/yramid/flaten）。"
+    "zh_description": "ComfyUI节点使用[a/FLATTEN：optical FLow-guided Attention for consistent text-to-video editing](https：//github.com/yramid/flaten)。"
   },
   {
     "author": "logtd",
@@ -6576,7 +6576,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Big-Idea-Technology/ComfyUI_Image_Text_Overlay",
     "title": "ImageTextOverlay Node for ComfyUI",
-    "zh_description": "ImageTextOverlay是一个可定制的ComfyUI节点，允许用户在ComfyUI项目中轻松添加文本覆盖到图像中。该节点利用Python Imaging Library（PIL）和PyTorch动态渲染图像上的文本，支持各种自定义选项，包括字体大小、对齐方式、颜色和填充。"
+    "zh_description": "ImageTextOverlay是一个可定制的ComfyUI节点，允许用户在ComfyUI项目中轻松添加文本覆盖到图像中。该节点利用Python Imaging Library(PIL)和PyTorch动态渲染图像上的文本，支持各种自定义选项，包括字体大小、对齐方式、颜色和填充。"
   },
   {
     "author": "Big Idea Technology",
@@ -6598,7 +6598,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Big-Idea-Technology/ComfyUI_Image_Text_Overlay",
     "title": "Image Text Overlay Node for ComfyUI",
-    "zh_description": "ImageTextOverlay是一个可定制的ComfyUI节点，允许用户在ComfyUI项目中轻松添加文本覆盖到图像中。该节点利用Python Imaging Library（PIL）和PyTorch动态渲染图像上的文本，支持各种自定义选项，包括字体大小、对齐方式、颜色和填充。"
+    "zh_description": "ImageTextOverlay是一个可定制的ComfyUI节点，允许用户在ComfyUI项目中轻松添加文本覆盖到图像中。该节点利用Python Imaging Library(PIL)和PyTorch动态渲染图像上的文本，支持各种自定义选项，包括字体大小、对齐方式、颜色和填充。"
   },
   {
     "author": "Guillaume-Fgt",
@@ -6620,7 +6620,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/AuroBit/ComfyUI-OOTDiffusion",
     "title": "ComfyUI OOTDiffusion",
-    "zh_description": "一个ComfyUI自定义节点，它简单地集成了[a/OOTDiffusion]（https：//github.com/levihsu/OOTDiffusion）功能。"
+    "zh_description": "一个ComfyUI自定义节点，它简单地集成了[a/OOTDiffusion](https：//github.com/levihsu/OOTDiffusion)功能。"
   },
   {
     "author": "AuroBit",
@@ -6631,7 +6631,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/AuroBit/ComfyUI-AnimateAnyone-reproduction",
     "title": "ComfyUI-AnimateAnyone-reproduction",
-    "zh_description": "一个ComfyUI自定义节点，它简单地集成了[a/animate-anyone-reproduction]（https：//github.com/bendanzzc/AnimateAnyone-reproduction）功能。"
+    "zh_description": "一个ComfyUI自定义节点，它简单地集成了[a/animate-anyone-reproduction](https：//github.com/bendanzzc/AnimateAnyone-reproduction)功能。"
   },
   {
     "author": "czcz1024",
@@ -6697,7 +6697,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/hiforce/comfyui-hiforce-plugin",
     "title": "Comfyui HiFORCE Plugin",
-    "zh_description": "[a/HiFORCE]（https：//www.hiforce.net/）为ComfyUI提供的自定义节点包。此自定义节点有助于通过Sampler、Upscale、Mask等方便地增强图像。\n注意：您应该安装[a/ComfyUI-Impact-Pack]（https：//github.com/ltdrdata/ComfyUI-Impact-Pack）。许多优化都建立在ComfyUI-Impact-Pack的基础上。"
+    "zh_description": "[a/HiFORCE](https：//www.hiforce.net/)为ComfyUI提供的自定义节点包。此自定义节点有助于通过Sampler、Upscale、Mask等方便地增强图像。\n注意：您应该安装[a/ComfyUI-Impact-Pack](https：//github.com/ltdrdata/ComfyUI-Impact-Pack)。许多优化都建立在ComfyUI-Impact-Pack的基础上。"
   },
   {
     "author": "kuschanow",
@@ -6741,7 +6741,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/qwixiwp/queuetools",
     "title": "queuetools",
-    "zh_description": "节点：加载图像（队列工具）。在comfyUI中为填充而制作的工具"
+    "zh_description": "节点：加载图像(队列工具)。在comfyUI中为填充而制作的工具"
   },
   {
     "author": "Chan-0312",
@@ -6752,7 +6752,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Chan-0312/ComfyUI-Prompt-Preview",
     "title": "ComfyUI-Prompt-Preview",
-    "zh_description": "欢迎使用ComfyUI提示预览，在这里您可以可视化来自[sdxl_prompt_styler]（https：//github.com/twri/sdxl_styler）的样式。"
+    "zh_description": "欢迎使用ComfyUI提示预览，在这里您可以可视化来自[sdxl_prompt_styler](https：//github.com/twri/sdxl_styler)的样式。"
   },
   {
     "author": "munkyfoot",
@@ -6774,7 +6774,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/holchan/ComfyUI-ModelDownloader",
     "title": "ComfyUI-ModelDownloader",
-    "zh_description": "ComfyUI节点，用于从外部链接下载模型（Checkpoints和LoRA），并充当输出独立节点。"
+    "zh_description": "ComfyUI节点，用于从外部链接下载模型(Checkpoints和LoRA)，并充当输出独立节点。"
   },
   {
     "author": "Alysondao",
@@ -6807,7 +6807,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/maracman/ComfyUI-SubjectStyle-CSV",
     "title": "ComfyUI-SubjectStyle-CSV",
-    "zh_description": "存储提示的CSV，其中的样式可以为每个主题更改。CSV节点使用列（样式）和行（主题）名称初始化，以便于解释。"
+    "zh_description": "存储提示的CSV，其中的样式可以为每个主题更改。CSV节点使用列(样式)和行(主题)名称初始化，以便于解释。"
   },
   {
     "author": "438443467",
@@ -6840,7 +6840,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/huchenlei/ComfyUI-layerdiffuse",
     "title": "ComfyUI-layerdiffuse (layerdiffusion)",
-    "zh_description": "[a/LayerDiffusion]的ComfyUI实现（https：//github.com/layerDiffusion/LayerDiffusion）。"
+    "zh_description": "[a/LayerDiffusion]的ComfyUI实现(https：//github.com/layerDiffusion/LayerDiffusion)。"
   },
   {
     "author": "huchenlei",
@@ -6851,7 +6851,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/huchenlei/ComfyUI_DanTagGen",
     "title": "ComfyUI_DanTagGen",
-    "zh_description": "[a/Kohaku's DanTagGen Demo]的ComfyUI节点（https：huggingface.co/KBlueLeaf/DanTagGen?不是所有观众=true）。"
+    "zh_description": "[a/Kohaku's DanTagGen Demo]的ComfyUI节点(https：huggingface.co/KBlueLeaf/DanTagGen?不是所有观众=true)。"
   },
   {
     "author": "nathannlu",
@@ -6873,7 +6873,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/nathannlu/ComfyUI-Cloud",
     "title": "Comfy Cloud",
-    "zh_description": "使用云GPU资源从本地ComfyUI运行工作流。\n注意：在您第一次安装插件后...\n第一次点击“生成”时，系统会提示您登录帐户。第一次之后的后续生成速度会更快（第一次运行需要一段时间来处理您的工作流）。完成这两个步骤后，您将能够在云端无缝生成您的工作流程！"
+    "zh_description": "使用云GPU资源从本地ComfyUI运行工作流。\n注意：在您第一次安装插件后...\n第一次点击“生成”时，系统会提示您登录帐户。第一次之后的后续生成速度会更快(第一次运行需要一段时间来处理您的工作流)。完成这两个步骤后，您将能够在云端无缝生成您的工作流程！"
   },
   {
     "author": "11dogzi",
@@ -6895,7 +6895,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/BXYMartin/ComfyUI-InstantIDUtils",
     "title": "Comfyui-ergouzi-Nodes",
-    "zh_description": "节点：Multi-ControlNet转换器，图像列表，转换PIL为张量（NHWC），转换张量（NHWC）为（NCHW），转换张量（NHWC）为PIL"
+    "zh_description": "节点：Multi-ControlNet转换器，图像列表，转换PIL为张量(NHWC)，转换张量(NHWC)为(NCHW)，转换张量(NHWC)为PIL"
   },
   {
     "author": "cdb-boop",
@@ -6906,7 +6906,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/cdb-boop/comfyui-image-round",
     "title": "comfyui-image-round",
-    "zh_description": "一个简单的节点，用于将输入图像向上（填充）或向下（裁剪）舍入到最接近的整数倍。从左/下的填充偏移量和填充值是可调的。"
+    "zh_description": "一个简单的节点，用于将输入图像向上(填充)或向下(裁剪)舍入到最接近的整数倍。从左/下的填充偏移量和填充值是可调的。"
   },
   {
     "author": "cdb-boop",
@@ -7093,7 +7093,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ExponentialML/ComfyUI_VisualStylePrompting",
     "title": "ComfyUI_VisualStylePrompting",
-    "zh_description": "ComfyUI版本的'[a/Visual Style Remoting with Swapping Self-Attention]（https：//github.com/naver-ai/Visual-Style-Attention）'"
+    "zh_description": "ComfyUI版本的'[a/Visual Style Remoting with Swapping Self-Attention](https：//github.com/naver-ai/Visual-Style-Attention)'"
   },
   {
     "author": "ExponentialML",
@@ -7126,7 +7126,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/stavsap/comfyui-ollama",
     "title": "ComfyUI Ollama",
-    "zh_description": "自定义ComfyUI节点，用于使用[a/ollama python客户端]（https：//github.com/ollama/ollama-python）与[a/Olama]（https：//ollama.com/）交互。\n将LLM的强大功能轻松集成到CompfyUI工作流程中。"
+    "zh_description": "自定义ComfyUI节点，用于使用[a/ollama python客户端](https：//github.com/ollama/ollama-python)与[a/Olama](https：//ollama.com/)交互。\n将LLM的强大功能轻松集成到CompfyUI工作流程中。"
   },
   {
     "author": "dchatel",
@@ -7181,7 +7181,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/Xyem/Xycuno-Oobabooga",
     "title": "Xycuno Oobabooga",
-    "zh_description": "Xycuno Oobabooga为ComfyUI提供了自定义节点，用于向[a/Oobabooga]（https：//github.com/oobabooga/text-generation-webui）实例发送请求，以帮助创建提示文本。"
+    "zh_description": "Xycuno Oobabooga为ComfyUI提供了自定义节点，用于向[a/Oobabooga](https：//github.com/oobabooga/text-generation-webui)实例发送请求，以帮助创建提示文本。"
   },
   {
     "author": "shi3z",
@@ -7313,7 +7313,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/daxcay/ComfyUI-JDCN",
     "title": "ComfyUI-JDCN",
-    "zh_description": "Jerry Davos用于在目录中保存潜在的自定义节点（BatchLatentSave），从目录中删除Latent（BatchLatentLoadFromDir），列表到字符串，字符串到列表，从目录中获取任何文件列表，其中给出了文件路径，文件名，移动任何文件从任何目录到任何其他目录，VHS视频合并文件移动器，字符串的重新批处理列表，从任何目录中批处理图像加载，从任何目录和其他自定义节点加载图像批处理。"
+    "zh_description": "Jerry Davos用于在目录中保存潜在的自定义节点(BatchLatentSave)，从目录中删除Latent(BatchLatentLoadFromDir)，列表到字符串，字符串到列表，从目录中获取任何文件列表，其中给出了文件路径，文件名，移动任何文件从任何目录到任何其他目录，VHS视频合并文件移动器，字符串的重新批处理列表，从任何目录中批处理图像加载，从任何目录和其他自定义节点加载图像批处理。"
   },
   {
     "author": "Seedsa",
@@ -7346,7 +7346,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ratulrafsan/Comfyui-SAL-VTON",
     "title": "Comfyui-SAL-VTON",
-    "zh_description": "给你的模特穿上衣服！\n这是我为ComfyUI快速实现的SAL-VTON节点。\n根据论文[a/Keyu Y.亭尾湾等人（2023）。通过语义关联的Landmakrs将服装与人链接以进行虚拟试戴]（https：//openaccess.thecvf.com/content/CVPR2023/papers/Yan_Linking_Garment_With_Person_via_Semantically_Associated_Landmarks_for_Virtual_CVPR_2023_paper.pdf）"
+    "zh_description": "给你的模特穿上衣服！\n这是我为ComfyUI快速实现的SAL-VTON节点。\n根据论文[a/Keyu Y.亭尾湾等人(2023)。通过语义关联的Landmakrs将服装与人链接以进行虚拟试戴](https：//openaccess.thecvf.com/content/CVPR2023/papers/Yan_Linking_Garment_With_Person_via_Semantically_Associated_Landmarks_for_Virtual_CVPR_2023_paper.pdf)"
   },
   {
     "author": "Nevysha",
@@ -7401,7 +7401,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/SuperBeastsAI/ComfyUI-SuperBeasts",
     "title": "ComfyUI-SuperBeasts",
-    "zh_description": "节点：HDR特效（SuperBeasts.AI）。此存储库包含SuperBeasts.AI创建和使用的ComfyUI的自定义节点（Instagram上的@SuperBeasts.AI）"
+    "zh_description": "节点：HDR特效(SuperBeasts.AI)。此存储库包含SuperBeasts.AI创建和使用的ComfyUI的自定义节点(Instagram上的@SuperBeasts.AI)"
   },
   {
     "author": "IKHOR",
@@ -7423,7 +7423,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/hay86/ComfyUI_Dreamtalk",
     "title": "ComfyUI Dreamtalk",
-    "zh_description": "[a/dreamtalk]（https：//github.com/ali-vilab/dreamtalk）为ComfyUI的非正式实现"
+    "zh_description": "[a/dreamtalk](https：//github.com/ali-vilab/dreamtalk)为ComfyUI的非正式实现"
   },
   {
     "author": "hay86",
@@ -7434,7 +7434,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/hay86/ComfyUI_AceNodes",
     "title": "ComfyUI_AceNodes",
-    "zh_description": "节点：文本，浮点，文本，种子，文本级联，文本输入开关（2/4/8路），文本列表，文本预览，文本缩放，文本到分辨率。一些有用的自定义节点还没有包含在ComfyUI核心中。"
+    "zh_description": "节点：文本，浮点，文本，种子，文本级联，文本输入开关(2/4/8路)，文本列表，文本预览，文本缩放，文本到分辨率。一些有用的自定义节点还没有包含在ComfyUI核心中。"
   },
   {
     "author": "shinich39",
@@ -7544,7 +7544,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/jiaxiangc/ComfyUI-ResAdapter",
     "title": "ResAdapter for ComfyUI",
-    "zh_description": "我们提供了ComfyUI-ResAdapter节点，帮助用户在ComfyUI中使用[a/ResAdapter]（https：//github.com/bytedance/res-adapter）。"
+    "zh_description": "我们提供了ComfyUI-ResAdapter节点，帮助用户在ComfyUI中使用[a/ResAdapter](https：//github.com/bytedance/res-adapter)。"
   },
   {
     "author": "ParisNeo",
@@ -7555,7 +7555,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ParisNeo/lollms_nodes_suite",
     "title": "lollms_nodes_suite",
-    "zh_description": "lollms_nodes_suite是comfyui的一组节点，它利用了lollms（一种最先进的人工智能文本生成工具）的强大功能来提高图像生成的质量。"
+    "zh_description": "lollms_nodes_suite是comfyui的一组节点，它利用了lollms(一种最先进的人工智能文本生成工具)的强大功能来提高图像生成的质量。"
   },
   {
     "author": "IsItDanOrAi",
@@ -7566,7 +7566,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/IsItDanOrAi/ComfyUI-Stereopsis",
     "title": "ComfyUI-Stereopsis",
-    "zh_description": "该计划代表了一个独立的企业，致力于在ComfyUI（稳定扩散）中集成立体视觉效果。目前，该项目的重点是在一个统一的框架内完善节点分类，因为它处于开发的早期阶段。然而，它已经实现了基本功能。通过通过并排（SBS）节点处理视频，并对其中一个输入应用帧延迟，它有助于创建立体效果。此效果与任何支持SBS视频播放的虚拟现实耳机兼容，提供了沉浸式媒体体验的实际应用。"
+    "zh_description": "该计划代表了一个独立的企业，致力于在ComfyUI(稳定扩散)中集成立体视觉效果。目前，该项目的重点是在一个统一的框架内完善节点分类，因为它处于开发的早期阶段。然而，它已经实现了基本功能。通过通过并排(SBS)节点处理视频，并对其中一个输入应用帧延迟，它有助于创建立体效果。此效果与任何支持SBS视频播放的虚拟现实耳机兼容，提供了沉浸式媒体体验的实际应用。"
   },
   {
     "author": "nickve28",
@@ -7588,7 +7588,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/frankchieng/ComfyUI_Aniportrait",
     "title": "ComfyUI_Aniportrait",
-    "zh_description": "[a/AniPortrait]（https：//github.com/Zejun-Yang/AniPortrait）视频生成的实现，包括自驱动、人脸再现和音频驱动，并使用参考图像"
+    "zh_description": "[a/AniPortrait](https：//github.com/Zejun-Yang/AniPortrait)视频生成的实现，包括自驱动、人脸再现和音频驱动，并使用参考图像"
   },
   {
     "author": "BlakeOne",
@@ -7709,7 +7709,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/A4P7J1N7M05OT/ComfyUI-PixelOE",
     "title": "ComfyUI-PixelOE",
-    "zh_description": "一个用于[a/PixelOE]（https：//github.com/KohakuBlueleaf/PixelOE）的基本系统ComfyUI包装器。\n我不能保证任何支持，如果有人想做一个适当的节点，请做。"
+    "zh_description": "一个用于[a/PixelOE](https：//github.com/KohakuBlueleaf/PixelOE)的基本系统ComfyUI包装器。\n我不能保证任何支持，如果有人想做一个适当的节点，请做。"
   },
   {
     "author": "ronniebasak",
@@ -7720,7 +7720,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/ronniebasak/ComfyUI-Tara-LLM-Integration",
     "title": "ComfyUI-Tara-LLM-Integration",
-    "zh_description": "Tara是ComfyUI的一个强大节点，它集成了大型语言模型（LLM），以增强和自动化工作流流程。使用Tara，您可以创建复杂、智能的工作流，用于优化和生成内容，管理API密钥，并将各种LLM无缝集成到您的项目中。"
+    "zh_description": "Tara是ComfyUI的一个强大节点，它集成了大型语言模型(LLM)，以增强和自动化工作流流程。使用Tara，您可以创建复杂、智能的工作流，用于优化和生成内容，管理API密钥，并将各种LLM无缝集成到您的项目中。"
   },
   {
     "author": "Sida Liu",
@@ -7797,7 +7797,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/AIFSH/ComfyUI-UVR5",
     "title": "ComfyUI-UVR5",
-    "zh_description": "[a/UVR 5]（https：//github.com/Anjok07/ultimatevocalremovergui）的自定义代码，用于分离人声和背景音乐"
+    "zh_description": "[a/UVR 5](https：//github.com/Anjok07/ultimatevocalremovergui)的自定义代码，用于分离人声和背景音乐"
   },
   {
     "author": "CapsAdmin",
@@ -7808,7 +7808,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/CapsAdmin/ComfyUI-Euler-Smea-Dyn-Sampler",
     "title": "ComfyUI-Euler-Smea-Dyn-Sampler",
-    "zh_description": "只是[a/Euler Smea Dyn Sampler]的comfyui版本（https：//github.com/Koishi-Star/Euler-Smea-Dyn-Sampler）。它将采样器直接添加到现有采样器中。"
+    "zh_description": "只是[a/Euler Smea Dyn Sampler]的comfyui版本(https：//github.com/Koishi-Star/Euler-Smea-Dyn-Sampler)。它将采样器直接添加到现有采样器中。"
   },
   {
     "author": "sdfxai",
@@ -7841,7 +7841,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/choey/Comfy-Topaz",
     "title": "Comfy-Topaz",
-    "zh_description": "Comfy-Topaz是ComfyUI的一个定制节点，它与Topaz Photo AI集成，以增强（放大、锐化、降噪等）。图像，允许这个传统上异步的步骤成为ComfyUI工作流的一部分。\n注：许可安装Topaz Photo AI"
+    "zh_description": "Comfy-Topaz是ComfyUI的一个定制节点，它与Topaz Photo AI集成，以增强(放大、锐化、降噪等)。图像，允许这个传统上异步的步骤成为ComfyUI工作流的一部分。\n注：许可安装Topaz Photo AI"
   },
   {
     "author": "ALatentPlace",
@@ -7863,7 +7863,7 @@
     "install_type": "git-clone",
     "reference": "https://github.com/AIFSH/ComfyUI-IP_LAP",
     "title": "ComfyUI-IP_LAP",
-    "zh_description": "节点：IP_NTFS节点、视频加载器、预览视频、合并音频视频。[a/IP_REQ]（https：//github.com/Weizhi-Zhong/IP_REQ）的comfyui自定义节点，用于制作音频驱动视频！"
+    "zh_description": "节点：IP_NTFS节点、视频加载器、预览视频、合并音频视频。[a/IP_REQ](https：//github.com/Weizhi-Zhong/IP_REQ)的comfyui自定义节点，用于制作音频驱动视频！"
   },
   {
     "author": "Wicloz",
@@ -8092,7 +8092,7 @@
     "install_type": "copy",
     "reference": "https://github.com/ntdviet/comfyui-ext",
     "title": "ntdviet/comfyui-ext",
-    "zh_description": "节点：LatentGarbageCollector。这个ComfyUI自定义节点刷新GPU缓存和空cuda进程间内存。它对于低内存环境（如免费的Google Colab）很有帮助，特别是当工作流VAE解码1500x1500以上大小的潜在。"
+    "zh_description": "节点：LatentGarbageCollector。这个ComfyUI自定义节点刷新GPU缓存和空cuda进程间内存。它对于低内存环境(如免费的Google Colab)很有帮助，特别是当工作流VAE解码1500x1500以上大小的潜在。"
   },
   {
     "author": "alkemann",

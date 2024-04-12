@@ -8,7 +8,7 @@
     "save_path": "vae_approx",
     "type": "TAESD",
     "url": "https://github.com/madebyollin/taesd/raw/main/taesdxl_decoder.pth",
-    "zh_description": "(SDXL Verison）要在ComfyUI中运行示例时以高质量查看预览，您将需要这个模型。"
+    "zh_description": "(SDXL Verison)要在ComfyUI中运行示例时以高质量查看预览，您将需要这个模型。"
   },
   {
     "base": "SDXL",
@@ -19,7 +19,7 @@
     "save_path": "vae_approx",
     "type": "TAESD",
     "url": "https://github.com/madebyollin/taesd/raw/main/taesdxl_encoder.pth",
-    "zh_description": "(SDXL Verison）要在ComfyUI中运行示例时以高质量查看预览，您将需要这个模型。"
+    "zh_description": "(SDXL Verison)要在ComfyUI中运行示例时以高质量查看预览，您将需要这个模型。"
   },
   {
     "base": "SD1.x",
@@ -140,7 +140,7 @@
     "save_path": "upscale_models/ldsr",
     "type": "upscale",
     "url": "https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1",
-    "zh_description": "LDSR高档车型。通过[a/ComfyUI-Flowty-LDSR]（https：//github.com/flowtyone/ComfyUI-Flowty-LDSR）扩展，可以使用高档模型。"
+    "zh_description": "LDSR高档车型。通过[a/ComfyUI-Flowty-LDSR](https：//github.com/flowtyone/ComfyUI-Flowty-LDSR)扩展，可以使用高档模型。"
   },
   {
     "base": "upscale",
@@ -162,7 +162,7 @@
     "save_path": "insightface",
     "type": "insightface",
     "url": "https://github.com/facefusion/facefusion-assets/releases/download/models/inswapper_128_fp16.onnx",
-    "zh_description": "[264 MB] insightface交换器模型的检查点\n(used通过ComfyUI-FaceSwap，comfyui-reactor-node，\nComfyUI roop和comfort_mtb）"
+    "zh_description": "[264 MB] insightface交换器模型的检查点\n(used通过ComfyUI-FaceSwap，comfyui-reactor-node，\nComfyUI roop和comfort_mtb)"
   },
   {
     "base": "inswapper",
@@ -173,7 +173,7 @@
     "save_path": "insightface",
     "type": "insightface",
     "url": "https://github.com/facefusion/facefusion-assets/releases/download/models/inswapper_128.onnx",
-    "zh_description": "[529 MB] insightface交换器模型的检查点\n(used通过ComfyUI-FaceSwap，comfyui-reactor-node，\nComfyUI roop和comfort_mtb）"
+    "zh_description": "[529 MB] insightface交换器模型的检查点\n(used通过ComfyUI-FaceSwap，comfyui-reactor-node，\nComfyUI roop和comfort_mtb)"
   },
   {
     "base": "deepbump",
@@ -184,7 +184,7 @@
     "save_path": "deepbump",
     "type": "deepbump",
     "url": "https://github.com/HugoTini/DeepBump/raw/master/deepbump256.onnx",
-    "zh_description": "deepbump模型的检查点，用于从图像生成高度和法线贴图纹理（需要comfort_mtb）"
+    "zh_description": "deepbump模型的检查点，用于从图像生成高度和法线贴图纹理(需要comfort_mtb)"
   },
   {
     "base": "face_restore",
@@ -228,7 +228,7 @@
     "save_path": "checkpoints/SVD",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid/resolve/main/svd.safetensors",
-    "zh_description": "稳定视频扩散（SVD）图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注：14帧@576x1024"
+    "zh_description": "稳定视频扩散(SVD)图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注：14帧@576x1024"
   },
   {
     "base": "zero123",
@@ -239,7 +239,7 @@
     "save_path": "checkpoints/zero123",
     "type": "zero123",
     "url": "https://huggingface.co/stabilityai/stable-zero123/resolve/main/stable_zero123.ckpt",
-    "zh_description": "Stable Zero 123是一个基于[a/Zero 123]（https：//github.com/cvlab-columbia/zero123）的视图调节图像生成模型。"
+    "zh_description": "Stable Zero 123是一个基于[a/Zero 123](https：//github.com/cvlab-columbia/zero123)的视图调节图像生成模型。"
   },
   {
     "base": "SVD",
@@ -250,7 +250,7 @@
     "save_path": "checkpoints/SVD",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/resolve/main/svd_xt.safetensors",
-    "zh_description": "稳定视频扩散（SVD）图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注：25帧@576x1024 "
+    "zh_description": "稳定视频扩散(SVD)图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注：25帧@576x1024 "
   },
   {
     "base": "SD1.5",
@@ -294,7 +294,7 @@
     "save_path": "default",
     "type": "embeddings",
     "url": "https://civitai.com/api/download/models/9208",
-    "zh_description": "这个嵌入应该在你的NEGATIVE提示符中使用。根据需要调整强度（似乎缩放良好，没有任何扭曲），所需的强度可能会根据积极和消极的提示而有所不同。"
+    "zh_description": "这个嵌入应该在你的NEGATIVE提示符中使用。根据需要调整强度(似乎缩放良好，没有任何扭曲)，所需的强度可能会根据积极和消极的提示而有所不同。"
   },
   {
     "base": "Stable Cascade",
@@ -470,7 +470,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0_0.9vae.safetensors",
-    "zh_description": "稳定扩散XL基础模型（VAE 0.9）"
+    "zh_description": "稳定扩散XL基础模型(VAE 0.9)"
   },
   {
     "base": "SDXL",
@@ -492,7 +492,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0_0.9vae.safetensors",
-    "zh_description": "稳定扩散XL精炼机模型（VAE 0.9）"
+    "zh_description": "稳定扩散XL精炼机模型(VAE 0.9)"
   },
   {
     "base": "SDXL",
@@ -547,7 +547,7 @@
     "save_path": "loras/SDXL-Lightning",
     "type": "lora",
     "url": "https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_2step_lora.safetensors",
-    "zh_description": "SDXL Lightning LoRA（2步）"
+    "zh_description": "SDXL Lightning LoRA(2步)"
   },
   {
     "base": "SDXL",
@@ -558,7 +558,7 @@
     "save_path": "loras/SDXL-Lightning",
     "type": "lora",
     "url": "https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_4step_lora.safetensors",
-    "zh_description": "SDXL Lightning LoRA（4step）"
+    "zh_description": "SDXL Lightning LoRA(4step)"
   },
   {
     "base": "SDXL",
@@ -569,7 +569,7 @@
     "save_path": "loras/SDXL-Lightning",
     "type": "lora",
     "url": "https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_8step_lora.safetensors",
-    "zh_description": "SDXL Lightning LoRA（8步）"
+    "zh_description": "SDXL Lightning LoRA(8步)"
   },
   {
     "base": "SD1.5",
@@ -591,7 +591,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-diffusion-2-1-base/resolve/main/v2-1_512-ema-pruned.safetensors",
-    "zh_description": "稳定扩散2基础模型（512）"
+    "zh_description": "稳定扩散2基础模型(512)"
   },
   {
     "base": "SD2",
@@ -602,7 +602,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors",
-    "zh_description": "稳定扩散2基本模型（768）"
+    "zh_description": "稳定扩散2基本模型(768)"
   },
   {
     "base": "SD1.5",
@@ -613,7 +613,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix2/AbyssOrangeMix2_hard.safetensors",
-    "zh_description": "AbyssOrangeMix 2-硬版（动漫风格）"
+    "zh_description": "AbyssOrangeMix 2-硬版(动漫风格)"
   },
   {
     "base": "SD1.5",
@@ -624,7 +624,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A1_orangemixs.safetensors",
-    "zh_description": "AbyssOrangeMix 3- A1（动漫风格）"
+    "zh_description": "AbyssOrangeMix 3- A1(动漫风格)"
   },
   {
     "base": "SD1.5",
@@ -635,7 +635,7 @@
     "save_path": "default",
     "type": "checkpoints",
     "url": "https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A3_orangemixs.safetensors",
-    "zh_description": "AbyssOrangeMix - A3（动漫风格）"
+    "zh_description": "AbyssOrangeMix - A3(动漫风格)"
   },
   {
     "base": "SD2.1",
@@ -657,7 +657,7 @@
     "save_path": "default",
     "type": "unclip",
     "url": "https://huggingface.co/comfyanonymous/illuminatiDiffusionV1_v11_unCLIP/resolve/main/illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors",
-    "zh_description": "混合模型（SD2.1 unCLIP + illuminatiDiffusionV1_v11）"
+    "zh_description": "混合模型(SD2.1 unCLIP + illuminatiDiffusionV1_v11)"
   },
   {
     "base": "SD2.1",
@@ -668,7 +668,7 @@
     "save_path": "default",
     "type": "unclip",
     "url": "https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors",
-    "zh_description": "混合模型（SD2.1 unCLIP + Waifu弥散1.5）"
+    "zh_description": "混合模型(SD2.1 unCLIP + Waifu弥散1.5)"
   },
   {
     "base": "SDXL VAE",
@@ -767,7 +767,7 @@
     "save_path": "checkpoints/segmind-vega",
     "type": "checkpoints",
     "url": "https://huggingface.co/segmind/Segmind-Vega/resolve/main/segmind-vega.safetensors",
-    "zh_description": "Segmind-Vega模型是Stable Diffusion XL（SDXL）的蒸馏版本，在保留高质量文本到图像生成能力的同时，提供了显着的70%的尺寸减小和令人印象深刻的100%加速。"
+    "zh_description": "Segmind-Vega模型是Stable Diffusion XL(SDXL)的蒸馏版本，在保留高质量文本到图像生成能力的同时，提供了显着的70%的尺寸减小和令人印象深刻的100%加速。"
   },
   {
     "base": "segmind-vega",
@@ -789,7 +789,7 @@
     "save_path": "default",
     "type": "lora",
     "url": "https://civitai.com/api/download/models/10350",
-    "zh_description": "LORA：Theovercomer8的对比修复（SD2.1）"
+    "zh_description": "LORA：Theovercomer8的对比修复(SD2.1)"
   },
   {
     "base": "SD1.5",
@@ -800,7 +800,7 @@
     "save_path": "default",
     "type": "lora",
     "url": "https://civitai.com/api/download/models/10638",
-    "zh_description": "LORA：Theovercomer8的对比修复（SD1.5）"
+    "zh_description": "LORA：Theovercomer8的对比修复(SD1.5)"
   },
   {
     "base": "SD1.5",
@@ -1053,7 +1053,7 @@
     "save_path": "clip_vision",
     "type": "clip_vision",
     "url": "https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetensors",
-    "zh_description": "[1.7GB] CLIPVision模型（样式模型需要）"
+    "zh_description": "[1.7GB] CLIPVision模型(样式模型需要)"
   },
   {
     "base": "ViT-H",
@@ -1064,7 +1064,7 @@
     "save_path": "clip_vision",
     "type": "clip_vision",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors",
-    "zh_description": "[2.5GB] CLIPVision型号（IP适配器需要）"
+    "zh_description": "[2.5GB] CLIPVision型号(IP适配器需要)"
   },
   {
     "base": "ViT-G",
@@ -1075,7 +1075,7 @@
     "save_path": "clip_vision",
     "type": "clip_vision",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors",
-    "zh_description": "[3.69GB] CLIPVision型号（IP适配器需要）"
+    "zh_description": "[3.69GB] CLIPVision型号(IP适配器需要)"
   },
   {
     "base": "SDXL",
@@ -1174,7 +1174,7 @@
     "save_path": "custom_nodes/ControlNet-LLLite-ComfyUI/models",
     "type": "controlnet",
     "url": "https://huggingface.co/kohya-ss/controlnet-lllite/resolve/main/controllllite_v01032064e_sdxl_canny_anime.safetensors",
-    "zh_description": "[46.2MB]一个设计极其紧凑的controlnet模型（又名：ControlNet-LLLite）。注：模型结构是高度试验性的，将来可能会有所改变。"
+    "zh_description": "[46.2MB]一个设计极其紧凑的controlnet模型(又名：ControlNet-LLLite)。注：模型结构是高度试验性的，将来可能会有所改变。"
   },
   {
     "base": "SDXL",
@@ -1218,7 +1218,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11e_sd15_ip2p_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（ip 2 p）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(ip 2 p)"
   },
   {
     "base": "SD1.5",
@@ -1229,7 +1229,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11e_sd15_shuffle_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（shuffle）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(shuffle)"
   },
   {
     "base": "SD1.5",
@@ -1240,7 +1240,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_canny_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（canny）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(canny)"
   },
   {
     "base": "SD1.5",
@@ -1251,7 +1251,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（深度）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(深度)"
   },
   {
     "base": "SD1.5",
@@ -1262,7 +1262,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors",
-    "zh_description": "新ControlNet-v1-1检查点的Safetensors/FP 16版本（inpaint）"
+    "zh_description": "新ControlNet-v1-1检查点的Safetensors/FP 16版本(inpaint)"
   },
   {
     "base": "SD1.5",
@@ -1273,7 +1273,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_lineart_fp16.safetensors",
-    "zh_description": "新的ControlNet-v1-1检查点的Safetensors/FP 16版本（linemt）"
+    "zh_description": "新的ControlNet-v1-1检查点的Safetensors/FP 16版本(linemt)"
   },
   {
     "base": "SD1.5",
@@ -1284,7 +1284,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_mlsd_fp16.safetensors",
-    "zh_description": "新ControlNet-v1-1检查点（mlsd）的Safetensors/FP 16版本"
+    "zh_description": "新ControlNet-v1-1检查点(mlsd)的Safetensors/FP 16版本"
   },
   {
     "base": "SD1.5",
@@ -1295,7 +1295,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_normalbae_fp16.safetensors",
-    "zh_description": "新ControlNet-v1-1检查点的Safetensors/FP 16版本（正常）"
+    "zh_description": "新ControlNet-v1-1检查点的Safetensors/FP 16版本(正常)"
   },
   {
     "base": "SD1.5",
@@ -1306,7 +1306,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（openpose）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(openpose)"
   },
   {
     "base": "SD1.5",
@@ -1317,7 +1317,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors",
-    "zh_description": "新ControlNet-v1-1检查点的Safetensors/FP 16版本（涂鸦）"
+    "zh_description": "新ControlNet-v1-1检查点的Safetensors/FP 16版本(涂鸦)"
   },
   {
     "base": "SD1.5",
@@ -1328,7 +1328,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_seg_fp16.safetensors",
-    "zh_description": "新的ControlNet-v1-1检查点（seg）的Safetensors/FP 16版本"
+    "zh_description": "新的ControlNet-v1-1检查点(seg)的Safetensors/FP 16版本"
   },
   {
     "base": "SD1.5",
@@ -1339,7 +1339,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_softedge_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（软边）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(软边)"
   },
   {
     "base": "SD1.5",
@@ -1350,7 +1350,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15s2_lineart_anime_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（动画）"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(动画)"
   },
   {
     "base": "SD1.5",
@@ -1361,7 +1361,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11u_sd15_tile_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（瓦片）/v11 u"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(瓦片)/v11 u"
   },
   {
     "base": "SD1.5",
@@ -1372,7 +1372,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1e_sd15_tile_fp16.safetensors",
-    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点（瓦片）/v11 f1 e\n您需要使用此模型进行<B>平铺重采样</B>"
+    "zh_description": "Safetensors/FP 16版本的新ControlNet-v1-1检查点(瓦片)/v11 f1 e\n您需要使用此模型进行<B>平铺重采样</B>"
   },
   {
     "base": "SD1.5",
@@ -1416,7 +1416,7 @@
     "save_path": "sams",
     "type": "sam",
     "url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth",
-    "zh_description": "Segmenty Anything SAM模型（ViT-H）"
+    "zh_description": "Segmenty Anything SAM模型(ViT-H)"
   },
   {
     "base": "SAM",
@@ -1427,7 +1427,7 @@
     "save_path": "sams",
     "type": "sam",
     "url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth",
-    "zh_description": "Segmenty Anything SAM模型（ViT-L）"
+    "zh_description": "Segmenty Anything SAM模型(ViT-L)"
   },
   {
     "base": "SAM",
@@ -1438,7 +1438,7 @@
     "save_path": "sams",
     "type": "sam",
     "url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth",
-    "zh_description": "Segmentty Anything Sam模型（ViT-B）"
+    "zh_description": "Segmentty Anything Sam模型(ViT-B)"
   },
   {
     "base": "SEECODER",
@@ -1911,7 +1911,7 @@
     "save_path": "loras/SD1.5/animatediff",
     "type": "lora",
     "url": "https://huggingface.co/guoyww/animatediff/resolve/main/v3_sd15_adapter.ckpt",
-    "zh_description": "AnimateDiff适配器LoRA（SD1.5）"
+    "zh_description": "AnimateDiff适配器LoRA(SD1.5)"
   },
   {
     "base": "MotionCtrl",
@@ -1933,7 +1933,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1944,7 +1944,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15_light.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1955,7 +1955,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15_vit-G.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1966,7 +1966,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1977,7 +1977,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus-face_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1988,7 +1988,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-full-face_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1999,7 +1999,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sd15.bin",
-    "zh_description": "IP适配器-FaceID型号（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID型号(SD1.5)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2010,7 +2010,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plus_sd15.bin",
-    "zh_description": "IP适配器-FaceID Plus型号（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID Plus型号(SD1.5)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2021,7 +2021,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-portrait_sd15.bin",
-    "zh_description": "IP适配器-FaceID肖像模型（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID肖像模型(SD1.5)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2032,7 +2032,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sdxl.bin",
-    "zh_description": "IP适配器-FaceID型号（SDXL）[ipadapter]"
+    "zh_description": "IP适配器-FaceID型号(SDXL)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2043,7 +2043,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin",
-    "zh_description": "IP适配器-FaceID Plus型号（SDXL）[ipadapter]"
+    "zh_description": "IP适配器-FaceID Plus型号(SDXL)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2054,7 +2054,7 @@
     "save_path": "loras/ipadapter",
     "type": "lora",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sd15_lora.safetensors",
-    "zh_description": "IP适配器-FaceID LoRA型号（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID LoRA型号(SD1.5)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2065,7 +2065,7 @@
     "save_path": "loras/ipadapter",
     "type": "lora",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plus_sd15_lora.safetensors",
-    "zh_description": "IP适配器-FaceID Plus LoRA型号（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID Plus LoRA型号(SD1.5)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2076,7 +2076,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sd15.bin",
-    "zh_description": "IP适配器-FaceID-Plus V2型号（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID-Plus V2型号(SD1.5)[ipadapter]"
   },
   {
     "base": "SD1.5",
@@ -2087,7 +2087,7 @@
     "save_path": "loras/ipadapter",
     "type": "lora",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sd15_lora.safetensors",
-    "zh_description": "IP适配器-FaceID-Plus V2 LoRA型号（SD1.5）[ipadapter]"
+    "zh_description": "IP适配器-FaceID-Plus V2 LoRA型号(SD1.5)[ipadapter]"
   },
   {
     "base": "SDXL",
@@ -2098,7 +2098,7 @@
     "save_path": "loras/ipadapter",
     "type": "lora",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sdxl_lora.safetensors",
-    "zh_description": "IP适配器-FaceID LoRA型号（SDXL）[ipadapter]"
+    "zh_description": "IP适配器-FaceID LoRA型号(SDXL)[ipadapter]"
   },
   {
     "base": "SDXL",
@@ -2109,7 +2109,7 @@
     "save_path": "loras/ipadapter",
     "type": "lora",
     "url": "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors",
-    "zh_description": "IP适配器-FaceID-Plus V2 LoRA型号（SDXL）[ipadapter]"
+    "zh_description": "IP适配器-FaceID-Plus V2 LoRA型号(SDXL)[ipadapter]"
   },
   {
     "base": "SDXL",
@@ -2120,7 +2120,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus]（https：//github.com/cubiq/ComfyUI_IPAdapter_plus）扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SDXL",
@@ -2164,7 +2164,7 @@
     "save_path": "custom_nodes/pfg-ComfyUI/models",
     "type": "PFG",
     "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-novel-n10.pt",
-    "zh_description": "按“安装”键直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上）"
+    "zh_description": "按“安装”键直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上)"
   },
   {
     "base": "SD1.5",
@@ -2175,7 +2175,7 @@
     "save_path": "custom_nodes/pfg-ComfyUI/models",
     "type": "PFG",
     "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-wd14-n10.pt",
-    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上版本）"
+    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上版本)"
   },
   {
     "base": "SD1.5",
@@ -2186,7 +2186,7 @@
     "save_path": "custom_nodes/pfg-ComfyUI/models",
     "type": "PFG",
     "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-wd15beta2-n10.pt",
-    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上版本）"
+    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上版本)"
   },
   {
     "base": "GFPGAN",
@@ -2197,7 +2197,7 @@
     "save_path": "facerestore_models",
     "type": "GFPGAN",
     "url": "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth",
-    "zh_description": "面部修复模型下载使用'Facerestore CF（Code Former）'自定义节点所需的模型。"
+    "zh_description": "面部修复模型下载使用'Facerestore CF(Code Former)'自定义节点所需的模型。"
   },
   {
     "base": "CodeFormer",
@@ -2208,7 +2208,7 @@
     "save_path": "facerestore_models",
     "type": "CodeFormer",
     "url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth",
-    "zh_description": "面部修复模型下载使用'Facerestore CF（Code Former）'自定义节点所需的模型。"
+    "zh_description": "面部修复模型下载使用'Facerestore CF(Code Former)'自定义节点所需的模型。"
   },
   {
     "base": "facexlib",
@@ -2219,7 +2219,7 @@
     "save_path": "facerestore_models",
     "type": "facexlib",
     "url": "https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth",
-    "zh_description": "人脸检测模型下载使用'Facerestore CF（Code Former）'自定义节点所需的模型。"
+    "zh_description": "人脸检测模型下载使用'Facerestore CF(Code Former)'自定义节点所需的模型。"
   },
   {
     "base": "facexlib",
@@ -2230,7 +2230,7 @@
     "save_path": "facerestore_models",
     "type": "facexlib",
     "url": "https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_mobilenet0.25_Final.pth",
-    "zh_description": "人脸检测模型下载使用'Facerestore CF（Code Former）'自定义节点所需的模型。"
+    "zh_description": "人脸检测模型下载使用'Facerestore CF(Code Former)'自定义节点所需的模型。"
   },
   {
     "base": "facexlib",
@@ -2241,7 +2241,7 @@
     "save_path": "facedetection",
     "type": "facexlib",
     "url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/yolov5l-face.pth",
-    "zh_description": "人脸检测模型下载使用'Facerestore CF（Code Former）'自定义节点所需的模型。"
+    "zh_description": "人脸检测模型下载使用'Facerestore CF(Code Former)'自定义节点所需的模型。"
   },
   {
     "base": "facexlib",
@@ -2252,7 +2252,7 @@
     "save_path": "facedetection",
     "type": "facexlib",
     "url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/yolov5n-face.pth",
-    "zh_description": "人脸检测模型下载使用'Facerestore CF（Code Former）'自定义节点所需的模型。"
+    "zh_description": "人脸检测模型下载使用'Facerestore CF(Code Former)'自定义节点所需的模型。"
   },
   {
     "base": "SDXL",
@@ -2274,7 +2274,7 @@
     "save_path": "insightface/models/antelopev2",
     "type": "insightface",
     "url": "https://huggingface.co/MonsterMMORPG/tools/resolve/main/1k3d68.onnx",
-    "zh_description": "Antelopev2 1k3d68.onnx Model for InstantId.（InstantId需要所有Antelopev2型号）"
+    "zh_description": "Antelopev2 1k3d68.onnx Model for InstantId.(InstantId需要所有Antelopev2型号)"
   },
   {
     "base": "inswapper",
@@ -2285,7 +2285,7 @@
     "save_path": "insightface/models/antelopev2",
     "type": "insightface",
     "url": "https://huggingface.co/MonsterMMORPG/tools/resolve/main/2d106det.onnx",
-    "zh_description": "Antelopev2 2d106det.onnx模型用于InstantId。（InstantId需要所有Antelopev2型号）"
+    "zh_description": "Antelopev2 2d106det.onnx模型用于InstantId。(InstantId需要所有Antelopev2型号)"
   },
   {
     "base": "inswapper",
@@ -2296,7 +2296,7 @@
     "save_path": "insightface/models/antelopev2",
     "type": "insightface",
     "url": "https://huggingface.co/MonsterMMORPG/tools/resolve/main/genderage.onnx",
-    "zh_description": "Antelopev2 genderage.onnx model for InstantId.（InstantId需要所有Antelopev2型号）"
+    "zh_description": "Antelopev2 genderage.onnx model for InstantId.(InstantId需要所有Antelopev2型号)"
   },
   {
     "base": "inswapper",
@@ -2307,7 +2307,7 @@
     "save_path": "insightface/models/antelopev2",
     "type": "insightface",
     "url": "https://huggingface.co/MonsterMMORPG/tools/resolve/main/glintr100.onnx",
-    "zh_description": "Antelopev2 glintr100.onnx模型用于InstantId。（InstantId需要所有Antelopev2型号）"
+    "zh_description": "Antelopev2 glintr100.onnx模型用于InstantId。(InstantId需要所有Antelopev2型号)"
   },
   {
     "base": "inswapper",
@@ -2318,7 +2318,7 @@
     "save_path": "insightface/models/antelopev2",
     "type": "insightface",
     "url": "https://huggingface.co/MonsterMMORPG/tools/resolve/main/scrfd_10g_bnkps.onnx",
-    "zh_description": "Antelopev2为InstantId创建fd_10g_bnkps.onnx模型。（InstantId需要所有Antelopev2型号）"
+    "zh_description": "Antelopev2为InstantId创建fd_10g_bnkps.onnx模型。(InstantId需要所有Antelopev2型号)"
   },
   {
     "base": "SDXL",
@@ -2483,7 +2483,7 @@
     "save_path": "blip",
     "type": "BLIP_MODEL",
     "url": "https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth",
-    "zh_description": "BLIP ImageCaption（COCO），w/ ViT-B和CapFilt-L"
+    "zh_description": "BLIP ImageCaption(COCO)，w/ ViT-B和CapFilt-L"
   },
   {
     "base": "DINO",
@@ -2516,7 +2516,7 @@
     "save_path": "sams",
     "type": "sam",
     "url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth",
-    "zh_description": "Segmenty Anything SAM模型（ViT-H）"
+    "zh_description": "Segmenty Anything SAM模型(ViT-H)"
   },
   {
     "base": "SAM",
@@ -2527,7 +2527,7 @@
     "save_path": "sams",
     "type": "sam",
     "url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth",
-    "zh_description": "Segmenty Anything SAM模型（ViT-L）"
+    "zh_description": "Segmenty Anything SAM模型(ViT-L)"
   },
   {
     "base": "SAM",

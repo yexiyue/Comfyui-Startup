@@ -23,6 +23,7 @@ impl MigrationTrait for Migration {
                     .col(ColumnDef::new(Model::Base).string().not_null())
                     .col(ColumnDef::new(Model::SavePath).string().not_null())
                     .col(ColumnDef::new(Model::Description).string().not_null())
+                    .col(ColumnDef::new(Model::ZhDescription).string())
                     .col(ColumnDef::new(Model::Reference).string().not_null())
                     .col(ColumnDef::new(Model::Filename).string().not_null())
                     .col(ColumnDef::new(Model::Url).string().not_null())
@@ -50,4 +51,5 @@ enum Model {
     Reference,
     Filename,
     Url,
+    ZhDescription
 }

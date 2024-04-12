@@ -77,6 +77,7 @@ pub async fn download_manager(
         files: vec![],
         install_type: "git-clone".into(),
         description: "".into(),
+        zh_description: None,
     };
 
     let mut start_time = Instant::now();

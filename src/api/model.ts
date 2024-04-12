@@ -8,6 +8,7 @@ export type Model = {
   base: string;
   save_path: string;
   description: string;
+  zh_description: string;
   reference: string;
   filename: string;
   url: string;

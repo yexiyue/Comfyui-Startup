@@ -18,6 +18,7 @@ pub struct Model {
     pub base: String,
     pub save_path: String,
     pub description: String,
+    pub zh_description: Option<String>,
     pub reference: String,
     pub filename: String,
     pub url: String,
@@ -91,10 +92,17 @@ impl DerefMut for ModelList {
 }
 
 impl ModelList {
+    #[allow(unused)]
     pub fn from_file<P: AsRef<Path>>(path: P) -> Result<Self, anyhow::Error> {
         let file = std::fs::File::open(path)?;
         let model_list: ModelList = serde_json::from_reader(file)?;
         Ok(model_list)
+    }
+}
+
+impl From<Vec<Model>> for ModelList {
+    fn from(models: Vec<Model>) -> Self {
+        Self { models }
     }
 }
 

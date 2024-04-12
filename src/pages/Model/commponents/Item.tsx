@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { notification } from "@/lib/notification";
 import { cn, formatToBytes } from "@/lib/utils";
+import { useConfigStore } from "@/useStore";
 import {
   CloseOutlined,
   CloudDownloadOutlined,
@@ -26,8 +27,9 @@ import { open } from "@tauri-apps/plugin-shell";
 import { useMemoizedFn } from "ahooks";
 import { App, Button, Progress, Space, Tag, Tooltip, Typography } from "antd";
 import { SlashIcon } from "lucide-react";
-import { useModelDownloadStore } from "../useStore";
 import { useState } from "react";
+import Markdown from "react-markdown";
+import { useModelDownloadStore } from "../useStore";
 
 type ModelItemProps = {
   model: Model;
@@ -36,7 +38,7 @@ type ModelItemProps = {
 
 export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
   useLingui();
-
+  const [language] = useConfigStore((store) => [store.language]);
   const { message } = App.useApp();
   const [
     downloadingModel,
@@ -346,7 +348,9 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className={cn("px-4 pt-0", downloading ? "pb-0" : "pb-2")}>
-        <p className="text-wrap">{model.description}</p>
+        <Markdown>
+          {language === "zh" ? model.zh_description : model.description}
+        </Markdown>
       </CardContent>
       <CardFooter className="pb-2 justify-between">
         <Progress
