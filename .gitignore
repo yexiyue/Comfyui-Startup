@@ -26,3 +26,4 @@ dist-ssr
 target
 .cargo
 todo
+/**/.env
