@@ -2,12 +2,12 @@
 name = "translate"
 version = "0.1.0"
 edition = "2021"
-
+default-run = "translate"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 anyhow = "1.0.82"
-chrono = { version = "0.4.37", optional = true }
+chrono = { version = "0.4.37", features = ["serde"] }
 derive_builder = "0.20.0"
 dotenv = "0.15.0"
 futures = "0.3.30"
@@ -26,4 +26,4 @@ tracing-subscriber = "0.3.18"
 
 [features]
 baidu = ["md5"]
-tencent = [ "chrono", "hex", "hmac", "sha2", "sha256"]
+tencent = ["hex", "hmac", "sha2", "sha256"]

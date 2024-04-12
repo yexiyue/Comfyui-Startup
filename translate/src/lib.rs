@@ -6,9 +6,9 @@ use serde_json::Value;
 use std::{path::Path, time::Duration};
 use tokio::{join, time::sleep};
 use tracing::{error, info, warn};
-
 #[cfg(feature = "baidu")]
 mod baidu;
+pub mod check;
 #[cfg(feature = "baidu")]
 use baidu::trans;
 
@@ -47,7 +47,7 @@ pub async fn run<P: AsRef<Path>>(
     } else {
         &custom_nodes
     };
-    let nodes = nodes.as_array().ok_or(anyhow!("no nodes"))?;
+    let nodes = nodes.as_array().ok_or(anyhow!("{nodes:#?}"))?;
 
     let mut new_nodes = nodes.clone();
     let time = std::time::Instant::now();
