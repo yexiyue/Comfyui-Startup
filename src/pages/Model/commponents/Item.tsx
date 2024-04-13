@@ -30,6 +30,7 @@ import { SlashIcon } from "lucide-react";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { useModelDownloadStore } from "../useStore";
+import { CustomLink } from "@/components/CustomLink";
 
 type ModelItemProps = {
   model: Model;
@@ -348,7 +349,11 @@ export const ModelItem = ({ model, isDownloaded }: ModelItemProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className={cn("px-4 pt-0", downloading ? "pb-0" : "pb-2")}>
-        <Markdown>
+        <Markdown
+          components={{
+            a: CustomLink,
+          }}
+        >
           {language === "zh" ? model.zh_description : model.description}
         </Markdown>
       </CardContent>

@@ -52,7 +52,7 @@ pub async fn download(
     let url = &model.get_url(config.is_chinese());
 
     let (tx, mut rx) = tokio::sync::mpsc::channel(10);
-
+    info!("downloading {}", url);
     let (task_id, mut download) =
         Download::new(&db, url, &filename.display().to_string(), &model.url).await?;
     info!("taskId = {}", task_id);

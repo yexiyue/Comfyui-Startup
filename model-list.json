@@ -140,7 +140,7 @@
     "save_path": "upscale_models/ldsr",
     "type": "upscale",
     "url": "https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1",
-    "zh_description": "LDSR高档车型。通过[a/ComfyUI-Flowty-LDSR](https：//github.com/flowtyone/ComfyUI-Flowty-LDSR)扩展，可以使用高档模型。"
+    "zh_description": "LDSR高档车型。通过[a/ComfyUI-Flowty-LDSR](https://github.com/flowtyone/ComfyUI-Flowty-LDSR)扩展，可以使用高档模型。"
   },
   {
     "base": "upscale",
@@ -228,7 +228,7 @@
     "save_path": "checkpoints/SVD",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid/resolve/main/svd.safetensors",
-    "zh_description": "稳定视频扩散(SVD)图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注：14帧@576x1024"
+    "zh_description": "稳定视频扩散(SVD)图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注:14帧@576x1024"
   },
   {
     "base": "zero123",
@@ -239,7 +239,7 @@
     "save_path": "checkpoints/zero123",
     "type": "zero123",
     "url": "https://huggingface.co/stabilityai/stable-zero123/resolve/main/stable_zero123.ckpt",
-    "zh_description": "Stable Zero 123是一个基于[a/Zero 123](https：//github.com/cvlab-columbia/zero123)的视图调节图像生成模型。"
+    "zh_description": "Stable Zero 123是一个基于[a/Zero 123](https://github.com/cvlab-columbia/zero123)的视图调节图像生成模型。"
   },
   {
     "base": "SVD",
@@ -250,7 +250,7 @@
     "save_path": "checkpoints/SVD",
     "type": "checkpoints",
     "url": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/resolve/main/svd_xt.safetensors",
-    "zh_description": "稳定视频扩散(SVD)图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注：25帧@576x1024 "
+    "zh_description": "稳定视频扩散(SVD)图像到视频是一种扩散模型，它将静止图像作为条件帧，并从中生成视频。\n注:25帧@576x1024 "
   },
   {
     "base": "SD1.5",
@@ -327,7 +327,7 @@
     "save_path": "vae/Stable-Cascade",
     "type": "VAE",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_a.safetensors",
-    "zh_description": "[73.7MB]稳定级联：stage_a"
+    "zh_description": "[73.7MB]稳定级联:stage_a"
   },
   {
     "base": "Stable Cascade",
@@ -338,7 +338,7 @@
     "save_path": "vae/Stable-Cascade",
     "type": "VAE",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/effnet_encoder.safetensors",
-    "zh_description": "[81.5MB]稳定级联：effnet_encoder。\nstage_c latent的VAE编码器。"
+    "zh_description": "[81.5MB]稳定级联:effnet_encoder。\nstage_c latent的VAE编码器。"
   },
   {
     "base": "Stable Cascade",
@@ -349,7 +349,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_b.safetensors",
-    "zh_description": "[6.25GB]稳定级联：stage_b"
+    "zh_description": "[6.25GB]稳定级联:stage_b"
   },
   {
     "base": "Stable Cascade",
@@ -360,7 +360,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_b_bf16.safetensors",
-    "zh_description": "[3.13GB] Stable Cascade：stage_b/bf16"
+    "zh_description": "[3.13GB] Stable Cascade:stage_b/bf16"
   },
   {
     "base": "Stable Cascade",
@@ -371,7 +371,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_b_lite.safetensors",
-    "zh_description": "[2.8GB]稳定级联：stage_b/lite"
+    "zh_description": "[2.8GB]稳定级联:stage_b/lite"
   },
   {
     "base": "Stable Cascade",
@@ -382,7 +382,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_b_lite_bf16.safetensors",
-    "zh_description": "[1.4GB]稳定级联：stage_b/bf 16，lite"
+    "zh_description": "[1.4GB]稳定级联:stage_b/bf 16，lite"
   },
   {
     "base": "Stable Cascade",
@@ -393,7 +393,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_c.safetensors",
-    "zh_description": "[14.4GB]稳定级联：stage_c"
+    "zh_description": "[14.4GB]稳定级联:stage_c"
   },
   {
     "base": "Stable Cascade",
@@ -404,7 +404,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_c_bf16.safetensors",
-    "zh_description": "[7.18GB]稳定级联：stage_c/bf 16"
+    "zh_description": "[7.18GB]稳定级联:stage_c/bf 16"
   },
   {
     "base": "Stable Cascade",
@@ -415,7 +415,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_c_lite.safetensors",
-    "zh_description": "[4.12GB] Stable Cascade：stage_c/lite"
+    "zh_description": "[4.12GB] Stable Cascade:stage_c/lite"
   },
   {
     "base": "Stable Cascade",
@@ -426,7 +426,7 @@
     "save_path": "unet/Stable-Cascade",
     "type": "unet",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_c_lite_bf16.safetensors",
-    "zh_description": "[2.06GB]稳定级联：stage_c/bf 16，lite"
+    "zh_description": "[2.06GB]稳定级联:stage_c/bf 16，lite"
   },
   {
     "base": "Stable Cascade",
@@ -437,7 +437,7 @@
     "save_path": "clip/Stable-Cascade",
     "type": "clip",
     "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/text_encoder/model.safetensors",
-    "zh_description": "[1.39GB] Stable Cascade：text_encode"
+    "zh_description": "[1.39GB] Stable Cascade:text_encode"
   },
   {
     "base": "SDXL",
@@ -789,7 +789,7 @@
     "save_path": "default",
     "type": "lora",
     "url": "https://civitai.com/api/download/models/10350",
-    "zh_description": "LORA：Theovercomer8的对比修复(SD2.1)"
+    "zh_description": "LORA:Theovercomer8的对比修复(SD2.1)"
   },
   {
     "base": "SD1.5",
@@ -800,7 +800,7 @@
     "save_path": "default",
     "type": "lora",
     "url": "https://civitai.com/api/download/models/10638",
-    "zh_description": "LORA：Theovercomer8的对比修复(SD1.5)"
+    "zh_description": "LORA:Theovercomer8的对比修复(SD1.5)"
   },
   {
     "base": "SD1.5",
@@ -1086,7 +1086,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-canny-rank128.safetensors",
-    "zh_description": "Control-LoRA：canny rank128"
+    "zh_description": "Control-LoRA:canny rank128"
   },
   {
     "base": "SDXL",
@@ -1097,7 +1097,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-depth-rank128.safetensors",
-    "zh_description": "Control-LoRA：深度等级128"
+    "zh_description": "Control-LoRA:深度等级128"
   },
   {
     "base": "SDXL",
@@ -1108,7 +1108,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-recolor-rank128.safetensors",
-    "zh_description": "Control-LoRA：重新着色等级128"
+    "zh_description": "Control-LoRA:重新着色等级128"
   },
   {
     "base": "SDXL",
@@ -1119,7 +1119,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-sketch-rank128-metadata.safetensors",
-    "zh_description": "Control-LoRA：草图rank 128元数据"
+    "zh_description": "Control-LoRA:草图rank 128元数据"
   },
   {
     "base": "SDXL",
@@ -1130,7 +1130,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-canny-rank256.safetensors",
-    "zh_description": "Control-LoRA：canny rank256"
+    "zh_description": "Control-LoRA:canny rank256"
   },
   {
     "base": "SDXL",
@@ -1141,7 +1141,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-depth-rank256.safetensors",
-    "zh_description": "Control-LoRA：深度等级256"
+    "zh_description": "Control-LoRA:深度等级256"
   },
   {
     "base": "SDXL",
@@ -1152,7 +1152,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-recolor-rank256.safetensors",
-    "zh_description": "Control-LoRA：重新着色等级256"
+    "zh_description": "Control-LoRA:重新着色等级256"
   },
   {
     "base": "SDXL",
@@ -1163,7 +1163,7 @@
     "save_path": "default",
     "type": "controlnet",
     "url": "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-sketch-rank256.safetensors",
-    "zh_description": "Control-LoRA：草图等级256"
+    "zh_description": "Control-LoRA:草图等级256"
   },
   {
     "base": "SDXL",
@@ -1174,7 +1174,7 @@
     "save_path": "custom_nodes/ControlNet-LLLite-ComfyUI/models",
     "type": "controlnet",
     "url": "https://huggingface.co/kohya-ss/controlnet-lllite/resolve/main/controllllite_v01032064e_sdxl_canny_anime.safetensors",
-    "zh_description": "[46.2MB]一个设计极其紧凑的controlnet模型(又名：ControlNet-LLLite)。注：模型结构是高度试验性的，将来可能会有所改变。"
+    "zh_description": "[46.2MB]一个设计极其紧凑的controlnet模型(又名:ControlNet-LLLite)。注:模型结构是高度试验性的，将来可能会有所改变。"
   },
   {
     "base": "SDXL",
@@ -1933,7 +1933,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1944,7 +1944,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15_light.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1955,7 +1955,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15_vit-G.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1966,7 +1966,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1977,7 +1977,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus-face_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -1988,7 +1988,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-full-face_sd15.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SD1.5",
@@ -2120,7 +2120,7 @@
     "save_path": "ipadapter",
     "type": "IP-Adapter",
     "url": "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl.safetensors",
-    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https：//github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
+    "zh_description": "您可以在[a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)扩展中使用此模型。"
   },
   {
     "base": "SDXL",
@@ -2164,7 +2164,7 @@
     "save_path": "custom_nodes/pfg-ComfyUI/models",
     "type": "PFG",
     "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-novel-n10.pt",
-    "zh_description": "按“安装”键直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上)"
+    "zh_description": "按“安装”键直接从pfg-ComfyUI/models扩展节点下载模型。(Note:需要ComfyUI-Manager V0.24或以上)"
   },
   {
     "base": "SD1.5",
@@ -2175,7 +2175,7 @@
     "save_path": "custom_nodes/pfg-ComfyUI/models",
     "type": "PFG",
     "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-wd14-n10.pt",
-    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上版本)"
+    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note:需要ComfyUI-Manager V0.24或以上版本)"
   },
   {
     "base": "SD1.5",
@@ -2186,7 +2186,7 @@
     "save_path": "custom_nodes/pfg-ComfyUI/models",
     "type": "PFG",
     "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-wd15beta2-n10.pt",
-    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note：需要ComfyUI-Manager V0.24或以上版本)"
+    "zh_description": "按下“install”键，直接从pfg-ComfyUI/models扩展节点下载模型。(Note:需要ComfyUI-Manager V0.24或以上版本)"
   },
   {
     "base": "GFPGAN",

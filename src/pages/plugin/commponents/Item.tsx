@@ -36,6 +36,7 @@ import {
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { useDownloadingPlugins, usePluginStore } from "../useStore";
+import { CustomLink } from "@/components/CustomLink";
 
 type PluginItemProps = {
   plugin: Plugin;
@@ -264,7 +265,11 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className={cn("px-4 pt-0", downloading ? "pb-0" : "pb-2")}>
-        <Markdown>
+        <Markdown
+          components={{
+            a: CustomLink,
+          }}
+        >
           {language === "zh" ? plugin.zh_description : plugin.description}
         </Markdown>
       </CardContent>
