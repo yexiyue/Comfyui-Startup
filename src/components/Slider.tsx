@@ -19,10 +19,10 @@ export const Slider = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const token = theme.useToken().token;
-  const [expanded, setExpanded] = useConfigStore((store) => [
-    store.expanded,
-    store.setExpanded,
-  ]);
+  // const [expanded, setExpanded] = useConfigStore((store) => [
+  //   store.expanded,
+  //   store.setExpanded,
+  // ]);
   useLingui();
 
   const menus: {

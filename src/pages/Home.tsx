@@ -30,8 +30,8 @@ export const Component = () => {
       navigate("/first-use");
       setFirstUse(false);
     }
-    // navigate("/first-use");
   }, []);
+  
   // 设置系统状态
   useAsyncEffect(async () => {
     await command("set_config", {

@@ -1,52 +1,40 @@
 import { command } from "@/api";
+import { SkipModal } from "@/components/SkipModal";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { open } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect } from "ahooks";
-import {
-  App,
-  Button,
-  Card,
-  Form,
-  Input,
-  Segmented,
-  Select,
-  Space,
-  Typography,
-} from "antd";
+import { App, Button, Card, Form, Input, Segmented, Select, Space } from "antd";
 import { FolderClosedIcon } from "lucide-react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg?react";
 
 export const Component = () => {
   useLingui();
   const { message } = App.useApp();
-
+  const navigate = useNavigate();
+  const [skipModalOpen, setSkipModalOpen] = useState(false);
   const [
     country,
     language,
     comfyuiPath,
-    sysInfo,
     setLanguage,
     setComfyuiPath,
     setCountry,
-    setSysInfo,
   ] = useConfigStore((store) => [
     store.country,
     store.language,
     store.comfyuiPath,
-    store.sysInfo,
     store.setLanguage,
     store.setComfyuiPath,
     store.setCountry,
-    store.setSysInfo,
   ]);
 
   useAsyncEffect(async () => {
     try {
       const config = await command("get_config");
-      const info = await command("get_info");
-      setSysInfo(info);
       if (config) {
         setCountry(config.country);
         setComfyuiPath(config.comfyui_path);
@@ -59,8 +47,8 @@ export const Component = () => {
   return (
     <div className="flex items-center h-screen justify-center flex-col">
       <Card className="shadow-sm w-[350px]">
-        <div>
-          <Logo className="w-[300px] h-[150px]" />
+        <div className=" h-[90px] flex justify-center">
+          <Logo />
         </div>
         <Form layout="vertical">
           <Form.Item label={t`语言`}>
@@ -95,13 +83,13 @@ export const Component = () => {
             />
           </Form.Item>
 
-          {/* <Form.Item label={t`路径`} required>
+          <Form.Item label={t`路径`} required>
             <Space.Compact>
               <Input
                 value={comfyuiPath}
+                onChange={(e) => setComfyuiPath(e.target.value)}
                 className="cursor-pointer"
-                disabled
-                placeholder={t`请选择安装目录`}
+                placeholder={t`请选择或输入安装目录`}
                 prefix={<FolderClosedIcon className="h-4 w-4" />}
               />
               <Button
@@ -111,32 +99,52 @@ export const Component = () => {
                     const path = await open({
                       directory: true,
                     });
-                    if (path) setComfyuiPath(`${path}/ComfyUI`);
+                    if (path) setComfyuiPath(path);
                   } catch (error) {
                     message.error(`${error}`);
                   }
                 }}
               >
-                <Trans>选择路径</Trans>
+                <Trans>选择目录</Trans>
               </Button>
             </Space.Compact>
-          </Form.Item> */}
+          </Form.Item>
 
-          <div className="w-full flex justify-center gap-4">
-            <Button onClick={async () => {}} type="primary">
-              <Trans>安装Comfyui</Trans>
+          <div className="w-full flex flex-col justify-center gap-4">
+            <Button
+              onClick={async () => {
+                await command("set_config", {
+                  configState: {
+                    comfyui_path: comfyuiPath,
+                    country,
+                  },
+                });
+                await command("install_comfyui");
+              }}
+              type="primary"
+            >
+              <Trans>安装ComfyUI</Trans>
             </Button>
-            <Button onClick={async () => {}} type="default">
+            <Button
+              onClick={() => {
+                setSkipModalOpen(true);
+              }}
+              type="link"
+            >
               <Trans>跳过安装</Trans>
             </Button>
           </div>
         </Form>
-        <div className="w-full flex justify-center mt-3">
-          <Typography.Text type="secondary" className="text-xs">
-            {sysInfo?.os_version} {sysInfo?.cpu}
-          </Typography.Text>
-        </div>
       </Card>
+      <SkipModal
+        skipModalOpen={skipModalOpen}
+        setSkipModalOpen={setSkipModalOpen}
+        onOk={(value) => {
+          setComfyuiPath(value);
+          setSkipModalOpen(false);
+          navigate("/");
+        }}
+      />
     </div>
   );
 };

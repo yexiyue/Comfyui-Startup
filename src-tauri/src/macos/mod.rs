@@ -2,7 +2,7 @@ mod install_brew;
 
 use crate::{
     error::MyError,
-    state::ConfigState,
+    state::MyConfig,
     utils::{Exec, Git},
 };
 pub use install_brew::install_brew;
@@ -10,8 +10,9 @@ pub use install_brew::install_brew;
 use tauri::State;
 
 #[tauri::command]
-pub async fn install_comfyui(state: State<'_, ConfigState>) -> Result<(), MyError> {
+pub async fn install_comfyui(state: State<'_, MyConfig>) -> Result<(), MyError> {
     let mut cmd = Exec::new();
+    let state = state.lock().await;
     let (brew, path) = install_brew(state.is_chinese())?;
     cmd.add(brew);
     cmd.add(format!("source {path}"));
