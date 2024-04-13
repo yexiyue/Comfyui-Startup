@@ -95,7 +95,7 @@ export const Component = () => {
             />
           </Form.Item>
 
-          <Form.Item label={t`路径`} required>
+          {/* <Form.Item label={t`路径`} required>
             <Space.Compact>
               <Input
                 value={comfyuiPath}
@@ -120,22 +120,14 @@ export const Component = () => {
                 <Trans>选择路径</Trans>
               </Button>
             </Space.Compact>
-          </Form.Item>
+          </Form.Item> */}
 
-          <div className="w-full flex justify-center">
-            <Button
-              onClick={async () => {
-                await command("set_config", {
-                  configState: {
-                    comfyui_path: comfyuiPath,
-                    country,
-                  },
-                });
-                await command("install_comfyui");
-              }}
-              type="primary"
-            >
+          <div className="w-full flex justify-center gap-4">
+            <Button onClick={async () => {}} type="primary">
               <Trans>安装Comfyui</Trans>
+            </Button>
+            <Button onClick={async () => {}} type="default">
+              <Trans>跳过安装</Trans>
             </Button>
           </div>
         </Form>

@@ -1,7 +1,6 @@
 use reqwest::Client;
 use sea_orm::DbConn;
 use tauri::State;
-use tracing::info;
 
 use crate::{
     error::MyError,
@@ -67,4 +66,10 @@ pub async fn init_data(config: State<'_, MyConfig>, db: State<'_, DbConn>) -> Re
     init_model_list(&db, model_list.into()).await?;
 
     Ok(())
+}
+
+#[tauri::command]
+pub async fn comfyui_exists(path: &str) -> Result<bool, MyError> {
+    let path = std::path::Path::new(path).join("main.py");
+    Ok(path.exists())
 }

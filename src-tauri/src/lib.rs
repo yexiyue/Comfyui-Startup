@@ -17,13 +17,13 @@ mod commands;
 mod model;
 
 use commands::{
+    comfyui_exists,
     config::{get_config, get_info, set_config},
     download::{cancel, download, remove, restore},
     init_data,
     model::{get_download_model, get_model_base_groups, get_model_list, get_model_type_groups},
     plugin::{
-        download_manager, download_plugin, get_installed_plugins, get_plugin_list, manager_exists,
-        remove_plugin, update_plugin,
+        download_plugin, get_installed_plugins, get_plugin_list, remove_plugin, update_plugin,
     },
     startup,
 };
@@ -45,6 +45,7 @@ pub async fn start() {
         .invoke_handler(generate_handler![
             open_devtool,
             install_comfyui,
+            comfyui_exists,
             get_config,
             set_config,
             get_info,
@@ -53,8 +54,6 @@ pub async fn start() {
             get_plugin_list,
             download_plugin,
             update_plugin,
-            manager_exists,
-            download_manager,
             // model
             download,
             cancel,

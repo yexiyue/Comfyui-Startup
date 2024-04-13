@@ -54,8 +54,8 @@ export const Slider = () => {
 
   return (
     <div className="w-[200px]">
-      <div className="w-full h-12">
-        <Logo className="w-full" />
+      <div className="w-full h-12 flex justify-center items-center">
+        <Logo className="h-full" />
       </div>
       <Separator className="mb-2" />
       <div className="flex w-full flex-col px-2 gap-2">

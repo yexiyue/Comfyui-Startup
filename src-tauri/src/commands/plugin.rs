@@ -46,65 +46,8 @@ impl PluginDownloadMessage {
     }
 }
 
-#[tauri::command]
-pub async fn manager_exists(config: State<'_, MyConfig>) -> Result<bool, MyError> {
-    let config = config.lock().await;
-    let path = &config.comfyui_path;
-    let comfyui_manager_path = Path::new(path).join("custom_nodes").join("ComfyUI-Manager");
-    if comfyui_manager_path.exists() {
-        // 插件未安装
-        Ok(true)
-    } else {
-        Ok(false)
-    }
-}
-
 pub fn percent(a: usize, b: usize) -> f64 {
     (a as f64 / b as f64 * 100f64).floor()
-}
-
-#[tauri::command]
-pub async fn download_manager(
-    config: State<'_, MyConfig>,
-    on_progress: Channel,
-) -> Result<(), MyError> {
-    let config = config.lock().await;
-    let plugin = Plugin {
-        author: "ltdrdata".to_string(),
-        title: "ComfyUI-Manager".into(),
-        reference: "https://github.com/ltdrdata/ComfyUI-Manager.git".into(),
-        pip: None,
-        files: vec![],
-        install_type: "git-clone".into(),
-        description: "".into(),
-        zh_description: None,
-    };
-
-    let mut start_time = Instant::now();
-    let mut progress = 0f64;
-
-    plugin
-        .download(&config.comfyui_path, config.is_chinese(), |p| {
-            let new_progress = percent(p.received_objects(), p.total_objects());
-            // 当下载进度太快时，会发生大量消息到前端，导致阻塞，所以这里做了一个截流
-            if start_time.elapsed() > Duration::from_millis(60) && progress != new_progress {
-                start_time = Instant::now();
-                progress = new_progress;
-                // info!("Download Progress: {}", new_progress);
-                on_progress
-                    .send(
-                        PluginDownloadMessage::builder()
-                            .status(PluginStatus::Downloading)
-                            .progress(new_progress)
-                            .build()
-                            .unwrap(),
-                    )
-                    .unwrap();
-            }
-            true
-        })
-        .await?;
-    Ok(())
 }
 
 #[tauri::command]

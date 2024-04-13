@@ -1,62 +1,78 @@
 import { command } from "@/api";
-import { ManagerModal } from "@/components/Home/ManagerModal";
-import { useConfigStore } from "@/useStore";
+import { useConfigStore, useSessionStore } from "@/useStore";
+import { LoadingOutlined } from "@ant-design/icons";
+import { t } from "@lingui/macro";
 import { useAsyncEffect } from "ahooks";
-import { Button, message } from "antd";
+import { Button, Spin, Typography, message } from "antd";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Component = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
-  const [
-    managerExist,
-    firstUse,
-    comfyuiPath,
-    country,
-    setFirstUse,
-    setManagerExist,
-  ] = useConfigStore((store) => [
-    store.managerExist,
-    store.firstUse,
-    store.comfyuiPath,
-    store.country,
-    store.setFirstUse,
-    store.setManagerExist,
+
+  const [firstUse, comfyuiPath, country, setFirstUse] = useConfigStore(
+    (store) => [
+      store.firstUse,
+      store.comfyuiPath,
+      store.country,
+      store.setFirstUse,
+    ]
+  );
+
+  const [loadData, setLoadData] = useSessionStore((store) => [
+    store.loadData,
+    store.setLoadData,
   ]);
 
+  const [dataLoading, setDataLoading] = useState(false);
   useEffect(() => {
     if (firstUse) {
       navigate("/first-use");
       setFirstUse(false);
     }
+    // navigate("/first-use");
   }, []);
-
   // 设置系统状态
   useAsyncEffect(async () => {
-    setLoading(true);
     await command("set_config", {
       configState: {
         comfyui_path: comfyuiPath,
         country,
       },
     });
-
-    let res = await command("manager_exists");
-    setManagerExist(res);
-    setLoading(false);
   }, [comfyuiPath, country]);
 
   useAsyncEffect(async () => {
-    try {
-      await command("init_data");
-    } catch (error) {
-      message.error(`${error}`);
+    if (!loadData) {
+      try {
+        setDataLoading(true);
+        await command("init_data");
+        setLoadData(true);
+      } catch (error) {
+        console.log(error);
+        message.error(t`加载数据失败，请检查网络`);
+      } finally {
+        setDataLoading(false);
+      }
     }
-  }, []);
+  }, [loadData]);
 
   return (
     <div className=" h-screen">
+      {dataLoading && (
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="flex flex-col gap-2 bg-transparent fixed">
+            <Spin
+              indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />}
+            />
+            <Typography.Link
+              style={{
+                cursor: "default",
+              }}
+            >{t`数据加载中...`}</Typography.Link>
+          </div>
+        </div>
+      )}
       <p>首页</p>
       <Button
         onClick={async () => {
@@ -65,7 +81,6 @@ export const Component = () => {
       >
         启动
       </Button>
-      {!loading && <ManagerModal managerExist={managerExist} />}
     </div>
   );
 };

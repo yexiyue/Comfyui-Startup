@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { SysInfo } from "./api";
 
 type State = {
@@ -12,7 +12,6 @@ type State = {
   // 国家
   country: string;
   sysInfo?: SysInfo;
-  managerExist: boolean;
   // 侧边栏是否展开
   expanded: boolean;
 };
@@ -23,7 +22,6 @@ type Action = {
   setComfyuiPath: (comfyuiPath: string) => void;
   setCountry: (country: string) => void;
   setSysInfo: (sysInfo: State["sysInfo"]) => void;
-  setManagerExist: (managerExist: boolean) => void;
   setExpanded: (expanded: boolean) => void;
 };
 
@@ -36,7 +34,6 @@ export const useConfigStore = create(
       firstUse: true,
       country: "chinese",
       sysInfo: undefined,
-      managerExist: false,
       expanded: true,
       setSysInfo(sysInfo) {
         set({ sysInfo });
@@ -53,15 +50,30 @@ export const useConfigStore = create(
       setCountry(country) {
         set({ country });
       },
-      setManagerExist(managerExist) {
-        set({ managerExist });
-      },
       setExpanded(expanded) {
         set({ expanded });
       },
     }),
     {
       name: "configStore",
+    }
+  )
+);
+type SessionStore = {
+  loadData: boolean;
+  setLoadData: (loadData: boolean) => void;
+};
+export const useSessionStore = create(
+  persist<SessionStore>(
+    (set) => ({
+      loadData: false,
+      setLoadData(loadData) {
+        set({ loadData });
+      },
+    }),
+    {
+      name: "sessionStore",
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );

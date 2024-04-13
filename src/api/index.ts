@@ -1,4 +1,4 @@
-import { Channel, invoke } from "@tauri-apps/api/core";
+import { invoke } from "@tauri-apps/api/core";
 import { ModelApi } from "./model";
 import { PluginApi } from "./plugin";
 
@@ -11,10 +11,7 @@ export const command = async <T extends keyof Commands>(
 
 type Commands = {
   // ComfyUI Manager
-  manager_exists: () => boolean;
-  download_manager: (args: {
-    onProgress: Channel<{ message: number; id: number }>;
-  }) => void;
+  comfyui_exists: (args: { path: string }) => boolean;
 
   // config
   get_info: () => SysInfo;
