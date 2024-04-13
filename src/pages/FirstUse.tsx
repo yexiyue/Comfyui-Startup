@@ -1,11 +1,21 @@
-import { command } from "@/api";
+import { SysInfo, command } from "@/api";
 import { SkipModal } from "@/components/SkipModal";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { open } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect } from "ahooks";
-import { App, Button, Card, Form, Input, Segmented, Select, Space } from "antd";
+import {
+  App,
+  Button,
+  Card,
+  Form,
+  Input,
+  Segmented,
+  Select,
+  Space,
+  Typography,
+} from "antd";
 import { FolderClosedIcon } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +26,15 @@ export const Component = () => {
   const { message } = App.useApp();
   const navigate = useNavigate();
   const [skipModalOpen, setSkipModalOpen] = useState(false);
+  const [sysInfo, setSysInfo] = useState<SysInfo | null>();
+
+  useAsyncEffect(async () => {
+    const sysInfo = await command("get_info");
+    if (sysInfo) {
+      setSysInfo(sysInfo);
+    }
+  }, []);
+
   const [
     country,
     language,
@@ -112,6 +131,7 @@ export const Component = () => {
 
           <div className="w-full flex flex-col justify-center gap-4">
             <Button
+              disabled={!comfyuiPath || sysInfo?.os !== "macos"}
               onClick={async () => {
                 await command("set_config", {
                   configState: {
@@ -125,6 +145,13 @@ export const Component = () => {
             >
               <Trans>安装ComfyUI</Trans>
             </Button>
+            {sysInfo?.os !== "macos" && (
+              <Typography.Text type="secondary">
+                <Trans>
+                  目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装
+                </Trans>
+              </Typography.Text>
+            )}
             <Button
               onClick={() => {
                 setSkipModalOpen(true);

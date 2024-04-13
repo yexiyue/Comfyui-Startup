@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { SysInfo } from "./api";
 
 type State = {
   // 语言
@@ -11,7 +10,6 @@ type State = {
   firstUse: boolean;
   // 国家
   country: string;
-  sysInfo?: SysInfo;
   // 侧边栏是否展开
   expanded: boolean;
 };
@@ -21,7 +19,6 @@ type Action = {
   setFirstUse: (firstUse: boolean) => void;
   setComfyuiPath: (comfyuiPath: string) => void;
   setCountry: (country: string) => void;
-  setSysInfo: (sysInfo: State["sysInfo"]) => void;
   setExpanded: (expanded: boolean) => void;
 };
 
@@ -33,11 +30,7 @@ export const useConfigStore = create(
       comfyuiPath: "",
       firstUse: true,
       country: "chinese",
-      sysInfo: undefined,
       expanded: true,
-      setSysInfo(sysInfo) {
-        set({ sysInfo });
-      },
       setLanguage(language) {
         set({ language });
       },

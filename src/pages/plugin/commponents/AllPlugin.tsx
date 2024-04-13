@@ -4,7 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
-import { Empty, Pagination, message } from "antd";
+import { App, Empty, Pagination } from "antd";
 import { useState } from "react";
 import { usePluginStore } from "../useStore";
 import { PluginItem } from "./Item";
@@ -16,6 +16,7 @@ type AllPluginProps = {
 
 export const AllPlugin = ({ search, width }: AllPluginProps) => {
   useLingui();
+  const { message } = App.useApp();
   const [plugins, setPlugins] = useState<Plugin[]>([]);
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);

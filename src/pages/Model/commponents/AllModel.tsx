@@ -4,7 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
-import { Empty, Pagination, message } from "antd";
+import { App, Empty, Pagination } from "antd";
 import { useEffect, useMemo, useState } from "react";
 import { useModelDownloadStore } from "../useStore";
 import { ModelItem } from "./Item";
@@ -18,7 +18,7 @@ type AllModelProps = {
 
 export const AllModel = ({ search, width, type, base }: AllModelProps) => {
   useLingui();
-
+  const { message } = App.useApp();
   const [filterModels, setFilterModels] = useState<Model[]>([]);
   const [page, setPage] = useState(1);
   const [pagesize, setPagesize] = useState(10);

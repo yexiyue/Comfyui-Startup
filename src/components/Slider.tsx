@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { useConfigStore } from "@/useStore";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Space, theme } from "antd";

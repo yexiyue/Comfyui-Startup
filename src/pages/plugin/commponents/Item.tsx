@@ -24,15 +24,7 @@ import { Channel } from "@tauri-apps/api/core";
 import { emit } from "@tauri-apps/api/event";
 import { open } from "@tauri-apps/plugin-shell";
 import { useMemoizedFn } from "ahooks";
-import {
-  App,
-  Button,
-  Progress,
-  Space,
-  Tag,
-  Tooltip,
-  Typography
-} from "antd";
+import { App, Button, Progress, Space, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { useDownloadingPlugins, usePluginStore } from "../useStore";

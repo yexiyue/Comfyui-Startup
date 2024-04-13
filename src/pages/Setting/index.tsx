@@ -3,10 +3,11 @@ import { InputButton } from "@/components/InputButton";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { Button, Form, Segmented, Select, message } from "antd";
+import { App, Button, Form, Segmented, Select } from "antd";
 
 export const Component = () => {
   useLingui();
+  const { message } = App.useApp();
   const [
     country,
     setCountry,

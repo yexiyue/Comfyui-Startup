@@ -1,14 +1,30 @@
-import { command } from "@/api";
+import { SysInfo, command } from "@/api";
+import homebg from "@/assets/home.png";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useConfigStore, useSessionStore } from "@/useStore";
-import { LoadingOutlined } from "@ant-design/icons";
-import { t } from "@lingui/macro";
+import {
+  AppleOutlined,
+  LoadingOutlined,
+  WindowsOutlined,
+} from "@ant-design/icons";
+import { Trans, t } from "@lingui/macro";
 import { useAsyncEffect } from "ahooks";
-import { Button, Spin, Typography, message } from "antd";
+import { App, Button, Spin, Typography } from "antd";
+import { CpuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Component = () => {
   const navigate = useNavigate();
+  const { message } = App.useApp();
+  const [sysInfo, setSysInfo] = useState<SysInfo | null>();
+
+  useAsyncEffect(async () => {
+    const sysInfo = await command("get_info");
+    if (sysInfo) {
+      setSysInfo(sysInfo);
+    }
+  }, []);
 
   const [firstUse, comfyuiPath, country, setFirstUse] = useConfigStore(
     (store) => [
@@ -31,7 +47,7 @@ export const Component = () => {
       setFirstUse(false);
     }
   }, []);
-  
+
   // 设置系统状态
   useAsyncEffect(async () => {
     await command("set_config", {
@@ -73,14 +89,38 @@ export const Component = () => {
           </div>
         </div>
       )}
-      <p>首页</p>
-      <Button
-        onClick={async () => {
-          await command("startup");
-        }}
-      >
-        启动
-      </Button>
+      <AspectRatio ratio={2}>
+        <img src={homebg} className="object-cover" />
+      </AspectRatio>
+      <div className=" p-4 flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <CpuIcon />
+          <Typography.Text>{sysInfo?.cpu}</Typography.Text>
+        </div>
+        <div className="flex items-center gap-2">
+          <p className=" text-2xl">
+            {sysInfo?.os === "macos" ? <AppleOutlined /> : <WindowsOutlined />}
+          </p>
+          <Typography.Text>{sysInfo?.os_version}</Typography.Text>
+        </div>
+      </div>
+      <div className="w-full flex justify-center items-center">
+        <Button
+          type="primary"
+          style={{
+            width: 200,
+          }}
+          onClick={async () => {
+            try {
+              await command("startup");
+            } catch (error) {
+              message.error(t`启动失败`);
+            }
+          }}
+        >
+          <Trans>启动</Trans>
+        </Button>
+      </div>
     </div>
   );
 };

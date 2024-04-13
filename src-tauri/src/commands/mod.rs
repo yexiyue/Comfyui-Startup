@@ -21,7 +21,7 @@ pub async fn startup(info: State<'_, SysInfo>, config: State<'_, MyConfig>) -> R
     let config = config.lock().await;
     let mut cmd = Exec::new();
     let mut cpu = false;
-    if info.cpu.starts_with("Apple") && info.os == "macos" {
+    if !info.cpu.starts_with("Apple") && info.os == "macos" {
         cpu = true;
     }
     cmd.add(format!("cd {}", &config.comfyui_path));

@@ -16,7 +16,7 @@ pub async fn install_comfyui(state: State<'_, MyConfig>) -> Result<(), MyError> 
     let (brew, path) = install_brew(state.is_chinese())?;
     cmd.add(brew);
     cmd.add(format!("source {path}"));
-    cmd.add("brew install cmake protobuf rust python git wget");
+    cmd.add("brew install cmake protobuf python git wget");
     cmd.add(
         Git::builder()
             .path(&state.comfyui_path)

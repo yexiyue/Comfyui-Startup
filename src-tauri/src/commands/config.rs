@@ -28,6 +28,6 @@ pub async fn set_config(
 
 #[tauri::command]
 pub async fn get_info(info: State<'_, SysInfo>) -> Result<SysInfo, MyError> {
-    let info = info.inner().to_owned();
-    Ok(info)
+    let info = &*info;
+    Ok(info.clone())
 }
