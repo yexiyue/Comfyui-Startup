@@ -13,112 +13,120 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Model/commponents/Item.tsx:70
-#: src/pages/Model/commponents/Item.tsx:273
+#: src/pages/Model/commponents/Item.tsx:73
+#: src/pages/Model/commponents/Item.tsx:276
 msgid "{0} 下载失败，请稍后再试"
 msgstr "{0} 下载失败，请稍后再试"
 
-#: src/pages/Model/commponents/Item.tsx:82
-#: src/pages/Model/commponents/Item.tsx:84
+#: src/pages/Model/commponents/Item.tsx:85
+#: src/pages/Model/commponents/Item.tsx:87
 msgid "{0} 下载成功"
 msgstr "{0} 下载成功"
 
-#: src/pages/Model/commponents/Item.tsx:112
+#: src/pages/Model/commponents/Item.tsx:115
 msgid "{0} 删除失败"
 msgstr "{0} 删除失败"
 
-#: src/pages/Model/commponents/Item.tsx:106
+#: src/pages/Model/commponents/Item.tsx:109
 msgid "{0} 删除成功"
 msgstr "{0} 删除成功"
 
-#: src/pages/Plugin/commponents/Item.tsx:86
+#: src/pages/Plugin/commponents/Item.tsx:80
 msgid "{0} 卸载失败"
 msgstr "{0} 卸载失败"
 
-#: src/pages/Plugin/commponents/Item.tsx:84
+#: src/pages/Plugin/commponents/Item.tsx:78
 msgid "{0} 卸载成功"
 msgstr "{0} 卸载成功"
 
-#: src/pages/Model/commponents/Item.tsx:143
+#: src/pages/Model/commponents/Item.tsx:146
 msgid "{0} 取消失败"
 msgstr "{0} 取消失败"
 
-#: src/pages/Model/commponents/Item.tsx:137
-#: src/pages/Plugin/commponents/Item.tsx:202
+#: src/pages/Model/commponents/Item.tsx:140
+#: src/pages/Plugin/commponents/Item.tsx:196
 msgid "{0} 取消成功"
 msgstr "{0} 取消成功"
 
-#: src/pages/Plugin/commponents/Item.tsx:179
-#: src/pages/Plugin/commponents/Item.tsx:219
+#: src/pages/Plugin/commponents/Item.tsx:173
+#: src/pages/Plugin/commponents/Item.tsx:213
 msgid "{0} 安装失败，请稍后再试"
 msgstr "{0} 安装失败，请稍后再试"
 
-#: src/pages/Plugin/commponents/Item.tsx:193
-#: src/pages/Plugin/commponents/Item.tsx:195
+#: src/pages/Plugin/commponents/Item.tsx:187
+#: src/pages/Plugin/commponents/Item.tsx:189
 msgid "{0} 安装成功"
 msgstr "{0} 安装成功"
 
-#: src/pages/Plugin/commponents/Item.tsx:196
+#: src/pages/Plugin/commponents/Item.tsx:190
 msgid "{0} 安装成功，请重启ComfyUI"
 msgstr "{0} 安装成功，请重启ComfyUI"
 
-#: src/pages/Plugin/commponents/Item.tsx:112
+#: src/pages/Plugin/commponents/Item.tsx:106
 msgid "{0} 已经是最新版"
 msgstr "{0} 已经是最新版"
 
-#: src/pages/Model/commponents/Item.tsx:239
+#: src/pages/Model/commponents/Item.tsx:242
 msgid "{0} 恢复下载失败"
 msgstr "{0} 恢复下载失败"
 
-#: src/pages/Model/commponents/Item.tsx:179
+#: src/pages/Model/commponents/Item.tsx:182
 msgid "{0} 暂停失败"
 msgstr "{0} 暂停失败"
 
-#: src/pages/Plugin/commponents/Item.tsx:117
+#: src/pages/Plugin/commponents/Item.tsx:111
 msgid "{0} 更新失败"
 msgstr "{0} 更新失败"
 
-#: src/pages/Plugin/commponents/Item.tsx:114
+#: src/pages/Plugin/commponents/Item.tsx:108
 msgid "{0} 更新成功"
 msgstr "{0} 更新成功"
 
-#: src/pages/Model/commponents/Item.tsx:208
+#: src/pages/Model/commponents/Item.tsx:211
 msgid "{0} 重新下载失败"
 msgstr "{0} 重新下载失败"
 
 #: src/components/Home/ManagerModal.tsx:51
 #: src/components/Home/ManagerModal.tsx:53
-msgid "ComfyUI-Manager 安装成功"
-msgstr "ComfyUI-Manager 安装成功"
+#~ msgid "ComfyUI-Manager 安装成功"
+#~ msgstr "ComfyUI-Manager 安装成功"
 
 #: src/components/Home/ManagerModal.tsx:54
-msgid "ComfyUI-Manager 安装成功，请重启ComfyUI"
-msgstr "ComfyUI-Manager 安装成功，请重启ComfyUI"
+#~ msgid "ComfyUI-Manager 安装成功，请重启ComfyUI"
+#~ msgstr "ComfyUI-Manager 安装成功，请重启ComfyUI"
 
 #: src/components/Home/ManagerModal.tsx:72
-msgid "ComfyUI-Manager 未安装"
-msgstr "ComfyUI-Manager 未安装"
+#~ msgid "ComfyUI-Manager 未安装"
+#~ msgstr "ComfyUI-Manager 未安装"
 
-#: src/pages/Model/commponents/Item.tsx:254
+#: src/components/SkipModal.tsx:44
+msgid "ComfyUI目录"
+msgstr "ComfyUI目录"
+
+#: src/pages/Model/commponents/Item.tsx:257
 msgid "下载"
 msgstr "下载"
 
 #: src/pages/Model/index.tsx:78
-#: src/pages/Plugin/commponents/Item.tsx:144
+#: src/pages/Plugin/commponents/Item.tsx:138
 #: src/pages/Plugin/index.tsx:53
 msgid "下载中"
 msgstr "下载中"
 
-#: src/pages/FirstUse.tsx:86
-#: src/pages/Setting/index.tsx:42
+#: src/components/SkipModal.tsx:49
+msgid "下载插件和模型需要ComfyUI目录"
+msgstr "下载插件和模型需要ComfyUI目录"
+
+#: src/pages/FirstUse.tsx:93
+#: src/pages/Setting/index.tsx:53
 msgid "中国用户"
 msgstr "中国用户"
 
 #: src/components/Home/ManagerModal.tsx:75
-msgid "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
-msgstr "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
+#~ msgid "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
+#~ msgstr "为了不影响插件管理和模型管理功能的正常使用，请您安装ComfyUI-Manager插件，点击安装即可自动安装"
 
-#: src/pages/Plugin/commponents/Item.tsx:247
+#: src/pages/Plugin/commponents/Item.tsx:241
 msgid "作者: {0}"
 msgstr "作者: {0}"
 
@@ -129,38 +137,47 @@ msgstr "作者: {0}"
 msgid "全部"
 msgstr "全部"
 
-#: src/pages/FirstUse.tsx:90
-#: src/pages/Setting/index.tsx:46
+#: src/pages/FirstUse.tsx:97
+#: src/pages/Setting/index.tsx:57
 msgid "其他国家"
 msgstr "其他国家"
 
-#: src/pages/Model/commponents/Item.tsx:95
+#: src/pages/Model/commponents/Item.tsx:98
 msgid "删除"
 msgstr "删除"
 
-#: src/pages/Plugin/commponents/Item.tsx:74
+#: src/pages/Home.tsx:69
+msgid "加载数据失败，请检查网络"
+msgstr "加载数据失败，请检查网络"
+
+#: src/pages/Plugin/commponents/Item.tsx:68
 msgid "卸载"
 msgstr "卸载"
 
-#: src/pages/Model/commponents/Item.tsx:124
-#: src/pages/Plugin/commponents/Item.tsx:127
+#: src/pages/Model/commponents/Item.tsx:127
+#: src/pages/Plugin/commponents/Item.tsx:121
 msgid "取消"
 msgstr "取消"
 
-#: src/components/Slider.tsx:27
+#: src/components/Slider.tsx:33
+#: src/pages/Home.tsx:121
 msgid "启动"
 msgstr "启动"
 
-#: src/pages/FirstUse.tsx:80
+#: src/pages/Home.tsx:117
+msgid "启动失败"
+msgstr "启动失败"
+
+#: src/pages/FirstUse.tsx:87
 msgid "在安装comfyui时会根据不同地区自动配置代理"
 msgstr "在安装comfyui时会根据不同地区自动配置代理"
 
-#: src/pages/Setting/index.tsx:36
+#: src/pages/Setting/index.tsx:48
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
 msgstr "在安装模型和插件时会根据不同地区自动配置代理"
 
-#: src/pages/FirstUse.tsx:79
-#: src/pages/Setting/index.tsx:35
+#: src/pages/FirstUse.tsx:86
+#: src/pages/Setting/index.tsx:47
 msgid "地区"
 msgstr "地区"
 
@@ -168,21 +185,23 @@ msgstr "地区"
 msgid "基础模型"
 msgstr "基础模型"
 
-#: src/pages/Model/commponents/Item.tsx:314
+#: src/pages/Model/commponents/Item.tsx:317
 msgid "基础类型: {0}"
 msgstr "基础类型: {0}"
 
-#: src/components/Home/ManagerModal.tsx:64
-#: src/pages/Plugin/commponents/Item.tsx:154
+#: src/pages/Plugin/commponents/Item.tsx:148
 msgid "安装"
 msgstr "安装"
 
 #: src/pages/FirstUse.tsx:138
-msgid "安装Comfyui"
-msgstr "安装Comfyui"
+#~ msgid "安装Comfyui"
+#~ msgstr "安装Comfyui"
 
-#: src/components/Home/ManagerModal.tsx:64
-#: src/pages/Plugin/commponents/Item.tsx:147
+#: src/pages/FirstUse.tsx:146
+msgid "安装ComfyUI"
+msgstr "安装ComfyUI"
+
+#: src/pages/Plugin/commponents/Item.tsx:141
 msgid "安装中"
 msgstr "安装中"
 
@@ -191,11 +210,11 @@ msgstr "安装中"
 msgid "已安装"
 msgstr "已安装"
 
-#: src/components/Layout.tsx:28
+#: src/components/Layout.tsx:24
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
 msgstr "当前有{0}个模型正在下载，确定要关闭吗？"
 
-#: src/pages/Model/commponents/Item.tsx:221
+#: src/pages/Model/commponents/Item.tsx:224
 msgid "恢复下载"
 msgstr "恢复下载"
 
@@ -207,11 +226,11 @@ msgstr "您还未下载过模型"
 msgid "您还未安装过插件"
 msgstr "您还未安装过插件"
 
-#: src/components/Layout.tsx:29
+#: src/components/Layout.tsx:25
 msgid "提示"
 msgstr "提示"
 
-#: src/components/Slider.tsx:32
+#: src/components/Slider.tsx:38
 #: src/pages/Plugin/index.tsx:40
 msgid "插件管理"
 msgstr "插件管理"
@@ -221,7 +240,11 @@ msgstr "插件管理"
 msgid "搜索"
 msgstr "搜索"
 
-#: src/pages/Model/commponents/Item.tsx:165
+#: src/pages/Home.tsx:88
+msgid "数据加载中..."
+msgstr "数据加载中..."
+
+#: src/pages/Model/commponents/Item.tsx:168
 msgid "暂停"
 msgstr "暂停"
 
@@ -233,16 +256,20 @@ msgstr "暂无下载中的插件"
 msgid "暂无下载中的模型"
 msgstr "暂无下载中的模型"
 
-#: src/pages/Plugin/commponents/Item.tsx:91
-#: src/pages/Setting/index.tsx:104
+#: src/pages/Plugin/commponents/Item.tsx:85
+#: src/pages/Setting/index.tsx:116
 msgid "更新"
 msgstr "更新"
 
-#: src/pages/Model/commponents/Item.tsx:325
+#: src/pages/Setting/index.tsx:110
+msgid "更新成功"
+msgstr "更新成功"
+
+#: src/pages/Model/commponents/Item.tsx:328
 msgid "模型文件名: {0}"
 msgstr "模型文件名: {0}"
 
-#: src/components/Slider.tsx:37
+#: src/components/Slider.tsx:43
 #: src/pages/Model/index.tsx:65
 msgid "模型管理"
 msgstr "模型管理"
@@ -251,11 +278,11 @@ msgstr "模型管理"
 msgid "模型类型"
 msgstr "模型类型"
 
-#: src/pages/Model/commponents/Item.tsx:303
+#: src/pages/Model/commponents/Item.tsx:306
 msgid "模型类型: {0}"
 msgstr "模型类型: {0}"
 
-#: src/pages/Plugin/commponents/AllPlugin.tsx:59
+#: src/pages/Plugin/commponents/AllPlugin.tsx:60
 #: src/pages/Plugin/commponents/DownloadedPlugin.tsx:53
 #: src/pages/Plugin/commponents/DownloadingPlugin.tsx:54
 msgid "没有找到插件"
@@ -267,12 +294,16 @@ msgstr "没有找到插件"
 msgid "没有找到模型"
 msgstr "没有找到模型"
 
-#: src/pages/Model/commponents/Item.tsx:161
-#: src/pages/Plugin/commponents/Item.tsx:142
+#: src/pages/FirstUse.tsx:150
+msgid "目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装"
+msgstr "目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装"
+
+#: src/pages/Model/commponents/Item.tsx:164
+#: src/pages/Plugin/commponents/Item.tsx:136
 msgid "等待中"
 msgstr "等待中"
 
-#: src/pages/Plugin/commponents/AllPlugin.tsx:42
+#: src/pages/Plugin/commponents/AllPlugin.tsx:43
 msgid "获取插件列表失败"
 msgstr "获取插件列表失败"
 
@@ -280,30 +311,58 @@ msgstr "获取插件列表失败"
 msgid "获取模型列表失败"
 msgstr "获取模型列表失败"
 
-#: src/components/Slider.tsx:42
+#: src/components/Slider.tsx:48
 msgid "设置"
 msgstr "设置"
 
-#: src/pages/FirstUse.tsx:66
-#: src/pages/Setting/index.tsx:79
+#: src/pages/FirstUse.tsx:73
+#: src/pages/Setting/index.tsx:84
 msgid "语言"
 msgstr "语言"
 
-#: src/pages/FirstUse.tsx:104
-#: src/pages/Setting/index.tsx:59
+#: src/components/InputButton.tsx:20
 msgid "请选择安装目录"
 msgstr "请选择安装目录"
 
-#: src/pages/FirstUse.tsx:98
-#: src/pages/Setting/index.tsx:54
+#: src/components/SkipModal.tsx:60
+msgid "请选择或输入ComfyUI目录"
+msgstr "请选择或输入ComfyUI目录"
+
+#: src/pages/FirstUse.tsx:111
+msgid "请选择或输入安装目录"
+msgstr "请选择或输入安装目录"
+
+#: src/components/SkipModal.tsx:30
+msgid "请选择或输入正确的ComfyUI目录"
+msgstr "请选择或输入正确的ComfyUI目录"
+
+#: src/pages/Setting/index.tsx:76
+msgid "请选择正确的ComfyUI目录"
+msgstr "请选择正确的ComfyUI目录"
+
+#: src/pages/FirstUse.tsx:105
+#: src/pages/Setting/index.tsx:66
 msgid "路径"
 msgstr "路径"
 
-#: src/pages/FirstUse.tsx:120
-#: src/pages/Setting/index.tsx:75
+#: src/components/SkipModal.tsx:25
+#: src/pages/Setting/index.tsx:72
+msgid "路径不能为空"
+msgstr "路径不能为空"
+
+#: src/pages/FirstUse.tsx:161
+msgid "跳过安装"
+msgstr "跳过安装"
+
+#: src/pages/FirstUse.tsx:127
+msgid "选择目录"
+msgstr "选择目录"
+
+#: src/components/InputButton.tsx:36
+#: src/components/SkipModal.tsx:76
 msgid "选择路径"
 msgstr "选择路径"
 
-#: src/pages/Model/commponents/Item.tsx:190
+#: src/pages/Model/commponents/Item.tsx:193
 msgid "重新下载"
 msgstr "重新下载"
