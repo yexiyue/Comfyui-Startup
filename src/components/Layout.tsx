@@ -1,6 +1,6 @@
 import { command } from "@/api";
-import { useModelDownloadStore } from "@/pages/Model/useStore";
-import { useConfigStore } from "@/useStore";
+import { useModelDownloadStore } from "@/pages/Model/usestore";
+import { useConfigStore } from "@/usestore";
 import { LoadingOutlined } from "@ant-design/icons";
 import { t } from "@lingui/macro";
 import { getCurrent } from "@tauri-apps/api/window";

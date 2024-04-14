@@ -6,7 +6,7 @@ import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
 import { App, Empty, Pagination } from "antd";
 import { useState } from "react";
-import { usePluginStore } from "../useStore";
+import { usePluginStore } from "../usestore";
 import { PluginItem } from "./Item";
 
 type AllPluginProps = {

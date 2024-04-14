@@ -4,7 +4,7 @@ import { usePaginationSearch } from "@/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";
-import { usePluginStore } from "../useStore";
+import { usePluginStore } from "../usestore";
 import { PluginItem } from "./Item";
 
 type DownloadedPluginProps = {

@@ -13,7 +13,7 @@ import { messages as enMessages } from "./locales/en.po";
 import { messages as jaMessages } from "./locales/ja.po";
 import { messages as zhMessages } from "./locales/zh.po";
 import { router } from "./router/router";
-import { useConfigStore } from "./useStore";
+import { useConfigStore } from "./usestore";
 
 const languageMap = {
   en: enUS,

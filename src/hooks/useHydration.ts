@@ -1,7 +1,7 @@
 import { tauriStore } from "@/lib/store";
-import { useModelDownloadStore } from "@/pages/Model/useStore";
-import { usePluginStore } from "@/pages/Plugin/useStore";
-import { useConfigStore } from "@/useStore";
+import { useModelDownloadStore } from "@/pages/Model/usestore";
+import { usePluginStore } from "@/pages/Plugin/usestore";
+import { useConfigStore } from "@/usestore";
 import { getCurrent } from "@tauri-apps/api/window";
 import { useAsyncEffect } from "ahooks";
 import { useState, useEffect } from "react";

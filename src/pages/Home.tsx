@@ -1,7 +1,7 @@
 import { SysInfo, command } from "@/api";
 import homebg from "@/assets/home.png";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { useConfigStore, useSessionStore } from "@/useStore";
+import { useConfigStore, useSessionStore } from "@/usestore";
 import {
   AppleOutlined,
   LoadingOutlined,

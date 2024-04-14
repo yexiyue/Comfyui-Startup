@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 import { AllModel } from "./commponents/AllModel";
 import { DownloadedModel } from "./commponents/DownloadedModel";
 import { DownloadingModel } from "./commponents/DownloadingModel";
-import { useModelDownloadStore } from "./useStore";
+import { useModelDownloadStore } from "./usestore";
 
 export const Component = () => {
   useLingui();

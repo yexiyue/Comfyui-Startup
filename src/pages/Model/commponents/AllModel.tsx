@@ -6,7 +6,7 @@ import { useLingui } from "@lingui/react";
 import { useAsyncEffect } from "ahooks";
 import { App, Empty, Pagination } from "antd";
 import { useEffect, useMemo, useState } from "react";
-import { useModelDownloadStore } from "../useStore";
+import { useModelDownloadStore } from "../usestore";
 import { ModelItem } from "./Item";
 
 type AllModelProps = {

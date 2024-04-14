@@ -1,6 +1,6 @@
 import { SysInfo, command } from "@/api";
 import { SkipModal } from "@/components/SkipModal";
-import { useConfigStore } from "@/useStore";
+import { useConfigStore } from "@/usestore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { open } from "@tauri-apps/plugin-dialog";
