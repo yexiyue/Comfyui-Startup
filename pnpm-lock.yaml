@@ -53,6 +53,9 @@ dependencies:
   '@tauri-apps/plugin-shell':
     specifier: '>=2.0.0-beta.0'
     version: 2.0.0-beta.0
+  '@tauri-apps/plugin-store':
+    specifier: 2.0.0-beta.2
+    version: 2.0.0-beta.2
   ahooks:
     specifier: ^3.7.10
     version: 3.7.10(react@18.2.0)
@@ -1987,6 +1990,12 @@ packages:
     resolution: {integrity: sha512-AADGPuGP+YM5Ar48XfA8o9k9jtlSBpEVcsbOEwWdifi0oAiVOBXgiy9C1Icsub/tlD3YjK7oT8vDcOXLGYBhUg==}
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.0
+    dev: false
+
+  /@tauri-apps/plugin-store@2.0.0-beta.2:
+    resolution: {integrity: sha512-9TdMLLYEPqRSABRX3GtwFNWiulfW+SUHdi+5dVgdk73B8PtGf457gdtwvgrP/O2k9Vt/ET2X6Nurimx1185AzA==}
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.4
     dev: false
 
   /@ts-morph/common@0.19.0:

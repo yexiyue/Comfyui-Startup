@@ -1,6 +1,6 @@
 import { Model, ModelStatus } from "@/api/model";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
 type ModelDownloadStore = {
@@ -14,7 +14,6 @@ type ModelDownloadStore = {
   ) => void;
   removeDownloadingModel: (url: string) => void;
   setDownloadingModel: (model: Model[]) => void;
-
   downloadedModels: Record<string, Model>;
   addDownloadedModel: (model: Model) => void;
   removeDownloadedModel: (url: string) => void;
@@ -82,6 +81,7 @@ export const useModelDownloadStore = create(
     })),
     {
       name: "model-download",
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );

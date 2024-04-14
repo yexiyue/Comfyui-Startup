@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Component as Home } from "@/pages/Home";
 import { Layout } from "@/components/Layout";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Layout,
+    ErrorBoundary: ErrorBoundary,
     children: [
       {
         index: true,
@@ -25,8 +27,8 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    index: true,
     path: "/first-use",
     lazy: () => import("@/pages/FirstUse"),
+    ErrorBoundary: ErrorBoundary,
   },
 ]);

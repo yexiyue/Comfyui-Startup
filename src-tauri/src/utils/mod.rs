@@ -1,13 +1,16 @@
 use anyhow::Context;
 use std::process::{Command, ExitStatus};
-use tauri::Manager;
+
 use tracing::info;
 mod git;
 pub use git::{Git, GitBuilderError};
 mod sysinfo;
 pub use self::sysinfo::SysInfo;
 pub use sysinfo::get_sysinfo;
+#[cfg(debug_assertions)]
+use tauri::Manager;
 
+#[cfg(debug_assertions)]
 #[tauri::command]
 pub async fn open_devtool(app: tauri::AppHandle) {
     app.get_webview_window("main").unwrap().open_devtools();

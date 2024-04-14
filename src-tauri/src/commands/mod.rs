@@ -13,6 +13,7 @@ use crate::{
 
 pub mod config;
 pub mod download;
+pub mod json_db;
 pub mod model;
 pub mod plugin;
 

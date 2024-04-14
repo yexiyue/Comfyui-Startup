@@ -49,13 +49,16 @@ export const useConfigStore = create(
     }),
     {
       name: "configStore",
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );
+
 type SessionStore = {
   loadData: boolean;
   setLoadData: (loadData: boolean) => void;
 };
+
 export const useSessionStore = create(
   persist<SessionStore>(
     (set) => ({

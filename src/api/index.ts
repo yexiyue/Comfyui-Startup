@@ -22,6 +22,11 @@ type Commands = {
   startup: () => void;
   // 初始化数据
   init_data: () => void;
+  // json db
+  get_item: (args: { key: string }) => any;
+  set_item: (args: { key: string; value: string }) => void;
+  remove_item: (args: { key: string }) => void;
+  save: () => void;
 } & PluginApi &
   ModelApi;
 

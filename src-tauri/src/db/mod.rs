@@ -5,6 +5,8 @@ use serde::Serialize;
 use tracing::log::LevelFilter;
 
 use crate::error::MyError;
+mod json_db;
+pub use json_db::{JsonDB, DB};
 
 pub async fn connect_db() -> Result<DbConn, MyError> {
     let dir = std::env::current_exe().context("failed to get current exe")?;

@@ -1,6 +1,6 @@
 import { Plugin } from "@/api/plugin";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
 type State = {
@@ -39,7 +39,7 @@ export const usePluginStore = create(
         });
       },
     })),
-    { name: "plugin-store" }
+    { name: "plugin-store", storage: createJSONStorage(() => sessionStorage) }
   )
 );
 

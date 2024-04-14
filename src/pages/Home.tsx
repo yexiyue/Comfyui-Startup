@@ -11,11 +11,9 @@ import { Trans, t } from "@lingui/macro";
 import { useAsyncEffect } from "ahooks";
 import { App, Button, Spin, Typography } from "antd";
 import { CpuIcon } from "lucide-react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export const Component = () => {
-  const navigate = useNavigate();
   const { message } = App.useApp();
   const [sysInfo, setSysInfo] = useState<SysInfo | null>();
 
@@ -26,14 +24,10 @@ export const Component = () => {
     }
   }, []);
 
-  const [firstUse, comfyuiPath, country, setFirstUse] = useConfigStore(
-    (store) => [
-      store.firstUse,
-      store.comfyuiPath,
-      store.country,
-      store.setFirstUse,
-    ]
-  );
+  const [comfyuiPath, country] = useConfigStore((store) => [
+    store.comfyuiPath,
+    store.country,
+  ]);
 
   const [loadData, setLoadData] = useSessionStore((store) => [
     store.loadData,
@@ -41,12 +35,6 @@ export const Component = () => {
   ]);
 
   const [dataLoading, setDataLoading] = useState(false);
-  useEffect(() => {
-    if (firstUse) {
-      navigate("/first-use");
-      setFirstUse(false);
-    }
-  }, []);
 
   // 设置系统状态
   useAsyncEffect(async () => {

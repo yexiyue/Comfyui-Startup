@@ -62,7 +62,7 @@ export const PluginItem = ({ plugin, isDownloaded }: PluginItemProps) => {
   });
 
   return (
-    <Card className="relative">
+    <Card className="relative min-w-[560px]">
       {isDownloaded ? (
         <Space className=" absolute top-4 right-4 ">
           <Tooltip title={<Trans>卸载</Trans>}>
