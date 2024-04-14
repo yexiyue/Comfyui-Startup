@@ -1,6 +1,6 @@
 import { command } from "@/api";
 import { InputButton } from "@/components/InputButton";
-import { useConfigStore } from "@/usestore";
+import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { App, Button, Form, Segmented, Select } from "antd";

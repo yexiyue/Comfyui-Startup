@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { notification } from "@/lib/notification";
 import { cn } from "@/lib/utils";
-import { useConfigStore } from "@/usestore";
+import { useConfigStore } from "@/useStore";
 import {
   CloseOutlined,
   DeleteOutlined,
@@ -27,7 +27,7 @@ import { useMemoizedFn } from "ahooks";
 import { App, Button, Progress, Space, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 import Markdown from "react-markdown";
-import { useDownloadingPlugins, usePluginStore } from "../usestore";
+import { useDownloadingPlugins, usePluginStore } from "../useStore";
 import { CustomLink } from "@/components/CustomLink";
 
 type PluginItemProps = {

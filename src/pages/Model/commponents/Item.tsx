@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { notification } from "@/lib/notification";
 import { cn, formatToBytes } from "@/lib/utils";
-import { useConfigStore } from "@/usestore";
+import { useConfigStore } from "@/useStore";
 import {
   CloseOutlined,
   CloudDownloadOutlined,
@@ -29,7 +29,7 @@ import { App, Button, Progress, Space, Tag, Tooltip, Typography } from "antd";
 import { SlashIcon } from "lucide-react";
 import { useState } from "react";
 import Markdown from "react-markdown";
-import { useModelDownloadStore } from "../usestore";
+import { useModelDownloadStore } from "../useStore";
 import { CustomLink } from "@/components/CustomLink";
 
 type ModelItemProps = {

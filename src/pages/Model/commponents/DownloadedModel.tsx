@@ -4,7 +4,7 @@ import { usePaginationSearch } from "@/hooks/usePaginationSearch";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";
-import { useModelDownloadStore } from "../usestore";
+import { useModelDownloadStore } from "../useStore";
 import { ModelItem } from "./Item";
 
 type DownloadedModelProps = {

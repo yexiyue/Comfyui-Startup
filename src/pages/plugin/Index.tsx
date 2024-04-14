@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 import { AllPlugin } from "./commponents/AllPlugin";
 import { DownloadedPlugin } from "./commponents/DownloadedPlugin";
 import { DownloadingPlugin } from "./commponents/DownloadingPlugin";
-import { usePluginStore } from "./usestore";
+import { usePluginStore } from "./useStore";
 
 export const Component = () => {
   useLingui();
