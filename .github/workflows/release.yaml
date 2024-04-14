@@ -33,6 +33,8 @@ jobs:
         uses: swatinem/rust-cache@v2
       - name: Install pnpm
         run: npm install -g pnpm
+      - name: Install tauri-cli
+        run: cargo install tauri-cli --version "^2.0.0-beta"
       - name: Sync node version and setup cache
         uses: actions/setup-node@v3
         with:
