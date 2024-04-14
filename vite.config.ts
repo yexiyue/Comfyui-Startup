@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, normalizePath } from "vite";
 import react from "@vitejs/plugin-react";
 import { lingui } from "@lingui/vite-plugin";
 import path from "path";
@@ -17,7 +17,7 @@ export default defineConfig(async () => ({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": normalizePath(path.resolve(__dirname, "./src")),
     },
   },
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
