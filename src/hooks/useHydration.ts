@@ -1,5 +1,5 @@
 import { tauriStore } from "@/lib/store";
-import { useModelDownloadStore } from "@/pages/Model/useStore";
+import { useModelDownloadStore } from "@/pages/model/useStore";
 import { usePluginStore } from "@/pages/plugin/useStore";
 import { useConfigStore } from "@/useStore";
 import { getCurrent } from "@tauri-apps/api/window";

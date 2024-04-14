@@ -1,5 +1,5 @@
 import { command } from "@/api";
-import { useModelDownloadStore } from "@/pages/Model/useStore";
+import { useModelDownloadStore } from "@/pages/model/useStore";
 import { useConfigStore } from "@/useStore";
 import { LoadingOutlined } from "@ant-design/icons";
 import { t } from "@lingui/macro";
@@ -8,7 +8,7 @@ import { confirm } from "@tauri-apps/plugin-dialog";
 import { Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Slider } from "./Slider";
+import { Slider } from "./slider";
 import { Separator } from "./ui/separator";
 import { useNavigate } from "react-router-dom";
 import { useConfigHydration } from "@/hooks/useHydration";

@@ -1,5 +1,5 @@
 import { SysInfo, command } from "@/api";
-import { SkipModal } from "@/components/SkipModal";
+import { SkipModal } from "@/components/skipModal";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";

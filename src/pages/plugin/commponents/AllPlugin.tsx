@@ -7,7 +7,7 @@ import { useAsyncEffect } from "ahooks";
 import { App, Empty, Pagination } from "antd";
 import { useState } from "react";
 import { usePluginStore } from "../useStore";
-import { PluginItem } from "./Item";
+import { PluginItem } from "./item";
 
 type AllPluginProps = {
   search: string;

@@ -1,5 +1,5 @@
 import { command } from "@/api";
-import { InputButton } from "@/components/InputButton";
+import { InputButton } from "@/components/inputButton";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";

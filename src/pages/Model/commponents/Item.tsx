@@ -30,7 +30,7 @@ import { SlashIcon } from "lucide-react";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { useModelDownloadStore } from "../useStore";
-import { CustomLink } from "@/components/CustomLink";
+import { CustomLink } from "@/components/customLink";
 
 type ModelItemProps = {
   model: Model;

@@ -5,7 +5,7 @@ import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";
 import { usePluginStore } from "../useStore";
-import { PluginItem } from "./Item";
+import { PluginItem } from "./item";
 
 type DownloadedPluginProps = {
   search: string;

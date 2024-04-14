@@ -7,7 +7,7 @@ import { useAsyncEffect } from "ahooks";
 import { App, Empty, Pagination } from "antd";
 import { useEffect, useMemo, useState } from "react";
 import { useModelDownloadStore } from "../useStore";
-import { ModelItem } from "./Item";
+import { ModelItem } from "./item";
 
 type AllModelProps = {
   search: string;

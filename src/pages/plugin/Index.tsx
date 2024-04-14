@@ -7,9 +7,9 @@ import { useAsyncEffect, useDebounce, useSize } from "ahooks";
 import { Input, Segmented } from "antd";
 import { SearchIcon } from "lucide-react";
 import { useRef, useState } from "react";
-import { AllPlugin } from "./commponents/AllPlugin";
-import { DownloadedPlugin } from "./commponents/DownloadedPlugin";
-import { DownloadingPlugin } from "./commponents/DownloadingPlugin";
+import { AllPlugin } from "./commponents/allPlugin";
+import { DownloadedPlugin } from "./commponents/downloadedPlugin";
+import { DownloadingPlugin } from "./commponents/downloadingPlugin";
 import { usePluginStore } from "./useStore";
 
 export const Component = () => {

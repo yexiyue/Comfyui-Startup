@@ -28,7 +28,7 @@ import { App, Button, Progress, Space, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { useDownloadingPlugins, usePluginStore } from "../useStore";
-import { CustomLink } from "@/components/CustomLink";
+import { CustomLink } from "@/components/customLink";
 
 type PluginItemProps = {
   plugin: Plugin;

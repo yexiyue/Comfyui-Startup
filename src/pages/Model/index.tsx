@@ -7,9 +7,9 @@ import { useAsyncEffect, useDebounce, useSize } from "ahooks";
 import { Input, Segmented, Select, SelectProps, Tooltip } from "antd";
 import { SearchIcon } from "lucide-react";
 import { useRef, useState } from "react";
-import { AllModel } from "./commponents/AllModel";
-import { DownloadedModel } from "./commponents/DownloadedModel";
-import { DownloadingModel } from "./commponents/DownloadingModel";
+import { AllModel } from "./commponents/allModel";
+import { DownloadedModel } from "./commponents/downloadedModel";
+import { DownloadingModel } from "./commponents/downloadingModel";
 import { useModelDownloadStore } from "./useStore";
 
 export const Component = () => {

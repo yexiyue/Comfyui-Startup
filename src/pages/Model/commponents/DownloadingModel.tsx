@@ -5,7 +5,7 @@ import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Empty } from "antd";
 import { useModelDownloadStore } from "../useStore";
-import { ModelItem } from "./Item";
+import { ModelItem } from "./item";
 
 type DownloadingModelProps = {
   search: string;
