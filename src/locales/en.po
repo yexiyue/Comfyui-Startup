@@ -7,7 +7,7 @@ msgstr ""
 "X-Generator: MonoDevelop Gettext addin\n"
 "Language: en\n"
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-04-14 09:52:35+0800\n"
+"PO-Revision-Date: 2024-04-14 15:42:28+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Report-Msgid-Bugs-To: \n"
@@ -113,7 +113,7 @@ msgstr "Downloading"
 msgid "下载插件和模型需要ComfyUI目录"
 msgstr "The ComfyUI directory is required to download plugins and models"
 
-#: src/pages/firstUse.tsx:93
+#: src/pages/firstUse.tsx:98
 #: src/pages/setting/index.tsx:53
 msgid "中国用户"
 msgstr "Chinese users"
@@ -132,12 +132,12 @@ msgstr "Author: {0}"
 msgid "全部"
 msgstr "All"
 
-#: src/pages/firstUse.tsx:97
+#: src/pages/firstUse.tsx:102
 #: src/pages/setting/index.tsx:57
 msgid "其他国家"
 msgstr "Other countries"
 
-#: src/components/layout.tsx:68
+#: src/components/layout.tsx:66
 msgid "初始化中..."
 msgstr "Initializing..."
 
@@ -149,9 +149,13 @@ msgstr "Delete"
 msgid "加载数据失败，请检查网络"
 msgstr "Failed to load data, please check the network"
 
+#: src/pages/firstUse.tsx:151
+msgid "即将自动关闭"
+msgstr "It's about to close automatically"
+
 #: src/pages/plugin/commponents/item.tsx:68
 msgid "卸载"
-msgstr "unload"
+msgstr "Unload"
 
 #: src/pages/model/commponents/item.tsx:127
 #: src/pages/plugin/commponents/item.tsx:121
@@ -161,13 +165,13 @@ msgstr "Cancel"
 #: src/components/slider.tsx:33
 #: src/pages/home.tsx:109
 msgid "启动"
-msgstr "initiate"
+msgstr "Initiate"
 
 #: src/pages/home.tsx:105
 msgid "启动失败"
 msgstr "Failed to start"
 
-#: src/pages/firstUse.tsx:87
+#: src/pages/firstUse.tsx:92
 msgid "在安装comfyui时会根据不同地区自动配置代理"
 msgstr "When installing comfyui, the agent is automatically configured according to different regions"
 
@@ -175,7 +179,7 @@ msgstr "When installing comfyui, the agent is automatically configured according
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
 msgstr "When installing models and plugins, agents are automatically configured based on different regions"
 
-#: src/pages/firstUse.tsx:86
+#: src/pages/firstUse.tsx:91
 #: src/pages/setting/index.tsx:47
 msgid "地区"
 msgstr "Region"
@@ -195,7 +199,7 @@ msgstr "Installation"
 #~ msgid "安装Comfyui"
 #~ msgstr "Install Comfyui"
 
-#: src/pages/firstUse.tsx:146
+#: src/pages/firstUse.tsx:161
 msgid "安装ComfyUI"
 msgstr "Install ComfyUI"
 
@@ -208,7 +212,7 @@ msgstr "Installing"
 msgid "已安装"
 msgstr "Installed"
 
-#: src/components/layout.tsx:29
+#: src/components/layout.tsx:28
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
 msgstr "There are currently {0} models being downloaded, are you sure you want to close them?"
 
@@ -224,7 +228,7 @@ msgstr "You haven't downloaded the model yet"
 msgid "您还未安装过插件"
 msgstr "You haven't installed the plugin yet"
 
-#: src/components/layout.tsx:30
+#: src/components/layout.tsx:29
 msgid "提示"
 msgstr "prompt"
 
@@ -288,6 +292,10 @@ msgstr "Model type"
 msgid "模型类型: {0}"
 msgstr "Model Type: {0}"
 
+#: src/pages/firstUse.tsx:152
+msgid "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新打开"
+msgstr "The ComfyUI installation script is being executed, and it will be automatically reopened for you after the installation is complete"
+
 #: src/pages/plugin/commponents/allPlugin.tsx:60
 #: src/pages/plugin/commponents/downloadedPlugin.tsx:53
 #: src/pages/plugin/commponents/downloadingPlugin.tsx:54
@@ -300,7 +308,7 @@ msgstr "No plugins found"
 msgid "没有找到模型"
 msgstr "No model found"
 
-#: src/pages/firstUse.tsx:150
+#: src/pages/firstUse.tsx:165
 msgid "目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装"
 msgstr "Currently, only one-click installation of ComfyUI on macOS is supported, if you are a Windows user, please install it manually"
 
@@ -321,7 +329,7 @@ msgstr "Failed to get model list"
 msgid "设置"
 msgstr "Set up"
 
-#: src/pages/firstUse.tsx:73
+#: src/pages/firstUse.tsx:78
 #: src/pages/setting/index.tsx:84
 msgid "语言"
 msgstr "Language"
@@ -334,7 +342,7 @@ msgstr "Please select the installation directory"
 msgid "请选择或输入ComfyUI目录"
 msgstr "Please select or enter the ComfyUI directory"
 
-#: src/pages/firstUse.tsx:111
+#: src/pages/firstUse.tsx:116
 msgid "请选择或输入安装目录"
 msgstr "Please select or enter an installation directory"
 
@@ -346,7 +354,7 @@ msgstr "Please select or enter the correct ComfyUI directory"
 msgid "请选择正确的ComfyUI目录"
 msgstr "Please select the correct ComfyUI directory"
 
-#: src/pages/firstUse.tsx:105
+#: src/pages/firstUse.tsx:110
 #: src/pages/setting/index.tsx:66
 msgid "路径"
 msgstr "Path"
@@ -356,7 +364,7 @@ msgstr "Path"
 msgid "路径不能为空"
 msgstr "The path cannot be empty"
 
-#: src/pages/firstUse.tsx:161
+#: src/pages/firstUse.tsx:176
 msgid "跳过安装"
 msgstr "Skip the installation"
 
@@ -365,7 +373,7 @@ msgstr "Skip the installation"
 msgid "返回主页"
 msgstr "Return to the home page"
 
-#: src/pages/firstUse.tsx:127
+#: src/pages/firstUse.tsx:132
 msgid "选择目录"
 msgstr "Select Catalog"
 

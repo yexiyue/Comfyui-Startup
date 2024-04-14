@@ -117,7 +117,7 @@ msgstr "下载中"
 msgid "下载插件和模型需要ComfyUI目录"
 msgstr "下载插件和模型需要ComfyUI目录"
 
-#: src/pages/firstUse.tsx:93
+#: src/pages/firstUse.tsx:98
 #: src/pages/setting/index.tsx:53
 msgid "中国用户"
 msgstr "中国用户"
@@ -137,12 +137,12 @@ msgstr "作者: {0}"
 msgid "全部"
 msgstr "全部"
 
-#: src/pages/firstUse.tsx:97
+#: src/pages/firstUse.tsx:102
 #: src/pages/setting/index.tsx:57
 msgid "其他国家"
 msgstr "其他国家"
 
-#: src/components/layout.tsx:68
+#: src/components/layout.tsx:66
 msgid "初始化中..."
 msgstr "初始化中..."
 
@@ -153,6 +153,10 @@ msgstr "删除"
 #: src/pages/home.tsx:57
 msgid "加载数据失败，请检查网络"
 msgstr "加载数据失败，请检查网络"
+
+#: src/pages/firstUse.tsx:151
+msgid "即将自动关闭"
+msgstr "即将自动关闭"
 
 #: src/pages/plugin/commponents/item.tsx:68
 msgid "卸载"
@@ -172,7 +176,7 @@ msgstr "启动"
 msgid "启动失败"
 msgstr "启动失败"
 
-#: src/pages/firstUse.tsx:87
+#: src/pages/firstUse.tsx:92
 msgid "在安装comfyui时会根据不同地区自动配置代理"
 msgstr "在安装comfyui时会根据不同地区自动配置代理"
 
@@ -180,7 +184,7 @@ msgstr "在安装comfyui时会根据不同地区自动配置代理"
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
 msgstr "在安装模型和插件时会根据不同地区自动配置代理"
 
-#: src/pages/firstUse.tsx:86
+#: src/pages/firstUse.tsx:91
 #: src/pages/setting/index.tsx:47
 msgid "地区"
 msgstr "地区"
@@ -201,7 +205,7 @@ msgstr "安装"
 #~ msgid "安装Comfyui"
 #~ msgstr "安装Comfyui"
 
-#: src/pages/firstUse.tsx:146
+#: src/pages/firstUse.tsx:161
 msgid "安装ComfyUI"
 msgstr "安装ComfyUI"
 
@@ -214,7 +218,7 @@ msgstr "安装中"
 msgid "已安装"
 msgstr "已安装"
 
-#: src/components/layout.tsx:29
+#: src/components/layout.tsx:28
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
 msgstr "当前有{0}个模型正在下载，确定要关闭吗？"
 
@@ -230,7 +234,7 @@ msgstr "您还未下载过模型"
 msgid "您还未安装过插件"
 msgstr "您还未安装过插件"
 
-#: src/components/layout.tsx:30
+#: src/components/layout.tsx:29
 msgid "提示"
 msgstr "提示"
 
@@ -294,6 +298,10 @@ msgstr "模型类型"
 msgid "模型类型: {0}"
 msgstr "模型类型: {0}"
 
+#: src/pages/firstUse.tsx:152
+msgid "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新打开"
+msgstr "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新打开"
+
 #: src/pages/plugin/commponents/allPlugin.tsx:60
 #: src/pages/plugin/commponents/downloadedPlugin.tsx:53
 #: src/pages/plugin/commponents/downloadingPlugin.tsx:54
@@ -306,7 +314,7 @@ msgstr "没有找到插件"
 msgid "没有找到模型"
 msgstr "没有找到模型"
 
-#: src/pages/firstUse.tsx:150
+#: src/pages/firstUse.tsx:165
 msgid "目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装"
 msgstr "目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装"
 
@@ -327,7 +335,7 @@ msgstr "获取模型列表失败"
 msgid "设置"
 msgstr "设置"
 
-#: src/pages/firstUse.tsx:73
+#: src/pages/firstUse.tsx:78
 #: src/pages/setting/index.tsx:84
 msgid "语言"
 msgstr "语言"
@@ -340,7 +348,7 @@ msgstr "请选择安装目录"
 msgid "请选择或输入ComfyUI目录"
 msgstr "请选择或输入ComfyUI目录"
 
-#: src/pages/firstUse.tsx:111
+#: src/pages/firstUse.tsx:116
 msgid "请选择或输入安装目录"
 msgstr "请选择或输入安装目录"
 
@@ -352,7 +360,7 @@ msgstr "请选择或输入正确的ComfyUI目录"
 msgid "请选择正确的ComfyUI目录"
 msgstr "请选择正确的ComfyUI目录"
 
-#: src/pages/firstUse.tsx:105
+#: src/pages/firstUse.tsx:110
 #: src/pages/setting/index.tsx:66
 msgid "路径"
 msgstr "路径"
@@ -362,7 +370,7 @@ msgstr "路径"
 msgid "路径不能为空"
 msgstr "路径不能为空"
 
-#: src/pages/firstUse.tsx:161
+#: src/pages/firstUse.tsx:176
 msgid "跳过安装"
 msgstr "跳过安装"
 
@@ -371,7 +379,7 @@ msgstr "跳过安装"
 msgid "返回主页"
 msgstr "返回主页"
 
-#: src/pages/firstUse.tsx:127
+#: src/pages/firstUse.tsx:132
 msgid "选择目录"
 msgstr "选择目录"
 

@@ -8,6 +8,7 @@
     "event:default",
     "window:default",
     "window:allow-destroy",
+    "window:allow-close",
     "app:default",
     "image:default",
     "resources:default",

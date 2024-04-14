@@ -1,4 +1,5 @@
 import { command } from "@/api";
+import { useConfigHydration } from "@/hooks/useHydration";
 import { useModelDownloadStore } from "@/pages/model/useStore";
 import { useConfigStore } from "@/useStore";
 import { LoadingOutlined } from "@ant-design/icons";
@@ -7,11 +8,9 @@ import { getCurrent } from "@tauri-apps/api/window";
 import { confirm } from "@tauri-apps/plugin-dialog";
 import { Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Slider } from "./slider";
 import { Separator } from "./ui/separator";
-import { useNavigate } from "react-router-dom";
-import { useConfigHydration } from "@/hooks/useHydration";
 
 export const Layout = () => {
   // 全局只注册一次的关闭提示
@@ -50,7 +49,6 @@ export const Layout = () => {
       const firstUse = useConfigStore.getState().firstUse;
       if (firstUse) {
         navigate("/first-use");
-        useConfigStore.getState().setFirstUse(false);
       }
       setFinished(true);
     }

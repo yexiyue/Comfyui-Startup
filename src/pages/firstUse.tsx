@@ -3,6 +3,7 @@ import { SkipModal } from "@/components/skipModal";
 import { useConfigStore } from "@/useStore";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
+import { getCurrent } from "@tauri-apps/api/window";
 import { open } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect } from "ahooks";
 import {
@@ -21,9 +22,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg?react";
 
+const tauriWindow = getCurrent();
+
 export const Component = () => {
   useLingui();
-  const { message } = App.useApp();
+  const { message, notification } = App.useApp();
   const navigate = useNavigate();
   const [skipModalOpen, setSkipModalOpen] = useState(false);
   const [sysInfo, setSysInfo] = useState<SysInfo | null>();
@@ -42,6 +45,7 @@ export const Component = () => {
     setLanguage,
     setComfyuiPath,
     setCountry,
+    setFirstUse,
   ] = useConfigStore((store) => [
     store.country,
     store.language,
@@ -49,6 +53,7 @@ export const Component = () => {
     store.setLanguage,
     store.setComfyuiPath,
     store.setCountry,
+    store.setFirstUse,
   ]);
 
   useAsyncEffect(async () => {
@@ -139,7 +144,17 @@ export const Component = () => {
                     country,
                   },
                 });
+                setFirstUse(false);
                 await command("install_comfyui");
+                setComfyuiPath(`${comfyuiPath}/ComfyUI`);
+                notification.success({
+                  message: t`即将自动关闭`,
+                  description: t`正在执行ComfyUI安装脚本，待安装完成后会自动为您重新打开`,
+                  onClose: () => {
+                    tauriWindow.close();
+                  },
+                  duration: 3,
+                });
               }}
               type="primary"
             >

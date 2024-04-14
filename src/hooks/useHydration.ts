@@ -2,28 +2,27 @@ import { tauriStore } from "@/lib/store";
 import { useModelDownloadStore } from "@/pages/model/useStore";
 import { usePluginStore } from "@/pages/plugin/useStore";
 import { useConfigStore } from "@/useStore";
-import { getCurrent } from "@tauri-apps/api/window";
 import { useAsyncEffect } from "ahooks";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { StoreApi } from "zustand";
 
-const stores: [string, () => Record<string, any>, (...args: any[]) => void][] =
+const stores: [string, StoreApi<any>, (...args: any[]) => void][] = [
   [
-    [
-      useConfigStore.persist.getOptions().name!,
-      useConfigStore.getState,
-      useConfigStore.setState,
-    ],
-    [
-      useModelDownloadStore.persist.getOptions().name!,
-      useModelDownloadStore.getState,
-      useModelDownloadStore.setState,
-    ],
-    [
-      usePluginStore.persist.getOptions().name!,
-      usePluginStore.getState,
-      usePluginStore.setState,
-    ],
-  ];
+    useConfigStore.persist.getOptions().name!,
+    useConfigStore,
+    useConfigStore.setState,
+  ],
+  [
+    useModelDownloadStore.persist.getOptions().name!,
+    useModelDownloadStore,
+    useModelDownloadStore.setState,
+  ],
+  [
+    usePluginStore.persist.getOptions().name!,
+    usePluginStore,
+    usePluginStore.setState,
+  ],
+];
 
 export const useConfigHydration = () => {
   const [hydrated, setHydrated] = useState(false);
@@ -41,10 +40,8 @@ export const useConfigHydration = () => {
   }, []);
 
   useEffect(() => {
-    const window = getCurrent();
-    window.onCloseRequested(async () => {
-      const tasks = stores.map(async ([storeName, store]) => {
-        const state = store();
+    stores.forEach(async ([storeName, store]) => {
+      store.subscribe(async (state) => {
         const value = Object.keys(state).reduce<Record<string, any>>(
           (pre, cur) => {
             if (typeof state[cur] !== "function") {
@@ -56,7 +53,6 @@ export const useConfigHydration = () => {
         );
         await tauriStore.setItem(storeName, JSON.stringify(value));
       });
-      await Promise.allSettled(tasks);
     });
   }, []);
 
