@@ -14,6 +14,7 @@ mod service;
 
 #[cfg(target_os = "macos")]
 mod macos;
+#[cfg(target_os = "macos")]
 use macos::install_comfyui;
 mod commands;
 mod model;
@@ -49,6 +50,7 @@ pub async fn start() {
         .invoke_handler(generate_handler![
             #[cfg(debug_assertions)]
             open_devtool,
+            #[cfg(target_os = "macos")]
             install_comfyui,
             comfyui_exists,
             get_config,
