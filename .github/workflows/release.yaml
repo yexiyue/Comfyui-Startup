@@ -31,7 +31,8 @@ jobs:
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
-
+      - name: Install pnpm
+        run: npm install -g pnpm
       - name: Sync node version and setup cache
         uses: actions/setup-node@v3
         with:
