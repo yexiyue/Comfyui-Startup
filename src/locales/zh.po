@@ -142,11 +142,15 @@ msgstr "全部"
 msgid "其他国家"
 msgstr "其他国家"
 
+#: src/components/Layout.tsx:68
+msgid "初始化中..."
+msgstr "初始化中..."
+
 #: src/pages/Model/commponents/Item.tsx:98
 msgid "删除"
 msgstr "删除"
 
-#: src/pages/Home.tsx:69
+#: src/pages/Home.tsx:57
 msgid "加载数据失败，请检查网络"
 msgstr "加载数据失败，请检查网络"
 
@@ -160,11 +164,11 @@ msgid "取消"
 msgstr "取消"
 
 #: src/components/Slider.tsx:33
-#: src/pages/Home.tsx:121
+#: src/pages/Home.tsx:109
 msgid "启动"
 msgstr "启动"
 
-#: src/pages/Home.tsx:117
+#: src/pages/Home.tsx:105
 msgid "启动失败"
 msgstr "启动失败"
 
@@ -210,7 +214,7 @@ msgstr "安装中"
 msgid "已安装"
 msgstr "已安装"
 
-#: src/components/Layout.tsx:24
+#: src/components/Layout.tsx:29
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
 msgstr "当前有{0}个模型正在下载，确定要关闭吗？"
 
@@ -226,7 +230,7 @@ msgstr "您还未下载过模型"
 msgid "您还未安装过插件"
 msgstr "您还未安装过插件"
 
-#: src/components/Layout.tsx:25
+#: src/components/Layout.tsx:30
 msgid "提示"
 msgstr "提示"
 
@@ -240,7 +244,7 @@ msgstr "插件管理"
 msgid "搜索"
 msgstr "搜索"
 
-#: src/pages/Home.tsx:88
+#: src/pages/Home.tsx:76
 msgid "数据加载中..."
 msgstr "数据加载中..."
 
@@ -264,6 +268,14 @@ msgstr "更新"
 #: src/pages/Setting/index.tsx:110
 msgid "更新成功"
 msgstr "更新成功"
+
+#: src/components/ErrorBoundary.tsx:13
+msgid "未找到页面"
+msgstr "未找到页面"
+
+#: src/components/ErrorBoundary.tsx:27
+msgid "未知错误"
+msgstr "未知错误"
 
 #: src/pages/Model/commponents/Item.tsx:328
 msgid "模型文件名: {0}"
@@ -353,6 +365,11 @@ msgstr "路径不能为空"
 #: src/pages/FirstUse.tsx:161
 msgid "跳过安装"
 msgstr "跳过安装"
+
+#: src/components/ErrorBoundary.tsx:16
+#: src/components/ErrorBoundary.tsx:30
+msgid "返回主页"
+msgstr "返回主页"
 
 #: src/pages/FirstUse.tsx:127
 msgid "选择目录"

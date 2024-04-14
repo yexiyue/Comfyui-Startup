@@ -7,7 +7,7 @@ msgstr ""
 "X-Generator: MonoDevelop Gettext addin\n"
 "Language: en\n"
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-04-13 21:08:09+0800\n"
+"PO-Revision-Date: 2024-04-14 09:52:35+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Report-Msgid-Bugs-To: \n"
@@ -137,11 +137,15 @@ msgstr "All"
 msgid "其他国家"
 msgstr "Other countries"
 
+#: src/components/Layout.tsx:68
+msgid "初始化中..."
+msgstr "Initializing..."
+
 #: src/pages/Model/commponents/Item.tsx:98
 msgid "删除"
 msgstr "Delete"
 
-#: src/pages/Home.tsx:69
+#: src/pages/Home.tsx:57
 msgid "加载数据失败，请检查网络"
 msgstr "Failed to load data, please check the network"
 
@@ -155,11 +159,11 @@ msgid "取消"
 msgstr "Cancel"
 
 #: src/components/Slider.tsx:33
-#: src/pages/Home.tsx:121
+#: src/pages/Home.tsx:109
 msgid "启动"
 msgstr "initiate"
 
-#: src/pages/Home.tsx:117
+#: src/pages/Home.tsx:105
 msgid "启动失败"
 msgstr "Failed to start"
 
@@ -204,7 +208,7 @@ msgstr "Installing"
 msgid "已安装"
 msgstr "Installed"
 
-#: src/components/Layout.tsx:24
+#: src/components/Layout.tsx:29
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
 msgstr "There are currently {0} models being downloaded, are you sure you want to close them?"
 
@@ -220,7 +224,7 @@ msgstr "You haven't downloaded the model yet"
 msgid "您还未安装过插件"
 msgstr "You haven't installed the plugin yet"
 
-#: src/components/Layout.tsx:25
+#: src/components/Layout.tsx:30
 msgid "提示"
 msgstr "prompt"
 
@@ -234,7 +238,7 @@ msgstr "Plugin management"
 msgid "搜索"
 msgstr "Search"
 
-#: src/pages/Home.tsx:88
+#: src/pages/Home.tsx:76
 msgid "数据加载中..."
 msgstr "Loading..."
 
@@ -258,6 +262,14 @@ msgstr "Update"
 #: src/pages/Setting/index.tsx:110
 msgid "更新成功"
 msgstr "The update was successful"
+
+#: src/components/ErrorBoundary.tsx:13
+msgid "未找到页面"
+msgstr "Page not found"
+
+#: src/components/ErrorBoundary.tsx:27
+msgid "未知错误"
+msgstr "Unknown error"
 
 #: src/pages/Model/commponents/Item.tsx:328
 msgid "模型文件名: {0}"
@@ -347,6 +359,11 @@ msgstr "The path cannot be empty"
 #: src/pages/FirstUse.tsx:161
 msgid "跳过安装"
 msgstr "Skip the installation"
+
+#: src/components/ErrorBoundary.tsx:16
+#: src/components/ErrorBoundary.tsx:30
+msgid "返回主页"
+msgstr "Return to the home page"
 
 #: src/pages/FirstUse.tsx:127
 msgid "选择目录"
