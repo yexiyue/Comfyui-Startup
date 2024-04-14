@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "plugin",
-        lazy: () => import("@/pages/plugin"),
+        lazy: () => import("@/pages/plugin/index"),
       },
       {
         path: "model",

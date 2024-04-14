@@ -27,3 +27,4 @@ target
 .cargo
 todo
 /**/.env
+test.sh
