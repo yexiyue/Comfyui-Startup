@@ -13,15 +13,15 @@ jobs:
       fail-fast: false
       matrix:
         platform: [macos-latest, windows-latest]
+    
+    
     runs-on: ${{ matrix.platform }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
       - name: Rust setup
         uses: dtolnay/rust-toolchain@stable
-
+      
       - name: Rust cache
         uses: swatinem/rust-cache@v2
       - name: Install pnpm
@@ -40,11 +40,17 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-          TAURI_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_PRIVATE_KEY_PASSWORD }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
           releaseName: "ComfyUI Startup v__VERSION__" # tauri-action replaces \_\_VERSION\_\_ with the app version.
           releaseBody: "See the assets to download and install this version."
           releaseDraft: true
           prerelease: false
+
+      - name: Upload assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm updater
+          
