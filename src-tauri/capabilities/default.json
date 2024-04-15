@@ -25,6 +25,8 @@
     "dialog:allow-confirm",
     "dialog:allow-ask",
     "notification:default",
-    "updater:default"
+    "updater:default",
+    "updater:allow-check",
+    "updater:allow-download-and-install"
   ]
 }

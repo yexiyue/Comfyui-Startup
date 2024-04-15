@@ -11,7 +11,8 @@
     "extract": "lingui extract",
     "ui": "shadcn-ui",
     "ico": "tauri icon ./public/logo.svg",
-    "entity": "sea-orm-cli generate entity -u sqlite:./target/debug/db/database.db --with-serde both  -o ./src-tauri/src/entity"
+    "entity": "sea-orm-cli generate entity -u sqlite:./target/debug/db/database.db --with-serde both  -o ./src-tauri/src/entity",
+    "updater": "node ./scripts/updater.mjs"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.5",
@@ -43,6 +44,7 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@actions/github": "^6.0.0",
     "@lingui/cli": "^4.7.1",
     "@lingui/conf": "^4.7.1",
     "@lingui/vite-plugin": "^4.7.1",

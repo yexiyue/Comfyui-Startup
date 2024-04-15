@@ -10,12 +10,17 @@ import { useAsyncEffect } from "ahooks";
 import { Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import { check } from "@tauri-apps/plugin-updater";
+// import { relaunch } from "@tauri-apps/plugin-process";
 
 export const BasicLayout = () => {
   const navigate = useNavigate();
   const [finished, setFinished] = useState(false);
   const _hasHydrated = useConfigHydration();
-
+  useAsyncEffect(async () => {
+    const res = await check();
+    console.log(res);
+  }, []);
   // 全局只注册一次的关闭提示
   useEffect(() => {
     const window = getCurrent();
