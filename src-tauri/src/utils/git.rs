@@ -1,7 +1,8 @@
+#![allow(unused)]
 use crate::error::MyError;
 use derive_builder::Builder;
 
-pub const PROXY: &str = "https://mirror.ghproxy.com/";
+pub const PROXY: &str = "https://mirror.ghproxy.com";
 #[derive(Debug, Builder, Clone)]
 #[builder(setter(into))]
 pub struct Git {
