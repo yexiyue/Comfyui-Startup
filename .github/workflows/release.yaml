@@ -54,8 +54,8 @@ jobs:
           releaseDraft: true
           prerelease: false
 
-      - name: Upload assets
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm updater
+      # - name: Upload assets
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: pnpm updater
           
