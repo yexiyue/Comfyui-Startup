@@ -1,34 +1,39 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Component as Home } from "@/pages/home";
-import { Layout } from "@/components/layout";
+import { SliderLayout } from "@/components/sliderLayout";
 import { ErrorBoundary } from "@/components/errorBoundary";
+import { BasicLayout } from "@/components/basicLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Layout,
+    Component: BasicLayout,
     ErrorBoundary: ErrorBoundary,
     children: [
       {
-        index: true,
-        Component: Home,
+        path: "/",
+        Component: SliderLayout,
+        children: [
+          {
+            index: true,
+            lazy: () => import("@/pages/home"),
+          },
+          {
+            path: "plugin",
+            lazy: () => import("@/pages/plugin"),
+          },
+          {
+            path: "model",
+            lazy: () => import("@/pages/model"),
+          },
+          {
+            path: "setting",
+            lazy: () => import("@/pages/setting"),
+          },
+        ],
       },
       {
-        path: "plugin",
-        lazy: () => import("@/pages/plugin/index"),
-      },
-      {
-        path: "model",
-        lazy: () => import("@/pages/model"),
-      },
-      {
-        path: "setting",
-        lazy: () => import("@/pages/setting"),
+        path: "/first-use",
+        lazy: () => import("@/pages/firstUse"),
       },
     ],
-  },
-  {
-    path: "/first-use",
-    lazy: () => import("@/pages/firstUse"),
-    ErrorBoundary: ErrorBoundary,
   },
 ]);

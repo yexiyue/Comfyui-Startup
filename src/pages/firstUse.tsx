@@ -56,18 +56,6 @@ export const Component = () => {
     store.setFirstUse,
   ]);
 
-  useAsyncEffect(async () => {
-    try {
-      const config = await command("get_config");
-      if (config) {
-        setCountry(config.country);
-        setComfyuiPath(config.comfyui_path);
-      }
-    } catch (error) {
-      message.error(`${error}`);
-    }
-  }, []);
-
   return (
     <div className="flex items-center h-screen justify-center flex-col">
       <Card className="shadow-sm w-[350px]">
@@ -183,6 +171,7 @@ export const Component = () => {
         setSkipModalOpen={setSkipModalOpen}
         onOk={(value) => {
           setComfyuiPath(value);
+          setFirstUse(false);
           setSkipModalOpen(false);
           navigate("/");
         }}

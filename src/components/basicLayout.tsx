@@ -6,13 +6,16 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { t } from "@lingui/macro";
 import { getCurrent } from "@tauri-apps/api/window";
 import { confirm } from "@tauri-apps/plugin-dialog";
+import { useAsyncEffect } from "ahooks";
 import { Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Slider } from "./slider";
-import { Separator } from "./ui/separator";
 
-export const Layout = () => {
+export const BasicLayout = () => {
+  const navigate = useNavigate();
+  const [finished, setFinished] = useState(false);
+  const _hasHydrated = useConfigHydration();
+
   // 全局只注册一次的关闭提示
   useEffect(() => {
     const window = getCurrent();
@@ -40,42 +43,41 @@ export const Layout = () => {
       }
     });
   }, []);
-  const navigate = useNavigate();
-  const [finished, setFinished] = useState(false);
-  const _hasHydrated = useConfigHydration();
 
-  useEffect(() => {
+  useAsyncEffect(async () => {
     if (_hasHydrated) {
       const firstUse = useConfigStore.getState().firstUse;
-      if (firstUse) {
+      const comfyuiExist = await command("comfyui_exists", {
+        path: useConfigStore.getState().comfyuiPath,
+      });
+
+      if (firstUse || !comfyuiExist) {
         navigate("/first-use");
       }
-      setFinished(true);
+      setTimeout(() => {
+        setFinished(true);
+      }, 1000);
     }
   }, [_hasHydrated]);
 
-  if (!finished) {
-    return (
-      <div className="w-screen h-screen flex justify-center items-center">
-        <div className="flex flex-col gap-2 bg-transparent fixed">
-          <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
-          <Typography.Link
-            style={{
-              cursor: "default",
-            }}
-          >{t`初始化中...`}</Typography.Link>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="w-screen h-screen flex">
-      <Slider />
-      <Separator orientation="vertical" className="h-full" />
-      <div className="overflow-hidden flex-1">
+    <>
+      {!finished ? (
+        <div className="w-screen h-screen flex justify-center items-center">
+          <div className="flex flex-col gap-2 bg-transparent fixed">
+            <Spin
+              indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />}
+            />
+            <Typography.Link
+              style={{
+                cursor: "default",
+              }}
+            >{t`初始化中...`}</Typography.Link>
+          </div>
+        </div>
+      ) : (
         <Outlet />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
