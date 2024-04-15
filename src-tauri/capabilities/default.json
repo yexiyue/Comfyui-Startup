@@ -2,7 +2,9 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": ["main"],
+  "windows": [
+    "main"
+  ],
   "permissions": [
     "path:default",
     "event:default",
@@ -22,6 +24,7 @@
     "dialog:allow-message",
     "dialog:allow-confirm",
     "dialog:allow-ask",
-    "notification:default"
+    "notification:default",
+    "updater:default"
   ]
 }
