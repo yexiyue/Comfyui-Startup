@@ -8,7 +8,16 @@
     "beforeBuildCommand": "pnpm build",
     "frontendDist": "../dist"
   },
-
+  "plugins": {
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://github.com/yexiyue/Comfyui-Startup/releases/download/updater/latest.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDYxQkFERjdBQjA2NzUzQkQKUldTOVUyZXdldCs2WVI5UUhlWllueVBYUVRyLzdQNXNycHptb3diYkx2MzlpSTVYc0lZbnNNb2QK"
+    }
+  },
   "app": {
     "withGlobalTauri": true,
     "windows": [
