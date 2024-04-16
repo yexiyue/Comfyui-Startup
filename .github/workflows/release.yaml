@@ -12,22 +12,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        settings:
-          - platform: 'macos-latest' # for Arm based macs (M1 and above).
-            args: '--target aarch64-apple-darwin'
-          - platform: 'macos-latest' # for Intel based macs.
-            args: '--target x86_64-apple-darwin'
-          - platform: 'windows-latest'
-            args: ''
+        platform: ['windows-latest', 'macos-latest']
 
-    runs-on: ${{ matrix.settings.platform }}
+    runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Rust setup
         uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ matrix.settings.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
       
       # - name: Rust cache
       #   uses: swatinem/rust-cache@v2
@@ -55,7 +47,6 @@ jobs:
           releaseBody: "See the assets to download and install this version."
           releaseDraft: true
           prerelease: false
-          args: ${{ matrix.settings.args }}
 
       - name: Upload assets
         env:
