@@ -12,7 +12,8 @@
     "ui": "shadcn-ui",
     "ico": "tauri icon ./public/logo.svg",
     "entity": "sea-orm-cli generate entity -u sqlite:./target/debug/db/database.db --with-serde both  -o ./src-tauri/src/entity",
-    "updater": "node ./scripts/updater.mjs"
+    "updater": "node ./scripts/updater.mjs",
+    "publish": "node ./scripts/publish.mjs"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.5",

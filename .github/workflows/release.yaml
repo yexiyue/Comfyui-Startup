@@ -35,6 +35,7 @@ jobs:
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: pnpm install --no-frozen-lockfile # Change this to npm, yarn or pnpm.
       - name: Build the app
+        id: build
         uses: tauri-apps/tauri-action@v0
 
         env:
@@ -51,5 +52,12 @@ jobs:
       - name: Upload assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm updater
-          
+          artifactPaths: ${{ steps.build.outputs.artifactPaths }}
+        run: pnpm publish
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./publish
+      #     keep_files: true
+

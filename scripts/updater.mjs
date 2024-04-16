@@ -29,7 +29,7 @@ const updateRelease = async () => {
   if (data.platforms["darwin-x86_64"]) {
     data.platforms["darwin-aarch64"] = data.platforms["darwin-x86_64"];
   }
-
+  
   await octokit.rest.repos.uploadReleaseAsset({
     owner: context.repo.owner,
     repo: context.repo.repo,
