@@ -3,10 +3,13 @@ use std::process::{Command, ExitStatus};
 
 use tracing::info;
 mod git;
+
+#[allow(unused)]
 pub use git::{Git, GitBuilderError};
 mod sysinfo;
 pub use self::sysinfo::SysInfo;
 pub use sysinfo::get_sysinfo;
+
 #[cfg(debug_assertions)]
 use tauri::Manager;
 
