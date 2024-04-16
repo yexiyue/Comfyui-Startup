@@ -1,16 +1,26 @@
-import { context, getOctokit } from "@actions/github";
-import { readFile, copyFile } from "node:fs/promises";
+import { getOctokit } from "@actions/github";
+import { readFile, copyFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 
 const octokit = getOctokit(process.env.GITHUB_TOKEN);
-const artifactPaths = process.env.artifactPaths;
+const artifactPaths = JSON.parse(process.env.artifactPaths);
+const targetDir = "publish";
+
 const publish = async () => {
-  console.log(artifactPaths);
-  // 上传新的文件
-  // const file = await readFile("latest.json", { encoding: "utf-8" });
-  // const data = JSON.parse(file);
-  // if (data.platforms["darwin-x86_64"]) {
-  //   data.platforms["darwin-aarch64"] = data.platforms["darwin-x86_64"];
-  // }
+  const tasks = artifactPaths.map(async (artifactPath) => {
+    const fileName = artifactPath.split("/").pop();
+    const path = join(__dirname, "../", targetDir, fileName);
+    await copyFile(artifactPath, path);
+    console.log(`Coping ${artifactPath} ======> ${fileName}`);
+  });
+  Promise.allSettled(tasks);
+
+  const file = await readFile("latest.json", { encoding: "utf-8" });
+  const data = JSON.parse(file);
+  if (data.platforms["darwin-x86_64"]) {
+    data.platforms["darwin-aarch64"] = data.platforms["darwin-x86_64"];
+  }
+  await writeFile("publish/latest.json", JSON.stringify(data, null, 2));
 };
 
 publish();

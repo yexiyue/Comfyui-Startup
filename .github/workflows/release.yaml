@@ -54,10 +54,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           artifactPaths: ${{ steps.build.outputs.artifactPaths }}
         run: pnpm publish
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./publish
-      #     keep_files: true
+      - name: ls publish
+        run: ls publish
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish
+          keep_files: true
 
