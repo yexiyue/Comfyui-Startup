@@ -1,26 +1,39 @@
 import { command } from "@/api";
 import { useConfigHydration } from "@/hooks/useHydration";
+import { useUpdater } from "@/hooks/useUpdater";
 import { useModelDownloadStore } from "@/pages/model/useStore";
 import { useConfigStore } from "@/useStore";
 import { LoadingOutlined } from "@ant-design/icons";
 import { t } from "@lingui/macro";
 import { getCurrent } from "@tauri-apps/api/window";
-import { confirm } from "@tauri-apps/plugin-dialog";
+import { ask, confirm } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect } from "ahooks";
-import { Spin, Typography } from "antd";
+import { Modal, Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-// import { check } from "@tauri-apps/plugin-updater";
-// import { relaunch } from "@tauri-apps/plugin-process";
 
 export const BasicLayout = () => {
   const navigate = useNavigate();
   const [finished, setFinished] = useState(false);
   const _hasHydrated = useConfigHydration();
-  // useAsyncEffect(async () => {
-  //   const res = await check();
-  //   console.log(res);
-  // }, []);
+  const { shouldUpdate, updating, update, checkUpdate } = useUpdater({
+    manual: true,
+    timeout: 3000,
+  });
+
+  useAsyncEffect(async () => {
+    if (shouldUpdate) {
+      const res = await ask(t`发现新版本，是否更新？`, {
+        title: t`更新提示`,
+        kind: "info",
+        okLabel: t`更新`,
+        cancelLabel: t`取消`,
+      });
+      if (res) {
+        await update();
+      }
+    }
+  }, [shouldUpdate]);
   // 全局只注册一次的关闭提示
   useEffect(() => {
     const window = getCurrent();
@@ -51,10 +64,14 @@ export const BasicLayout = () => {
 
   useAsyncEffect(async () => {
     if (_hasHydrated) {
-      const firstUse = useConfigStore.getState().firstUse;
+      const { firstUse, autoCheckUpdate } = useConfigStore.getState();
       const comfyuiExist = await command("comfyui_exists", {
         path: useConfigStore.getState().comfyuiPath,
       });
+
+      if (autoCheckUpdate) {
+        await checkUpdate();
+      }
 
       if (firstUse || !comfyuiExist) {
         navigate("/first-use");
@@ -83,6 +100,27 @@ export const BasicLayout = () => {
       ) : (
         <Outlet />
       )}
+      <Modal
+        centered
+        open={true}
+        closable={updating}
+        footer={null}
+        width={200}
+        styles={{
+          body: {
+            height: 120,
+          },
+        }}
+      >
+        <div className="w-full h-full flex justify-center items-center flex-col">
+          <Spin indicator={<LoadingOutlined style={{ fontSize: 28 }} spin />} />
+          <Typography.Link
+            style={{
+              cursor: "default",
+            }}
+          >{t`正在更新...`}</Typography.Link>
+        </div>
+      </Modal>
     </>
   );
 };

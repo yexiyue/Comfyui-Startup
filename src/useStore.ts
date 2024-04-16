@@ -12,6 +12,8 @@ type State = {
   country: string;
   // 侧边栏是否展开
   expanded: boolean;
+  // 自动检测更新
+  autoCheckUpdate: boolean;
 };
 
 type Action = {
@@ -31,6 +33,7 @@ export const useConfigStore = create(
       firstUse: true,
       country: "chinese",
       expanded: true,
+      autoCheckUpdate: true,
       setLanguage(language) {
         set({ language });
       },
