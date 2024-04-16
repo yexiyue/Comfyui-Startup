@@ -12,9 +12,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest,windows-latest]
+        settings:
+          - platform: 'macos-latest' # for Arm based macs (M1 and above).
+            args: '--target aarch64-apple-darwin'
+          - platform: 'macos-latest' # for Intel based macs.
+            args: '--target x86_64-apple-darwin'
+          - platform: 'windows-latest'
+            args: ''
 
-    runs-on: ${{ matrix.platform }}
+    runs-on: ${{ matrix.settings.platform }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -47,6 +53,7 @@ jobs:
           releaseBody: "See the assets to download and install this version."
           releaseDraft: true
           prerelease: false
+          args: ${{ matrix.settings.args }}
 
       - name: Upload assets
         env:
