@@ -7,7 +7,7 @@ msgstr ""
 "X-Generator: MonoDevelop Gettext addin\n"
 "Language: ja\n"
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-04-14 15:41:44+0800\n"
+"PO-Revision-Date: 2024-04-16 23:46:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Report-Msgid-Bugs-To: \n"
@@ -113,8 +113,8 @@ msgstr "ダウンロード"
 msgid "下载插件和模型需要ComfyUI目录"
 msgstr "ComfyUIディレクトリは、プラグインとモデルをダウンロードするために必要です"
 
-#: src/pages/firstUse.tsx:98
-#: src/pages/setting/index.tsx:53
+#: src/pages/firstUse.tsx:86
+#: src/pages/setting/index.tsx:81
 msgid "中国用户"
 msgstr "中国のユーザー"
 
@@ -132,12 +132,12 @@ msgstr "著者: {0}"
 msgid "全部"
 msgstr "すべての"
 
-#: src/pages/firstUse.tsx:102
-#: src/pages/setting/index.tsx:57
+#: src/pages/firstUse.tsx:90
+#: src/pages/setting/index.tsx:85
 msgid "其他国家"
 msgstr "その他の国"
 
-#: src/components/layout.tsx:66
+#: src/components/basicLayout.tsx:100
 msgid "初始化中..."
 msgstr "初期化。。。"
 
@@ -149,7 +149,7 @@ msgstr "削除"
 msgid "加载数据失败，请检查网络"
 msgstr "データの読み込みに失敗しました。ネットワークを確認してください"
 
-#: src/pages/firstUse.tsx:151
+#: src/pages/firstUse.tsx:139
 msgid "即将自动关闭"
 msgstr "自動的に閉じようとしています"
 
@@ -157,12 +157,19 @@ msgstr "自動的に閉じようとしています"
 msgid "卸载"
 msgstr "降ろす"
 
+#: src/components/basicLayout.tsx:64
+#: src/pages/setting/index.tsx:161
+msgid "发现新版本，是否更新？"
+msgstr "新しいバージョンを検出し、更新されていますか?"
+
+#: src/components/basicLayout.tsx:68
 #: src/pages/model/commponents/item.tsx:127
 #: src/pages/plugin/commponents/item.tsx:121
+#: src/pages/setting/index.tsx:165
 msgid "取消"
 msgstr "キャンセル"
 
-#: src/components/slider.tsx:33
+#: src/components/slider.tsx:38
 #: src/pages/home.tsx:109
 msgid "启动"
 msgstr "始める"
@@ -171,16 +178,16 @@ msgstr "始める"
 msgid "启动失败"
 msgstr "起動に失敗しました"
 
-#: src/pages/firstUse.tsx:92
+#: src/pages/firstUse.tsx:80
 msgid "在安装comfyui时会根据不同地区自动配置代理"
 msgstr "comfyuiをインストールすると、エージェントはさまざまなリージョンに従って自動的に構成されます"
 
-#: src/pages/setting/index.tsx:48
+#: src/pages/setting/index.tsx:76
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
 msgstr "モデルとプラグインをインストールすると、エージェントはさまざまなリージョンに基づいて自動的に構成されます"
 
-#: src/pages/firstUse.tsx:91
-#: src/pages/setting/index.tsx:47
+#: src/pages/firstUse.tsx:79
+#: src/pages/setting/index.tsx:75
 msgid "地区"
 msgstr "地域"
 
@@ -199,7 +206,7 @@ msgstr "取り付け"
 #~ msgid "安装Comfyui"
 #~ msgstr "Comfyuiをインストールする"
 
-#: src/pages/firstUse.tsx:161
+#: src/pages/firstUse.tsx:149
 msgid "安装ComfyUI"
 msgstr "ComfyUIをインストールする"
 
@@ -212,7 +219,11 @@ msgstr "装着"
 msgid "已安装"
 msgstr "インストール"
 
-#: src/components/layout.tsx:28
+#: src/pages/setting/index.tsx:159
+msgid "已是最新版本"
+msgstr "最新バージョンです"
+
+#: src/components/basicLayout.tsx:37
 msgid "当前有{0}个模型正在下载，确定要关闭吗？"
 msgstr "現在、{0}モデルがダウンロードされていますが、閉じてもよろしいですか?"
 
@@ -228,11 +239,12 @@ msgstr "モデルをまだダウンロードしていません"
 msgid "您还未安装过插件"
 msgstr "プラグインをまだインストールしていません"
 
-#: src/components/layout.tsx:29
+#: src/components/basicLayout.tsx:38
+#: src/hooks/useUpdater.ts:55
 msgid "提示"
 msgstr "プロンプト"
 
-#: src/components/slider.tsx:38
+#: src/components/slider.tsx:43
 #: src/pages/plugin/index.tsx:40
 msgid "插件管理"
 msgstr "プラグイン管理"
@@ -258,14 +270,25 @@ msgstr "ダウンロード中のプラグインはありません"
 msgid "暂无下载中的模型"
 msgstr "ダウンロードにモデルがありません"
 
+#: src/components/basicLayout.tsx:67
 #: src/pages/plugin/commponents/item.tsx:85
-#: src/pages/setting/index.tsx:116
+#: src/pages/setting/index.tsx:148
+#: src/pages/setting/index.tsx:164
 msgid "更新"
 msgstr "更新"
 
-#: src/pages/setting/index.tsx:110
+#: src/hooks/useUpdater.ts:54
+msgid "更新下载完成，是否立即重启应用？"
+msgstr "更新プログラムがダウンロードされたらすぐにアプリを再起動しますか?"
+
+#: src/pages/setting/index.tsx:142
 msgid "更新成功"
 msgstr "更新は成功しました"
+
+#: src/components/basicLayout.tsx:65
+#: src/pages/setting/index.tsx:162
+msgid "更新提示"
+msgstr "アップデートのヒント"
 
 #: src/components/errorBoundary.tsx:13
 msgid "未找到页面"
@@ -275,11 +298,20 @@ msgstr "ページが見つかりません"
 msgid "未知错误"
 msgstr "不明なエラー"
 
+#: src/pages/setting/index.tsx:176
+msgid "检查更新"
+msgstr "アップデートを確認する"
+
+#: src/components/basicLayout.tsx:75
+#: src/pages/setting/index.tsx:172
+msgid "检查更新失败"
+msgstr "更新プログラムの確認に失敗しました"
+
 #: src/pages/model/commponents/item.tsx:328
 msgid "模型文件名: {0}"
 msgstr "モデルファイル名:{0}"
 
-#: src/components/slider.tsx:43
+#: src/components/slider.tsx:48
 #: src/pages/model/index.tsx:65
 msgid "模型管理"
 msgstr "モデル管理"
@@ -292,9 +324,14 @@ msgstr "モデルの種類"
 msgid "模型类型: {0}"
 msgstr "モデルタイプ:{0}"
 
-#: src/pages/firstUse.tsx:152
+#: src/pages/firstUse.tsx:140
 msgid "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新打开"
 msgstr "ComfyUIインストールスクリプトが実行されており、インストールが完了すると自動的に再度開きます"
+
+#: src/components/basicLayout.tsx:124
+#: src/pages/setting/index.tsx:198
+msgid "正在更新..."
+msgstr "更新。。。"
 
 #: src/pages/plugin/commponents/allPlugin.tsx:60
 #: src/pages/plugin/commponents/downloadedPlugin.tsx:53
@@ -308,7 +345,7 @@ msgstr "プラグインが見つかりませんでした"
 msgid "没有找到模型"
 msgstr "モデルが見つかりません"
 
-#: src/pages/firstUse.tsx:165
+#: src/pages/firstUse.tsx:153
 msgid "目前只支持macos系统一键安装ComfyUI,如果是windows用户请手动安装"
 msgstr "現在、macOSへのComfyUIのワンクリックインストールのみがサポートされており、Windowsユーザーの場合は手動でインストールしてください"
 
@@ -317,20 +354,28 @@ msgstr "現在、macOSへのComfyUIのワンクリックインストールのみ
 msgid "等待中"
 msgstr "待つこと"
 
+#: src/pages/setting/index.tsx:122
+msgid "自动更新"
+msgstr "自動更新"
+
 #: src/pages/plugin/commponents/allPlugin.tsx:43
 msgid "获取插件列表失败"
 msgstr "プラグイン リストの取得に失敗しました"
+
+#: src/hooks/useUpdater.ts:37
+msgid "获取更新信息失败"
+msgstr "更新情報を取得できませんでした"
 
 #: src/pages/model/commponents/allModel.tsx:53
 msgid "获取模型列表失败"
 msgstr "モデルリストの取得に失敗しました"
 
-#: src/components/slider.tsx:48
+#: src/components/slider.tsx:53
 msgid "设置"
 msgstr "並べる"
 
-#: src/pages/firstUse.tsx:78
-#: src/pages/setting/index.tsx:84
+#: src/pages/firstUse.tsx:66
+#: src/pages/setting/index.tsx:112
 msgid "语言"
 msgstr "言語"
 
@@ -342,7 +387,7 @@ msgstr "インストールディレクトリを選択してください"
 msgid "请选择或输入ComfyUI目录"
 msgstr "ComfyUIディレクトリを選択または入力してください"
 
-#: src/pages/firstUse.tsx:116
+#: src/pages/firstUse.tsx:104
 msgid "请选择或输入安装目录"
 msgstr "インストールディレクトリを選択または入力してください"
 
@@ -350,21 +395,21 @@ msgstr "インストールディレクトリを選択または入力してくだ
 msgid "请选择或输入正确的ComfyUI目录"
 msgstr "正しいComfyUIディレクトリを選択または入力してください"
 
-#: src/pages/setting/index.tsx:76
+#: src/pages/setting/index.tsx:104
 msgid "请选择正确的ComfyUI目录"
 msgstr "正しいComfyUIディレクトリを選択してください"
 
-#: src/pages/firstUse.tsx:110
-#: src/pages/setting/index.tsx:66
+#: src/pages/firstUse.tsx:98
+#: src/pages/setting/index.tsx:94
 msgid "路径"
 msgstr "パス"
 
 #: src/components/skipModal.tsx:25
-#: src/pages/setting/index.tsx:72
+#: src/pages/setting/index.tsx:100
 msgid "路径不能为空"
 msgstr "パスを空にすることはできません"
 
-#: src/pages/firstUse.tsx:176
+#: src/pages/firstUse.tsx:164
 msgid "跳过安装"
 msgstr "インストールをスキップする"
 
@@ -373,7 +418,7 @@ msgstr "インストールをスキップする"
 msgid "返回主页"
 msgstr "ホームページに戻る"
 
-#: src/pages/firstUse.tsx:132
+#: src/pages/firstUse.tsx:120
 msgid "选择目录"
 msgstr "カタログを選択"
 
