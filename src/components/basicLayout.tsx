@@ -8,12 +8,13 @@ import { t } from "@lingui/macro";
 import { getCurrent } from "@tauri-apps/api/window";
 import { ask, confirm } from "@tauri-apps/plugin-dialog";
 import { useAsyncEffect } from "ahooks";
-import { Modal, Spin, Typography } from "antd";
+import { App, Modal, Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export const BasicLayout = () => {
   const navigate = useNavigate();
+  const { message } = App.useApp();
   const [finished, setFinished] = useState(false);
   const _hasHydrated = useConfigHydration();
   const { shouldUpdate, updating, update, checkUpdate } = useUpdater({
@@ -70,7 +71,11 @@ export const BasicLayout = () => {
       });
 
       if (autoCheckUpdate) {
-        await checkUpdate();
+        try {
+          await checkUpdate();
+        } catch (error) {
+          message.error(t`检查更新失败`);
+        }
       }
 
       if (firstUse || !comfyuiExist) {
@@ -102,8 +107,8 @@ export const BasicLayout = () => {
       )}
       <Modal
         centered
-        open={true}
-        closable={updating}
+        open={updating}
+        closable={false}
         footer={null}
         width={200}
         styles={{
