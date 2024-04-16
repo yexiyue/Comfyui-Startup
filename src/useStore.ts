@@ -22,6 +22,7 @@ type Action = {
   setComfyuiPath: (comfyuiPath: string) => void;
   setCountry: (country: string) => void;
   setExpanded: (expanded: boolean) => void;
+  setAutoCheckUpdate: (autoCheckUpdate: boolean) => void;
 };
 
 export const useConfigStore = create(
@@ -33,7 +34,7 @@ export const useConfigStore = create(
       firstUse: true,
       country: "chinese",
       expanded: true,
-      autoCheckUpdate: true,
+      autoCheckUpdate: false,
       setLanguage(language) {
         set({ language });
       },
@@ -48,6 +49,9 @@ export const useConfigStore = create(
       },
       setExpanded(expanded) {
         set({ expanded });
+      },
+      setAutoCheckUpdate(autoCheckUpdate) {
+        set({ autoCheckUpdate });
       },
     }),
     {

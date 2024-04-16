@@ -1,13 +1,38 @@
 import { command } from "@/api";
 import { InputButton } from "@/components/inputButton";
+import { useUpdater } from "@/hooks/useUpdater";
 import { useConfigStore } from "@/useStore";
+import { LoadingOutlined } from "@ant-design/icons";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { App, Button, Form, Segmented, Select } from "antd";
+import { ask } from "@tauri-apps/plugin-dialog";
 
+import {
+  App,
+  Button,
+  Form,
+  Modal,
+  Segmented,
+  Select,
+  Spin,
+  Switch,
+  Typography,
+} from "antd";
+
+type FormData = {
+  country: string;
+  comfyuiPath: string;
+  language: string;
+  autoCheckUpdate: boolean;
+};
 export const Component = () => {
   useLingui();
   const { message } = App.useApp();
+  const { update, checkUpdate, updating } = useUpdater({
+    manual: true,
+    timeout: 3000,
+  });
+
   const [
     country,
     setCountry,
@@ -15,6 +40,8 @@ export const Component = () => {
     setComfyuiPath,
     language,
     setLanguage,
+    autoCheckUpdate,
+    setAutoCheckUpdate,
   ] = useConfigStore((store) => [
     store.country,
     store.setCountry,
@@ -22,28 +49,29 @@ export const Component = () => {
     store.setComfyuiPath,
     store.language,
     store.setLanguage,
+    store.autoCheckUpdate,
+    store.setAutoCheckUpdate,
   ]);
-  const [form] = Form.useForm<{
-    country: string;
-    comfyuiPath: string;
-    language: string;
-  }>();
+  const [form] = Form.useForm<FormData>();
 
   return (
     <div className="w-full h-full flex justify-center items-center">
       <Form
-        className="w-[380px] translate-y-[-50px]"
+        className="w-[380px] border rounded-lg shadow-lg"
+        style={{
+          padding: 24,
+        }}
         layout="vertical"
-        labelCol={{ span: 4 }}
         form={form}
         initialValues={{
           country,
           comfyuiPath,
           language,
+          autoCheckUpdate,
         }}
       >
         <Form.Item
-          name={"country"}
+          name="country"
           label={t`地区`}
           extra={t`在安装模型和插件时会根据不同地区自动配置代理`}
         >
@@ -62,7 +90,7 @@ export const Component = () => {
         </Form.Item>
 
         <Form.Item
-          name={"comfyuiPath"}
+          name="comfyuiPath"
           label={t`路径`}
           rules={[
             {
@@ -81,7 +109,7 @@ export const Component = () => {
         >
           <InputButton />
         </Form.Item>
-        <Form.Item name={"language"} label={t`语言`}>
+        <Form.Item name="language" label={t`语言`}>
           <Select
             className="w-[150px]"
             options={[
@@ -90,6 +118,9 @@ export const Component = () => {
               { value: "ja", label: "日本語" },
             ]}
           ></Select>
+        </Form.Item>
+        <Form.Item name="autoCheckUpdate" label={t`自动更新`}>
+          <Switch />
         </Form.Item>
         <div className="flex justify-center">
           <Button
@@ -107,6 +138,7 @@ export const Component = () => {
                 setComfyuiPath(values.comfyuiPath);
                 setCountry(values.country);
                 setLanguage(values.language);
+                setAutoCheckUpdate(values.autoCheckUpdate);
                 message.success(t`更新成功`);
               } catch (error) {
                 message.error(`${error}`);
@@ -116,7 +148,56 @@ export const Component = () => {
             <Trans>更新</Trans>
           </Button>
         </div>
+        <div className="flex justify-center pt-4">
+          <Button
+            type="link"
+            className="w-full"
+            onClick={async () => {
+              try {
+                const shouldUpdate = await checkUpdate();
+                if (!shouldUpdate) {
+                  message.success(t`已是最新版本`);
+                } else {
+                  const confirm = await ask(t`发现新版本，是否更新？`, {
+                    title: t`更新提示`,
+                    kind: "info",
+                    okLabel: t`更新`,
+                    cancelLabel: t`取消`,
+                  });
+                  if (confirm) {
+                    await update();
+                  }
+                }
+              } catch (error) {
+                message.error(t`检查更新失败`);
+              }
+            }}
+          >
+            <Trans>检查更新</Trans>
+          </Button>
+        </div>
       </Form>
+      <Modal
+        centered
+        open={updating}
+        closable={false}
+        footer={null}
+        width={200}
+        styles={{
+          body: {
+            height: 120,
+          },
+        }}
+      >
+        <div className="w-full h-full flex justify-center items-center flex-col">
+          <Spin indicator={<LoadingOutlined style={{ fontSize: 28 }} spin />} />
+          <Typography.Link
+            style={{
+              cursor: "default",
+            }}
+          >{t`正在更新...`}</Typography.Link>
+        </div>
+      </Modal>
     </div>
   );
 };

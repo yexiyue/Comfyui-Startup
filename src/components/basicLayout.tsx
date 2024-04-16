@@ -17,24 +17,11 @@ export const BasicLayout = () => {
   const { message } = App.useApp();
   const [finished, setFinished] = useState(false);
   const _hasHydrated = useConfigHydration();
-  const { shouldUpdate, updating, update, checkUpdate } = useUpdater({
+  const { updating, update, checkUpdate } = useUpdater({
     manual: true,
     timeout: 3000,
   });
 
-  useAsyncEffect(async () => {
-    if (shouldUpdate) {
-      const res = await ask(t`发现新版本，是否更新？`, {
-        title: t`更新提示`,
-        kind: "info",
-        okLabel: t`更新`,
-        cancelLabel: t`取消`,
-      });
-      if (res) {
-        await update();
-      }
-    }
-  }, [shouldUpdate]);
   // 全局只注册一次的关闭提示
   useEffect(() => {
     const window = getCurrent();
@@ -72,7 +59,18 @@ export const BasicLayout = () => {
 
       if (autoCheckUpdate) {
         try {
-          await checkUpdate();
+          const shouldUpdate = await checkUpdate();
+          if (shouldUpdate) {
+            const confirm = await ask(t`发现新版本，是否更新？`, {
+              title: t`更新提示`,
+              kind: "info",
+              okLabel: t`更新`,
+              cancelLabel: t`取消`,
+            });
+            if (confirm) {
+              await update();
+            }
+          }
         } catch (error) {
           message.error(t`检查更新失败`);
         }
@@ -83,7 +81,7 @@ export const BasicLayout = () => {
       }
       setTimeout(() => {
         setFinished(true);
-      }, 1000);
+      }, 1500);
     }
   }, [_hasHydrated]);
 
