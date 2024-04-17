@@ -23,9 +23,9 @@ export const useUpdater = (props: UpdaterOptions = {}) => {
     const updater = await check(checkOps);
     if (updater?.available) {
       setShouldUpdate(true);
+      updaterRef.current = updater;
       return true;
     }
-    updaterRef.current = updater;
     return false;
   });
 

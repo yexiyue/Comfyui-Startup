@@ -1,6 +1,6 @@
 {
   "productName": "comfyui-startup",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "identifier": "com.tauri.comfyui-startup",
   "build": {
     "beforeDevCommand": "pnpm dev",
@@ -12,6 +12,7 @@
     "updater": {
       "active": true,
       "endpoints": [
+        "https://mirror.ghproxy.com/https://github.com/yexiyue/Comfyui-Startup/releases/download/updater/latest.json",
         "https://github.com/yexiyue/Comfyui-Startup/releases/download/updater/latest.json"
       ],
       "dialog": true,

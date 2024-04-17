@@ -6,7 +6,6 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { ask } from "@tauri-apps/plugin-dialog";
-
 import {
   App,
   Button,
@@ -28,11 +27,11 @@ type FormData = {
 export const Component = () => {
   useLingui();
   const { message } = App.useApp();
-  const { update, checkUpdate, updating } = useUpdater({
+  const { update, checkUpdate, updating, progress } = useUpdater({
     manual: true,
     timeout: 3000,
   });
-
+  console.log("updating", updating, progress);
   const [
     country,
     setCountry,
@@ -153,10 +152,24 @@ export const Component = () => {
             type="link"
             className="w-full"
             onClick={async () => {
+              const key = "checkUpdate";
+
+              message.open({
+                content: t`正在检查更新...`,
+                key,
+                type: "loading",
+                duration: 0,
+              });
+
               try {
                 const shouldUpdate = await checkUpdate();
                 if (!shouldUpdate) {
-                  message.success(t`已是最新版本`);
+                  message.open({
+                    content: t`已是最新版本`,
+                    key,
+                    type: "success",
+                    duration: 2,
+                  });
                 } else {
                   const confirm = await ask(t`发现新版本，是否更新？`, {
                     title: t`更新提示`,
@@ -164,12 +177,19 @@ export const Component = () => {
                     okLabel: t`更新`,
                     cancelLabel: t`取消`,
                   });
+
                   if (confirm) {
+                    message.destroy(key);
                     await update();
                   }
                 }
               } catch (error) {
-                message.error(t`检查更新失败`);
+                message.open({
+                  content: t`检查更新失败`,
+                  key,
+                  type: "error",
+                  duration: 2,
+                });
               }
             }}
           >

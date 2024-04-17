@@ -34,7 +34,7 @@ export const useConfigStore = create(
       firstUse: true,
       country: "chinese",
       expanded: true,
-      autoCheckUpdate: false,
+      autoCheckUpdate: true,
       setLanguage(language) {
         set({ language });
       },
