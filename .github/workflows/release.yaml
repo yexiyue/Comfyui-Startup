@@ -53,7 +53,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           artifactPaths: ${{ steps.build.outputs.artifactPaths }}
-        run: pnpm publish --no-git-checks
+        run: node scripts/publish.mjs
+        
       - name: ls publish
         run: ls publish
       - name: Deploy
