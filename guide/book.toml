@@ -1,0 +1,10 @@
+[book]
+authors = ["yexiyue"]
+language = "en"
+multilingual = false
+src = "src"
+title = "ComfyUI Startup"
+
+[output.html]
+git-repository-url = "https://github.com/yexiyue/Comfyui-Startup"
+additional-js = ["theme/custom/onclick.js"]
