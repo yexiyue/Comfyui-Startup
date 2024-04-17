@@ -1,8 +1,6 @@
-import { getOctokit } from "@actions/github";
 import { readFile, copyFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
-const octokit = getOctokit(process.env.GITHUB_TOKEN);
 const artifactPaths = JSON.parse(process.env.artifactPaths);
 const targetDir = "publish";
 
