@@ -12,17 +12,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: ['windows-latest']
-    # , 'macos-latest'
+        platform: ['windows-latest', 'macos-latest']
+
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      # - name: Rust setup
-      #   uses: dtolnay/rust-toolchain@stable
+      - name: Rust setup
+        uses: dtolnay/rust-toolchain@stable
       
-      # - name: Rust cache
-      #   uses: swatinem/rust-cache@v2
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Sync node version and setup cache
@@ -31,36 +29,36 @@ jobs:
           node-version: "lts/*"
           cache: "pnpm" # Set this to npm, yarn or pnpm.
 
-      # - name: Install frontend dependencies
-      #   # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
-      #   run: pnpm install --no-frozen-lockfile # Change this to npm, yarn or pnpm.
-      # - name: Build the app
-      #   id: build
-      #   uses: tauri-apps/tauri-action@v0
+      - name: Install frontend dependencies
+        # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
+        run: pnpm install --no-frozen-lockfile # Change this to npm, yarn or pnpm.
+      - name: Build the app
+        id: build
+        uses: tauri-apps/tauri-action@v0
 
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-      #     TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_PRIVATE_KEY_PASSWORD }}
-      #   with:
-      #     tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
-      #     releaseName: "ComfyUI Startup v__VERSION__" # tauri-action replaces \_\_VERSION\_\_ with the app version.
-      #     releaseBody: "See the assets to download and install this version."
-      #     releaseDraft: true
-      #     prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
+          releaseName: "ComfyUI Startup v__VERSION__" # tauri-action replaces \_\_VERSION\_\_ with the app version.
+          releaseBody: "See the assets to download and install this version."
+          releaseDraft: true
+          prerelease: false
 
       - name: Upload assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          artifactPaths: '["D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\msi\\comfyui-startup_0.1.8_x64_en-US.msi","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\msi\\comfyui-startup_0.1.8_x64_en-US.msi.zip","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\msi\\comfyui-startup_0.1.8_x64_en-US.msi.zip.sig","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\nsis\\comfyui-startup_0.1.8_x64-setup.exe","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\nsis\\comfyui-startup_0.1.8_x64-setup.nsis.zip","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\nsis\\comfyui-startup_0.1.8_x64-setup.nsis.zip.sig"]'
+          artifactPaths: ${{ steps.build.outputs.artifactPaths }}
         run: node scripts/publish.mjs
-
-      # - name: ls publish
-      #   run: ls publish
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./publish
-      #     keep_files: true
+      - name: ls publish
+        run: ls publish
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish
+          keep_files: true
 
