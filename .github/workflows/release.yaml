@@ -51,14 +51,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # artifactPaths: ${{ steps.build.outputs.artifactPaths }}
-        run: node scripts/publish.mjs
-      - name: ls publish
-        run: ls publish
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./publish
-          keep_files: true
+        run: pnpm updater
+        
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./publish
+      #     keep_files: true
 
