@@ -1,6 +1,6 @@
 [book]
 authors = ["yexiyue"]
-language = "en"
+language = "zh"
 multilingual = false
 src = "src"
 title = "ComfyUI Startup"
