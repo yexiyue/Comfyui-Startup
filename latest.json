@@ -1,14 +1,14 @@
 {
   "version": "0.1.8",
   "notes": "See the assets to download and install this version.",
-  "pub_date": "2024-04-17T01:19:50.505Z",
+  "pub_date": "2024-04-17T01:27:22.860Z",
   "platforms": {
     "darwin-x86_64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTOVUyZXdldCs2WWVjVmhjTXdRZzVsSUJzc3M3ckxjUXZKVUhwVVRHU2pQdkh0ZHhZOUVFdVo1TmVFc09KRncralVNWVh3aDVnMTlzWFhQQ2xwVmJDTHdLa0hjYVZhVVEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzEzMzA2MzM1CWZpbGU6Y29tZnl1aS1zdGFydHVwLmFwcC50YXIuZ3oKSUE0cTBUY0FTMC9Rd3krNTlKc0VXdWpYU2pLeVl6ZC9vckNIOWJWTUlqOHBoNmRWM1BnTUxBWTRxRlVZQlpLcWI5SXJTd3RIaXIwWjJMc3k2ejJBQXc9PQo=",
       "url": "https://github.com/yexiyue/Comfyui-Startup/releases/download/v0.1.9-beta/comfyui-startup_x64.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTOVUyZXdldCs2WWNYMWdKTFhiUjd0VGl2YU1ydGVBOG5oaHVoMmtHTlhCbXIrd3U4Ky9ReDAxOSs1aEdRblVoU1BNL0dHNjdUSXlpdHJHYVhhZ1haOTVpU3M4TzdnL1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzEzMzE2NzgyCWZpbGU6Y29tZnl1aS1zdGFydHVwXzAuMS44X3g2NF9lbi1VUy5tc2kuemlwCnRUZ0JEM1ZqU01wMVFXL3V6SUFTdFRtVkFLcnNvVC9pNkI5b0NIa05IY3QyeVhVQThORmNSYVNLUUZCRTlyRTgyeXpDczcwR0hWL1lzb25TdmxoVUNnPT0K",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTOVUyZXdldCs2WVdHTUtrLzhTeFc0MjFtenNzMVBxR2xWY2NWbXBLSG1ZV3ZGOXZtWXFrY2lqNmVFdmxOVTF1Sm1VY2p6bDBrZE1kNGduVXhtSTczUHNFYXhTVVZEb1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzEzMzE3MjM1CWZpbGU6Y29tZnl1aS1zdGFydHVwXzAuMS44X3g2NF9lbi1VUy5tc2kuemlwClJrMHVTVGQvaUtqdkpoZEJjdktzUVNxYWNDQmxsekc4WS9jRk0xdkY3WitUTVhaamQyTmpSemdZTWdDL1hzeHR4N1pXazZoc0plNW1GandRSWFtdENBPT0K",
       "url": "https://github.com/yexiyue/Comfyui-Startup/releases/download/v0.1.9-beta/comfyui-startup_0.1.8_x64_en-US.msi.zip"
     },
     "darwin-aarch64": {
