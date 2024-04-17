@@ -50,11 +50,11 @@ jobs:
       - name: Upload assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          artifactPaths: ${{ steps.build.outputs.artifactPaths }}
+          # artifactPaths: ${{ steps.build.outputs.artifactPaths }}
         run: node scripts/publish.mjs
       - name: ls publish
         run: ls publish
-        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
