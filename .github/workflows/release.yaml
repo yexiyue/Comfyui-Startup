@@ -12,14 +12,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: ['windows-latest', 'macos-latest']
-
+        platform: ['windows-latest']
+    # , 'macos-latest'
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Rust setup
-        uses: dtolnay/rust-toolchain@stable
+      # - name: Rust setup
+      #   uses: dtolnay/rust-toolchain@stable
       
       # - name: Rust cache
       #   uses: swatinem/rust-cache@v2
@@ -55,12 +55,12 @@ jobs:
           artifactPaths: '["D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\msi\\comfyui-startup_0.1.8_x64_en-US.msi","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\msi\\comfyui-startup_0.1.8_x64_en-US.msi.zip","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\msi\\comfyui-startup_0.1.8_x64_en-US.msi.zip.sig","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\nsis\\comfyui-startup_0.1.8_x64-setup.exe","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\nsis\\comfyui-startup_0.1.8_x64-setup.nsis.zip","D:\\a\\Comfyui-Startup\\Comfyui-Startup\\target\\release\\bundle\\nsis\\comfyui-startup_0.1.8_x64-setup.nsis.zip.sig"]'
         run: node scripts/publish.mjs
 
-      - name: ls publish
-        run: ls publish
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./publish
-          keep_files: true
+      # - name: ls publish
+      #   run: ls publish
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./publish
+      #     keep_files: true
 

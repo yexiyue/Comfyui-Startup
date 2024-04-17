@@ -2,9 +2,10 @@ import { readFile, copyFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
 const artifactPaths = JSON.parse(process.env.artifactPaths);
-console.log(artifactPaths);
+console.log("artifactPaths", artifactPaths);
+console.log("first", artifactPaths[0]);
 const targetDir = "publish";
-console.log(join(__dirname, "../", targetDir));
+console.log("dir", join(import.meta.dirname, "../", targetDir));
 // const publish = async () => {
 //   await mkdir(targetDir, { recursive: true });
 
