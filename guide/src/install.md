@@ -1,4 +1,5 @@
 # 安装
+
 ![home](install.assets/home.png)
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
     <link rel="stylesheet" href="./install.assets/iconfont.css" />
   </head>
   <body>
-    <div class="flex w-full justify-center gap-6 mt-10">
+    <div class="flex w-full justify-center gap-6 my-10">
       <div
         class="w-[200px] h-[200px] border hover:shadow-lg rounded-lg transition-all flex flex-col gap-2 justify-center items-center"
       >
@@ -74,3 +75,42 @@
   </body>
 </html>
 
+
+
+<div class="mt-[30px]">点击即可下载，中国用户推荐使用镜像下载</div>
+
+<img src="install.assets/image-20240418124832211.png" class="my-4 m-auto w-[300px]" />
+
+
+
+**出现警告是正常的点击取消即可**
+
+**然后在设置中允许打开就OK了**
+
+<img src="install.assets/image-20240418125331449.png" class="my-4"/>
+
+**然后会再次弹出一次警告**
+
+<img src="install.assets/image-20240418125429225.png" class="my-4 w-[300px] m-auto"/>
+
+**打开后进入到首次安装页面**
+
+
+
+![image-20240418125656521](install.assets/image-20240418125656521.png)
+
+**其中路径是准备安装ComfyUI的目录**
+
+**如果您本地已经有ComfyUI了可以直接跳过安装**
+
+![image-20240418125835818](install.assets/image-20240418125835818.png)
+
+
+
+<p class="my-[40px] text-secondaryColor" style="font-size:24px;">部分页面展示</p>
+
+
+
+![image-20240418125926624](install.assets/image-20240418125926624.png)
+
+![image-20240418130540884](install.assets/image-20240418130540884.png)
