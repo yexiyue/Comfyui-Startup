@@ -39,7 +39,7 @@ impl Exec {
         let mut cmd = Command::new("osascript");
         let cmd = cmd.args([
             "-e",
-            &format!(r#"tell application "Terminal" to do script "{commands}" in front window"#),
+            &format!(r#"tell application "Terminal" to do script "{commands}""#,),
         ]);
         let res = cmd.status()?;
         Ok(res)

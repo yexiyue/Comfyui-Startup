@@ -102,6 +102,7 @@ impl Status {
                 new_commit_time > last_time
             })
             .collect::<Vec<_>>();
+
         let tasks = new_commits.iter().map(|commit| {
             let client = client.clone();
             let filename = self.filename.clone();
@@ -148,5 +149,4 @@ impl Status {
 
         Ok(res)
     }
-
 }
