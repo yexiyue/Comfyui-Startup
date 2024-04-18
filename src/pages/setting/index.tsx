@@ -179,9 +179,9 @@ export const Component = () => {
                   });
 
                   if (confirm) {
-                    message.destroy(key);
                     await update();
                   }
+                  message.destroy(key);
                 }
               } catch (error) {
                 message.open({
