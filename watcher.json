@@ -5,7 +5,7 @@
       "owner": "ltdrdata",
       "repo": "ComfyUI-Manager",
       "branch": "main",
-      "lastUpdate": "2024-04-12T07:18:12.060127+00:00",
+      "lastUpdate": "2024-04-18T03:54:59.962308+00:00",
       "translateTask": {
         "from": "en",
         "to": "zh",
@@ -13,14 +13,14 @@
         "targetField": "description",
         "field": "models"
       },
-      "alsoTranslate": true
+      "alsoTranslate": false
     },
     {
       "filename": "custom-node-list.json",
       "owner": "ltdrdata",
       "repo": "ComfyUI-Manager",
       "branch": "main",
-      "lastUpdate": "2024-04-12T07:20:45.262953+00:00",
+      "lastUpdate": "2024-04-18T03:55:36.118606+00:00",
       "translateTask": {
         "from": "en",
         "to": "zh",

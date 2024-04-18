@@ -1,2 +1,5 @@
+
 [workspace]
 members = ["src-tauri", "migration", "translate"]
+resolver = "2"
+package.edition = "2021"

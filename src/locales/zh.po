@@ -118,7 +118,7 @@ msgid "下载插件和模型需要ComfyUI目录"
 msgstr "下载插件和模型需要ComfyUI目录"
 
 #: src/pages/firstUse.tsx:86
-#: src/pages/setting/index.tsx:81
+#: src/pages/setting/index.tsx:80
 msgid "中国用户"
 msgstr "中国用户"
 
@@ -138,7 +138,7 @@ msgid "全部"
 msgstr "全部"
 
 #: src/pages/firstUse.tsx:90
-#: src/pages/setting/index.tsx:85
+#: src/pages/setting/index.tsx:84
 msgid "其他国家"
 msgstr "其他国家"
 
@@ -163,14 +163,14 @@ msgid "卸载"
 msgstr "卸载"
 
 #: src/components/basicLayout.tsx:64
-#: src/pages/setting/index.tsx:161
+#: src/pages/setting/index.tsx:174
 msgid "发现新版本，是否更新？"
 msgstr "发现新版本，是否更新？"
 
 #: src/components/basicLayout.tsx:68
 #: src/pages/model/commponents/item.tsx:127
 #: src/pages/plugin/commponents/item.tsx:121
-#: src/pages/setting/index.tsx:165
+#: src/pages/setting/index.tsx:178
 msgid "取消"
 msgstr "取消"
 
@@ -187,12 +187,12 @@ msgstr "启动失败"
 msgid "在安装comfyui时会根据不同地区自动配置代理"
 msgstr "在安装comfyui时会根据不同地区自动配置代理"
 
-#: src/pages/setting/index.tsx:76
+#: src/pages/setting/index.tsx:75
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
 msgstr "在安装模型和插件时会根据不同地区自动配置代理"
 
 #: src/pages/firstUse.tsx:79
-#: src/pages/setting/index.tsx:75
+#: src/pages/setting/index.tsx:74
 msgid "地区"
 msgstr "地区"
 
@@ -225,7 +225,7 @@ msgstr "安装中"
 msgid "已安装"
 msgstr "已安装"
 
-#: src/pages/setting/index.tsx:159
+#: src/pages/setting/index.tsx:168
 msgid "已是最新版本"
 msgstr "已是最新版本"
 
@@ -278,8 +278,8 @@ msgstr "暂无下载中的模型"
 
 #: src/components/basicLayout.tsx:67
 #: src/pages/plugin/commponents/item.tsx:85
-#: src/pages/setting/index.tsx:148
-#: src/pages/setting/index.tsx:164
+#: src/pages/setting/index.tsx:147
+#: src/pages/setting/index.tsx:177
 msgid "更新"
 msgstr "更新"
 
@@ -287,12 +287,12 @@ msgstr "更新"
 msgid "更新下载完成，是否立即重启应用？"
 msgstr "更新下载完成，是否立即重启应用？"
 
-#: src/pages/setting/index.tsx:142
+#: src/pages/setting/index.tsx:141
 msgid "更新成功"
 msgstr "更新成功"
 
 #: src/components/basicLayout.tsx:65
-#: src/pages/setting/index.tsx:162
+#: src/pages/setting/index.tsx:175
 msgid "更新提示"
 msgstr "更新提示"
 
@@ -304,12 +304,12 @@ msgstr "未找到页面"
 msgid "未知错误"
 msgstr "未知错误"
 
-#: src/pages/setting/index.tsx:176
+#: src/pages/setting/index.tsx:196
 msgid "检查更新"
 msgstr "检查更新"
 
 #: src/components/basicLayout.tsx:75
-#: src/pages/setting/index.tsx:172
+#: src/pages/setting/index.tsx:188
 msgid "检查更新失败"
 msgstr "检查更新失败"
 
@@ -335,9 +335,13 @@ msgid "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新
 msgstr "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新打开"
 
 #: src/components/basicLayout.tsx:124
-#: src/pages/setting/index.tsx:198
+#: src/pages/setting/index.tsx:218
 msgid "正在更新..."
 msgstr "正在更新..."
+
+#: src/pages/setting/index.tsx:158
+msgid "正在检查更新..."
+msgstr "正在检查更新..."
 
 #: src/pages/plugin/commponents/allPlugin.tsx:60
 #: src/pages/plugin/commponents/downloadedPlugin.tsx:53
@@ -360,7 +364,7 @@ msgstr "目前只支持macos系统一键安装ComfyUI,如果是windows用户请�
 msgid "等待中"
 msgstr "等待中"
 
-#: src/pages/setting/index.tsx:122
+#: src/pages/setting/index.tsx:121
 msgid "自动更新"
 msgstr "自动更新"
 
@@ -381,7 +385,7 @@ msgid "设置"
 msgstr "设置"
 
 #: src/pages/firstUse.tsx:66
-#: src/pages/setting/index.tsx:112
+#: src/pages/setting/index.tsx:111
 msgid "语言"
 msgstr "语言"
 
@@ -401,17 +405,17 @@ msgstr "请选择或输入安装目录"
 msgid "请选择或输入正确的ComfyUI目录"
 msgstr "请选择或输入正确的ComfyUI目录"
 
-#: src/pages/setting/index.tsx:104
+#: src/pages/setting/index.tsx:103
 msgid "请选择正确的ComfyUI目录"
 msgstr "请选择正确的ComfyUI目录"
 
 #: src/pages/firstUse.tsx:98
-#: src/pages/setting/index.tsx:94
+#: src/pages/setting/index.tsx:93
 msgid "路径"
 msgstr "路径"
 
 #: src/components/skipModal.tsx:25
-#: src/pages/setting/index.tsx:100
+#: src/pages/setting/index.tsx:99
 msgid "路径不能为空"
 msgstr "路径不能为空"
 

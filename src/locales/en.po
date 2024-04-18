@@ -7,7 +7,7 @@ msgstr ""
 "X-Generator: MonoDevelop Gettext addin\n"
 "Language: en\n"
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-04-16 23:45:45+0800\n"
+"PO-Revision-Date: 2024-04-18 12:36:10+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Report-Msgid-Bugs-To: \n"
@@ -114,7 +114,7 @@ msgid "下载插件和模型需要ComfyUI目录"
 msgstr "The ComfyUI directory is required to download plugins and models"
 
 #: src/pages/firstUse.tsx:86
-#: src/pages/setting/index.tsx:81
+#: src/pages/setting/index.tsx:80
 msgid "中国用户"
 msgstr "Chinese users"
 
@@ -133,7 +133,7 @@ msgid "全部"
 msgstr "All"
 
 #: src/pages/firstUse.tsx:90
-#: src/pages/setting/index.tsx:85
+#: src/pages/setting/index.tsx:84
 msgid "其他国家"
 msgstr "Other countries"
 
@@ -158,14 +158,14 @@ msgid "卸载"
 msgstr "Unload"
 
 #: src/components/basicLayout.tsx:64
-#: src/pages/setting/index.tsx:161
+#: src/pages/setting/index.tsx:174
 msgid "发现新版本，是否更新？"
 msgstr "Discover a new version, is it updated?"
 
 #: src/components/basicLayout.tsx:68
 #: src/pages/model/commponents/item.tsx:127
 #: src/pages/plugin/commponents/item.tsx:121
-#: src/pages/setting/index.tsx:165
+#: src/pages/setting/index.tsx:178
 msgid "取消"
 msgstr "Cancel"
 
@@ -182,12 +182,12 @@ msgstr "Failed to start"
 msgid "在安装comfyui时会根据不同地区自动配置代理"
 msgstr "When installing comfyui, the agent is automatically configured according to different regions"
 
-#: src/pages/setting/index.tsx:76
+#: src/pages/setting/index.tsx:75
 msgid "在安装模型和插件时会根据不同地区自动配置代理"
 msgstr "When installing models and plugins, agents are automatically configured based on different regions"
 
 #: src/pages/firstUse.tsx:79
-#: src/pages/setting/index.tsx:75
+#: src/pages/setting/index.tsx:74
 msgid "地区"
 msgstr "Region"
 
@@ -219,7 +219,7 @@ msgstr "Installing"
 msgid "已安装"
 msgstr "Installed"
 
-#: src/pages/setting/index.tsx:159
+#: src/pages/setting/index.tsx:168
 msgid "已是最新版本"
 msgstr "It is the latest version"
 
@@ -272,8 +272,8 @@ msgstr "There are no models in the download"
 
 #: src/components/basicLayout.tsx:67
 #: src/pages/plugin/commponents/item.tsx:85
-#: src/pages/setting/index.tsx:148
-#: src/pages/setting/index.tsx:164
+#: src/pages/setting/index.tsx:147
+#: src/pages/setting/index.tsx:177
 msgid "更新"
 msgstr "Update"
 
@@ -281,12 +281,12 @@ msgstr "Update"
 msgid "更新下载完成，是否立即重启应用？"
 msgstr "Will I restart the app immediately after the update is downloaded?"
 
-#: src/pages/setting/index.tsx:142
+#: src/pages/setting/index.tsx:141
 msgid "更新成功"
 msgstr "The update was successful"
 
 #: src/components/basicLayout.tsx:65
-#: src/pages/setting/index.tsx:162
+#: src/pages/setting/index.tsx:175
 msgid "更新提示"
 msgstr "Update Tips"
 
@@ -298,12 +298,12 @@ msgstr "Page not found"
 msgid "未知错误"
 msgstr "Unknown error"
 
-#: src/pages/setting/index.tsx:176
+#: src/pages/setting/index.tsx:196
 msgid "检查更新"
 msgstr "Check for updates"
 
 #: src/components/basicLayout.tsx:75
-#: src/pages/setting/index.tsx:172
+#: src/pages/setting/index.tsx:188
 msgid "检查更新失败"
 msgstr "Failed to check for updates"
 
@@ -329,9 +329,13 @@ msgid "正在执行ComfyUI安装脚本，待安装完成后会自动为您重新
 msgstr "The ComfyUI installation script is being executed, and it will be automatically reopened for you after the installation is complete"
 
 #: src/components/basicLayout.tsx:124
-#: src/pages/setting/index.tsx:198
+#: src/pages/setting/index.tsx:218
 msgid "正在更新..."
 msgstr "Updating..."
+
+#: src/pages/setting/index.tsx:158
+msgid "正在检查更新..."
+msgstr "Checking for updates..."
 
 #: src/pages/plugin/commponents/allPlugin.tsx:60
 #: src/pages/plugin/commponents/downloadedPlugin.tsx:53
@@ -354,7 +358,7 @@ msgstr "Currently, only one-click installation of ComfyUI on macOS is supported,
 msgid "等待中"
 msgstr "Waiting"
 
-#: src/pages/setting/index.tsx:122
+#: src/pages/setting/index.tsx:121
 msgid "自动更新"
 msgstr "Automatic updates"
 
@@ -375,7 +379,7 @@ msgid "设置"
 msgstr "Set up"
 
 #: src/pages/firstUse.tsx:66
-#: src/pages/setting/index.tsx:112
+#: src/pages/setting/index.tsx:111
 msgid "语言"
 msgstr "Language"
 
@@ -395,17 +399,17 @@ msgstr "Please select or enter an installation directory"
 msgid "请选择或输入正确的ComfyUI目录"
 msgstr "Please select or enter the correct ComfyUI directory"
 
-#: src/pages/setting/index.tsx:104
+#: src/pages/setting/index.tsx:103
 msgid "请选择正确的ComfyUI目录"
 msgstr "Please select the correct ComfyUI directory"
 
 #: src/pages/firstUse.tsx:98
-#: src/pages/setting/index.tsx:94
+#: src/pages/setting/index.tsx:93
 msgid "路径"
 msgstr "Path"
 
 #: src/components/skipModal.tsx:25
-#: src/pages/setting/index.tsx:100
+#: src/pages/setting/index.tsx:99
 msgid "路径不能为空"
 msgstr "The path cannot be empty"
 
