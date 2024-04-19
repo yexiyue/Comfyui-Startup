@@ -177,11 +177,10 @@ export const Component = () => {
                     okLabel: t`更新`,
                     cancelLabel: t`取消`,
                   });
-
+                  message.destroy(key);
                   if (confirm) {
                     await update();
                   }
-                  message.destroy(key);
                 }
               } catch (error) {
                 message.open({
