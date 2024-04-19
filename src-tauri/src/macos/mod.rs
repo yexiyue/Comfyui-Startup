@@ -1,25 +1,24 @@
 mod install_brew;
 
+use std::path::Path;
+
 use crate::{
     error::MyError,
     state::MyConfig,
-    utils::{Exec, Git, SysInfo},
+    utils::{Exec, Git},
 };
 pub use install_brew::install_brew;
 
 use tauri::State;
 
 #[tauri::command]
-pub async fn install_comfyui(
-    state: State<'_, MyConfig>,
-    sysinfo: State<'_, SysInfo>,
-) -> Result<(), MyError> {
+pub async fn install_comfyui(state: State<'_, MyConfig>) -> Result<(), MyError> {
     let mut cmd = Exec::new();
     let state = state.lock().await;
     let (brew, _path) = install_brew(state.is_chinese())?;
     cmd.add(brew);
-
-    let brew_path = if sysinfo.arch == "x86_64" {
+    let path = Path::new("/usr/local/Homebrew/bin/brew");
+    let brew_path = if path.exists() {
         "/usr/local/Homebrew/bin/brew"
     } else {
         "/opt/homebrew/bin/brew"
