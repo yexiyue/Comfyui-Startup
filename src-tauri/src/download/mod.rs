@@ -487,6 +487,7 @@ impl Download {
 }
 
 pub fn cache_file(filepath: &str) -> anyhow::Result<String> {
+    let home = tauri::path::BaseDirectory::Cache.variable();
     let path = Path::new(filepath);
     if path.is_dir() {
         return Err(anyhow!("filepath is a directory"));
@@ -498,9 +499,8 @@ pub fn cache_file(filepath: &str) -> anyhow::Result<String> {
         }
     }
     let filename = path.file_name().context("filename is not valid")?;
-    let dir = std::env!("HOME");
 
-    let cache_dir = Path::new(dir).join(".cache").join("comfyui-startup");
+    let cache_dir = Path::new(home).join("comfyui-startup");
     // 创建缓存目录
     if !cache_dir.exists() {
         std::fs::create_dir_all(&cache_dir)?;
